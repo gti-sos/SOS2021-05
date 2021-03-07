@@ -1,2 +1,3 @@
 # SOS2021-05
-Esto es un cambio
+
+Esto es un cambio SOLUCIONADO
