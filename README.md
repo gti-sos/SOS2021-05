@@ -1,5 +1,7 @@
 # SOS2021-05
 
-Esto es un cambio SOLUCIONADO
-Esto es otro cambio solucionado de Ivan
-Esto es un cambio de Manue
+# Team
+
+[Iván Martín Jiménez](https://github.com/ivanmartinsk)
+[Manuel Sánchez López](https://github.com/manu261998)
+[José Antonio Megías Macías](https://github.com/josanmegias)
