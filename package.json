@@ -1,0 +1,23 @@
+{
+  "name": "sos2021-05",
+  "version": "1.0.0",
+  "description": "- **Team**   - [Iván Martín Jiménez](https://github.com/ivanmartinsk)   - [Manuel Sanchez López](https://github.com/manu261998)   - [José Antonio Megías Macías](https://github.com/josanmegias) - **Project description**: Research on attacks, homicides caused by guns and firearms sold in recent years in the US - **Repository**: [gti-sos/SOS2021-05](https://github.com/gti-sos/SOS2021-05) - **URL**:  - **APIs**:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gti-sos/SOS2021-05.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gti-sos/SOS2021-05/issues"
+  },
+  "homepage": "https://github.com/gti-sos/SOS2021-05#readme",
+  "dependencies": {
+    "cool-ascii-faces": "^1.3.4",
+    "express": "^4.17.1"
+  }
+}
