@@ -2,14 +2,24 @@
 var cool = require("cool-ascii-faces")
 var express = require("express");
 var app = express();
-var port = 10002;
+var port = (process.env.PORT || 10000);
 
+/*
 app.get("/cool", (request, response) => {
 	
 	response.send(cool());
 	console.log("New Request ha llegao");
 	
 });
+*/
+
+app.use("/", express.static(path.join(__dirname,"public")));
+
+app.get('/index', (request, response) => {
+    response.send(express());
+    console.log('New request to /index has arrived');
+});
+
 
 app.listen(port, () => {
 	console.log("Server ready listening in port " + port)
