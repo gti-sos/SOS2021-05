@@ -37,7 +37,7 @@ app.listen(port, () => {
 //IVAN
 
 app.get("/info/homicides-by-firearms", (request,response) => {
-	response.send("");
+	response.send("<html><style>table,td{  width: 50%; text-align: center; border-spacing: 4 ; border: 1.5px solid black}</style><body><table class = default><caption>Homicides by firearms in the United States </caption> <tbody><tr ><td ><strong>state</strong></td><td ><strong>year</strong></td><td ><strong>homicide-by-firearm</strong></td><td ><strong>handgun</strong></td><td><strong>rifle</strong></td><td><strong>shotgun</strong></td><td><strong>type-not-stated</strong></td></tr><tr ><td >Alaska</td><td>2019</td><td>70</td><td>17</td><td>1</td><td>6</td><td>20</td></tr><tr s><td >Arkansas</td><td >2019</td><td>255</td><td >87</td><td >10</td><td >5</td><td >74</td></tr><tr ><td >Idaho</td><td >2019</td><td >23</td><td>9</td><td >0</td><td >0</td><td >7</td></tr><tr ><td >West Virginia</td><td >2019</td><td >69</td><td >24</td><td >7</td><td >2</td><td >17</td></tr><tr ><td >Wyoming</td><td >2019</td><td >11</td><td>7</td><td >0</td><td >0</td><td >2</td></tr><tr><td >Montana</td><td >2019</td><td >20</td><td >13</td><td >1</td><td >1</td><td >1</td></tr><tr ><td >New Mexico</td><td >2019</td><td >146</td><td>53</td><td >1</td><td >3</td><td >43</td></tr><tr><td >Alabama</td><td >2019</td><td >3</td><td >3</td><td >0</td><td >0</td><td >0</td></tr></tbody> </table> </body> </html>");
 	console.log("New request to /info/homicides-by-firearms has arrived");
 });
 
