@@ -18,7 +18,7 @@ app.use("/", express.static( path.join(__dirname ,"./public")));
 
 app.get('/index', (request, response) => {
     response.send(express());
-    console.log('New request to /index has arrived');
+    console.log('New request to /index has arrived, succesfuly');
 });
 
 
