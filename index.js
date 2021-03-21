@@ -43,7 +43,7 @@ app.get("/info/homicides-by-firearms", (request,response) => {
 
 //MANUEL
 app.get("/info/arms-sales-stats", (request,response) => {
-	response.send("");
+	response.send("<html><style>table,td{  width: 50%; text-align: center; border-spacing: 4 ; border: 1.5px solid black}</style><body><table class = default><caption>Firearms sales in the United States </caption> <tbody><tr ><td ><strong>state</strong></td><td ><strong>year</strong></td><td ><strong>month</strong></td><td ><strong>firearms sold</strong></td><td ><strong>firearms sold/people</strong></td></tr><tr ><td >Alabama</td><td>2019</td><td >1</td><td >79,332</td><td >0.01197</td></tr><tr s><td >Alabama</td><td >2019</td><td>2</td><td >75,336</td><td >0.01305</td></tr><tr ><td >Alabama</td><td >2019</td><td >3</td><td>92,652</td><td >0.01765</td></tr><tr ><td >Alabama</td><td >2019</td><td >4</td><td >70,748</td><td >0.01415</td></tr><tr ><td >Alabama</td><td >2019</td><td >5</td><td>80,519</td><td >0.01489</td></tr><tr><td >Alabama</td><td >2019</td><td >6</td><td >139,873</td><td >0.02118</td></tr><tr ><td >Alabama</td><td >2019</td><td >7</td><td>107,49</td><td >0.01659</td></tr><tr><td >Alabama</td><td >2019</td><td >8</td><td >85,347</td><td >0.01392</td></tr><tr ><td>Alabama</td><td >2019</td><td >9</td><td>80,478</td><td >0.0133</td></tr><tr><td >Alabama</td><td >2019</td><td >10</td><td >80,934</td><td >0.0138</td></tr></tbody> </table> </body> </html>");
 	console.log("New request to /info/arms-sales-stats has arrived");
 });
 
