@@ -25,3 +25,45 @@ app.get('/index', (request, response) => {
 app.listen(port, () => {
 	console.log("Server ready listening in port " + port)
 })
+
+
+
+
+
+
+
+//Acceso a datos tablas
+
+//IVAN
+
+app.get("/info/homicides-by-firearms", (request,response) => {
+	response.send("");
+	console.log("New request to /info/homicides-by-firearms has arrived");
+});
+
+//MANUEL
+app.get("/info/arms-sales-stats", (request,response) => {
+	response.send("");
+	console.log("New request to /info/arms-sales-stats has arrived");
+});
+
+
+//Jose Antonio
+app.get("/info/attacks-stats", (request,response) => {
+	response.send("");
+	console.log("New request to /info/attacks-stats has arrived");
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
