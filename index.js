@@ -329,7 +329,7 @@ app.get(BASE_API_PATH+"/arms-sales-stats/loadInitialData", (req,res)=>{
 	];
 
 	for(var dataLines in arms_sales_stats_initial_data){
-		arms-sales-stats.push(arms_sales_stats_initial_data[dataLines]);
+		arms_sales_stats.push(arms_sales_stats_initial_data[dataLines]);
 	}
 
 	//Lanzamos el código 200 indicando que se han cargado los datos iniciales de forma satisfactoria
@@ -373,7 +373,7 @@ app.post(BASE_API_PATH+"/arms-sales-stats", (req,res)=>{
 
 app.get(BASE_API_PATH+"/arms-sales-stats/:state/:year", (req,res)=>{ //Cuando llamen a /api/v1/education_expenditures/(pais)
 		
-	var data = homicides_by_firearms.filter(function(k){ 
+	var data = arms_sales_stats.filter(function(k){ 
 		return k.state==String(req.params.state) && e.year==String(req.params.year);
 	});
 	
