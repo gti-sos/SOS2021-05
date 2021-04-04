@@ -385,7 +385,7 @@ app.get(BASE_API_PATH+"/arms-sales-stats/:state/:year", (req,res)=>{ //Cuando ll
 //4) DELETE a un recurso, borra ese recurso (en concreto)
 //En nuestro caso, borramos el recurso por estado y año
 
-app.delete(BASE_API_PATH+"/arms-sales-stats/:state/:year", function(req, res) { 
+app.delete(BASE_API_PATH+"/arms-sales-stats/:state/:year/:month", function(req, res) { 
 	//Si el 'estado' y 'año' coinciden con los recibidos o dados, se elimina ese recurso
 	arms_sales_stats = arms_sales_stats.filter(function(k){
 		if(k.state!==String(req.params.state) || k.year!==(String(req.params.year)) || k.month!==(String(req.params.month)) ) {
