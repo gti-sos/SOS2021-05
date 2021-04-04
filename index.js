@@ -187,7 +187,7 @@ app.get(BASE_API_PATH+"/homicides-by-firearms/:state/:year", (req,res)=>{ //Cuan
 app.delete(BASE_API_PATH+"/homicides-by-firearms/:state/:year", function(req, res) { 
 	//Si el 'estado' y 'año' coinciden con los recibidos o dados, se elimina ese recurso
 	homicides_by_firearms = homicides_by_firearms.filter(function(k){
-		if(k.state!==String(req.params.state) && k.year!==(String(req.params.year))) {
+		if(k.state!==String(req.params.state) || k.year!==(String(req.params.year))) {
 			return k;
 		}
 	});
@@ -608,7 +608,7 @@ app.get(BASE_API_PATH+"/attacks-stats/:state/:year", (req,res)=>{ //Cuando llame
 app.delete(BASE_API_PATH+"/attacks-stats/:state/:year", function(req, res) { 
 	//Si el 'estado' y 'año' coinciden con los recibidos o dados, se elimina ese recurso
 	attacks_stats = attacks_stats.filter(function(k){
-		if(k.state!==String(req.params.state) && k.year!==(String(req.params.year))) {
+		if(k.state!==String(req.params.state) || k.year!==(String(req.params.year))) {
 			return k;
 		}
 	});
