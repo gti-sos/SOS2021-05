@@ -495,7 +495,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"type-of-attack-knife":"424"
 		},
 		{
-			"state":"West virginia",
+			"state":"West-virginia",
 			"year":"2019",
 			"sex-male": "2856" ,
 			"sex-female":"766",
@@ -534,7 +534,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"type-of-attack-knife":"1165"
 		},
 		{
-			"state":"New Mexico",
+			"state":"New-Mexico",
 			"year":"2019",
 			"sex-male": "6736" ,
 			"sex-female":"1545",
