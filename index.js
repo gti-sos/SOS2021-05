@@ -81,7 +81,7 @@ app.get(BASE_API_PATH+"/homicides-by-firearms/loadInitialData", (req,res)=>{
 			"type-not-stated": "7"
 		},
 		{
-			"state":"West Virginia",
+			"state":"West-Virginia",
 			"year":"2019",
 			"homicide-by-firearm": "69" ,
 			"handgun":"24",
@@ -108,7 +108,7 @@ app.get(BASE_API_PATH+"/homicides-by-firearms/loadInitialData", (req,res)=>{
 			"type-not-stated": "2"
 		},
 		{
-			"state":"New Mexico",
+			"state":"New-Mexico",
 			"year":"2019",
 			"homicide-by-firearm": "146" ,
 			"handgun":"53",
