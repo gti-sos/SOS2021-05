@@ -388,7 +388,7 @@ app.get(BASE_API_PATH+"/arms-sales-stats/:state/:year", (req,res)=>{ //Cuando ll
 app.delete(BASE_API_PATH+"/arms-sales-stats/:state/:year", function(req, res) { 
 	//Si el 'estado' y 'año' coinciden con los recibidos o dados, se elimina ese recurso
 	arms_sales_stats = arms_sales_stats.filter(function(k){
-		if(k.state!==String(req.params.state) && k.year!==(String(req.params.year))) {
+		if(k.state!==String(req.params.state) || k.year!==(String(req.params.year)) || k.month!==(String(req.params.month)) ) {
 			return k;
 		}
 	});
