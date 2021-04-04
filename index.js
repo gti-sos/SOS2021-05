@@ -202,7 +202,7 @@ app.delete(BASE_API_PATH+"/homicides-by-firearms/:state/:year", function(req, re
 
 app.put(BASE_API_PATH+"/homicides-by-firearms/:state/:year", function(req, res) { 
 
-	for(var e in homicides_by_firearms){
+	for(var k in homicides_by_firearms){
 		
 		if(homicides_by_firearms[k].state == String(req.params.state) &&
 			homicides_by_firearms[k].year == String(req.params.year)){
@@ -259,70 +259,70 @@ app.get(BASE_API_PATH+"/arms-sales-stats/loadInitialData", (req,res)=>{
 			"state":"Alabama",
 			"year":"2019",
 			"month": "1" ,
-			"arms-saled":"79.332",
+			"arms-sold":"79.332",
 			"percent-of-people":"0.01197",
 		},
 		{
 			"state":"Alabama",
 			"year":"2019",
 			"month": "2" ,
-			"arms-saled":"75.336",
+			"arms-sold":"75.336",
 			"percent-of-people":"0.01305",
 		},
 		{
 			"state":"Alabama",
 			"year":"2019",
 			"month": "3" ,
-			"arms-saled":"92.652",
+			"arms-sold":"92.652",
 			"percent-of-people":"0.01765",
 		},
 		{
 			"state":"Alabama",
 			"year":"2019",
 			"month": "4" ,
-			"arms-saled":"70.748",
+			"arms-sold":"70.748",
 			"percent-of-people":"0.01415",
 		},
 		{
 			"state":"Alabama",
 			"year":"2019",
 			"month": "5" ,
-			"arms-saled":"80.519",
+			"arms-sold":"80.519",
 			"percent-of-people":"0.01489",
 		},
 		{
 			"state":"Alabama",
 			"year":"2019",
 			"month": "6" ,
-			"arms-saled":"139.873",
+			"arms-sold":"139.873",
 			"percent-of-people":"0.02118",
 		},
 		{
 			"state":"Alabama",
 			"year":"2019",
 			"month": "7" ,
-			"arms-saled":"107.490",
+			"arms-sold":"107.490",
 			"percent-of-people":"0.01659",
 		},
 		{
 			"state":"Alabama",
 			"year":"2019",
 			"month": "8" ,
-			"arms-saled":"85.347",
+			"arms-sold":"85.347",
 			"percent-of-people":"0.01392",
 		},
 		{
 			"state":"Alabama",
 			"year":"2019",
 			"month": "9" ,
-			"arms-saled":"80.478",
+			"arms-sold":"80.478",
 			"percent-of-people":"0.0133",
 		},
 		{
 			"state":"Alabama",
 			"year":"2018",
 			"month": "10" ,
-			"arms-saled":"80.934",
+			"arms-sold":"80.934",
 			"percent-of-people":"0.0138",
 		}
 
@@ -403,7 +403,7 @@ app.delete(BASE_API_PATH+"/arms-sales-stats/:state/:year/:month", function(req, 
 
 app.put(BASE_API_PATH+"/arms-sales-stats/:state/:year", function(req, res) { 
 
-	for(var e in arms_sales_stats){
+	for(var k in arms_sales_stats){
 		
 		if(arms_sales_stats[k].state == String(req.params.state) &&
 			arms_sales_stats[k].year == String(req.params.year)){
@@ -623,7 +623,7 @@ app.delete(BASE_API_PATH+"/attacks-stats/:state/:year", function(req, res) {
 
 app.put(BASE_API_PATH+"/attacks-stats/:state/:year", function(req, res) { 
 
-	for(var e in attacks_stats){
+	for(var k in attacks_stats){
 		
 		if(attacks_stats[k].state == String(req.params.state) &&
 			attacks_stats[k].year == String(req.params.year)){
