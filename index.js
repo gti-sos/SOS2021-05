@@ -173,7 +173,7 @@ app.post(BASE_API_PATH+"/homicides-by-firearms", (req,res)=>{
 app.get(BASE_API_PATH+"/homicides-by-firearms/:state/:year", (req,res)=>{ //Cuando llamen a /api/v1/education_expenditures/(pais)
 		
 	var data = homicides_by_firearms.filter(function(k){ 
-		return k.state==String(req.params.state) && e.year==String(req.params.year);
+		return k.state==String(req.params.state) && k.year==String(req.params.year);
 	});
 	
 	//Respondemos a la petición enviando el recurso, filtrado, y en JSON
@@ -207,7 +207,7 @@ app.put(BASE_API_PATH+"/homicides-by-firearms/:state/:year", function(req, res) 
 		if(homicides_by_firearms[k].state == String(req.params.state) &&
 			homicides_by_firearms[k].year == String(req.params.year)){
 				var data = req.body;
-				homicides_by_firearms[e] = data;
+				homicides_by_firearms[k] = data;
 				break;
 		}
 	}
@@ -320,7 +320,7 @@ app.get(BASE_API_PATH+"/arms-sales-stats/loadInitialData", (req,res)=>{
 		},
 		{
 			"state":"Alabama",
-			"year":"2019",
+			"year":"2018",
 			"month": "10" ,
 			"arms-saled":"80.934",
 			"percent-of-people":"0.0138",
@@ -374,7 +374,7 @@ app.post(BASE_API_PATH+"/arms-sales-stats", (req,res)=>{
 app.get(BASE_API_PATH+"/arms-sales-stats/:state/:year", (req,res)=>{ //Cuando llamen a /api/v1/education_expenditures/(pais)
 		
 	var data = arms_sales_stats.filter(function(k){ 
-		return k.state==String(req.params.state) && e.year==String(req.params.year);
+		return k.state==String(req.params.state) && k.year==String(req.params.year);
 	});
 	
 	//Respondemos a la petición enviando el recurso, filtrado, y en JSON
@@ -408,7 +408,7 @@ app.put(BASE_API_PATH+"/arms-sales-stats/:state/:year", function(req, res) {
 		if(arms_sales_stats[k].state == String(req.params.state) &&
 			arms_sales_stats[k].year == String(req.params.year)){
 				var data = req.body;
-				arms_sales_stats[e] = data;
+				arms_sales_stats[k] = data;
 				break;
 		}
 	}
@@ -594,7 +594,7 @@ app.post(BASE_API_PATH+"/attacks-stats", (req,res)=>{
 app.get(BASE_API_PATH+"/attacks-stats/:state/:year", (req,res)=>{ //Cuando llamen a /api/v1/education_expenditures/(pais)
 		
 	var data = attacks_stats.filter(function(k){ 
-		return k.state==String(req.params.state) && e.year==String(req.params.year);
+		return k.state==String(req.params.state) && k.year==String(req.params.year);
 	});
 	
 	//Respondemos a la petición enviando el recurso, filtrado, y en JSON
@@ -628,7 +628,7 @@ app.put(BASE_API_PATH+"/attacks-stats/:state/:year", function(req, res) {
 		if(attacks_stats[k].state == String(req.params.state) &&
 			attacks_stats[k].year == String(req.params.year)){
 				var data = req.body;
-				attacks_stats[e] = data;
+				attacks_stats[k] = data;
 				break;
 		}
 	}
