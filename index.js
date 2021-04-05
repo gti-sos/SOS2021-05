@@ -134,15 +134,7 @@ app.get(BASE_API_PATH+"/homicides-by-firearms/loadInitialData", (req,res)=>{
 	//Lanzamos el código 200 indicando que se han cargado los datos iniciales de forma satisfactoria
 	//(Lo indicamos con el 200 por consola, y con un pequeño html para el usuario de forma gráfica)
 
-	res.status(200).send(`<!DOCTYPE html>
-			<html>
-				<h1>
-					<title>Homicides by firearms</title>
-				</h1>
-				<body>
-					<h3>Initial data loaded successfully</h3>
-				</body>
-			</html>`);
+	res.status(200).send("Initial data loaded succesfully!");
 
 });
 
@@ -336,15 +328,7 @@ app.get(BASE_API_PATH+"/arms-sales-stats/loadInitialData", (req,res)=>{
 	//Lanzamos el código 200 indicando que se han cargado los datos iniciales de forma satisfactoria
 	//(Lo indicamos con el 200 por consola, y con un pequeño html para el usuario de forma gráfica)
 
-	res.status(200).send(`<!DOCTYPE html>
-			<html>
-				<h1>
-					<title>Arms Sales Stats</title>
-				</h1>
-				<body>
-					<h3>Initial data loaded successfully</h3>
-				</body>
-			</html>`);
+	res.status(200).send("Initial data loaded succesfully!");
 
 });
 
@@ -559,15 +543,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 	//Lanzamos el código 200 indicando que se han cargado los datos iniciales de forma satisfactoria
 	//(Lo indicamos con el 200 por consola, y con un pequeño html para el usuario de forma gráfica)
 
-	res.status(200).send(`<!DOCTYPE html>
-			<html>
-				<h1>
-					<title>Attacks stats</title>
-				</h1>
-				<body>
-					<h3>Initial data loaded successfully</h3>
-				</body>
-			</html>`);
+	res.status(200).send("Initial data loaded succesfully!");
 
 });
 
