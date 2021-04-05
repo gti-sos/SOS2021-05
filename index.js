@@ -412,9 +412,13 @@ app.put(BASE_API_PATH+"/arms-sales-stats/:state/:year/:month", function(req, res
 	for(var k in arms_sales_stats){
 		
 		if(arms_sales_stats[k].state == String(req.params.state) &&
-			arms_sales_stats[k].year == String(req.params.year)){
+			arms_sales_stats[k].year == String(req.params.year) &&
+			arms_sales_stats[k].month == String(req.params.month)){
+				
 				esta=true;
-				var data = req.body;
+			
+				
+				var data = arms_sales_stats[k].state + arms_sales_stats[k].year + arms_sales_stats[k].month+eq.body;
 				arms_sales_stats[k] = data;
 			 	
 				break;
