@@ -200,7 +200,7 @@ app.delete(BASE_API_PATH+"/homicides-by-firearms/:state/:year", function(req, re
 //5) PUT a un recurso (en concreto), actualiza ese recurso
 //actualizamos los que coincidan con 'state' y 'year'
 
-app.put(BASE_API_PATH+"/homicides-by-firearms/:state/:year", function(req) { 
+app.put(BASE_API_PATH+"/homicides-by-firearms/:state/:year", function(req,res) { 
 
 	for(var k in homicides_by_firearms){
 		
@@ -211,6 +211,7 @@ app.put(BASE_API_PATH+"/homicides-by-firearms/:state/:year", function(req) {
 				break;
 		}
 	}
+	res.status(200).send("Actualización realizada correctamente");
 });
 
 
