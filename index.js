@@ -418,7 +418,7 @@ app.put(BASE_API_PATH+"/arms-sales-stats/:state/:year/:month", function(req, res
 				esta=true;
 			
 				
-				var data = arms_sales_stats[k].state + arms_sales_stats[k].year + arms_sales_stats[k].month+eq.body;
+				var data = arms_sales_stats[k].state + arms_sales_stats[k].year + arms_sales_stats[k].month+ req.body;
 				arms_sales_stats[k] = data;
 			 	
 				break;
