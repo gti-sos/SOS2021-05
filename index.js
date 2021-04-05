@@ -401,8 +401,10 @@ app.delete(BASE_API_PATH+"/arms-sales-stats/:state/:year/:month", function(req, 
 //5) PUT a un recurso (en concreto), actualiza ese recurso
 //actualizamos los que coincidan con 'state' y 'year'
 
-app.put(BASE_API_PATH+"/arms-sales-stats/:state/:year", function(req, res) { 
+app.put(BASE_API_PATH+"/arms-sales-stats/:state/:year/:month", function(req, res) { 
 
+	/*
+	
 	for(var k in arms_sales_stats){
 		
 		if(arms_sales_stats[k].state == String(req.params.state) &&
@@ -412,6 +414,29 @@ app.put(BASE_API_PATH+"/arms-sales-stats/:state/:year", function(req, res) {
 				break;
 		}
 	}
+	
+	*/
+	var esta = false;
+	
+	arms_sales_stats = arms_sales_stats.filter(function(k){
+		if(k.state!==String(req.params.state) || k.year!==(String(req.params.year)) || k.month!==(String(req.params.month)) ) {
+			return k;
+		}else{
+			
+			var data = [{
+				
+			"state": String(req.params.state),
+			"year": String(req.params.year),
+			"month": String(req.params.month) ,
+						
+			}]
+			
+			data = data.concat(k.body);
+			
+			return data;
+		}
+	});
+	
 });
 
 
