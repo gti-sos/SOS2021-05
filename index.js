@@ -402,12 +402,7 @@ app.delete(BASE_API_PATH+"/arms-sales-stats/:state/:year/:month", function(req, 
 //actualizamos los que coincidan con 'state' y 'year'
 
 
-function jsonConcat(o1, o2) {
- for (var key in o2) {
-  o1[key] = o2[key];
- }
- return o1;
-}
+
 
 
 app.put(BASE_API_PATH+"/arms-sales-stats/:state/:year/:month", function(req, res) { 
@@ -437,14 +432,16 @@ app.put(BASE_API_PATH+"/arms-sales-stats/:state/:year/:month", function(req, res
 				
 			"state": String(req.params.state),
 			"year": String(req.params.year),
-			"month": String(req.params.month) 
+			"month": String(req.params.month),
+			"arms-sold":"80.934",
+			"percent-of-people":"0.0138",
 						
 			}]
 			
-			var conca = jsonConcat(data,k.body);
 			
 			
-			return conca;
+			
+			return data;
 		}
 	});
 	
