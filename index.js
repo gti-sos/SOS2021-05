@@ -407,19 +407,30 @@ app.delete(BASE_API_PATH+"/arms-sales-stats/:state/:year/:month", function(req, 
 
 app.put(BASE_API_PATH+"/arms-sales-stats/:state/:year/:month", function(req, res) { 
 
-	/*
+	var esta = false;
 	
 	for(var k in arms_sales_stats){
 		
 		if(arms_sales_stats[k].state == String(req.params.state) &&
 			arms_sales_stats[k].year == String(req.params.year)){
+				esta=true;
 				var data = req.body;
 				arms_sales_stats[k] = data;
+			 	
 				break;
 		}
 	}
 	
-	*/
+	if(!esta){
+        console.log("El recurso no está");
+        return res.sendStatus(404);
+      }else{
+		  
+		  res.status(200).send("Recurso actualizado");
+	  }
+	
+	/*
+	
 	var esta = false;
 	
 	arms_sales_stats = arms_sales_stats.filter(function(k){
@@ -453,7 +464,7 @@ app.put(BASE_API_PATH+"/arms-sales-stats/:state/:year/:month", function(req, res
 		  res.status(200).send("Recurso actualizado");
 	  }
 	
-	
+	*/
 });
 
 
