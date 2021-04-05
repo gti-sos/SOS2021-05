@@ -436,6 +436,7 @@ app.put(BASE_API_PATH+"/arms-sales-stats/:state/:year/:month", function(req, res
 			return data;
 		}
 	});
+	res.status(200).send("Recurso actualizado");
 	
 });
 
