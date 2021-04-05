@@ -401,6 +401,15 @@ app.delete(BASE_API_PATH+"/arms-sales-stats/:state/:year/:month", function(req, 
 //5) PUT a un recurso (en concreto), actualiza ese recurso
 //actualizamos los que coincidan con 'state' y 'year'
 
+
+function jsonConcat(o1, o2) {
+ for (var key in o2) {
+  o1[key] = o2[key];
+ }
+ return o1;
+}
+
+
 app.put(BASE_API_PATH+"/arms-sales-stats/:state/:year/:month", function(req, res) { 
 
 	/*
@@ -423,20 +432,30 @@ app.put(BASE_API_PATH+"/arms-sales-stats/:state/:year/:month", function(req, res
 			return k;
 		}else{
 			
+			esta = true;
 			var data = [{
 				
 			"state": String(req.params.state),
 			"year": String(req.params.year),
-			"month": String(req.params.month) ,
+			"month": String(req.params.month) 
 						
 			}]
 			
-			data = data.concat(k.body);
+			var conca = jsonConcat(data,k.body);
 			
-			return data;
+			
+			return conca;
 		}
 	});
-	res.status(200).send("Recurso actualizado");
+	
+	   if(!esta){
+        console.log("El recurso no está");
+        return res.sendStatus(404);
+      }else{
+		  
+		  res.status(200).send("Recurso actualizado");
+	  }
+	
 	
 });
 
