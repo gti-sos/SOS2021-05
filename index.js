@@ -194,16 +194,22 @@ app.delete(BASE_API_PATH+"/homicides-by-firearms/:state/:year", function(req, re
 
 app.put(BASE_API_PATH+"/homicides-by-firearms/:state/:year", function(req,res) { 
 
+	var esta = false;
 	for(var k in homicides_by_firearms){
 		
 		if(homicides_by_firearms[k].state == String(req.params.state) &&
 			homicides_by_firearms[k].year == String(req.params.year)){
+			esta=true;
 				var data = req.body;
 				homicides_by_firearms[k] = data;
 				break;
 		}
 	}
+	if(!esta){
+		res.status(404).send("No hemos encontrado el recurso");
+	}else{
 	res.status(200).send("Actualización realizada correctamente");
+	}
 });
 
 
@@ -389,16 +395,23 @@ app.delete(BASE_API_PATH+"/arms-sales-stats/:state/:year/:month", function(req, 
 
 app.put(BASE_API_PATH+"/arms-sales-stats/:state/:year", function(req,res) { 
 
+	var esta = false;
 	for(var k in arms_sales_stats){
 		
 		if(arms_sales_stats[k].state == String(req.params.state) &&
 			arms_sales_stats[k].year == String(req.params.year)){
+			esta=true;
 				var data = req.body;
 				arms_sales_stats[k] = data;
 				break;
 		}
 	}
+	
+	if(!esta){
+		res.status(404).send("No hemos encontrado el recurso");
+	}else{
 	res.status(200).send("Actualización realizada correctamente");
+	}
 });
 
 
@@ -603,16 +616,22 @@ app.delete(BASE_API_PATH+"/attacks-stats/:state/:year", function(req, res) {
 
 app.put(BASE_API_PATH+"/attacks-stats/:state/:year", function(req, res) { 
 
+	var esta = false;
 	for(var k in attacks_stats){
 		
 		if(attacks_stats[k].state == String(req.params.state) &&
 			attacks_stats[k].year == String(req.params.year)){
+				esta =true;
 				var data = req.body;
 				attacks_stats[k] = data;
 				break;
 		}
 	}
+	if(!esta){
+		res.status(404).send("No hemos encontrado el recurso");
+	}else{
 	res.status(200).send("Actualización realizada correctamente");
+	}
 });
 
 
