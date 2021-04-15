@@ -115,9 +115,10 @@ app.post(BASE_API_PATH+"/arms-sales-stats", (req,res)=>{
 	
 	for(var k in arms_sales_stats){
 		
-		if(arms_sales_stats[k].state == String(req.params.state) &&
-			arms_sales_stats[k].year == String(req.params.year)&&
-			arms_sales_stats[k].month == String(req.params.month)){
+		if(arms_sales_stats[k].state == String(req.body.state) &&
+			arms_sales_stats[k].year == String(req.body.year)&&
+			arms_sales_stats[k].month == String(req.body.month)){
+			
 			esta=true;
 		}
 	}
@@ -125,10 +126,10 @@ app.post(BASE_API_PATH+"/arms-sales-stats", (req,res)=>{
 	if(!esta){
 		arms_sales_stats.push(data);
 		//"Metemos" en el array de datos para este recurso lo recibido en el POST
-		res.sendStatus(201).send("Recurso añadido satisfactoriamente");
+		res.status(201).send("Recurso añadido satisfactoriamente");
 		
 	}else{
-		res.sendStatus(409).send("Error. Ya Existe un recurso con el mismo Estado, Año y Mes");
+		res.status(409).send("Error. Ya Existe un recurso con el mismo Estado, Año y Mes");
 	}
 	
 });
