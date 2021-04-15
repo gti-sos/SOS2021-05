@@ -110,9 +110,27 @@ app.get(BASE_API_PATH + "/arms-sales-stats", (req,res) => {
 
 app.post(BASE_API_PATH+"/arms-sales-stats", (req,res)=>{
 	var data = req.body;
-	//"Metemos" en el array de datos para este recurso lo recibido en el POST
-	arms_sales_stats.push(data);
-	res.sendStatus(201);
+	
+	var esta =false;
+	
+	for(var k in arms_sales_stats){
+		
+		if(arms_sales_stats[k].state == String(req.params.state) &&
+			arms_sales_stats[k].year == String(req.params.year)&&
+			arms_sales_stats[k].month == String(req.params.month)){
+			esta=true;
+		}
+	}
+	
+	if(!esta){
+		arms_sales_stats.push(data);
+		//"Metemos" en el array de datos para este recurso lo recibido en el POST
+		res.sendStatus(201).send("Recurso añadido satisfactoriamente");
+		
+	}else{
+		res.sendStatus(409).send("Error. Ya Existe un recurso con el mismo Estado, Año y Mes");
+	}
+	
 });
 
 
@@ -121,12 +139,20 @@ app.post(BASE_API_PATH+"/arms-sales-stats", (req,res)=>{
 
 app.get(BASE_API_PATH+"/arms-sales-stats/:state/:year", (req,res)=>{ //Cuando llamen a /api/v1/education_expenditures/(pais)
 		
+	var esta =false;
+	
 	var data = arms_sales_stats.filter(function(k){ 
+		esta=true;
 		return k.state==String(req.params.state) && k.year==String(req.params.year);
 	});
 	
 	//Respondemos a la petición enviando el recurso, filtrado, y en JSON
-	res.status(200).send(JSON.stringify(data,null,2));
+	if(esta){
+		res.status(200).send(JSON.stringify(data,null,2));
+	}else{
+		res.status(404).send("No hemos encontrado el recurso");
+	}
+	
 });
 
 
@@ -135,14 +161,23 @@ app.get(BASE_API_PATH+"/arms-sales-stats/:state/:year", (req,res)=>{ //Cuando ll
 
 app.delete(BASE_API_PATH+"/arms-sales-stats/:state/:year/:month", function(req, res) { 
 	//Si el 'estado' y 'año' coinciden con los recibidos o dados, se elimina ese recurso
+	var esta= false;
 	arms_sales_stats = arms_sales_stats.filter(function(k){
-		if(k.state!==String(req.params.state) || k.year!==(String(req.params.year)) || k.month!==(String(req.params.month)) ) {
+		
+		if(k.state!=String(req.params.state) || k.year!=(String(req.params.year)) || k.month!=(String(req.params.month)) ) {
 			return k;
+		}else{
+			esta=true;
 		}
 	});
+	
+	if(esta){
+		res.status(200).send("Recurso eliminado satisfactoriamente");
+	}else{
+		res.status(404).send("No hemos encontrado el recurso, por lo tanto no se ha eliminado nada");
+	}
 
-
-	res.status(200).send("Recurso eliminado satisfactoriamente");
+	
 });
 
 
