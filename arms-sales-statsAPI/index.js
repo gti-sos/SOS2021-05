@@ -186,13 +186,14 @@ app.delete(BASE_API_PATH+"/arms-sales-stats/:state/:year/:month", function(req, 
 //actualizamos los que coincidan con 'state' y 'year'
 
 
-app.put(BASE_API_PATH+"/arms-sales-stats/:state/:year", function(req,res) { 
+app.put(BASE_API_PATH+"/arms-sales-stats/:state/:year/:month", function(req,res) { 
 
 	var esta = false;
 	for(var k in arms_sales_stats){
 		
 		if(arms_sales_stats[k].state == String(req.params.state) &&
-			arms_sales_stats[k].year == String(req.params.year)){
+			arms_sales_stats[k].year == String(req.params.year)&&
+			arms_sales_stats[k].month == String(req.params.month)){
 			esta=true;
 				var data = req.body;
 				arms_sales_stats[k] = data;
