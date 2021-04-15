@@ -141,9 +141,17 @@ app.post(BASE_API_PATH+"/arms-sales-stats", (req,res)=>{
 app.get(BASE_API_PATH+"/arms-sales-stats/:state/:year", (req,res)=>{ //Cuando llamen a /api/v1/education_expenditures/(pais)
 		
 	var esta =false;
-	
+	for(var k in arms_sales_stats){
+		
+		if(arms_sales_stats[k].state == String(req.params.state) &&
+			arms_sales_stats[k].year == String(req.params.year)){
+			
+			esta=true;
+				
+		}
+	}
 	var data = arms_sales_stats.filter(function(k){ 
-		esta=true;
+		
 		return k.state==String(req.params.state) && k.year==String(req.params.year);
 	});
 	
