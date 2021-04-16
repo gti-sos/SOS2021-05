@@ -1,0 +1,594 @@
+{
+	"info": {
+		"_postman_id": "24dcea01-f435-4f1b-a8d8-cd8a2735edde",
+		"name": "SOS2021-05-fire-arms-sales",
+		"description": "This is an API  that collects data from the sale of firearms in the United States.\nThis collection gives you access to the API. Hope you enjoy the ease of use.\nIf you have any problem or find some bug, please, contact me at: manu261998@gmail.com.\n\nHave a nice experience with my Collection!",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Check empty list",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"codigo de estado correcto\", function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							"\r",
+							"\r",
+							"pm.test(\"numero de archivos creados\"  , function(){\r",
+							"     \r",
+							"    pm.expect(pm.response.json().length).to.eql(0);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://sos2021-05.herokuapp.com/api/v1/arms-sales-stats",
+					"protocol": "http",
+					"host": [
+						"sos2021-05",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"arms-sales-stats"
+					]
+				},
+				"description": "First of all. This request checks that there is no data prior to carrying out the checks. It should return an empty list"
+			},
+			"response": []
+		},
+		{
+			"name": "Load Resource List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://sos2021-05.herokuapp.com/api/v1/arms-sales-stats/loadInitialData",
+					"protocol": "http",
+					"host": [
+						"sos2021-05",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"arms-sales-stats",
+						"loadInitialData"
+					]
+				},
+				"description": "This request takes care of loading the data into the item list. 10 data corresponding to the sale of weapons will be loaded."
+			},
+			"response": []
+		},
+		{
+			"name": "Return all resources",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"codigo de estado correcto\", function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							"\r",
+							"\r",
+							"pm.test(\"numero de archivos creados\"  , function(){\r",
+							"     \r",
+							"    pm.expect(pm.response.json().length).to.eql(10);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://sos2021-05.herokuapp.com/api/v1/arms-sales-stats",
+					"protocol": "http",
+					"host": [
+						"sos2021-05",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"arms-sales-stats"
+					]
+				},
+				"description": "This request takes care of returning all the existing elements in the list. For this specific case, it should return 10 JSON elements because they are the ones that were previously loaded."
+			},
+			"response": []
+		},
+		{
+			"name": "Filtering to existing resource",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"codigo de estado correcto\", function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							"\r",
+							"\r",
+							"pm.test(\"numero de archivos creados\"  , function(){\r",
+							"     \r",
+							"    pm.expect(pm.response.json().length).to.eql(1);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://sos2021-05.herokuapp.com/api/v1/arms-sales-stats/Alabama/2018",
+					"protocol": "http",
+					"host": [
+						"sos2021-05",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"arms-sales-stats",
+						"Alabama",
+						"2018"
+					]
+				},
+				"description": "This request is responsible for finding an item or set of items that share the \"state\" and \"year\" fields.\n\nThe search will be done using the url as follows:\nhttp://sos2021-05.herokuapp.com/api/v1/arms-sales-stats/STATE/YEAR\n\nIt will return the list of elements that contain the mentioned data.\n\nFor this specific case, since there is a data with those values, it must return ONE single element"
+			},
+			"response": []
+		},
+		{
+			"name": "Filtering to non-existing resource",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"codigo de estado correcto\", function(){\r",
+							"    pm.response.to.have.status(404);\r",
+							"})\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://sos2021-05.herokuapp.com/api/v1/arms-sales-stats/Alabama/2006",
+					"protocol": "http",
+					"host": [
+						"sos2021-05",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"arms-sales-stats",
+						"Alabama",
+						"2006"
+					]
+				},
+				"description": "It works exactly the same as the previous request.\n\nFor this specific case, since there is not a data with those values, it must return a 404 error code(Not Found)"
+			},
+			"response": []
+		},
+		{
+			"name": "Post a new resource",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"codigo de estado correcto\", function(){\r",
+							"    pm.response.to.have.status(201);\r",
+							"})\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"state\": \"Alaska\",\r\n    \"year\": \"2019\",\r\n    \"month\": \"2\",\r\n    \"arms-sold\": \"29.723\",\r\n    \"percent-of-people\": \"0.0165\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://sos2021-05.herokuapp.com/api/v1/arms-sales-stats/",
+					"protocol": "http",
+					"host": [
+						"sos2021-05",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"arms-sales-stats",
+						""
+					]
+				},
+				"description": "This method allows adding a new element to the list from the body of the request.\n\nIt should be noted that there cannot be two elements with the same value in the \"state\", \"year\" and \"month\" fields. If there is, it would throw an error code 409 (Conflict).\n\nFor this specific case, it will create the object without problems and return a code of 201."
+			},
+			"response": []
+		},
+		{
+			"name": "Post the same resource",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"codigo de estado correcto\", function(){\r",
+							"    pm.response.to.have.status(409);\r",
+							"})\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"state\": \"Alaska\",\r\n    \"year\": \"2019\",\r\n    \"month\": \"2\",\r\n    \"arms-sold\": \"29.723\",\r\n    \"percent-of-people\": \"0.0165\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://sos2021-05.herokuapp.com/api/v1/arms-sales-stats/",
+					"protocol": "http",
+					"host": [
+						"sos2021-05",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"arms-sales-stats",
+						""
+					]
+				},
+				"description": "This method allows adding a new element to the list from the body of the request.\n\nIt should be noted that there cannot be two elements with the same value in the \"state\", \"year\" and \"month\" fields. If there is, it would throw an error code 409 (Conflict).\n\nFor this specific case, it will not be possible to add the new data since there is one that shares the same values. Therefore the addition will be discarded and will return an error code 409 (Conflict)"
+			},
+			"response": []
+		},
+		{
+			"name": "Post a method",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"codigo de estado no permitido\", function(){\r",
+							"    pm.response.to.have.status(405);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://sos2021-05.herokuapp.com/api/v1/arms-sales-stats/Alaska/2019",
+					"protocol": "http",
+					"host": [
+						"sos2021-05",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"arms-sales-stats",
+						"Alaska",
+						"2019"
+					]
+				},
+				"description": "This is one of the prohibited methods since you cannot do a POST within a specific resource.\n\nAny such request will instantly throw a 405 (Method Not Allowed) error."
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a resource",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"codigo de estado correcto\", function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://sos2021-05.herokuapp.com/api/v1/arms-sales-stats/Alaska/2019/2",
+					"protocol": "http",
+					"host": [
+						"sos2021-05",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"arms-sales-stats",
+						"Alaska",
+						"2019",
+						"2"
+					]
+				},
+				"description": "This request allows us to delete a specific resource from the list of resources.\n\nThe search will be done using the url as follows: http://sos2021-05.herokuapp.com/api/v1/arms-sales-stats/STATE/YEAR/MONTH\n\nIf the resource is on the list, it will be removed successfully. If it is not in the list, a 404 (Not Found) error code should be returned.\n\nFor this specific case, you will find and delete the resource."
+			},
+			"response": []
+		},
+		{
+			"name": "Delete the same resource",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"codigo de estado correcto\", function(){\r",
+							"    pm.response.to.have.status(404);\r",
+							"})\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://sos2021-05.herokuapp.com/api/v1/arms-sales-stats/Alaska/2019/2",
+					"protocol": "http",
+					"host": [
+						"sos2021-05",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"arms-sales-stats",
+						"Alaska",
+						"2019",
+						"2"
+					]
+				},
+				"description": "It works exactly the same as the previous one.\n\nIn this case, the resource will not be found so it will return a 404 error."
+			},
+			"response": []
+		},
+		{
+			"name": "Update List of resources",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"codigo de estado no permitido\", function(){\r",
+							"    pm.response.to.have.status(405);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://sos2021-05.herokuapp.com/api/v1/arms-sales-stats/",
+					"protocol": "http",
+					"host": [
+						"sos2021-05",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"arms-sales-stats",
+						""
+					]
+				},
+				"description": "This is one of the prohibited methods since you cannot do a PUT within the entire resource list.\n\nAny such request will instantly throw a 405 (Method Not Allowed) error."
+			},
+			"response": []
+		},
+		{
+			"name": "Update to a non-existing resource",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"codigo de estado correcto\", function(){\r",
+							"    pm.response.to.have.status(404);\r",
+							"})\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"state\": \"Alaska\",\r\n    \"year\": \"2019\",\r\n    \"month\": \"2\",\r\n    \"arms-sold\": \"80.723\",\r\n    \"percent-of-people\": \"0.0055\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://sos2021-05.herokuapp.com/api/v1/arms-sales-stats/Alaska/2017/2",
+					"protocol": "http",
+					"host": [
+						"sos2021-05",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"arms-sales-stats",
+						"Alaska",
+						"2017",
+						"2"
+					]
+				},
+				"description": "This method allows us to update the \"arms-sold\" and \"percent-of-people\" fields for a specific element.\n\nThe search will be done using the url as follows: http://sos2021-05.herokuapp.com/api/v1/arms-sales-stats/STATE/YEAR/MONTH\n\nIf this resource exists, the update will be successful. If this does not exist, it should return a 404 error since a resource that does not exist cannot be updated.\n\nFor this specific case, the resource will not exist so it must return a 404 error."
+			},
+			"response": []
+		},
+		{
+			"name": "Update to an existing resource",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"codigo de estado correcto\", function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"state\": \"Alaska\",\r\n    \"year\": \"2019\",\r\n    \"month\": \"2\",\r\n    \"arms-sold\": \"80.723\",\r\n    \"percent-of-people\": \"0.0055\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://sos2021-05.herokuapp.com/api/v1/arms-sales-stats/Alabama/2019/2",
+					"protocol": "http",
+					"host": [
+						"sos2021-05",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"arms-sales-stats",
+						"Alabama",
+						"2019",
+						"2"
+					]
+				},
+				"description": "It works exactly the same as the previous one.\n\nIn this case, the resource will be found so it will be updated and return a 200 code."
+			},
+			"response": []
+		},
+		{
+			"name": "Delete all the resources",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"codigo de estado correcto\", function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://sos2021-05.herokuapp.com/api/v1/arms-sales-stats/",
+					"protocol": "http",
+					"host": [
+						"sos2021-05",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"arms-sales-stats",
+						""
+					]
+				},
+				"description": "This method will take care of emptying the entire list of resources so that, when the collection is run again, there is no previous data."
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "HOST",
+			"value": "sos2021-05.herokuapp.com"
+		}
+	]
+}
