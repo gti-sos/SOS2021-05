@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "24dcea01-f435-4f1b-a8d8-cd8a2735edde",
-		"name": "SOS2021-05-fire-arms-sales",
+		"name": "SOS2021-05-arms-sales-stats",
 		"description": "This is an API  that collects data from the sale of firearms in the United States.\nThis collection gives you access to the API. Hope you enjoy the ease of use.\nIf you have any problem or find some bug, please, contact me at: manu261998@gmail.com.\n\nHave a nice experience with my Collection!",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -232,7 +232,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"state\": \"Alaska\",\r\n    \"year\": \"2019\",\r\n    \"month\": \"2\",\r\n    \"arms-sold\": \"29.723\",\r\n    \"percent-of-people\": \"0.0165\"\r\n}",
+					"raw": "{\r\n    \"state\": \"Alaska\",\r\n    \"year\": \"2019\",\r\n    \"month\": \"2\",\r\n    \"arms_sold\": \"29.723\",\r\n    \"percent_of_people\": \"0.0165\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -279,7 +279,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"state\": \"Alaska\",\r\n    \"year\": \"2019\",\r\n    \"month\": \"2\",\r\n    \"arms-sold\": \"29.723\",\r\n    \"percent-of-people\": \"0.0165\"\r\n}",
+					"raw": "{\r\n    \"state\": \"Alaska\",\r\n    \"year\": \"2019\",\r\n    \"month\": \"2\",\r\n    \"arms_sold\": \"29.723\",\r\n    \"percent_of_people\": \"0.0165\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -326,7 +326,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"state\": \"Delaware\",\r\n    \"year\": \"2019\",\r\n    \"month\": \"2\",\r\n    \"arms-sold\": \"29.723\"\r\n}",
+					"raw": "{\r\n    \"state\": \"Delaware\",\r\n    \"year\": \"2019\",\r\n    \"month\": \"2\",\r\n    \"arms_sold\": \"29.723\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -528,7 +528,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"state\": \"Alaska\",\r\n    \"year\": \"2019\",\r\n    \"month\": \"2\",\r\n    \"arms-sold\": \"80.723\",\r\n    \"percent-of-people\": \"0.0055\"\r\n}",
+					"raw": "{\r\n    \"state\": \"Alaska\",\r\n    \"year\": \"2019\",\r\n    \"month\": \"2\",\r\n    \"arms_sold\": \"80.723\",\r\n    \"percent_of_people\": \"0.0055\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -577,7 +577,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"state\": \"Alaska\",\r\n    \"year\": \"2019\",\r\n    \"month\": \"2\",\r\n    \"arms-sold\": \"80.723\",\r\n    \"percent-of-people\": \"0.0055\"\r\n}",
+					"raw": "{\r\n    \"state\": \"Alaska\",\r\n    \"year\": \"2019\",\r\n    \"month\": \"2\",\r\n    \"arms_sold\": \"80.723\",\r\n    \"percent_of_people\": \"0.0055\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -606,6 +606,55 @@
 			"response": []
 		},
 		{
+			"name": "Update a resource changing State (Conflict Expected)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"codigo de estado correcto\", function(){\r",
+							"    pm.response.to.have.status(409);\r",
+							"})\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"state\": \"Alaska\",\r\n    \"year\": \"2019\",\r\n    \"month\": \"2\",\r\n    \"arms_sold\": \"80.723\",\r\n    \"percent_of_people\": \"0.0055\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://sos2021-05.herokuapp.com/api/v1/arms-sales-stats/Alabama/2019/1",
+					"protocol": "http",
+					"host": [
+						"sos2021-05",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"arms-sales-stats",
+						"Alabama",
+						"2019",
+						"1"
+					]
+				},
+				"description": "This request seeks to update a resource by changing one of its identifiers.\n\nThe result of this search is a conflict failure. It will return a 409 error."
+			},
+			"response": []
+		},
+		{
 			"name": "Update to an existing resource with wrong body",
 			"event": [
 				{
@@ -626,7 +675,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"state\": \"Alaska\",\r\n    \"year\": \"2019\",\r\n    \"month\": \"2\",\r\n    \"arms-sold\": \"80.723\",\r\n    \"wrong-field\": \"0.0055\"\r\n}",
+					"raw": "{\r\n    \"state\": \"Alaska\",\r\n    \"year\": \"2019\",\r\n    \"month\": \"2\",\r\n    \"arms_sold\": \"80.723\",\r\n    \"wrong_field\": \"0.0055\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"

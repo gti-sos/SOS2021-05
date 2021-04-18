@@ -255,9 +255,17 @@ app.put(BASE_API_PATH+"/arms-sales-stats/:state/:year/:month", function(req,res)
 					
 				}else{
 					
-					db.update({state:String(req.params.state), year:String(req.params.year)}, 
-							  {state:String(req.params.state), year:String(req.params.year),month: record.month, arms_sold: record.arms_sold , 
-							   percent_of_people:record.percent_of_people}, {}, function (err, numReplaced) {
+					if(String(req.params.state) !=  req.body.state || String(req.params.year) !=  req.body.year  ){
+					   
+						
+						res.status(409).send("Conflicto. Los identificadores de State y Year deben ser iguales");
+						
+					   }else{
+					   
+						   
+						   db.update({state:String(req.params.state), year:String(req.params.year)}, 
+							  {state:String(req.params.state), year:String(req.params.year),month: req.body.month, arms_sold:  req.body.arms_sold, 
+							 	percent_of_people: req.body.percent_of_people}, {}, function (err, numReplaced) {
 										
 						if(err) {
 							console.error(err);
@@ -269,6 +277,12 @@ app.put(BASE_API_PATH+"/arms-sales-stats/:state/:year/:month", function(req,res)
 								
 					
 					});
+						   
+						   
+						   
+					   }
+					
+					
 					
 				}
 				
