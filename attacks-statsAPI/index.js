@@ -273,7 +273,7 @@ app.put(BASE_API_PATH+"/attacks-stats/:state/:year", function(req, res) {
 					   
 						   
 						   db.update({state:String(req.params.state), year:String(req.params.year)}, 
-							  {state:String(req.params.state), year:String(req.params.year), sex_male:String(req.body.sex_male), sex_female:String(req.body.sex_female), sex_unknown:String(req.body.sex_unknown), age_range_20_29:String(req.body.age_range_20_29), age_range_30_39:String(req.body.age_range_30_39), age_range_other:String(req.body.age_range_other), type_of_attack_personal_weapons:String(req.body.type_of_attack_personal_weapons), type_of_attack_gun:String(req.body.type_of_attack_gun), type_of_attack_knife:String(req.body.type_of_attack_knife), {}, function (err, numReplaced) {
+							  {state:String(req.params.state), year:String(req.params.year), sex_male: req.body.sex_male, sex_female:req.body.sex_female, sex_unknown:req.body.sex_unknown, age_range_20_29:req.body.age_range_20_29, age_range_30_39:req.body.age_range_30_39, age_range_other:req.body.age_range_other, type_of_attack_personal_weapons:req.body.type_of_attack_personal_weapons, type_of_attack_gun:req.body.type_of_attack_gun, type_of_attack_knife:req.body.type_of_attack_knife}, {}, function (err, numReplaced) {
 										
 						if(err) {
 							console.error(err);
