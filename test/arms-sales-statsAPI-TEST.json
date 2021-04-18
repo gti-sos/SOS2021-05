@@ -577,7 +577,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"state\": \"Alaska\",\r\n    \"year\": \"2019\",\r\n    \"month\": \"2\",\r\n    \"arms_sold\": \"80.723\",\r\n    \"percent_of_people\": \"0.0055\"\r\n}",
+					"raw": "{\r\n    \"state\": \"Alabama\",\r\n    \"year\": \"2019\",\r\n    \"month\": \"2\",\r\n    \"arms_sold\": \"80.723\",\r\n    \"percent_of_people\": \"0.0055\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
