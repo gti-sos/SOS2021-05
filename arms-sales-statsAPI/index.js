@@ -14,6 +14,7 @@ var arms_sales_stats = [];
 
 app.get(BASE_API_PATH+"/arms-sales-stats/loadInitialData", (req,res)=>{ 
 
+	
 	var arms_sales_stats_initial_data = [
 		{
 			"state":"Alabama",
