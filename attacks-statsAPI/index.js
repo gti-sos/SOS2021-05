@@ -238,7 +238,7 @@ app.put(BASE_API_PATH+"/attacks-stats/:state/:year", function(req, res) {
 	
 	var aux = Object.keys(data);
 	
-		if(aux[0]!="state"|| aux[1]!= "year" || aux[2]!= "sex-male"|| aux[3]!= "sex-female" || aux[4] != "sex-unknown" || aux[5] != "age-range-20-29" || aux[6] != "age-range-30-39" || aux[7] != "age-range-other" || aux[8] != "type-of-attack-personal-weapons" || aux[9] != "type-of-attack-gun" || aux[10] != "type-of-attack-knife"){
+		if(aux[0]!="state"|| aux[1]!= "year" || aux[2]!= "sex_male"|| aux[3]!= "sex_female" || aux[4] != "sex_unknown" || aux[5] != "age_range_20_29" || aux[6] != "age_range_30_39" || aux[7] != "age_range_other" || aux[8] != "type_of_attack_personal_weapons" || aux[9] != "type_of_attack_gun" || aux[10] != "type_of_attack_knife"){
 			bodyok =false;
 		}
 	
