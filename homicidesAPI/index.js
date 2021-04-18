@@ -2,6 +2,7 @@ var Datastore = require("nedb");
 var db = new Datastore({ filename: "homicidesAPI/homicides.db", autoload: true });
 
  
+
  module.exports.register = (app, BASE_API_PATH) => {
 	 
 	 var homicides_by_firearms = [];
