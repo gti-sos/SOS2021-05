@@ -112,6 +112,7 @@ app.post(BASE_API_PATH+"/arms-sales-stats", (req,res)=>{
 	var data = req.body;
 	
 	var esta =false;
+	var bodyok= true;
 	
 	for(var k in arms_sales_stats){
 		
@@ -120,15 +121,27 @@ app.post(BASE_API_PATH+"/arms-sales-stats", (req,res)=>{
 			arms_sales_stats[k].month == String(req.body.month)){
 			
 			esta=true;
+			
+			var cantidadDeClaves = Object.keys(data).length;
+			if(cantidadDeClaves!=5){
+				body = false;
+			}
+			
+			
 		}
 	}
 	
-	if(!esta){
+	if(!esta && bodyok){
 		arms_sales_stats.push(data);
 		//"Metemos" en el array de datos para este recurso lo recibido en el POST
 		res.status(201).send("Recurso añadido satisfactoriamente");
 		
-	}else{
+	}else if(!esta && !bodyok){
+			 
+		res.status(400).send("Error. El formato del body es Erroneo");
+	}
+	
+	else{
 		res.status(409).send("Error. Ya Existe un recurso con el mismo Estado, Año y Mes");
 	}
 	
