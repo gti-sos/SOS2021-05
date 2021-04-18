@@ -108,23 +108,40 @@
 
     app.post(BASE_API_PATH+"/homicides-by-firearms", (req,res)=>{
         var data = req.body;
-
+        
+        var esta =false;
+        var bodyok= true;
+        
         for(var k in homicides_by_firearms){
-		
+            
             if(homicides_by_firearms[k].state == String(req.body.state) &&
-            homicides_by_firearms[k].year == String(req.body.year)){
+                homicides_by_firearms[k].year == String(req.body.year)){
                 
                 esta=true;
+                
+                var cantidadDeClaves = Object.keys(data).length;
+                if(cantidadDeClaves!=5){
+                    body = false;
+                }
+                
+                
             }
         }
-        if(!esta){
+        
+        if(!esta && bodyok){
             homicides_by_firearms.push(data);
             //"Metemos" en el array de datos para este recurso lo recibido en el POST
             res.status(201).send("Recurso añadido satisfactoriamente");
             
-        }else{
-            res.status(409).send("Error! Ya Existe un recurso con el mismo Estado y Año.");
+        }else if(!esta && !bodyok){
+                 
+            res.status(400).send("Error. El formato del body es Erroneo");
         }
+        
+        else{
+            res.status(409).send("Error. Ya Existe un recurso con el mismo Estado, Año y Mes");
+        }
+        
     });
 
 
@@ -237,4 +254,3 @@
     
 }
 	 
- 

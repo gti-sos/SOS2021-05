@@ -109,6 +109,7 @@ app.get(BASE_API_PATH + "/arms-sales-stats", (req,res) => {
 //2)POST  a la lista de recursos (para introducir nuevos arrays de datos)
 
 app.post(BASE_API_PATH+"/arms-sales-stats", (req,res)=>{
+	
 	var data = req.body;
 	
 	var esta =false;
@@ -122,14 +123,29 @@ app.post(BASE_API_PATH+"/arms-sales-stats", (req,res)=>{
 			
 			esta=true;
 			
-			var cantidadDeClaves = Object.keys(data).length;
-			if(cantidadDeClaves!=5){
-				body = false;
-			}
+			
 			
 			
 		}
+		
+		
 	}
+	
+	var cantidadDeClaves = Object.keys(data).length;
+			
+		if(cantidadDeClaves!=5){
+				bodyok = false;
+			}
+	
+		
+	
+		var aux = Object.keys(data);
+	
+		if(aux[0]!="state"|| aux[1]!= "year" || aux[2]!= "month"|| aux[3]!= "arms-sold" || aux[4] != "percent-of-people"){
+			bodyok =false;
+		}
+	
+	
 	
 	if(!esta && bodyok){
 		arms_sales_stats.push(data);
@@ -209,23 +225,51 @@ app.delete(BASE_API_PATH+"/arms-sales-stats/:state/:year/:month", function(req, 
 
 app.put(BASE_API_PATH+"/arms-sales-stats/:state/:year/:month", function(req,res) { 
 
+	var data = req.body;
+	
 	var esta = false;
+	var bodyok = true;
+	
+	var aux = Object.keys(data);
+	
+		if(aux[0]!="state"|| aux[1]!= "year" || aux[2]!= "month"|| aux[3]!= "arms-sold" || aux[4] != "percent-of-people"){
+			bodyok =false;
+		}
+	
+	
 	for(var k in arms_sales_stats){
 		
 		if(arms_sales_stats[k].state == String(req.params.state) &&
 			arms_sales_stats[k].year == String(req.params.year)&&
 			arms_sales_stats[k].month == String(req.params.month)){
+			
 			esta=true;
-				var data = req.body;
-				arms_sales_stats[k] = data;
+			
+				if(bodyok){
+					
+					var data = req.body;
+					arms_sales_stats[k] = data;
+					
+				}
 				break;
 		}
+		
+		
+		
 	}
 	
-	if(!esta){
+	if(esta&& bodyok){
+		
+		res.status(200).send("Actualización realizada correctamente");
+		
+	}else if(esta && !bodyok){
+			 
+			 res.status(400).send("Error. El formato del body es Erroneo");
+			 
+			 }
+	else{
+	
 		res.status(404).send("No hemos encontrado el recurso");
-	}else{
-	res.status(200).send("Actualización realizada correctamente");
 	}
 });
 
