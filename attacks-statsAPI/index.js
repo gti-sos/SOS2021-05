@@ -1,6 +1,10 @@
+var Datastore = require("nedb");
+var db = new Datastore({ filename: "attacks-statsAPI/attacks-stats.db", autoload: true });
+
+
 module.exports.register = (app, BASE_API_PATH) => {
 
-// API 'attacks stats' (José Antonio Megías Macías)
+	// API 'attacks stats' (José Antonio Megías Macías)
 
 var attacks_stats = [];
 
@@ -14,99 +18,97 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 		{
 			"state":"Alabama",
 			"year":"2019",
-			"sex-male": "111" ,
-			"sex-female":"18",
-			"sex-unknown":"14",
-			"age-range-20-29":"44",
-			"age-range-30-39":"14",
-			"age-range-other":"85",
-			"type-of-attack-personal-weapons": "38",
-			"type-of-attack-gun":"20",
-			"type-of-attack-knife":"8"
+			"sex_male": "111" ,
+			"sex_female":"18",
+			"sex_unknown":"14",
+			"age_range_20_29":"44",
+			"age_range_30_39":"14",
+			"age_range_other":"85",
+			"type_of_attack_personal_weapons": "38",
+			"type_of_attack_gun":"20",
+			"type_of_attack_knife":"8"
 		},
 		{
 			"state":"Arkansas",
 			"year":"2019",
-			"sex-male": "11330" ,
-			"sex-female":"3164",
-			"sex-unknown":"1565",
-			"age-range-20-29":"4168",
-			"age-range-30-39":"3384",
-			"age-range-other":"8507",
-			"type-of-attack-personal-weapons": "3781",
-			"type-of-attack-gun":"1985",
-			"type-of-attack-knife":"1442"
+			"sex_male": "11330" ,
+			"sex_female":"3164",
+			"sex_unknown":"1565",
+			"age_range_20_29":"4168",
+			"age_range_30_39":"3384",
+			"age_range_other":"8507",
+			"type_of-attack_personal_weapons": "3781",
+			"type_of_attack_gun":"1985",
+			"type_of_attack_knife":"1442"
 		},
 		{
 			"state":"Idaho",
 			"year":"2019",
-			"sex-male": "3110" ,
-			"sex-female":"594",
-			"sex-unknown":"54",
-			"age-range-20-29":"1083",
-			"age-range-30-39":"910",
-			"age-range-other":"3585",
-			"type-of-attack-personal-weapons": "1908",
-			"type-of-attack-gun":"268",
-			"type-of-attack-knife":"424"
+			"sex_male": "3110" ,
+			"sex_female":"594",
+			"sex_unknown":"54",
+			"age_range_20_29":"1083",
+			"age_range30_39":"910",
+			"age_range_other":"3585",
+			"type_of_attack_personal_weapons": "1908",
+			"type_of_attack_gun":"268",
+			"type_of_attack_knife":"424"
 		},
 		{
 			"state":"West-virginia",
 			"year":"2019",
-			"sex-male": "2856" ,
-			"sex-female":"766",
-			"sex-unknown":"71",
-			"age-range-20-29":"1030",
-			"age-range-30-39":"944",
-			"age-range-other":"1719",
-			"type-of-attack-personal-weapons": "1046",
-			"type-of-attack-gun":"358",
-			"type-of-attack-knife":"361"
+			"sex_male": "2856" ,
+			"sex_female":"766",
+			"sex_unknown":"71",
+			"age_range_20_29":"1030",
+			"age_range_30_39":"944",
+			"age_range_other":"1719",
+			"type_of_attack_personal_weapons": "1046",
+			"type_of_attack_gun":"358",
+			"type_of_attack_knife":"361"
 		},
 		{
 			"state":"Wyoming",
 			"year":"2019",
-			"sex-male": "-" ,
-			"sex-female":"-",
-			"sex-unknown":"-",
-			"age-range-20-29":"-",
-			"age-range-30-39":"-",
-			"age-range-other":"-",
-			"type-of-attack-personal-weapons": "-",
-			"type-of-attack-gun":"-",
-			"type-of-attack-knife":"-"
+			"sex_male": "-" ,
+			"sex_female":"-",
+			"sex_unknown":"-",
+			"age_range_20-29":"-",
+			"age_range_30-39":"-",
+			"age_range_other":"-",
+			"type_of_attack_personal_weapons": "-",
+			"type_of_attack_gun":"-",
+			"type_of_attack_knife":"-"
 		},
 		{
 			"state":"Montana",
 			"year":"2019",
-			"sex-male": "2607" ,
-			"sex-female":"745",
-			"sex-unknown":"62",
-			"age-range-20-29":"951",
-			"age-range-30-39":"869",
-			"age-range-other":"5234",
-			"type-of-attack-personal-weapons": "1061",
-			"type-of-attack-gun":"193",
-			"type-of-attack-knife":"1165"
+			"sex_male": "2607" ,
+			"sex_female":"745",
+			"sex_unknown":"62",
+			"age_range_20_29":"951",
+			"age_range_30_39":"869",
+			"age_range_other":"5234",
+			"type_of_attack_personal_weapons": "1061",
+			"type_of_attack_gun":"193",
+			"type_of_attack_knife":"1165"
 		},
 		{
 			"state":"New-Mexico",
 			"year":"2019",
-			"sex-male": "6736" ,
-			"sex-female":"1545",
-			"sex-unknown":"826",
-			"age-range-20-29":"2623",
-			"age-range-30-39":"2128",
-			"age-range-other":"4356",
-			"type-of-attack-personal-weapons": "2221",
-			"type-of-attack-gun":"949",
-			"type-of-attack-knife":"1165"
+			"sex_male": "6736" ,
+			"sex_female":"1545",
+			"sex_unknown":"826",
+			"age_range_20_29":"2623",
+			"age_range_30_39":"2128",
+			"age_range_other":"4356",
+			"type_of_attack_personal_weapons": "2221",
+			"type_of_attack_gun":"949",
+			"type_of_attack_knife":"1165"
 		},
 	];
 
-	for(var dataLines in attacks_stats_initial_data){
-		attacks_stats.push(attacks_stats_initial_data[dataLines]);
-	}
+	db.insert(arms_sales_stats_initial_data);
 
 	//Lanzamos el código 200 indicando que se han cargado los datos iniciales de forma satisfactoria
 	//(Lo indicamos con el 200 por consola, y con un pequeño html para el usuario de forma gráfica)
@@ -121,7 +123,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 //(GET para cargar el array completo)
 
 app.get(BASE_API_PATH + "/attacks-stats", (req,res) => {
-	res.send(200, JSON.stringify(attacks_stats,null,2));
+	res.send(200, db.getAllData());
 })
 
 
@@ -135,44 +137,44 @@ app.post(BASE_API_PATH+"/attacks-stats", (req,res)=>{
 	var esta = false;
 	var bodyok = true;
 	
-	for(var k in attacks_stats){
-		
-		if(attacks_stats[k].state == String(req.body.state) &&
-			attacks_stats[k].year == String(req.body.year)){
+	db.find({state:String(req.body.state), year:String(req.body.year) }, function(err, record) {
+    	
+			if (record.length!=0) {
+       	 			esta=true;
 			
-			esta=true;	
-		}
-	}
-	
-	var cantidadDeClaves = Object.keys(data).length;
+				res.status(409).send("Error. Ya Existe un recurso con el mismo Estado y Año");
+    
+			}else{
 			
-		if(cantidadDeClaves!=7){
-				bodyok = false;
-			}
+			// -----------------Comprueba body------------------------ 
+				var cantidadDeClaves = Object.keys(data).length;
+			
+				if(cantidadDeClaves!=11){
+					bodyok = false;
+				}
 	
 		
+				var aux = Object.keys(data);
 	
-		var aux = Object.keys(data);
-	
-		if(aux[0]!="state"|| aux[1]!= "year" || aux[2]!= "sex-male"|| aux[3]!= "sex-female" || aux[4] != "sex-unknown" || aux[5] != "age-range-20-29" || aux[6] != "age-range-30-39" || aux[7] != "age-range-other" || aux[8] != "type-of-attack-personal-weapons" || aux[9] != "type-of-attack-gun" || aux[10] != "type-of-attack-knife"){
-			bodyok =false;
-		}
-	
-	
-	
-	if(!esta && bodyok){
-		attacks_stats.push(data);
-		//"Metemos" en el array de datos para este recurso lo recibido en el POST
-		res.status(201).send("Recurso añadido satisfactoriamente");
+				if(aux[0]!="state"|| aux[1]!= "year" || aux[2]!= "sex_male"|| aux[3]!= "sex_female" || aux[4] != "sex_unknown" || aux[5] != "age_range_20_29" || aux[6] != "age_range_30_39" || aux[7] != "age_range_other" || aux[8] != "type_of_attack_personal_weapons" || aux[9] != "type_of_attack_gun" || aux[10] != "type_of_attack_knife"){
+					bodyok =false;
+				}
+			// ------------------------------------------------------- 
+			
+			if( bodyok){
 		
-	}else if(!esta && !bodyok){
+				db.insert(data);
+				//"Metemos" en el array de datos para este recurso lo recibido en el POST
+				res.status(201).send("Recurso añadido satisfactoriamente");
+		
+			}else if(!bodyok){
 			 
-		res.status(400).send("Error. El formato del body es Erroneo");
-	}
-	
-	else{
-		res.status(409).send("Error. Ya Existe un recurso con el mismo Estado y Año");
-	}
+				res.status(400).send("Error. El formato del body es Erroneo");
+			}
+			
+			}
+		
+	});
 	
 });
 
@@ -182,26 +184,20 @@ app.post(BASE_API_PATH+"/attacks-stats", (req,res)=>{
 
 app.get(BASE_API_PATH+"/attacks-stats/:state/:year", (req,res)=>{ //Cuando llamen a /api/v1/attacks-stats/
 	
-	var esta =false;
-	for(var k in attacks_stats){
+	db.find({state:String(req.params.state), year:String(req.params.year)  }, function(err, record) {
 		
-		if(attacks_stats[k].state == String(req.params.state) &&
-			attacks_stats[k].year == String(req.params.year)){
+		console.log(record);
+		
+		if (record.length==0) {
+       	
+			res.status(404).send("No hemos encontrado el recurso");
+    
+		}else{
 			
-			esta=true;		
+			res.status(200).send(record);
 		}
-	}
-	var data = attacks_stats.filter(function(k){ 
 		
-		return k.state==String(req.params.state) && k.year==String(req.params.year);
-	});
-	
-	//Respondemos a la petición enviando el recurso, filtrado, y en JSON
-	if(esta){
-		res.status(200).send(JSON.stringify(data,null,2));
-	}else{
-		res.status(404).send("No hemos encontrado el recurso");
-	}
+		});
 
 });
 
@@ -211,22 +207,22 @@ app.get(BASE_API_PATH+"/attacks-stats/:state/:year", (req,res)=>{ //Cuando llame
 
 app.delete(BASE_API_PATH+"/attacks-stats/:state/:year", function(req, res) { 
 	//Si el 'estado' y 'año' coinciden con los recibidos o dados, se elimina ese recurso
-	var esta= false;
-	attacks_stats = attacks_stats.filter(function(k){
-		
-		if(k.state!=String(req.params.state) || k.year!=(String(req.params.year))) {
-			return k;
-		}else{
-			esta=true;
-		}
-	});
 	
-	if(esta){
-		res.status(200).send("Recurso eliminado satisfactoriamente");
-	}else{
-		res.status(404).send("No hemos encontrado el recurso, por lo tanto no se ha eliminado nada");
-	}	
-
+	db.remove({state:String(req.params.state), year:String(req.params.year)},{},(err, numEvictionsRemoved)=>{
+			
+		console.log(err);
+		
+		if(err!=null){
+				console.error("ERROR deleting DB evictions in DELETE: "+err);
+				res.sendStatus(500);
+			}else{
+				if(numEvictionsRemoved==0){
+					res.status(404).send("No hemos encontrado el recurso");
+				}else{
+					res.status(200).send("Recurso eliminado satisfactoriamente :D");
+				}
+			}
+		})
 });
 
 
@@ -247,36 +243,63 @@ app.put(BASE_API_PATH+"/attacks-stats/:state/:year", function(req, res) {
 		}
 	
 	
-	for(var k in attacks_stats){
+	db.find({state:String(req.params.state), year:String(req.params.year) }, function(err, record) {
 		
-		if(attacks_stats[k].state == String(req.params.state) &&
-			attacks_stats[k].year == String(req.params.year)){
+		console.log(record);
+		if(err!=null){
+				console.error("ERROR deleting DB evictions in DELETE: "+err);
+				res.sendStatus(500);
+		}else{
 			
-			esta=true;
 			
-				if(bodyok){
+			if (record.length==0) {
+       	
+				res.status(404).send("No hemos encontrado el recurso");
+    
+			}else{
+			
+				if(!bodyok){
 					
-					var data = req.body;
-					attacks_stats[k] = data;		
+					 res.status(400).send("Error. El formato del body es Erroneo");
+					
+				}else{
+					
+					if(String(req.params.state) !=  req.body.state || String(req.params.year) !=  req.body.year  ){
+					   
+						
+						res.status(409).send("Conflicto. Los identificadores de State y Year deben ser iguales");
+						
+					   }else{
+					   
+						   
+						   db.update({state:String(req.params.state), year:String(req.params.year)}, 
+							  {state:String(req.params.state), year:String(req.params.year), sex_male:String(req.body.sex_male), sex_female:String(req.body.sex_female), sex_unknown:String(req.body.sex_unknown), age_range_20_29:String(req.body.age_range_20_29), age_range_30_39:String(req.body.age_range_30_39), age_range_other:String(req.body.age_range_other), type_of_attack_personal_weapons:String(req.body.type_of_attack_personal_weapons), type_of_attack_gun:String(req.body.type_of_attack_gun), type_of_attack_knife:String(req.body.type_of_attack_knife), {}, function (err, numReplaced) {
+										
+						if(err) {
+							console.error(err);
+							res.status(500).send("Error en la base de datos");
+						}else{
+							res.status(200).send(String(req.params.state)+" "+String(req.params.year)+" Ha sido actualizado exitosamente");
+							
+						}
+								
+					
+					});
+						   
+						   
+						   
+					   }
+					
+					
+					
 				}
-				break;
+				
+			}
+			
 		}
 		
-	}
-	
-	if(esta&& bodyok){
 		
-		res.status(200).send("Actualización realizada correctamente");
-		
-	}else if(esta && !bodyok){
-			 
-			 res.status(400).send("Error. El formato del body es Erroneo");
-			 
-			 }
-	else{
-	
-		res.status(404).send("No hemos encontrado el recurso");
-	}
+		});
 
 });
 
@@ -303,7 +326,9 @@ app.put(BASE_API_PATH+"/attacks-stats", function(req, res) {
 
 app.delete(BASE_API_PATH+"/attacks-stats", (req,res)=>{
 		
-	attacks_stats = []; 
+	db.remove({}, { multi: true }, function(err, numDeleted) {
+     console.log('Deleted', numDeleted, 'user(s)');
+}); 
 	res.status(200).send("Lista de recursos eliminada satisfactoriamente");
 
 });
