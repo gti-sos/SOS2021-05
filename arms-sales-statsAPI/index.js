@@ -138,7 +138,7 @@ app.post(BASE_API_PATH+"/arms-sales-stats", (req,res)=>{
 //3) GET a un recurso (en concreto), devuelve ese recurso
 //En nuestro caso, accedemos a los elementos por estado y año (p ej.)
 
-app.get(BASE_API_PATH+"/arms-sales-stats/:state/:year", (req,res)=>{ //Cuando llamen a /api/v1/education_expenditures/(pais)
+app.get(BASE_API_PATH+"/arms-sales-stats/:state/:year", (req,res)=>{ 
 		
 	var esta =false;
 	for(var k in arms_sales_stats){

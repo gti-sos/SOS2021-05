@@ -108,23 +108,53 @@
 
     app.post(BASE_API_PATH+"/homicides-by-firearms", (req,res)=>{
         var data = req.body;
-        //"Metemos" en el array de datos para este recurso lo recibido en el POST
-        homicides_by_firearms.push(data);
-        res.sendStatus(201);
+
+        for(var k in homicides_by_firearms){
+		
+            if(homicides_by_firearms[k].state == String(req.body.state) &&
+            homicides_by_firearms[k].year == String(req.body.year)){
+                
+                esta=true;
+            }
+        }
+        if(!esta){
+            arms_sales_stats.push(data);
+            //"Metemos" en el array de datos para este recurso lo recibido en el POST
+            res.status(201).send("Recurso añadido satisfactoriamente");
+            
+        }else{
+            res.status(409).send("Error! Ya Existe un recurso con el mismo Estado y Año.");
+        }
     });
 
 
     //3) GET a un recurso (en concreto), devuelve ese recurso
     //En nuestro caso, accedemos a los elementos por estado y año (p ej.)
 
-    app.get(BASE_API_PATH+"/homicides-by-firearms/:state/:year", (req,res)=>{ //Cuando llamen a /api/v1/education_expenditures/(pais)
+    app.get(BASE_API_PATH+"/homicides-by-firearms/:state/:year", (req,res)=>{ 
             
+        var esta =false;
+        for(var k in arms_sales_stats){
+            
+            if(arms_sales_stats[k].state == String(req.params.state) &&
+                arms_sales_stats[k].year == String(req.params.year)){
+                
+                esta=true;
+                    
+            }
+        }
         var data = homicides_by_firearms.filter(function(k){ 
+            
             return k.state==String(req.params.state) && k.year==String(req.params.year);
         });
-        
+	
         //Respondemos a la petición enviando el recurso, filtrado, y en JSON
-        res.status(200).send(JSON.stringify(data,null,2));
+        if(esta){
+            res.status(200).send(JSON.stringify(data,null,2));
+        }else{
+            res.status(404).send("No hemos encontrado el recurso solicitado");
+        }
+	
     });
 
 
@@ -133,14 +163,21 @@
 
     app.delete(BASE_API_PATH+"/homicides-by-firearms/:state/:year", function(req, res) { 
         //Si el 'estado' y 'año' coinciden con los recibidos o dados, se elimina ese recurso
-        homicides_by_firearms = homicides_by_firearms.filter(function(k){
-            if(k.state!==String(req.params.state) || k.year!==(String(req.params.year))) {
-                return k;
-            }
-        });
-
-
-        res.status(200).send("Recurso eliminado satisfactoriamente");
+	var esta= false;
+	homicides_by_firearms = homicides_by_firearms.filter(function(k){
+		
+		if(k.state!=String(req.params.state) || k.year!=(String(req.params.year))) {
+			return k;
+		}else{
+			esta=true;
+		}
+	});
+	
+	if(esta){
+		res.status(200).send("Recurso eliminado satisfactoriamente");
+	}else{
+		res.status(404).send("No hemos encontrado el recurso, por lo tanto no se ha eliminado nada");
+	}
     });
 
 
@@ -161,7 +198,7 @@
             }
         }
         if(!esta){
-            res.status(404).send("No hemos encontrado el recurso");
+            res.status(404).send("Recurso no encontrado");
         }else{
         res.status(200).send("Actualización realizada correctamente");
         }
