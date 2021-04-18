@@ -1,4 +1,8 @@
- module.exports.register = (app, BASE_API_PATH) => {
+var Datastore = require("nedb");
+var db = new Datastore({ filename: "arms-sales-statsAPI/arms-sales-stats.db", autoload: true });
+
+
+module.exports.register = (app, BASE_API_PATH) => {
 	 
 	 // API 'Arms sales stats' (Manuel Sánchez López)
 
@@ -84,10 +88,9 @@ app.get(BASE_API_PATH+"/arms-sales-stats/loadInitialData", (req,res)=>{
 
 	];
 
-	for(var dataLines in arms_sales_stats_initial_data){
-		arms_sales_stats.push(arms_sales_stats_initial_data[dataLines]);
-	}
-
+	
+	db.insert(arms_sales_stats_initial_data);
+	
 	//Lanzamos el código 200 indicando que se han cargado los datos iniciales de forma satisfactoria
 	//(Lo indicamos con el 200 por consola, y con un pequeño html para el usuario de forma gráfica)
 
@@ -101,7 +104,7 @@ app.get(BASE_API_PATH+"/arms-sales-stats/loadInitialData", (req,res)=>{
 //(GET para cargar el array completo)
 
 app.get(BASE_API_PATH + "/arms-sales-stats", (req,res) => {
-	res.send(200, JSON.stringify(arms_sales_stats,null,2));
+	res.send(200, db.getAllData());
 })
 
 
@@ -148,7 +151,8 @@ app.post(BASE_API_PATH+"/arms-sales-stats", (req,res)=>{
 	
 	
 	if(!esta && bodyok){
-		arms_sales_stats.push(data);
+		
+		db.insert(data);
 		//"Metemos" en el array de datos para este recurso lo recibido en el POST
 		res.status(201).send("Recurso añadido satisfactoriamente");
 		
