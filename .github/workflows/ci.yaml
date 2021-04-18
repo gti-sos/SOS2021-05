@@ -12,5 +12,5 @@ jobs:
       - uses: actions/checkout@v2
       - run: npm install
       - run: npm start &
-	  - run: npm newman run test/attacks_statsAPI_TEST
+	  - run: npm newman run test/attacks_statsAPI_TEST.json
       - run: npx newman run test/arms-sales-statsAPI-TEST.json
