@@ -1,3 +1,5 @@
+
+ module.exports.register = (app, BASE_API_PATH) => {
 // API 'attacks stats' (José Antonio Megías Macías)
 
 var attacks_stats = [];
@@ -8,6 +10,8 @@ var attacks_stats = [];
 
 app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{ 
 
+	
+	
 	var attacks_stats_initial_data = [
 		{
 			"state":"Alabama",
@@ -215,3 +219,4 @@ app.delete(BASE_API_PATH+"/attacks-stats", (req,res)=>{
 	res.status(200).send("Lista de recursos eliminada satisfactoriamente");
 
 });
+ }
