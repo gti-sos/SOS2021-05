@@ -118,7 +118,7 @@
             }
         }
         if(!esta){
-            arms_sales_stats.push(data);
+            homicides_by_firearms.push(data);
             //"Metemos" en el array de datos para este recurso lo recibido en el POST
             res.status(201).send("Recurso añadido satisfactoriamente");
             
@@ -136,8 +136,8 @@
         var esta =false;
         for(var k in homicides_by_firearms){
             
-            if(arms_sales_stats[k].state == String(req.params.state) &&
-                arms_sales_stats[k].year == String(req.params.year)){
+            if(homicides_by_firearms[k].state == String(req.params.state) &&
+                homicides_by_firearms[k].year == String(req.params.year)){
                 
                 esta=true;
                     
