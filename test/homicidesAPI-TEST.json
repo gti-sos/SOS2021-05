@@ -285,6 +285,51 @@
 			"response": []
 		},
 		{
+			"name": "Post new resource with wrong body Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{\r\n\"state\": \"Cordoba\",\r\n\"ye\": \"2019\",\r\n\"homicide-by-firearm\": \"22380\",\r\n\"handgun\": \"17\",\r\n\"rifle\": \"1\",\r\n\"shotgun\": \"6\",\r\n\"type-not-stated\": \"20\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://sos2021-05.herokuapp.com/api/v1/homicides-by-firearms",
+					"protocol": "http",
+					"host": [
+						"sos2021-05",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"homicides-by-firearms"
+					]
+				},
+				"description": "Force an error by trying to post with a wrong body. In this case, the identifier 'year' is not well spelled, with 'ye'"
+			},
+			"response": []
+		},
+		{
 			"name": "Post to a method",
 			"event": [
 				{
@@ -449,6 +494,95 @@
 					]
 				},
 				"description": "Force an error just by trying to update some elements in a non-existing resource."
+			},
+			"response": []
+		},
+		{
+			"name": "Update with wrong body",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"state\": \"Cordoba\",\r\n\"yer\": \"2019\",\r\n\"homicide-by-firearm\": \"22380\",\r\n\"handgun\": \"17\",\r\n\"rifle\": \"9\",\r\n\"shotgun\": \"800\",\r\n\"type-not-stated\": \"20\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "http://sos2021-05.herokuapp.com/api/v1/homicides-by-firearms/Cordoba/2019",
+					"protocol": "http",
+					"host": [
+						"sos2021-05",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"homicides-by-firearms",
+						"Cordoba",
+						"2019"
+					]
+				},
+				"description": "Force an error by trying to update a resource with a wrong body identifier. Instead of 'year' we put 'yer'"
+			},
+			"response": []
+		},
+		{
+			"name": "Update resource changing 'state'",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 409\", function () {\r",
+							"    pm.response.to.have.status(409);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"state\": \"Idaho\",\r\n\"year\": \"2019\",\r\n\"homicide-by-firearm\": \"22380\",\r\n\"handgun\": \"17\",\r\n\"rifle\": \"9\",\r\n\"shotgun\": \"800\",\r\n\"type-not-stated\": \"20\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://sos2021-05.herokuapp.com/api/v1/homicides-by-firearms/Cordoba/2019",
+					"protocol": "http",
+					"host": [
+						"sos2021-05",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"homicides-by-firearms",
+						"Cordoba",
+						"2019"
+					]
+				},
+				"description": "Force an error by giving in the body a non-matching element \"state\" given in the URL."
 			},
 			"response": []
 		},
