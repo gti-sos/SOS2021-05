@@ -120,7 +120,7 @@
                 esta=true;
                 
                 var cantidadDeClaves = Object.keys(data).length;
-                if(cantidadDeClaves!=5){
+                if(cantidadDeClaves!=7){
                     body = false;
                 }
                 
