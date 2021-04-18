@@ -17,8 +17,7 @@
 							"    pm.response.to.have.status(200);\r",
 							"})\r",
 							"\r",
-							"\r",
-							"pm.test(\"numero de archivos creados\"  , function(){\r",
+							"pm.test(\"numero de archivos devueltos\"  , function(){\r",
 							"     \r",
 							"    pm.expect(pm.response.json().length).to.eql(0);\r",
 							"})"
@@ -50,6 +49,19 @@
 		},
 		{
 			"name": "Load Resource List",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"codigo de estado correcto\", function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -242,7 +254,7 @@
 						""
 					]
 				},
-				"description": "This method allows adding a new element to the list from the body of the request.\n\nIt should be noted that there cannot be two elements with the same value in the \"state\", \"year\" and \"month\" fields. If there is, it would throw an error code 409 (Conflict).\n\nFor this specific case, it will create the object without problems and return a code of 201."
+				"description": "This method allows adding a new element to the list from the body of the request.\n\nIt should be noted that there cannot be two elements with the same value in the \"state\", \"year\" and \"month\" fields. If there is, it would throw an error code 409 (Conflict).\n\nIn case of the body format wrong. It would throw an error code 400 (Bad Request).\n\nFor this specific case, it will create the object without problems and return a code of 201."
 			},
 			"response": []
 		},
@@ -290,6 +302,53 @@
 					]
 				},
 				"description": "This method allows adding a new element to the list from the body of the request.\n\nIt should be noted that there cannot be two elements with the same value in the \"state\", \"year\" and \"month\" fields. If there is, it would throw an error code 409 (Conflict).\n\nFor this specific case, it will not be possible to add the new data since there is one that shares the same values. Therefore the addition will be discarded and will return an error code 409 (Conflict)"
+			},
+			"response": []
+		},
+		{
+			"name": "Post a new resource with wrong body",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"codigo de estado correcto\", function(){\r",
+							"    pm.response.to.have.status(400);\r",
+							"})\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"state\": \"Delaware\",\r\n    \"year\": \"2019\",\r\n    \"month\": \"2\",\r\n    \"arms-sold\": \"29.723\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://sos2021-05.herokuapp.com/api/v1/arms-sales-stats/",
+					"protocol": "http",
+					"host": [
+						"sos2021-05",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"arms-sales-stats",
+						""
+					]
+				},
+				"description": "It acts the same as the previous requests. Demonstrates operation in case of \"Bad Request\"\n\nFor this specific case, it will not be possible to add the new data because the body format is wrong. It would throw an error code 400 (Bad Request)."
 			},
 			"response": []
 		},
@@ -493,7 +552,7 @@
 						"2"
 					]
 				},
-				"description": "This method allows us to update the \"arms-sold\" and \"percent-of-people\" fields for a specific element.\n\nThe search will be done using the url as follows: http://sos2021-05.herokuapp.com/api/v1/arms-sales-stats/STATE/YEAR/MONTH\n\nIf this resource exists, the update will be successful. If this does not exist, it should return a 404 error since a resource that does not exist cannot be updated.\n\nFor this specific case, the resource will not exist so it must return a 404 error."
+				"description": "This method allows us to update the \"arms-sold\" and \"percent-of-people\" fields for a specific element.\n\nThe search will be done using the url as follows: http://sos2021-05.herokuapp.com/api/v1/arms-sales-stats/STATE/YEAR/MONTH\n\nIf this resource exists, the update will be successful. If this does not exist, it should return a 404 error since a resource that does not exist cannot be updated.\n\nIf the body format is wrong, it can't uptdate the resource and it should throw a 400 error(Bad Request) \n\nFor this specific case, the resource will not exist so it must return a 404 error."
 			},
 			"response": []
 		},
@@ -543,6 +602,55 @@
 					]
 				},
 				"description": "It works exactly the same as the previous one.\n\nIn this case, the resource will be found so it will be updated and return a 200 code."
+			},
+			"response": []
+		},
+		{
+			"name": "Update to an existing resource with wrong body",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"codigo de estado correcto\", function(){\r",
+							"    pm.response.to.have.status(400);\r",
+							"})\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"state\": \"Alaska\",\r\n    \"year\": \"2019\",\r\n    \"month\": \"2\",\r\n    \"arms-sold\": \"80.723\",\r\n    \"wrong-field\": \"0.0055\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://sos2021-05.herokuapp.com/api/v1/arms-sales-stats/Alabama/2019/1",
+					"protocol": "http",
+					"host": [
+						"sos2021-05",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"arms-sales-stats",
+						"Alabama",
+						"2019",
+						"1"
+					]
+				},
+				"description": "It works exactly the same as the previous one.\n\nIn this case, the resource will be found so it will be updated and return a 400 code because the body format is wrong."
 			},
 			"response": []
 		},
