@@ -1,3 +1,7 @@
+var Datastore = require("nedb");
+var db = new Datastore({ filename: "homicidesAPI/homicides.db", autoload: true });
+
+ 
  module.exports.register = (app, BASE_API_PATH) => {
 	 
 	 var homicides_by_firearms = [];
@@ -82,9 +86,7 @@
             }
         ];
 
-        for(var dataLines in homicides_by_firearms_initial_data){
-            homicides_by_firearms.push(homicides_by_firearms_initial_data[dataLines]);
-        }
+        db.insert(homicides_by_firearms_initial_data);
 
         //Lanzamos el código 200 indicando que se han cargado los datos iniciales de forma satisfactoria
         //(Lo indicamos con el 200 por consola, y con un pequeño html para el usuario de forma gráfica)
@@ -99,9 +101,9 @@
     //(GET para cargar el array completo)
 
     app.get(BASE_API_PATH + "/homicides-by-firearms", (req,res) => {
-        res.send(200, JSON.stringify(homicides_by_firearms,null,2));
+        res.send(200, db.getAllData());
     })
-
+    
 
 
     //2)POST  a la lista de recursos (para introducir nuevos arrays de datos)
