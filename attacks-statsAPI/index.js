@@ -1,5 +1,5 @@
+module.exports.register = (app, BASE_API_PATH) => {
 
- module.exports.register = (app, BASE_API_PATH) => {
 // API 'attacks stats' (José Antonio Megías Macías)
 
 var attacks_stats = [];
@@ -10,8 +10,6 @@ var attacks_stats = [];
 
 app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{ 
 
-	
-	
 	var attacks_stats_initial_data = [
 		{
 			"state":"Alabama",
@@ -131,24 +129,80 @@ app.get(BASE_API_PATH + "/attacks-stats", (req,res) => {
 //2)POST  a la lista de recursos (para introducir nuevos arrays de datos)
 
 app.post(BASE_API_PATH+"/attacks-stats", (req,res)=>{
+	
 	var data = req.body;
-	//"Metemos" en el array de datos para este recurso lo recibido en el POST
-	attacks_stats.push(data);
-	res.sendStatus(201);
+	
+	var esta = false;
+	var bodyok = true;
+	
+	for(var k in attacks_stats){
+		
+		if(attacks_stats[k].state == String(req.body.state) &&
+			attacks_stats[k].year == String(req.body.year)){
+			
+			esta=true;	
+		}
+	}
+	
+	var cantidadDeClaves = Object.keys(data).length;
+			
+		if(cantidadDeClaves!=7){
+				bodyok = false;
+			}
+	
+		
+	
+		var aux = Object.keys(data);
+	
+		if(aux[0]!="state"|| aux[1]!= "year" || aux[2]!= "sex-male"|| aux[3]!= "sex-female" || aux[4] != "sex-unknown" || aux[5] != "age-range-20-29" || aux[6] != "age-range-30-39" || aux[7] != "age-range-other" || aux[8] != "type-of-attack-personal-weapons" || aux[9] != "type-of-attack-gun" || aux[10] != "type-of-attack-knife"){
+			bodyok =false;
+		}
+	
+	
+	
+	if(!esta && bodyok){
+		attacks_stats.push(data);
+		//"Metemos" en el array de datos para este recurso lo recibido en el POST
+		res.status(201).send("Recurso añadido satisfactoriamente");
+		
+	}else if(!esta && !bodyok){
+			 
+		res.status(400).send("Error. El formato del body es Erroneo");
+	}
+	
+	else{
+		res.status(409).send("Error. Ya Existe un recurso con el mismo Estado y Año");
+	}
+	
 });
 
 
 //3) GET a un recurso (en concreto), devuelve ese recurso
 //En nuestro caso, accedemos a los elementos por estado y año (p ej.)
 
-app.get(BASE_API_PATH+"/attacks-stats/:state/:year", (req,res)=>{ //Cuando llamen a /api/v1/education_expenditures/(pais)
+app.get(BASE_API_PATH+"/attacks-stats/:state/:year", (req,res)=>{ //Cuando llamen a /api/v1/attacks-stats/
+	
+	var esta =false;
+	for(var k in attacks_stats){
 		
+		if(attacks_stats[k].state == String(req.params.state) &&
+			attacks_stats[k].year == String(req.params.year)){
+			
+			esta=true;		
+		}
+	}
 	var data = attacks_stats.filter(function(k){ 
+		
 		return k.state==String(req.params.state) && k.year==String(req.params.year);
 	});
 	
 	//Respondemos a la petición enviando el recurso, filtrado, y en JSON
-	res.status(200).send(JSON.stringify(data,null,2));
+	if(esta){
+		res.status(200).send(JSON.stringify(data,null,2));
+	}else{
+		res.status(404).send("No hemos encontrado el recurso");
+	}
+
 });
 
 
@@ -157,14 +211,22 @@ app.get(BASE_API_PATH+"/attacks-stats/:state/:year", (req,res)=>{ //Cuando llame
 
 app.delete(BASE_API_PATH+"/attacks-stats/:state/:year", function(req, res) { 
 	//Si el 'estado' y 'año' coinciden con los recibidos o dados, se elimina ese recurso
+	var esta= false;
 	attacks_stats = attacks_stats.filter(function(k){
-		if(k.state!==String(req.params.state) || k.year!==(String(req.params.year))) {
+		
+		if(k.state!=String(req.params.state) || k.year!=(String(req.params.year))) {
 			return k;
+		}else{
+			esta=true;
 		}
 	});
+	
+	if(esta){
+		res.status(200).send("Recurso eliminado satisfactoriamente");
+	}else{
+		res.status(404).send("No hemos encontrado el recurso, por lo tanto no se ha eliminado nada");
+	}	
 
-
-	res.status(200).send("Recurso eliminado satisfactoriamente");
 });
 
 
@@ -173,23 +235,49 @@ app.delete(BASE_API_PATH+"/attacks-stats/:state/:year", function(req, res) {
 
 app.put(BASE_API_PATH+"/attacks-stats/:state/:year", function(req, res) { 
 
+	var data = req.body;
+	
 	var esta = false;
+	var bodyok = true;
+	
+	var aux = Object.keys(data);
+	
+		if(aux[0]!="state"|| aux[1]!= "year" || aux[2]!= "sex-male"|| aux[3]!= "sex-female" || aux[4] != "sex-unknown" || aux[5] != "age-range-20-29" || aux[6] != "age-range-30-39" || aux[7] != "age-range-other" || aux[8] != "type-of-attack-personal-weapons" || aux[9] != "type-of-attack-gun" || aux[10] != "type-of-attack-knife"){
+			bodyok =false;
+		}
+	
+	
 	for(var k in attacks_stats){
 		
 		if(attacks_stats[k].state == String(req.params.state) &&
 			attacks_stats[k].year == String(req.params.year)){
-				esta =true;
-				var data = req.body;
-				attacks_stats[k] = data;
+			
+			esta=true;
+			
+				if(bodyok){
+					
+					var data = req.body;
+					attacks_stats[k] = data;		
+				}
 				break;
 		}
+		
 	}
 	
-	if(!esta){
+	if(esta&& bodyok){
+		
+		res.status(200).send("Actualización realizada correctamente");
+		
+	}else if(esta && !bodyok){
+			 
+			 res.status(400).send("Error. El formato del body es Erroneo");
+			 
+			 }
+	else{
+	
 		res.status(404).send("No hemos encontrado el recurso");
-	}else{
-	res.status(200).send("Actualización realizada correctamente");
 	}
+
 });
 
 
@@ -219,4 +307,4 @@ app.delete(BASE_API_PATH+"/attacks-stats", (req,res)=>{
 	res.status(200).send("Lista de recursos eliminada satisfactoriamente");
 
 });
- }
+}
