@@ -302,7 +302,9 @@ app.put(BASE_API_PATH+"/arms-sales-stats", function(req, res) {
 
 app.delete(BASE_API_PATH+"/arms-sales-stats", (req,res)=>{
 		
-	arms_sales_stats = []; 
+	db.remove({}, { multi: true }, function(err, numDeleted) {
+     console.log('Deleted', numDeleted, 'user(s)');
+}); 
 	res.status(200).send("Lista de recursos eliminada satisfactoriamente");
 
 });
