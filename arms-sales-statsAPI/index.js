@@ -19,71 +19,71 @@ app.get(BASE_API_PATH+"/arms-sales-stats/loadInitialData", (req,res)=>{
 			"state":"Alabama",
 			"year":"2019",
 			"month": "1" ,
-			"arms-sold":"79.332",
-			"percent-of-people":"0.01197",
+			"arms_sold":"79.332",
+			"percent_of_people":"0.01197",
 		},
 		{
 			"state":"Alabama",
 			"year":"2019",
 			"month": "2" ,
-			"arms-sold":"75.336",
-			"percent-of-people":"0.01305",
+			"arms_sold":"75.336",
+			"percent_of_people":"0.01305",
 		},
 		{
 			"state":"Alabama",
 			"year":"2019",
 			"month": "3" ,
-			"arms-sold":"92.652",
-			"percent-of-people":"0.01765",
+			"arms_sold":"92.652",
+			"percent_of_people":"0.01765",
 		},
 		{
 			"state":"Alabama",
 			"year":"2019",
 			"month": "4" ,
-			"arms-sold":"70.748",
-			"percent-of-people":"0.01415",
+			"arms_sold":"70.748",
+			"percent_of_people":"0.01415",
 		},
 		{
 			"state":"Alabama",
 			"year":"2019",
 			"month": "5" ,
-			"arms-sold":"80.519",
-			"percent-of-people":"0.01489",
+			"arms_sold":"80.519",
+			"percent_of_people":"0.01489",
 		},
 		{
 			"state":"Alabama",
 			"year":"2019",
 			"month": "6" ,
 			"arms-sold":"139.873",
-			"percent-of-people":"0.02118",
+			"percent_of_people":"0.02118",
 		},
 		{
 			"state":"Alabama",
 			"year":"2019",
 			"month": "7" ,
-			"arms-sold":"107.490",
-			"percent-of-people":"0.01659",
+			"arms_sold":"107.490",
+			"percent_of_people":"0.01659",
 		},
 		{
 			"state":"Alabama",
 			"year":"2019",
 			"month": "8" ,
-			"arms-sold":"85.347",
-			"percent-of-people":"0.01392",
+			"arms_sold":"85.347",
+			"percent_of_people":"0.01392",
 		},
 		{
 			"state":"Alabama",
 			"year":"2019",
 			"month": "9" ,
-			"arms-sold":"80.478",
-			"percent-of-people":"0.0133",
+			"arms_sold":"80.478",
+			"percent_of_people":"0.0133",
 		},
 		{
 			"state":"Alabama",
 			"year":"2018",
 			"month": "10" ,
-			"arms-sold":"80.934",
-			"percent-of-people":"0.0138",
+			"arms_sold":"80.934",
+			"percent_of_people":"0.0138",
 		}
 
 	];
@@ -118,52 +118,50 @@ app.post(BASE_API_PATH+"/arms-sales-stats", (req,res)=>{
 	var esta =false;
 	var bodyok= true;
 	
-	for(var k in arms_sales_stats){
+	db.find({state:String(req.body.state), year:String(req.body.year), month:String(req.body.month)  }, function(err, record) {
+    	
 		
-		if(arms_sales_stats[k].state == String(req.body.state) &&
-			arms_sales_stats[k].year == String(req.body.year)&&
-			arms_sales_stats[k].month == String(req.body.month)){
+		if (record.length!=0) {
+       	 esta=true;
 			
-			esta=true;
+			res.status(409).send("Error. Ya Existe un recurso con el mismo Estado, Año y Mes");
+    
+		}else{
 			
+			// -----------------Comprueba body------------------------ 
+				var cantidadDeClaves = Object.keys(data).length;
 			
-			
-			
-		}
-		
-		
-	}
-	
-	var cantidadDeClaves = Object.keys(data).length;
-			
-		if(cantidadDeClaves!=5){
-				bodyok = false;
-			}
+				if(cantidadDeClaves!=5){
+					bodyok = false;
+				}
 	
 		
+				var aux = Object.keys(data);
 	
-		var aux = Object.keys(data);
-	
-		if(aux[0]!="state"|| aux[1]!= "year" || aux[2]!= "month"|| aux[3]!= "arms-sold" || aux[4] != "percent-of-people"){
-			bodyok =false;
-		}
-	
-	
-	
-	if(!esta && bodyok){
+				if(aux[0]!="state"|| aux[1]!= "year" || aux[2]!= "month"|| aux[3]!= "arms_sold" || aux[4] != "percent_of_people"){
+					bodyok =false;
+				}
+			// ------------------------------------------------------- 
+			
+			if( bodyok){
 		
-		db.insert(data);
-		//"Metemos" en el array de datos para este recurso lo recibido en el POST
-		res.status(201).send("Recurso añadido satisfactoriamente");
+				db.insert(data);
+				//"Metemos" en el array de datos para este recurso lo recibido en el POST
+				res.status(201).send("Recurso añadido satisfactoriamente");
 		
-	}else if(!esta && !bodyok){
+			}else if(!bodyok){
 			 
-		res.status(400).send("Error. El formato del body es Erroneo");
-	}
+				res.status(400).send("Error. El formato del body es Erroneo");
+			}
+			
+			}
+		
+    
 	
-	else{
-		res.status(409).send("Error. Ya Existe un recurso con el mismo Estado, Año y Mes");
-	}
+	});
+	
+
+	
 	
 });
 
@@ -173,27 +171,22 @@ app.post(BASE_API_PATH+"/arms-sales-stats", (req,res)=>{
 
 app.get(BASE_API_PATH+"/arms-sales-stats/:state/:year", (req,res)=>{ 
 		
-	var esta =false;
-	for(var k in arms_sales_stats){
 		
-		if(arms_sales_stats[k].state == String(req.params.state) &&
-			arms_sales_stats[k].year == String(req.params.year)){
+	db.find({state:String(req.params.state), year:String(req.params.year)  }, function(err, record) {
+		
+		console.log(record);
+		
+		if (record.length==0) {
+       	
+			res.status(404).send("No hemos encontrado el recurso");
+    
+		}else{
 			
-			esta=true;
-				
+			res.status(200).send(record);
 		}
-	}
-	var data = arms_sales_stats.filter(function(k){ 
 		
-		return k.state==String(req.params.state) && k.year==String(req.params.year);
-	});
+		});
 	
-	//Respondemos a la petición enviando el recurso, filtrado, y en JSON
-	if(esta){
-		res.status(200).send(JSON.stringify(data,null,2));
-	}else{
-		res.status(404).send("No hemos encontrado el recurso");
-	}
 	
 });
 
@@ -203,22 +196,23 @@ app.get(BASE_API_PATH+"/arms-sales-stats/:state/:year", (req,res)=>{
 
 app.delete(BASE_API_PATH+"/arms-sales-stats/:state/:year/:month", function(req, res) { 
 	//Si el 'estado' y 'año' coinciden con los recibidos o dados, se elimina ese recurso
-	var esta= false;
-	arms_sales_stats = arms_sales_stats.filter(function(k){
-		
-		if(k.state!=String(req.params.state) || k.year!=(String(req.params.year)) || k.month!=(String(req.params.month)) ) {
-			return k;
-		}else{
-			esta=true;
-		}
-	});
 	
-	if(esta){
-		res.status(200).send("Recurso eliminado satisfactoriamente");
-	}else{
-		res.status(404).send("No hemos encontrado el recurso, por lo tanto no se ha eliminado nada");
-	}
-
+	
+	db.remove({state:String(req.params.state), year:String(req.params.year), month:String(req.params.month)},{},(err, numEvictionsRemoved)=>{
+			
+		console.log(err);
+		
+		if(err!=null){
+				console.error("ERROR deleting DB evictions in DELETE: "+err);
+				res.sendStatus(500);
+			}else{
+				if(numEvictionsRemoved==0){
+					res.status(404).send("No hemos encontrado el recurso");
+				}else{
+					res.status(200).send("Recurso eliminado satisfactoriamente :D");
+				}
+			}
+		})
 	
 });
 
@@ -236,11 +230,64 @@ app.put(BASE_API_PATH+"/arms-sales-stats/:state/:year/:month", function(req,res)
 	
 	var aux = Object.keys(data);
 	
-		if(aux[0]!="state"|| aux[1]!= "year" || aux[2]!= "month"|| aux[3]!= "arms-sold" || aux[4] != "percent-of-people"){
+		if(aux[0]!="state"|| aux[1]!= "year" || aux[2]!= "month"|| aux[3]!= "arms_sold" || aux[4] != "percent_of_people"){
 			bodyok =false;
 		}
 	
+	db.find({state:String(req.params.state), year:String(req.params.year),month: String(req.params.month)  }, function(err, record) {
+		
+		console.log(record);
+		if(err!=null){
+				console.error("ERROR deleting DB evictions in DELETE: "+err);
+				res.sendStatus(500);
+		}else{
+			
+			
+			if (record.length==0) {
+       	
+				res.status(404).send("No hemos encontrado el recurso");
+    
+			}else{
+			
+				if(!bodyok){
+					
+					 res.status(400).send("Error. El formato del body es Erroneo");
+					
+				}else{
+					
+					db.update({state:String(req.params.state), year:String(req.params.year)}, 
+							  {state:String(req.params.state), year:String(req.params.year),month: record.month, arms_sold: record.arms_sold , 
+							   percent_of_people:record.percent_of_people}, {}, function (err, numReplaced) {
+										
+						if(err) {
+							console.error(err);
+							res.status(500).send("Error en la base de datos");
+						}else{
+							res.status(200).send(String(req.params.state)+" "+String(req.params.year)+" Ha sido actualizado exitosamente");
+							
+						}
+								
+					
+					});
+					
+				}
+				
+				
+				
+				
+				
+			}
+			
+			
+		}
+		
+		
+		});
 	
+	
+	
+	
+	/*
 	for(var k in arms_sales_stats){
 		
 		if(arms_sales_stats[k].state == String(req.params.state) &&
@@ -258,9 +305,6 @@ app.put(BASE_API_PATH+"/arms-sales-stats/:state/:year/:month", function(req,res)
 				break;
 		}
 		
-		
-		
-		
 	}
 	
 	if(esta&& bodyok){
@@ -270,12 +314,16 @@ app.put(BASE_API_PATH+"/arms-sales-stats/:state/:year/:month", function(req,res)
 	}else if(esta && !bodyok){
 			 
 			 res.status(400).send("Error. El formato del body es Erroneo");
-			 
-			 }
+		}
 	else{
 	
 		res.status(404).send("No hemos encontrado el recurso");
 	}
+	*/
+	
+	
+	
+	
 });
 
 
