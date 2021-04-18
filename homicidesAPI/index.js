@@ -2,7 +2,6 @@ var Datastore = require("nedb");
 var db = new Datastore({ filename: "homicidesAPI/homicides.db", autoload: true });
 
  
-
  module.exports.register = (app, BASE_API_PATH) => {
 	 
 	 var homicides_by_firearms = [];
@@ -101,103 +100,116 @@ var db = new Datastore({ filename: "homicidesAPI/homicides.db", autoload: true }
     //1)GET a la lista de recursos devuelve una lista con todos los recursos
     //(GET para cargar el array completo)
 
+    //1)GET a la lista de recursos devuelve una lista con todos los recursos
+//(GET para cargar el array completo)
+
     app.get(BASE_API_PATH + "/homicides-by-firearms", (req,res) => {
         res.send(200, db.getAllData());
     })
-    
 
 
-    //2)POST  a la lista de recursos (para introducir nuevos arrays de datos)
 
     app.post(BASE_API_PATH+"/homicides-by-firearms", (req,res)=>{
+	
         var data = req.body;
         
         var esta =false;
         var bodyok= true;
         
-        for(var k in homicides_by_firearms){
+        db.find({state:String(req.body.state), year:String(req.body.year) }, function(err, record) {
             
-            if(homicides_by_firearms[k].state == String(req.body.state) &&
-                homicides_by_firearms[k].year == String(req.body.year)){
-                
+            
+            if (record.length!=0) {
                 esta=true;
                 
-                var cantidadDeClaves = Object.keys(data).length;
-                if(cantidadDeClaves!=7){
-                    body = false;
+                res.status(409).send("Error. Ya Existe un recurso con el mismo Estado y Año.");
+        
+            }else{
+                
+                // -----------------Comprueba body------------------------ 
+                    var cantidadDeClaves = Object.keys(data).length;
+                
+                    if(cantidadDeClaves!=7){
+                        bodyok = false;
+                    }
+        
+            
+                    var aux = Object.keys(data);
+        
+                    if(aux[0]!="state"|| aux[1]!= "year" || aux[2]!= "homicide-by-firearm"|| aux[3]!= "handgun" || aux[4] != "rifle" || aux[5] != "shotgun" || aux[6] != "type-not-stated"){
+                        bodyok =false;
+                    }
+                // ------------------------------------------------------- 
+                
+                if(bodyok){
+            
+                    db.insert(data);
+                    //"Metemos" en el array de datos para este recurso lo recibido en el POST
+                    res.status(201).send("Recurso añadido satisfactoriamente");
+            
+                }else if(!bodyok){
+                 
+                    res.status(400).send("Error. El formato del body es Erroneo");
                 }
                 
-                
-            }
-        }
-        
-        if(!esta && bodyok){
-            homicides_by_firearms.push(data);
-            //"Metemos" en el array de datos para este recurso lo recibido en el POST
-            res.status(201).send("Recurso añadido satisfactoriamente");
+                }
             
-        }else if(!esta && !bodyok){
-                 
-            res.status(400).send("Error. El formato del body es Erroneo");
-        }
         
-        else{
-            res.status(409).send("Error. Ya Existe un recurso con el mismo Estado, Año y Mes");
-        }
+        
+        });  
         
     });
+
 
 
     //3) GET a un recurso (en concreto), devuelve ese recurso
     //En nuestro caso, accedemos a los elementos por estado y año (p ej.)
 
     app.get(BASE_API_PATH+"/homicides-by-firearms/:state/:year", (req,res)=>{ 
+		
+		
+        db.find({state:String(req.params.state), year:String(req.params.year)  }, function(err, record) {
             
-        var esta =false;
-        for(var k in homicides_by_firearms){
+            console.log(record);
             
-            if(homicides_by_firearms[k].state == String(req.params.state) &&
-                homicides_by_firearms[k].year == String(req.params.year)){
+            if (record.length==0) {
+               
+                res.status(404).send("No hemos encontrado el recurso");
+        
+            }else{
                 
-                esta=true;
-                    
+                res.status(200).send(record);
             }
-        }
-        var data = homicides_by_firearms.filter(function(k){ 
             
-            return k.state==String(req.params.state) && k.year==String(req.params.year);
-        });
-	
-        //Respondemos a la petición enviando el recurso, filtrado, y en JSON
-        if(esta){
-            res.status(200).send(JSON.stringify(data,null,2));
-        }else{
-            res.status(404).send("No hemos encontrado el recurso solicitado");
-        }
-	
+            });
+        
+        
     });
-
+    
 
     //4) DELETE a un recurso, borra ese recurso (en concreto)
     //En nuestro caso, borramos el recurso por estado y año
 
     app.delete(BASE_API_PATH+"/homicides-by-firearms/:state/:year", function(req, res) { 
         //Si el 'estado' y 'año' coinciden con los recibidos o dados, se elimina ese recurso
-	var esta= false;
-	homicides_by_firearms = homicides_by_firearms.filter(function(k){
-		
-		if(k.state!=String(req.params.state) || k.year!=(String(req.params.year))) {
-			return k;
-		}else{
-			esta=true;
-		}
-	});
-	
-	if(esta){
-		res.status(200).send("Recurso eliminado satisfactoriamente");
-	}else{
-		res.status(404).send("No hemos encontrado el recurso, por lo tanto no se ha eliminado nada");
-	}
+        
+        
+        db.remove({state:String(req.params.state), year:String(req.params.year)},{},(err, numEvictionsRemoved)=>{
+                
+            console.log(err);
+            
+            if(err!=null){
+                    console.error("ERROR: "+err);
+                    res.sendStatus(500);
+                }else{
+                    if(numEvictionsRemoved==0){
+                        res.status(404).send("No hemos encontrado el recurso");
+                    }else{
+                        res.status(200).send("Recurso eliminado satisfactoriamente");
+                    }
+                }
+            })
+        
     });
 
 
@@ -206,23 +218,81 @@ var db = new Datastore({ filename: "homicidesAPI/homicides.db", autoload: true }
 
     app.put(BASE_API_PATH+"/homicides-by-firearms/:state/:year", function(req,res) { 
 
+        var data = req.body;
+        
         var esta = false;
-        for(var k in homicides_by_firearms){
-            
-            if(homicides_by_firearms[k].state == String(req.params.state) &&
-                homicides_by_firearms[k].year == String(req.params.year)){
-                esta=true;
-                    var data = req.body;
-                    homicides_by_firearms[k] = data;
-                    break;
+        var bodyok = true;
+        
+        var aux = Object.keys(data);
+        
+            if(aux[0]!="state"|| aux[1]!= "year" || aux[2]!= "homicide-by-firearm"|| aux[3]!= "handgun" || aux[4] != "rifle" || aux[5] != "shotgun" || aux[6] != "type-not-stated"){
+                bodyok =false;
             }
-        }
-        if(!esta){
-            res.status(404).send("Recurso no encontrado");
-        }else{
-        res.status(200).send("Actualización realizada correctamente");
-        }
+        
+        db.find({state:String(req.params.state), year:String(req.params.year)  }, function(err, record) {
+            
+            console.log(record);
+            if(err!=null){
+                    console.error("ERROR deleting DB evictions in DELETE: "+err);
+                    res.sendStatus(500);
+            }else{
+                
+                
+                if (record.length==0) {
+               
+                    res.status(404).send("No hemos encontrado el recurso");
+        
+                }else{
+                
+                    if(!bodyok){
+                        
+                         res.status(400).send("Error. El formato del body es Erroneo");
+                        
+                    }else{
+                        
+                        if(String(req.params.state) !=  req.body.state || String(req.params.year) !=  req.body.year  ){
+                           
+                            
+                            res.status(409).send("Conflicto. Los identificadores de State y Year deben ser iguales");
+                            
+                           }else{
+                           
+                               
+                               db.update({state:String(req.params.state), year:String(req.params.year)}, 
+                                  {state:String(req.params.state), year:String(req.params.year),homicide_by_firearm: req.body.homicide_by_firearm, handgun: req.body.handgun, 
+                                    rifle: req.body.rifle, shotgun: req.body.shotgun, type_not_stated: req.body.type_not_stated}, {}, function (err, numReplaced) {
+                                            
+                            if(err) {
+                                console.error(err);
+                                res.status(500).send("Error en la base de datos");
+                            }else{
+                                res.status(200).send(String(req.params.state)+" "+String(req.params.year)+" Ha sido actualizado exitosamente");
+                                
+                            }
+                                    
+                        
+                        });
+                               
+                               
+                               
+                           }
+                        
+                        
+                        
+                    }
+                    
+                }
+                
+            }
+            
+            
+            });
+        
+        
+        
+        
     });
+    
 
 
 
@@ -246,14 +316,18 @@ var db = new Datastore({ filename: "homicidesAPI/homicides.db", autoload: true }
     //En otras palabras, borramos todos los elementos existentes en el array inicial
 
     app.delete(BASE_API_PATH+"/homicides-by-firearms", (req,res)=>{
-            
-        homicides_by_firearms = []; 
+		
+        db.remove({}, { multi: true }, function(err, numDeleted) {
+         console.log('Deleted', numDeleted, 'user(s)');
+    }); 
         res.status(200).send("Lista de recursos eliminada satisfactoriamente");
-
+    
     });
+         
+         
+     
 
 
 
     
 }
-	 

@@ -1,0 +1,576 @@
+{
+	"info": {
+		"_postman_id": "66da929a-b4e9-4f28-bd2f-a19a7e66d9eb",
+		"name": "SOS2021-05-homicides-by-firearms",
+		"description": "This is the API Postman's collection \"Homicides by firearms in the U.S.A\", developed by Iván Martín Jiménez (https://github.com/ivanmartinsk).\nFor more information about the project itself, feel free to check the whole documentation in our Git Repository https://github.com/gti-sos/SOS2021-05 !",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Check empty list",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://sos2021-05.herokuapp.com/api/v1/homicides-by-firearms",
+					"protocol": "http",
+					"host": [
+						"sos2021-05",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"homicides-by-firearms"
+					]
+				},
+				"description": "Quick check that the resource list is clean"
+			},
+			"response": []
+		},
+		{
+			"name": "Load initial data",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://sos2021-05.herokuapp.com/api/v1/homicides-by-firearms/loadInitialData",
+					"protocol": "http",
+					"host": [
+						"sos2021-05",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"homicides-by-firearms",
+						"loadInitialData"
+					]
+				},
+				"description": "GET request to the specified URL which load all the initial data use to initiallizate the array."
+			},
+			"response": []
+		},
+		{
+			"name": "Get all resources",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://sos2021-05.herokuapp.com/api/v1/homicides-by-firearms",
+					"protocol": "http",
+					"host": [
+						"sos2021-05",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"homicides-by-firearms"
+					]
+				},
+				"description": "GET Request to access all initial resources loaded."
+			},
+			"response": []
+		},
+		{
+			"name": "Filtering to existing resource",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://sos2021-05.herokuapp.com/api/v1/homicides-by-firearms/Alaska/2019",
+					"protocol": "http",
+					"host": [
+						"sos2021-05",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"homicides-by-firearms",
+						"Alaska",
+						"2019"
+					]
+				},
+				"description": "GET Request to an specified resource, which in this case are all of the resources that meet the \"state\" (Alaska) and the \"year\" (2019) given in the URL."
+			},
+			"response": []
+		},
+		{
+			"name": "Filtering to a non existing resource",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404, test passed\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://sos2021-05.herokuapp.com/api/v1/homicides-by-firearms/Michigan/2019",
+					"protocol": "http",
+					"host": [
+						"sos2021-05",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"homicides-by-firearms",
+						"Michigan",
+						"2019"
+					]
+				},
+				"description": "Force for an error just by accesing and filtering to a non-existing resource."
+			},
+			"response": []
+		},
+		{
+			"name": "Post a new resource x",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{\r\n\"state\": \"Cordoba\",\r\n\"year\": \"2019\",\r\n\"homicide-by-firearm\": \"22380\",\r\n\"handgun\": \"17\",\r\n\"rifle\": \"1\",\r\n\"shotgun\": \"6\",\r\n\"type-not-stated\": \"20\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://sos2021-05.herokuapp.com/api/v1/homicides-by-firearms",
+					"protocol": "http",
+					"host": [
+						"sos2021-05",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"homicides-by-firearms"
+					]
+				},
+				"description": "Introduce a new resource just by a simple body sentence by a POST request."
+			},
+			"response": []
+		},
+		{
+			"name": "Post an already existing resource x",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 409, test passed\", function () {\r",
+							"    pm.response.to.have.status(409);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{\r\n\"state\": \"Cordoba\",\r\n\"year\": \"2019\",\r\n\"homicide-by-firearm\": \"22380\",\r\n\"handgun\": \"17\",\r\n\"rifle\": \"1\",\r\n\"shotgun\": \"6\",\r\n\"type-not-stated\": \"20\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://sos2021-05.herokuapp.com/api/v1/homicides-by-firearms",
+					"protocol": "http",
+					"host": [
+						"sos2021-05",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"homicides-by-firearms"
+					]
+				},
+				"description": "Force an error just by posting (adding) an already existing resource."
+			},
+			"response": []
+		},
+		{
+			"name": "Post to a method",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 405, test passed\", function () {\r",
+							"    pm.response.to.have.status(405);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{\r\n\"state\": \"Cordoba\",\r\n\"year\": \"2019\",\r\n\"homicide-by-firearm\": \"22380\",\r\n\"handgun\": \"17\",\r\n\"rifle\": \"1\",\r\n\"shotgun\": \"6\",\r\n\"type-not-stated\": \"20\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "http://sos2021-05.herokuapp.com/api/v1/homicides-by-firearms/Alabama/2019",
+					"protocol": "http",
+					"host": [
+						"sos2021-05",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"homicides-by-firearms",
+						"Alabama",
+						"2019"
+					]
+				},
+				"description": "Force an error by trying to post to an specific resource."
+			},
+			"response": []
+		},
+		{
+			"name": "Update the resource x",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"state\": \"Cordoba\",\r\n\"year\": \"2019\",\r\n\"homicide-by-firearm\": \"22380\",\r\n\"handgun\": \"17\",\r\n\"rifle\": \"9\",\r\n\"shotgun\": \"800\",\r\n\"type-not-stated\": \"20\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://sos2021-05.herokuapp.com/api/v1/homicides-by-firearms/Cordoba/2019",
+					"protocol": "http",
+					"host": [
+						"sos2021-05",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"homicides-by-firearms",
+						"Cordoba",
+						"2019"
+					]
+				},
+				"description": "Updating some elements in the resource that we already post previously."
+			},
+			"response": []
+		},
+		{
+			"name": "Update resource list",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 405, test passed\", function () {\r",
+							"    pm.response.to.have.status(405);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://sos2021-05.herokuapp.com/api/v1/homicides-by-firearms",
+					"protocol": "http",
+					"host": [
+						"sos2021-05",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"homicides-by-firearms"
+					]
+				},
+				"description": "Force an error just by trying to update a resource list."
+			},
+			"response": []
+		},
+		{
+			"name": "Update non-existing resource",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404, test passed\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"state\": \"Michigan\",\r\n\"year\": \"2018\",\r\n\"homicide-by-firearm\": \"22380\",\r\n\"handgun\": \"17\",\r\n\"rifle\": \"9\",\r\n\"shotgun\": \"800\",\r\n\"type-not-stated\": \"20\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "http://sos2021-05.herokuapp.com/api/v1/homicides-by-firearms/Michigan/2018\n",
+					"protocol": "http",
+					"host": [
+						"sos2021-05",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"homicides-by-firearms",
+						"Michigan",
+						"2018\n"
+					]
+				},
+				"description": "Force an error just by trying to update some elements in a non-existing resource."
+			},
+			"response": []
+		},
+		{
+			"name": "Delete the resource x",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n"
+				},
+				"url": {
+					"raw": "http://sos2021-05.herokuapp.com/api/v1/homicides-by-firearms/Cordoba/2019",
+					"protocol": "http",
+					"host": [
+						"sos2021-05",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"homicides-by-firearms",
+						"Cordoba",
+						"2019"
+					]
+				},
+				"description": "Remove from the resource list the element previously added in 'Post a new resource x'"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete the same resource x",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404, test passed\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n"
+				},
+				"url": {
+					"raw": "http://sos2021-05.herokuapp.com/api/v1/homicides-by-firearms/Cordoba/2019",
+					"protocol": "http",
+					"host": [
+						"sos2021-05",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"homicides-by-firearms",
+						"Cordoba",
+						"2019"
+					]
+				},
+				"description": "Force an error by trying to delete a resource that already doesn´t exist."
+			},
+			"response": []
+		},
+		{
+			"name": "Delete all data",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://sos2021-05.herokuapp.com/api/v1/homicides-by-firearms",
+					"protocol": "http",
+					"host": [
+						"sos2021-05",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"homicides-by-firearms"
+					]
+				},
+				"description": "Remove the whole data from the array, leaving the resource list just like at the very beginning, empty."
+			},
+			"response": []
+		}
+	]
+}
