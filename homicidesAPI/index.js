@@ -134,7 +134,7 @@
     app.get(BASE_API_PATH+"/homicides-by-firearms/:state/:year", (req,res)=>{ 
             
         var esta =false;
-        for(var k in arms_sales_stats){
+        for(var k in homicides_by_firearms){
             
             if(arms_sales_stats[k].state == String(req.params.state) &&
                 arms_sales_stats[k].year == String(req.params.year)){
