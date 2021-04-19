@@ -55,7 +55,7 @@ app.get(BASE_API_PATH+"/arms-sales-stats/loadInitialData", (req,res)=>{
 			"state":"Alabama",
 			"year":"2019",
 			"month": "6" ,
-			"arms-sold":"139.873",
+			"arms_sold":"139.873",
 			"percent_of_people":"0.02118",
 		},
 		{
@@ -194,7 +194,7 @@ app.get(BASE_API_PATH+"/arms-sales-stats/:state/:year", (req,res)=>{
 			var aux = record.map((c)=>{
 				return {state : c.state, year: c.year, month: c.month, arms_sold: c.arms_sold, percent_of_people: c.percent_of_people  }
 			});
-			res.sendStatus(200);
+			res.status(200).send(aux);
 		}
 		
 		});
@@ -281,9 +281,9 @@ app.put(BASE_API_PATH+"/arms-sales-stats/:state/:year/:month", function(req,res)
 										
 						if(err) {
 							console.error(err);
-							res.status(500).send("Error en la base de datos");
+							res.sendStatus(500);
 						}else{
-							res.sedStatus(200);
+							res.sendStatus(200);
 							
 						}
 								
