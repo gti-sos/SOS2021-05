@@ -97,7 +97,7 @@ app.get(BASE_API_PATH+"/arms-sales-stats/loadInitialData", (req,res)=>{
 	//Lanzamos el código 200 indicando que se han cargado los datos iniciales de forma satisfactoria
 	//(Lo indicamos con el 200 por consola, y con un pequeño html para el usuario de forma gráfica)
 
-	res.status(200).send("Initial data loaded succesfully!");
+	res.sendStatus(200);
 
 });
 
@@ -135,7 +135,7 @@ app.post(BASE_API_PATH+"/arms-sales-stats", (req,res)=>{
 		if (record.length!=0) {
        	 esta=true;
 			
-			res.status(409).send("Error. Ya Existe un recurso con el mismo Estado, Año y Mes");
+			res.sendStatus(409);
     
 		}else{
 			
@@ -158,11 +158,11 @@ app.post(BASE_API_PATH+"/arms-sales-stats", (req,res)=>{
 		
 				db.insert(data);
 				//"Metemos" en el array de datos para este recurso lo recibido en el POST
-				res.status(201).send("Recurso añadido satisfactoriamente");
+				res.sendStatus(201);
 		
 			}else if(!bodyok){
 			 
-				res.status(400).send("Error. El formato del body es Erroneo");
+				res.sendStatus(400);
 			}
 			
 			}
@@ -189,14 +189,14 @@ app.get(BASE_API_PATH+"/arms-sales-stats/:state/:year", (req,res)=>{
 		
 		if (record.length==0) {
        	
-			res.status(404).send("No hemos encontrado el recurso");
+			res.sendStatus(404);
     
 		}else{
 		
 			var aux = record.map((c)=>{
 				return {state : c.state, year: c.year, month: c.month, arms_sold: c.arms_sold, percent_of_people: c.percent_of_people  }
 			});
-			res.status(200).send(aux);
+			res.sendStatus(200);
 		}
 		
 		});
@@ -221,9 +221,9 @@ app.delete(BASE_API_PATH+"/arms-sales-stats/:state/:year/:month", function(req, 
 				res.sendStatus(500);
 			}else{
 				if(numEvictionsRemoved==0){
-					res.status(404).send("No hemos encontrado el recurso");
+					res.sendStatus(404);
 				}else{
-					res.status(200).send("Recurso eliminado satisfactoriamente :D");
+					res.sendStatus(200);
 				}
 			}
 		})
@@ -259,20 +259,20 @@ app.put(BASE_API_PATH+"/arms-sales-stats/:state/:year/:month", function(req,res)
 			
 			if (record.length==0) {
        	
-				res.status(404).send("No hemos encontrado el recurso");
+				res.sendStatus(404);
     
 			}else{
 			
 				if(!bodyok){
 					
-					 res.status(400).send("Error. El formato del body es Erroneo");
+					 res.sendStatus(400);
 					
 				}else{
 					
 					if(String(req.params.state) !=  req.body.state || String(req.params.year) !=  req.body.year  ){
 					   
 						
-						res.status(409).send("Conflicto. Los identificadores de State y Year deben ser iguales");
+						res.sendStatus(409);
 						
 					   }else{
 					   
@@ -285,7 +285,7 @@ app.put(BASE_API_PATH+"/arms-sales-stats/:state/:year/:month", function(req,res)
 							console.error(err);
 							res.status(500).send("Error en la base de datos");
 						}else{
-							res.status(200).send(String(req.params.state)+" "+String(req.params.year)+" Ha sido actualizado exitosamente");
+							res.sedStatus(200);
 							
 						}
 								
@@ -357,7 +357,7 @@ app.put(BASE_API_PATH+"/arms-sales-stats/:state/:year/:month", function(req,res)
 
 app.post(BASE_API_PATH+"/arms-sales-stats/:state/:year", function(req, res) { 
 
-	res.status(405).send("Metodo no permitido"); 
+	res.sendStatus(405); 
 });
 
 
@@ -365,7 +365,7 @@ app.post(BASE_API_PATH+"/arms-sales-stats/:state/:year", function(req, res) {
 
 app.put(BASE_API_PATH+"/arms-sales-stats", function(req, res) { 
 
-	res.status(405).send("Metodo no permitido"); 
+	res.sendStatus(405); 
 });
 
 //8)DELETE a la lista de recursos (completa) borra todos los recursos
@@ -376,7 +376,7 @@ app.delete(BASE_API_PATH+"/arms-sales-stats", (req,res)=>{
 	db.remove({}, { multi: true }, function(err, numDeleted) {
      console.log('Deleted', numDeleted, 'user(s)');
 }); 
-	res.status(200).send("Lista de recursos eliminada satisfactoriamente");
+	res.sendStatus(200);
 
 });
 	 

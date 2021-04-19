@@ -634,7 +634,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://sos2021-05.herokuapp.com/api/v1/arms-sales-stats/Alabama/2019/1",
+					"raw": "http://sos2021-05.herokuapp.com/api/v1/arms-sales-stats/Alabama/2019/2",
 					"protocol": "http",
 					"host": [
 						"sos2021-05",
@@ -647,7 +647,7 @@
 						"arms-sales-stats",
 						"Alabama",
 						"2019",
-						"1"
+						"2"
 					]
 				},
 				"description": "This request seeks to update a resource by changing one of its identifiers.\n\nThe result of this search is a conflict failure. It will return a 409 error."
@@ -683,7 +683,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://sos2021-05.herokuapp.com/api/v1/arms-sales-stats/Alabama/2019/1",
+					"raw": "http://sos2021-05.herokuapp.com/api/v1/arms-sales-stats/Alabama/2019/2",
 					"protocol": "http",
 					"host": [
 						"sos2021-05",
@@ -696,7 +696,7 @@
 						"arms-sales-stats",
 						"Alabama",
 						"2019",
-						"1"
+						"2"
 					]
 				},
 				"description": "It works exactly the same as the previous one.\n\nIn this case, the resource will be found so it will be updated and return a 400 code because the body format is wrong."
