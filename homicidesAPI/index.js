@@ -186,7 +186,7 @@ var db = new Datastore({ filename: "homicidesAPI/homicides.db", autoload: true }
             }else{
                 
 			var aux = record.map((c)=>{
-				return {state : c.state, year: c.year  }
+				return {state: c.state,year:c.year, homicide_by_firearm: c.homicide_by_firearm,handgun: c.handgun, rifle:c.rifle, shotgun: c.shotgun, type_not_stated: c.type_not_stated }
 			});
 			res.status(200).send(aux);
             }
