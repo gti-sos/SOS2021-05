@@ -107,7 +107,15 @@ app.get(BASE_API_PATH+"/arms-sales-stats/loadInitialData", (req,res)=>{
 //(GET para cargar el array completo)
 
 app.get(BASE_API_PATH + "/arms-sales-stats", (req,res) => {
-	res.send(200, db.getAllData());
+	
+	var mapita = db.getAllData();
+		
+	var aux = mapita.map((c)=>{
+				return {state : c.state, year: c.year, month: c.month, arms_sold: c.arms_sold, percent_of_people: c.percent_of_people  }
+			});
+			res.status(200).send(aux);
+	
+	res.send(200, aux);
 })
 
 
@@ -184,8 +192,11 @@ app.get(BASE_API_PATH+"/arms-sales-stats/:state/:year", (req,res)=>{
 			res.status(404).send("No hemos encontrado el recurso");
     
 		}else{
-			
-			res.status(200).send(record);
+		
+			var aux = record.map((c)=>{
+				return {state : c.state, year: c.year, month: c.month, arms_sold: c.arms_sold, percent_of_people: c.percent_of_people  }
+			});
+			res.status(200).send(aux);
 		}
 		
 		});

@@ -124,7 +124,14 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 //(GET para cargar el array completo)
 
 app.get(BASE_API_PATH + "/attacks-stats", (req,res) => {
-	res.send(200, db.getAllData());
+	var mapita = db.getAllData();
+		
+	var aux = mapita.map((c)=>{
+				return {state : c.state, year: c.year, sex_male:c.sex_male, sex_female: c.sex_female, sex_unknown:c.sex_unknown , 		age_range_20_29:c.age_range_20_29, age_range_30_39:c.age_range_30_39, age_range_other: c.age_range_other, type_of_attack_personal_weapons:c.type_of_attack_personal_weapons, type_of_attack_gun: c.type_of_attack_gun, type_of_attack_knife:c.type_of_attack_knife   }
+			});
+			res.status(200).send(aux);
+	
+	res.send(200, aux);
 })
 
 
@@ -195,7 +202,11 @@ app.get(BASE_API_PATH+"/attacks-stats/:state/:year", (req,res)=>{ //Cuando llame
     
 		}else{
 			
-			res.status(200).send(record);
+			
+			var aux = record.map((c)=>{
+				return {state : c.state, year: c.year, sex_male:c.sex_male, sex_female: c.sex_female, sex_unknown:c.sex_unknown , 		age_range_20_29:c.age_range_20_29, age_range_30_39:c.age_range_30_39, age_range_other: c.age_range_other, type_of_attack_personal_weapons:c.type_of_attack_personal_weapons, type_of_attack_gun: c.type_of_attack_gun, type_of_attack_knife:c.type_of_attack_knife   }
+			});
+			res.status(200).send(aux);
 		}
 		
 		});

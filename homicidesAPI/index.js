@@ -104,7 +104,14 @@ var db = new Datastore({ filename: "homicidesAPI/homicides.db", autoload: true }
 //(GET para cargar el array completo)
 
     app.get(BASE_API_PATH + "/homicides-by-firearms", (req,res) => {
-        res.send(200, db.getAllData());
+        var mapita = db.getAllData();
+		
+	var aux = mapita.map((c)=>{
+				return {state: c.state,year:c.year}
+			});
+			res.status(200).send(aux);
+	
+	res.send(200, aux);
     })
 
 
@@ -178,7 +185,10 @@ var db = new Datastore({ filename: "homicidesAPI/homicides.db", autoload: true }
         
             }else{
                 
-                res.status(200).send(record);
+			var aux = record.map((c)=>{
+				return {state : c.state, year: c.year  }
+			});
+			res.status(200).send(aux);
             }
             
             });
