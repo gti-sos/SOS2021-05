@@ -15,74 +15,74 @@ var db = new Datastore({ filename: "homicidesAPI/homicides.db", autoload: true }
             {
                 "state":"Alaska",
                 "year":"2019",
-                "homicide-by-firearm": "70" ,
+                "homicide_by_firearm": "70" ,
                 "handgun":"17",
                 "rifle":"1",
                 "shotgun":"6",
-                "type-not-stated": "20"
+                "type_not_stated": "20"
             },
             {
                 "state":"Arkansas",
                 "year":"2019",
-                "homicide-by-firearm": "255" ,
+                "homicide_by_firearm": "255" ,
                 "handgun":"87",
                 "rifle":"10",
                 "shotgun":"5",
-                "type-not-stated": "74"
+                "type_not_stated": "74"
             },
             {
                 "state":"Idaho",
                 "year":"2019",
-                "homicide-by-firearm": "23" ,
+                "homicide_by_firearm": "23" ,
                 "handgun":"9",
                 "rifle":"0",
                 "shotgun":"0",
-                "type-not-stated": "7"
+                "type_not_stated": "7"
             },
             {
-                "state":"West-Virginia",
+                "state":"West_Virginia",
                 "year":"2019",
-                "homicide-by-firearm": "69" ,
+                "homicide:by_firearm": "69" ,
                 "handgun":"24",
                 "rifle":"7",
                 "shotgun":"2",
-                "type-not-stated": "17"
+                "type_not_stated": "17"
             },
             {
                 "state":"Wyoming",
                 "year":"2019",
-                "homicide-by-firearm": "11" ,
+                "homicide_by_firearm": "11" ,
                 "handgun":"7",
                 "rifle":"0",
                 "shotgun":"0",
-                "type-not-stated": "2"
+                "type_not_stated": "2"
             },
             {
                 "state":"Montana",
                 "year":"2019",
-                "homicide-by-firearm": "20" ,
+                "homicide_by_firearm": "20" ,
                 "handgun":"13",
                 "rifle":"1",
                 "shotgun":"1",
-                "type-not-stated": "2"
+                "type_not_stated": "2"
             },
             {
-                "state":"New-Mexico",
+                "state":"New_Mexico",
                 "year":"2019",
-                "homicide-by-firearm": "146" ,
+                "homicide_by_firearm": "146" ,
                 "handgun":"53",
                 "rifle":"1",
                 "shotgun":"3",
-                "type-not-stated": "43"
+                "type_not_stated": "43"
             },
             {
                 "state":"Alabama",
                 "year":"2019",
-                "homicide-by-firearm": "3" ,
+                "homicide_by_firearm": "3" ,
                 "handgun":"3",
                 "rifle":"0",
                 "shotgun":"0",
-                "type-not-stated": "0"
+                "type_not_stated": "0"
             }
         ];
 
@@ -107,7 +107,7 @@ var db = new Datastore({ filename: "homicidesAPI/homicides.db", autoload: true }
         var mapita = db.getAllData();
 		
 	var aux = mapita.map((c)=>{
-				return {state: c.state,year:c.year}
+				return {state: c.state,year:c.year, homicide_by_firearm: c.homicide_by_firearm,handgun: c.handgun, rifle:c.rifle, shotgun: c.shotgun, type_not_stated: c.type_not_stated}
 			});
 			res.status(200).send(aux);
 	
@@ -143,7 +143,7 @@ var db = new Datastore({ filename: "homicidesAPI/homicides.db", autoload: true }
             
                     var aux = Object.keys(data);
         
-                    if(aux[0]!="state"|| aux[1]!= "year" || aux[2]!= "homicide-by-firearm"|| aux[3]!= "handgun" || aux[4] != "rifle" || aux[5] != "shotgun" || aux[6] != "type-not-stated"){
+                    if(aux[0]!="state"|| aux[1]!= "year" || aux[2]!= "homicide_by_firearm"|| aux[3]!= "handgun" || aux[4] != "rifle" || aux[5] != "shotgun" || aux[6] != "type_not_stated"){
                         bodyok =false;
                     }
                 // ------------------------------------------------------- 
@@ -235,7 +235,7 @@ var db = new Datastore({ filename: "homicidesAPI/homicides.db", autoload: true }
         
         var aux = Object.keys(data);
         
-            if(aux[0]!="state"|| aux[1]!= "year" || aux[2]!= "homicide-by-firearm"|| aux[3]!= "handgun" || aux[4] != "rifle" || aux[5] != "shotgun" || aux[6] != "type-not-stated"){
+            if(aux[0]!="state"|| aux[1]!= "year" || aux[2]!= "homicide_by_firearm"|| aux[3]!= "handgun" || aux[4] != "rifle" || aux[5] != "shotgun" || aux[6] != "type_not_stated"){
                 bodyok =false;
             }
         

@@ -214,7 +214,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "\r\n{\r\n\"state\": \"Cordoba\",\r\n\"year\": \"2019\",\r\n\"homicide-by-firearm\": \"22380\",\r\n\"handgun\": \"17\",\r\n\"rifle\": \"1\",\r\n\"shotgun\": \"6\",\r\n\"type-not-stated\": \"20\"\r\n}\r\n",
+					"raw": "\r\n{\r\n\"state\": \"Cordoba\",\r\n\"year\": \"2019\",\r\n\"homicide_by_firearm\": \"22380\",\r\n\"handgun\": \"17\",\r\n\"rifle\": \"1\",\r\n\"shotgun\": \"6\",\r\n\"type_not_stated\": \"20\"\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -259,7 +259,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "\r\n{\r\n\"state\": \"Cordoba\",\r\n\"year\": \"2019\",\r\n\"homicide-by-firearm\": \"22380\",\r\n\"handgun\": \"17\",\r\n\"rifle\": \"1\",\r\n\"shotgun\": \"6\",\r\n\"type-not-stated\": \"20\"\r\n}\r\n",
+					"raw": "\r\n{\r\n\"state\": \"Cordoba\",\r\n\"year\": \"2019\",\r\n\"homicide_by_firearm\": \"22380\",\r\n\"handgun\": \"17\",\r\n\"rifle\": \"1\",\r\n\"shotgun\": \"6\",\r\n\"type_not_stated\": \"20\"\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -304,7 +304,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "\r\n{\r\n\"state\": \"Cordoba\",\r\n\"ye\": \"2019\",\r\n\"homicide-by-firearm\": \"22380\",\r\n\"handgun\": \"17\",\r\n\"rifle\": \"1\",\r\n\"shotgun\": \"6\",\r\n\"type-not-stated\": \"20\"\r\n}\r\n",
+					"raw": "\r\n{\r\n\"state\": \"Cordoba\",\r\n\"ye\": \"2019\",\r\n\"homicide_by_firearm\": \"22380\",\r\n\"handgun\": \"17\",\r\n\"rifle\": \"1\",\r\n\"shotgun\": \"6\",\r\n\"type_not_stated\": \"20\"\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -349,7 +349,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "\r\n{\r\n\"state\": \"Cordoba\",\r\n\"year\": \"2019\",\r\n\"homicide-by-firearm\": \"22380\",\r\n\"handgun\": \"17\",\r\n\"rifle\": \"1\",\r\n\"shotgun\": \"6\",\r\n\"type-not-stated\": \"20\"\r\n}\r\n"
+					"raw": "\r\n{\r\n\"state\": \"Cordoba\",\r\n\"year\": \"2019\",\r\n\"homicide_by_firearm\": \"22380\",\r\n\"handgun\": \"17\",\r\n\"rifle\": \"1\",\r\n\"shotgun\": \"6\",\r\n\"type_not_stated\": \"20\"\r\n}\r\n"
 				},
 				"url": {
 					"raw": "http://sos2021-05.herokuapp.com/api/v1/homicides-by-firearms/Alabama/2019",
@@ -392,7 +392,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\"state\": \"Cordoba\",\r\n\"year\": \"2019\",\r\n\"homicide-by-firearm\": \"22380\",\r\n\"handgun\": \"17\",\r\n\"rifle\": \"9\",\r\n\"shotgun\": \"800\",\r\n\"type-not-stated\": \"20\"\r\n}\r\n",
+					"raw": "{\r\n\"state\": \"Cordoba\",\r\n\"year\": \"2019\",\r\n\"homicide_by_firearm\": \"22380\",\r\n\"handgun\": \"17\",\r\n\"rifle\": \"9\",\r\n\"shotgun\": \"800\",\r\n\"type_not_stated\": \"20\"\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -475,7 +475,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\"state\": \"Michigan\",\r\n\"year\": \"2018\",\r\n\"homicide-by-firearm\": \"22380\",\r\n\"handgun\": \"17\",\r\n\"rifle\": \"9\",\r\n\"shotgun\": \"800\",\r\n\"type-not-stated\": \"20\"\r\n}\r\n"
+					"raw": "{\r\n\"state\": \"Michigan\",\r\n\"year\": \"2018\",\r\n\"homicide_by_firearm\": \"22380\",\r\n\"handgun\": \"17\",\r\n\"rifle\": \"9\",\r\n\"shotgun\": \"800\",\r\n\"type_not_stated\": \"20\"\r\n}\r\n"
 				},
 				"url": {
 					"raw": "http://sos2021-05.herokuapp.com/api/v1/homicides-by-firearms/Michigan/2018\n",
@@ -517,7 +517,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\"state\": \"Cordoba\",\r\n\"yer\": \"2019\",\r\n\"homicide-by-firearm\": \"22380\",\r\n\"handgun\": \"17\",\r\n\"rifle\": \"9\",\r\n\"shotgun\": \"800\",\r\n\"type-not-stated\": \"20\"\r\n}\r\n"
+					"raw": "{\r\n\"state\": \"Cordoba\",\r\n\"yer\": \"2019\",\r\n\"homicide_by_firearm\": \"22380\",\r\n\"handgun\": \"17\",\r\n\"rifle\": \"9\",\r\n\"shotgun\": \"800\",\r\n\"type_not_stated\": \"20\"\r\n}\r\n"
 				},
 				"url": {
 					"raw": "http://sos2021-05.herokuapp.com/api/v1/homicides-by-firearms/Cordoba/2019",
@@ -559,7 +559,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\"state\": \"Idaho\",\r\n\"year\": \"2019\",\r\n\"homicide-by-firearm\": \"22380\",\r\n\"handgun\": \"17\",\r\n\"rifle\": \"9\",\r\n\"shotgun\": \"800\",\r\n\"type-not-stated\": \"20\"\r\n}\r\n",
+					"raw": "{\r\n\"state\": \"Idaho\",\r\n\"year\": \"2019\",\r\n\"homicide_by_firearm\": \"22380\",\r\n\"handgun\": \"17\",\r\n\"rifle\": \"9\",\r\n\"shotgun\": \"800\",\r\n\"type_not_stated\": \"20\"\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
