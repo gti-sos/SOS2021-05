@@ -170,7 +170,7 @@ var db = new Datastore({ filename: "homicidesAPI/homicides.db", autoload: true }
 
 
     //3) GET a un recurso (en concreto), devuelve ese recurso
-    //En nuestro caso, accedemos a los elementos por estado y año (p ej.)
+    //En nuestro caso, accedemos a los elementos por estado y año (p ej)
 
     app.get(BASE_API_PATH+"/homicides-by-firearms/:state/:year", (req,res)=>{ 
 		
