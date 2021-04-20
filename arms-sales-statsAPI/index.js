@@ -106,15 +106,60 @@ app.get(BASE_API_PATH+"/arms-sales-stats/loadInitialData", (req,res)=>{
 
 app.get(BASE_API_PATH + "/arms-sales-stats", (req,res) => {
 	
-	var mapita = db.getAllData();
-		
-	var aux = mapita.map((c)=>{
-				return {state : c.state, year: c.year, month: c.month, arms_sold: c.arms_sold, percent_of_people: c.percent_of_people  }
-			});
-			res.status(200).send(aux);
+	let query = {};
+        let offset = 0;
+        let limit = Number.MAX_SAFE_INTEGER;
+
+        // Pagination
+        if (req.query.limit) {
+            limit = parseInt(req.query.limit);
+            delete req.query.limit;
+        }
+
+        if (req.query.offset) {
+            offset = parseInt(req.query.offset);
+            delete req.query.offset;
+        }
+
+        // Search
+        if (req.query.state) query["country"] = req.query.state;
+        if (req.query.year) query["year"] = parseInt(req.query.year);
+        if (req.query.month) query["month"] = parseInt(req.query.month);
+        if (req.query.arms_sold) query["arms_sold"] = parseFloat(req.query.arms_sold);
+        if (req.query.percent_of_people) query["percent_of_people"] = parseFloat(req.query.query.percent_of_people);
 	
-	res.send(200, aux);
-})
+	 foundsResearchSourcesDB.find(query).sort({ country: 1, year: -1 }).skip(offset).limit(limit).exec(function (err, resources) {
+            if (err) {
+                console.error(DATABASE_ERR_MSSG + err);
+                res.sendStatus(500);
+            } else {
+                if (resources.length != 0) {
+                   
+					var aux = mapita.map((c)=>{
+				return {state : c.state, year: c.year, month: c.month, arms_sold: c.arms_sold, percent_of_people: c.percent_of_people  }
+			
+			res.status(200).send(aux);
+					
+					
+                    });
+
+                    // res.status(200).send(JSON.stringify(resourcesToSend, null, 2));
+                    res.status(200).send(resourcesToSend);
+                } else {
+                    res.sendStatus(404);
+                }
+
+            }
+
+        });
+    });
+	
+	
+	
+	
+		
+	
+
 
 
 
@@ -126,6 +171,9 @@ app.post(BASE_API_PATH+"/arms-sales-stats", (req,res)=>{
 	
 	var esta =false;
 	var bodyok= true;
+	
+	
+	
 	
 	db.find({state:String(req.body.state), year:String(req.body.year), month:String(req.body.month)  }, function(err, record) {
     	
@@ -305,46 +353,6 @@ app.put(BASE_API_PATH+"/arms-sales-stats/:state/:year/:month", function(req,res)
 		
 		
 		});
-	
-	
-	
-	
-	/*
-	for(var k in arms_sales_stats){
-		
-		if(arms_sales_stats[k].state == String(req.params.state) &&
-			arms_sales_stats[k].year == String(req.params.year)&&
-			arms_sales_stats[k].month == String(req.params.month)){
-			
-			esta=true;
-			
-				if(bodyok){
-					
-					var data = req.body;
-					arms_sales_stats[k] = data;
-					
-				}
-				break;
-		}
-		
-	}
-	
-	if(esta&& bodyok){
-		
-		res.status(200).send("Actualización realizada correctamente");
-		
-	}else if(esta && !bodyok){
-			 
-			 res.status(400).send("Error. El formato del body es Erroneo");
-		}
-	else{
-	
-		res.status(404).send("No hemos encontrado el recurso");
-	}
-	*/
-	
-	
-	
 	
 });
 
