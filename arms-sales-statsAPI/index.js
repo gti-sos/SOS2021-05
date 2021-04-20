@@ -121,6 +121,7 @@ app.get(BASE_API_PATH + "/arms-sales-stats", (req,res) => {
             delete req.query.offset;
         }
 
+	if(limit== null || offset==null){
         // Search
         if (req.query.state) query["country"] = req.query.state;
         if (req.query.year) query["year"] = parseInt(req.query.year);
@@ -152,6 +153,18 @@ app.get(BASE_API_PATH + "/arms-sales-stats", (req,res) => {
             }
 
         });
+	
+	}else{
+		var mapita = db.getAllData();
+		
+	var aux = mapita.map((c)=>{
+				return {state : c.state, year: c.year, month: c.month, arms_sold: c.arms_sold, percent_of_people: c.percent_of_people  }
+			});
+			res.status(200).send(aux);
+	
+	res.send(200, aux);
+	}
+	
     });
 	
 	
