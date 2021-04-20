@@ -128,23 +128,23 @@ app.get(BASE_API_PATH + "/arms-sales-stats", (req,res) => {
         if (req.query.arms_sold) query["arms_sold"] = parseFloat(req.query.arms_sold);
         if (req.query.percent_of_people) query["percent_of_people"] = parseFloat(req.query.query.percent_of_people);
 	
-	 foundsResearchSourcesDB.find(query).sort({ country: 1, year: -1 }).skip(offset).limit(limit).exec(function (err, resources) {
+	 db.find(query).sort({ state: 1, year: -1 }).skip(offset).limit(limit).exec(function (err, resources) {
             if (err) {
                 console.error(DATABASE_ERR_MSSG + err);
                 res.sendStatus(500);
             } else {
                 if (resources.length != 0) {
                    
-					var aux = mapita.map((c)=>{
+					var aux = resources.map((c)=>{
 				return {state : c.state, year: c.year, month: c.month, arms_sold: c.arms_sold, percent_of_people: c.percent_of_people  }
 			
-			res.status(200).send(aux);
+					res.status(200).send(aux);
 					
 					
                     });
 
                     // res.status(200).send(JSON.stringify(resourcesToSend, null, 2));
-                    res.status(200).send(resourcesToSend);
+                    res.status(200).send(aux);
                 } else {
                     res.sendStatus(404);
                 }
