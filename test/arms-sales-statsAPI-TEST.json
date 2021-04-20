@@ -98,7 +98,7 @@
 							"\r",
 							"pm.test(\"numero de archivos creados\"  , function(){\r",
 							"     \r",
-							"    pm.expect(pm.response.json().length).to.eql(10);\r",
+							"    pm.expect(pm.response.json().length).to.eql(2);\r",
 							"})"
 						],
 						"type": "text/javascript"
@@ -109,7 +109,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://sos2021-05.herokuapp.com/api/v1/arms-sales-stats",
+					"raw": "http://sos2021-05.herokuapp.com/api/v1/arms-sales-stats?limit=2&offset=1",
 					"protocol": "http",
 					"host": [
 						"sos2021-05",
@@ -120,6 +120,16 @@
 						"api",
 						"v1",
 						"arms-sales-stats"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "2"
+						},
+						{
+							"key": "offset",
+							"value": "1"
+						}
 					]
 				},
 				"description": "This request takes care of returning all the existing elements in the list. For this specific case, it should return 10 JSON elements because they are the ones that were previously loaded."
