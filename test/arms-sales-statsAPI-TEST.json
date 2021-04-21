@@ -109,7 +109,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://sos2021-05.herokuapp.com/api/v1/arms-sales-stats?limit=2&offset=1",
+					"raw": "http://sos2021-05.herokuapp.com/api/v1/arms-sales-stats?limit=2&offset=1&state=Alabama&year=2019",
 					"protocol": "http",
 					"host": [
 						"sos2021-05",
@@ -129,6 +129,14 @@
 						{
 							"key": "offset",
 							"value": "1"
+						},
+						{
+							"key": "state",
+							"value": "Alabama"
+						},
+						{
+							"key": "year",
+							"value": "2019"
 						}
 					]
 				},
