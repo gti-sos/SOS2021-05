@@ -100,19 +100,62 @@ var db = new Datastore({ filename: "homicidesAPI/homicides.db", autoload: true }
     //1)GET a la lista de recursos devuelve una lista con todos los recursos
     //(GET para cargar el array completo)
 
-    //1)GET a la lista de recursos devuelve una lista con todos los recursos
-//(GET para cargar el array completo)
+   
 
     app.get(BASE_API_PATH + "/homicides-by-firearms", (req,res) => {
-        var mapita = db.getAllData();
-		
-	var aux = mapita.map((c)=>{
-				return {state: c.state,year:c.year, homicide_by_firearm: c.homicide_by_firearm,handgun: c.handgun, rifle:c.rifle, shotgun: c.shotgun, type_not_stated: c.type_not_stated}
-			});
-			res.status(200).send(aux);
-	
-	res.send(200, aux);
-    })
+        
+        let query = {};
+            let offset = 0;
+            let limit = Number.MAX_SAFE_INTEGER;
+
+            // Pagination
+            if (req.query.limit) {
+                limit = parseInt(req.query.limit);
+                delete req.query.limit;
+            }
+
+            if (req.query.offset) {
+                offset = parseInt(req.query.offset);
+                delete req.query.offset;
+            }
+
+            // Search
+            if (req.query.state) query["state"] = req.query.state;
+            if (req.query.year) query["year"] = req.query.year;
+            if (req.query.homicide_by_firearm) query["homicide_by_firearms"] = req.query.homicide_by_firearm;
+            if (req.query.handgun) query["handgun"] =req.query.handgun;
+            if (req.query.rifle) query["rifle"] = req.query.rifle;
+            if (req.query.shotgun) query["shotgun"] = req.query.shotgun;
+            if (req.query.type_not_stated) query["type_not_stated"] = req.query.type_not_stated;
+
+
+        
+        db.find(query).sort({ state: 1, year: -1 }).skip(offset).limit(limit).exec(function (err, resources) {
+                if (err) {
+                    console.error(DATABASE_ERR_MSSG + err);
+                    res.sendStatus(500);
+                } else {
+                    if (resources.length != 0) {
+                    
+                        var aux = resources.map((c)=>{
+                    return {state: c.state,year:c.year, homicide_by_firearm: c.homicide_by_firearm,handgun: c.handgun, rifle:c.rifle, shotgun: c.shotgun, type_not_stated: c.type_not_stated  }
+                
+                        res.status(200).send(aux);
+                        
+                        
+                        });
+
+                        // res.status(200).send(JSON.stringify(resourcesToSend, null, 2));
+                        res.status(200).send(aux);
+                    } else {
+                        var array = [];
+                        res.status(200).send(array);
+                    }
+
+                }
+
+            });
+        });
 
 
 
@@ -188,7 +231,12 @@ var db = new Datastore({ filename: "homicidesAPI/homicides.db", autoload: true }
 			var aux = record.map((c)=>{
 				return {state: c.state,year:c.year, homicide_by_firearm: c.homicide_by_firearm,handgun: c.handgun, rifle:c.rifle, shotgun: c.shotgun, type_not_stated: c.type_not_stated }
 			});
-			res.status(200).send(aux);
+            if (aux.length == 1) {
+                res.status(200).send(aux[0]);
+            }else{
+                res.status(200).send(aux);
+            }
+
             }
             
             });
