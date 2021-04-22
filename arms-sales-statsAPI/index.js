@@ -228,10 +228,10 @@ app.post(BASE_API_PATH+"/arms-sales-stats", (req,res)=>{
 //3) GET a un recurso (en concreto), devuelve ese recurso
 //En nuestro caso, accedemos a los elementos por estado y año (p ej.)
 
-app.get(BASE_API_PATH+"/arms-sales-stats/:state/:year", (req,res)=>{ 
+app.get(BASE_API_PATH+"/arms-sales-stats/:state/:year/:month", (req,res)=>{ 
 		
 		
-	db.find({state:String(req.params.state), year:String(req.params.year)  }, function(err, record) {
+	db.find({state:String(req.params.state), year:String(req.params.year), month:String(req.params.month)  }, function(err, record) {
 		
 		console.log(record);
 		
@@ -244,7 +244,7 @@ app.get(BASE_API_PATH+"/arms-sales-stats/:state/:year", (req,res)=>{
 			var aux = record.map((c)=>{
 				return {state : c.state, year: c.year, month: c.month, arms_sold: c.arms_sold, percent_of_people: c.percent_of_people  }
 			});
-			res.status(200).send(aux);
+			res.status(200).send(aux[0]);
 		}
 		
 		});
