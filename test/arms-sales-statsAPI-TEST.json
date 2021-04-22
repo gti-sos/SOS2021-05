@@ -155,11 +155,7 @@
 							"    pm.response.to.have.status(200);\r",
 							"})\r",
 							"\r",
-							"\r",
-							"pm.test(\"numero de archivos creados\"  , function(){\r",
-							"     \r",
-							"    pm.expect(pm.response.json().length).to.eql(1);\r",
-							"})"
+							""
 						],
 						"type": "text/javascript"
 					}
@@ -169,7 +165,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://sos2021-05.herokuapp.com/api/v1/arms-sales-stats/Alabama/2018",
+					"raw": "http://sos2021-05.herokuapp.com/api/v1/arms-sales-stats/Alabama/2019/6",
 					"protocol": "http",
 					"host": [
 						"sos2021-05",
@@ -181,7 +177,8 @@
 						"v1",
 						"arms-sales-stats",
 						"Alabama",
-						"2018"
+						"2019",
+						"6"
 					]
 				},
 				"description": "This request is responsible for finding an item or set of items that share the \"state\" and \"year\" fields.\n\nThe search will be done using the url as follows:\nhttp://sos2021-05.herokuapp.com/api/v1/arms-sales-stats/STATE/YEAR\n\nIt will return the list of elements that contain the mentioned data.\n\nFor this specific case, since there is a data with those values, it must return ONE single element"
