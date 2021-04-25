@@ -25,6 +25,7 @@ app.use(express.json());
 
 //Ruta base de acceso a los recursos, bajo la versión 'v1'
 var BASE_API_PATH = "/api/v1";
+var BASE_API_PATHv2 = "/api/v2";
 
 app.get('/index', (request, response) => {
     response.send(express());
@@ -44,21 +45,29 @@ app.listen(port, () => {
 
 // API 'Homicides by firearms' (Iván Martín Jiménez)
 
-	var homicidesAPI = require("./homicidesAPI");
-	homicidesAPI.register(app,BASE_API_PATH);
+	var homicidesAPIv1 = require("./src/back/homicidesAPI/v1");
+	homicidesAPIv1.register(app,BASE_API_PATH);
 
+	var homicidesAPIv2 = require("./src/back/homicidesAPI/v2");
+	homicidesAPIv2.register(app,BASE_API_PATH);
 
 // API 'Arms sales stats' (Manuel Sánchez López)
 
-	var armssalesstatsAPI = require("./arms-sales-statsAPI");
-	armssalesstatsAPI.register(app,BASE_API_PATH);
+	//v1
+	var armssalesstatsv1API = require("./src/back/arms-sales-statsAPI/v1");
+	armssalesstatsv1API.register(app,BASE_API_PATH);
+	//v2
+	var armssalesstatsv2API = require("./src/back/arms-sales-statsAPI/v2");
+	armssalesstatsv2API.register(app,BASE_API_PATHv2);
 
 
 // API 'Attacks stats' (José Antonio Megías Macías)
 
-	var attacksstatsAPI = require("./attacks-statsAPI");
-	attacksstatsAPI.register(app,BASE_API_PATH);
+	var attacksstatsAPIv1 = require("./src/back/attacks-statsAPI/v1");
+	attacksstatsAPIv1.register(app,BASE_API_PATH);
 
+	var attacksstatsAPIv2 = require("./src/back/attacks-statsAPI/v2");
+	attacksstatsAPIv2.register(app,BASE_API_PATHv2);
 
 
 //F03

@@ -1,5 +1,5 @@
 var Datastore = require("nedb");
-var db = new Datastore({ filename: "homicidesAPI/homicides.db", autoload: true });
+var db = new Datastore({ filename: "./src/back/homicidesAPI/v1/homicides.db", autoload: true });
 
  
  module.exports.register = (app, BASE_API_PATH) => {
