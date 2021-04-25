@@ -55,9 +55,9 @@ import {
             </li>
             <li>
                 <b>Font End APIs</b>
-                    <b></b> <a href="https://documenter.getpostman.com/view/14948327/TzJsfdKb">Homicides by firearms</a>
-                    <b></b> <a href="https://documenter.getpostman.com/view/14942846/TzJrCewR">Arms sales stats</a>
-                    <b></b> <a href="https://documenter.getpostman.com/view/14948357/TzJsfdFD">Attacks stats</a>
+                    <b></b> <a href="https://sos2021-05.herokuapp.com/#/homicides">Homicides by firearms</a>
+                    <b></b> <a href="https://sos2021-05.herokuapp.com/#/sales">Arms sales stats</a>
+                    <b></b> <a href="https://sos2021-05.herokuapp.com/#/attacks">Attacks stats</a>
             </li>
     
         </ul>
