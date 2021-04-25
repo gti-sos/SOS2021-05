@@ -1,13 +1,13 @@
 <script>
-	import Table_svelte from './homicides/Homicides.svelte'
-	export let name;
+	import Table_svelte from './arms-sales-stats/Arms-sales-stats.svelte'
+	
 	
 </script>
 
 <main>
-	<h2>Hello {name}!</h2>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-	 <input type="button" id="b1" value="Games" onClick="document.getElementById('oculto').style.visibility='visible'">
+	<h2>Front End Api</h2>
+	
+	 <input type="button" id="b1" value="Homicides" onClick="document.getElementById('oculto').style.visibility='visible'">
 	 <input type="button" value="Ocultar" onClick="document.getElementById('oculto').style.visibility='hidden'">
 	<br>
    
@@ -17,6 +17,7 @@
 		<Table_svelte/>
 
     </div>
+
 <style type="text/css">
   table, th, td {
   border: 1px solid black;
