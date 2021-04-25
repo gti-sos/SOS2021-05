@@ -49,7 +49,7 @@ app.listen(port, () => {
 	homicidesAPIv1.register(app,BASE_API_PATH);
 
 	var homicidesAPIv2 = require("./src/back/homicidesAPI/v2");
-	homicidesAPIv2.register(app,BASE_API_PATH);
+	homicidesAPIv2.register(app,BASE_API_PATHv2);
 
 // API 'Arms sales stats' (Manuel Sánchez López)
 
