@@ -5,7 +5,7 @@
 </script>
 
 <main>
-	<h1>Hello {name}!</h1>
+	<h2>Hello {name}!</h2>
 	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
 	 <input type="button" id="b1" value="Games" onClick="document.getElementById('oculto').style.visibility='visible'">
 	 <input type="button" value="Ocultar" onClick="document.getElementById('oculto').style.visibility='hidden'">
@@ -35,10 +35,10 @@
 		margin: 0 auto;
 	}
 
-	h1 {
+	h2 {
 		color: #ff3e00;
 		text-transform: uppercase;
-		font-size: 4em;
+		font-size: 2em;
 		font-weight: 100;
 	}
 
