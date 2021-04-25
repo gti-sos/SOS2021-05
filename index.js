@@ -1,13 +1,5 @@
 
-/*
-var cool = require("cool-ascii-faces")
-app.get("/cool", (request, response) => {
-	
-	response.send(cool());
-	console.log("New Request ha llegado");
-	
-});
-*/
+
 
 
 //Para desplegar la app
