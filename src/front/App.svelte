@@ -3,7 +3,7 @@
 	import Sales from "./arms-sales-stats/arms-sales-stats.svelte";
 	import Homicides from "./homicides/homicides.svelte";
 	
-	import Info from "./info.svelte";
+	import Info from "./Info.svelte";
 	const routes = {
 		"/": Info,
 		"/homicides": Homicides,
