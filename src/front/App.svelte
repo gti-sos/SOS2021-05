@@ -6,8 +6,7 @@
 	const routes = {
 		"/": Info,
 		"/homicides": Homicides,
-		"/sales": Sales
-		
+		"/sales": Sales		
 	};
 </script>
 
