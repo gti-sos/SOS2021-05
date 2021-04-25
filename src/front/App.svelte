@@ -7,6 +7,7 @@
 		"/": Info,
 		"/homicides": Homicides,
 		"/sales": Sales
+		
 	};
 </script>
 
