@@ -180,12 +180,6 @@ app.get(BASE_API_PATH + "/attacks-stats", (req,res) => {
 
 
 
-		
-	
-	
-	res.send(200, aux);
-
-
 //2)POST  a la lista de recursos (para introducir nuevos arrays de datos)
 
 app.post(BASE_API_PATH+"/attacks-stats", (req,res)=>{
