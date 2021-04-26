@@ -125,16 +125,65 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 //(GET para cargar el array completo)
 
 app.get(BASE_API_PATH + "/attacks-stats", (req,res) => {
-	var mapita = db.getAllData();
+	
+	let query = {};
+        let offset = 0;
+        let limit = Number.MAX_SAFE_INTEGER;
+
+        // Pagination
+        if (req.query.limit) {
+            limit = parseInt(req.query.limit);
+            delete req.query.limit;
+        }
+
+        if (req.query.offset) {
+            offset = parseInt(req.query.offset);
+            delete req.query.offset;
+        }
+
+        // Search
+        if (req.query.state) query["state"] = req.query.state;
+        if (req.query.year) query["year"] = req.query.year;
+        if (req.query.sex_male) query["sex_male"] = req.query.sex_male;
+        if (req.query.sex_female) query["sex_female"] =req.query.sex_female;
+        if (req.query.sex_unknown) query["sex_unknown"] = req.query.query.sex_unknown;
+		if (req.query.age_range_20_29) query["age_range_20_29"] = req.query.query.age_range_20_29;
+		if (req.query.age_range_30_39) query["age_range_30_39"] = req.query.query.age_range_30_39;
+		if (req.query.age_range_other) query["age_range_other"] = req.query.query.age_range_other;
+		if (req.query.type_of_attack_personal_weapons) query["type_of_attack_personal_weapons"] = req.query.query.type_of_attack_personal_weapons;
+		if (req.query.type_of_attack_gun) query["type_of_attack_gun"] = req.query.query.type_of_attack_gun;
+		if (req.query.type_of_attack_knife) query["type_of_attack_knife"] = req.query.query.type_of_attack_knife;
+	
+	 db.find(query).sort({ state: 1, year: -1 }).skip(offset).limit(limit).exec(function (err, resources) {
+            if (err) {
+                console.error(DATABASE_ERR_MSSG + err);
+                res.sendStatus(500);
+            } else {
+                if (resources.length != 0) {
+                   
+					var aux = resources.map((c)=>{
+						return {state : c.state, year: c.year, sex_male:c.sex_male, sex_female: c.sex_female, sex_unknown:c.sex_unknown , 		age_range_20_29:c.age_range_20_29, age_range_30_39:c.age_range_30_39, age_range_other: c.age_range_other, type_of_attack_personal_weapons:c.type_of_attack_personal_weapons, type_of_attack_gun: c.type_of_attack_gun, type_of_attack_knife:c.type_of_attack_knife   }
+					});
+					
+
+                    // res.status(200).send(JSON.stringify(resourcesToSend, null, 2));
+                    res.status(200).send(aux);
+                } else {
+					var array = [];
+                    res.status(200).send(array);
+                }
+
+            }
+
+        });
+    });
+
+
+
 		
-	var aux = mapita.map((c)=>{
-				return {state : c.state, year: c.year, sex_male:c.sex_male, sex_female: c.sex_female, sex_unknown:c.sex_unknown , 		age_range_20_29:c.age_range_20_29, age_range_30_39:c.age_range_30_39, age_range_other: c.age_range_other, type_of_attack_personal_weapons:c.type_of_attack_personal_weapons, type_of_attack_gun: c.type_of_attack_gun, type_of_attack_knife:c.type_of_attack_knife   }
-			});
-			res.status(200).send(aux);
+	
 	
 	res.send(200, aux);
-})
-
 
 
 //2)POST  a la lista de recursos (para introducir nuevos arrays de datos)

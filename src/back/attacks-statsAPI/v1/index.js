@@ -25,7 +25,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_20_29":"44",
 			"age_range_30_39":"14",
 			"age_range_other":"85",
-			"type_of_attack_personal_weapons": "38",
+			"type_of_attack_personal_weapons":"38",
 			"type_of_attack_gun":"20",
 			"type_of_attack_knife":"8"
 		},
@@ -143,9 +143,15 @@ app.get(BASE_API_PATH + "/attacks-stats", (req,res) => {
         // Search
         if (req.query.state) query["state"] = req.query.state;
         if (req.query.year) query["year"] = req.query.year;
-        if (req.query.month) query["month"] = req.query.month;
-        if (req.query.arms_sold) query["arms_sold"] =req.query.arms_sold;
-        if (req.query.percent_of_people) query["percent_of_people"] = req.query.query.percent_of_people;
+        if (req.query.sex_male) query["sex_male"] = req.query.sex_male;
+        if (req.query.sex_female) query["sex_female"] =req.query.sex_female;
+        if (req.query.sex_unknown) query["sex_unknown"] = req.query.query.sex_unknown;
+		if (req.query.age_range_20_29) query["age_range_20_29"] = req.query.query.age_range_20_29;
+		if (req.query.age_range_30_39) query["age_range_30_39"] = req.query.query.age_range_30_39;
+		if (req.query.age_range_other) query["age_range_other"] = req.query.query.age_range_other;
+		if (req.query.type_of_attack_personal_weapons) query["type_of_attack_personal_weapons"] = req.query.query.type_of_attack_personal_weapons;
+		if (req.query.type_of_attack_gun) query["type_of_attack_gun"] = req.query.query.type_of_attack_gun;
+		if (req.query.type_of_attack_knife) query["type_of_attack_knife"] = req.query.query.type_of_attack_knife;
 	
 	 db.find(query).sort({ state: 1, year: -1 }).skip(offset).limit(limit).exec(function (err, resources) {
             if (err) {
