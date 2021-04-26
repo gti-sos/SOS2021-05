@@ -3,7 +3,7 @@
         onMount
     } from "svelte";
 
-    import Table from "./sveltestrap/src/Table.svelte";
+    import Table from "sveltestrap/src/Table.svelte";
 	
     let data = [];
     async function getGames(){
