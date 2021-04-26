@@ -13,9 +13,14 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Status code is 200\", function () {\r",
+							"pm.test(\"codigo de estado correcto\", function(){\r",
 							"    pm.response.to.have.status(200);\r",
-							"});"
+							"})\r",
+							"\r",
+							"pm.test(\"numero de archivos devueltos\"  , function(){\r",
+							"     \r",
+							"    pm.expect(pm.response.json().length).to.eql(0);\r",
+							"})"
 						],
 						"type": "text/javascript"
 					}
@@ -49,7 +54,7 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Status code is 200\", function () {\r",
+							"pm.test(\"Codigo de estado correcto!\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
 							"\r",
@@ -88,10 +93,15 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Status code is 200\", function () {\r",
+							"pm.test(\"codigo de estado correcto\", function(){\r",
 							"    pm.response.to.have.status(200);\r",
-							"});\r",
-							""
+							"})\r",
+							"\r",
+							"\r",
+							"pm.test(\"numero de archivos creados\"  , function(){\r",
+							"     \r",
+							"    pm.expect(pm.response.json().length).to.eql(8);\r",
+							"})"
 						],
 						"type": "text/javascript"
 					}
@@ -157,6 +167,66 @@
 			"response": []
 		},
 		{
+			"name": "Filtering with pagination",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"codigo de estado correcto\", function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							"\r",
+							"\r",
+							"pm.test(\"numero de archivos creados\"  , function(){\r",
+							"     \r",
+							"    pm.expect(pm.response.json().length).to.eql(1);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://sos2021-05.herokuapp.com/api/v1/homicides-by-firearms?limit=0&offset=0&state=Alabama&year=2019",
+					"protocol": "http",
+					"host": [
+						"sos2021-05",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"homicides-by-firearms"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "0"
+						},
+						{
+							"key": "offset",
+							"value": "0"
+						},
+						{
+							"key": "state",
+							"value": "Alabama"
+						},
+						{
+							"key": "year",
+							"value": "2019"
+						}
+					]
+				},
+				"description": "Petición a los recursos haciendo uso de paginacion. En concreto, accedemos al recurso con \"Alabama\" como state y \"2019\" como year."
+			},
+			"response": []
+		},
+		{
 			"name": "Filtering to a non existing resource",
 			"event": [
 				{
@@ -201,9 +271,10 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Successful POST request\", function () {\r",
-							"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
-							"});"
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							" "
 						],
 						"type": "text/javascript"
 					}

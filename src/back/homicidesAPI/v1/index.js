@@ -122,7 +122,7 @@ var db = new Datastore({ filename: "./src/back/homicidesAPI/v1/homicides.db", au
             // Search
             if (req.query.state) query["state"] = req.query.state;
             if (req.query.year) query["year"] = req.query.year;
-            if (req.query.homicide_by_firearm) query["homicide_by_firearms"] = req.query.homicide_by_firearm;
+            if (req.query.homicide_by_firearm) query["homicide_by_firearm"] = req.query.homicide_by_firearm;
             if (req.query.handgun) query["handgun"] =req.query.handgun;
             if (req.query.rifle) query["rifle"] = req.query.rifle;
             if (req.query.shotgun) query["shotgun"] = req.query.shotgun;
@@ -154,8 +154,8 @@ var db = new Datastore({ filename: "./src/back/homicidesAPI/v1/homicides.db", au
 
                 }
 
-            });
         });
+    });
 
 
 
