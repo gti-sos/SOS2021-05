@@ -26,7 +26,7 @@
 <main>
     <Table bordered>
         <thead>
-            <tr>
+            <tr><b>
                 <td>State</td>
                 <td>Year</td>
                 <td>Sex male</td>
@@ -39,7 +39,7 @@
 				<td>Type of attack gun</td>
 				<td>Type of attack knife</td>
 
-            </tr>
+            </b></tr>
         </thead>
         <tbody>
             {#each data as data}
