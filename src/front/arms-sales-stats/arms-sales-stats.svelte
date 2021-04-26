@@ -1,74 +1,65 @@
-<script>
-    import {
-        onMount
-    } from "svelte";
-    import UncontrolledAlert from "sveltestrap/src/UncontrolledAlert.svelte";
-    let open = false;
+<script lang="ts">
+   
+import {Button, Table, Toast, ToastBody, ToastHeader } from 'sveltestrap';
+    const BASE_API_URL = "/api/v2/arms-sales-stats"; //tiene que llamar a la API para tratar los datos
+	
+    let cargados = false;
     let data = [];
-    let error = null;
-    // Carga
-    let open1 = false;
-    const toggle1 = () => (open1 = !open1);
-    const toggle1P = () => {
-    open1 = !open1;
-    getStats();
-    };
-    // Borrado
-    let open2 = false;
-    const toggle2 = () => (open2 = !open2);
-    const toggle2P = () => {
-    open2 = !open2;
-    deleteStats();
-    };
-    // getStats() comprueba si recibe los objetos JSON, si no los carga con /loadInitialData y luego los pide
-    async function getData() {
-        const res = await fetch("/api/v2/arms-sales-stats");
-        const json = await res.json();
-        data = json;
-        console.log(`We have received ${data.length} elements`);
-    }
-    async function getStats() {
-        const res = await fetch("/api/v2/arms-sales-stats");
-        if(res.length==0) {
-            getData()
-            error = 0
-        } else {
-            error = 409
-            const aux = await fetch("/api/v2/arms-sales-stats/loadInitialData")
-            if (aux.ok) {
-                getData()
-            } else {
-                error = 409
-                getData
+    async function loadStats(){
+        console.log("Loading data...");
+        const carga =  await fetch(BASE_API_URL + "/loadInitialData");
+        cargados = true;
+        if (carga.ok){
+            console.log("Ok.");
+            const res = await fetch(BASE_API_URL);
+            if(res.ok){
+                console.log("Ok. Obtaining data...")
+                const json = await res.json();
+                data = json;
+                console.log('Received ${data.length} life stats.');
+            }else{
+                console.log("Error, there is no data.")
             }
+        }else{
+            console.log("Error loading data.");
         }
     }
-    // Borrado de datos
+   
     async function deleteStats() {
-        const res = await fetch("/api/v2/arms-sales-stats", {
-        method: "DELETE",
-        }).then(function (res) {
-        if (res.ok) {
-            console.log("OK");
-            data = [];
-            error = 0;
-        } else if (res.status = 404) {
-            error = 404;
-            console.log("ERROR Data not found in database");
-        } else {
-            error = 1000;
-            console.log("ERROR");
-        }
-    });
-  }
-    //document.getElementById ("delmhdata").addEventListener ("click", deleteStats);
+		console.log("Deleting life stats...");
+        cargados=false;
+		const res = await fetch(BASE_API_URL, {
+			method: "DELETE"
+		}).then(function (res) {
+			if (res.ok){
+				console.log("Ok.");
+                data = [];
+			} else if (res.status==404){ //no data found
+                console.log("No data found");
+			} else  { 
+				console.log("Error deleting DB stats");
+			}
+			
+		});
+	}
 </script>
-
+  
 
 <main>
-<button id="loadmhdata" type="button" class="btn btn-info" on:click={toggle1P}>Cargar datos</button>
-    <button id="delmhdata" type="button" class="btn btn-danger" on:click={toggle2P}>Borrar datos</button>
-    <table >
+    <div>
+        {#if cargados}  
+        <Button style="background-color: crimson;" disabled> Cargar datos</Button>
+        {:else}
+        <Button style="background-color: crimson;" on:click={loadStats}> Cargar datos</Button>
+        {/if}
+        <Button style="background-color: darkgray" on:click={deleteStats}> Eliminar datos</Button>
+        
+    </div>
+    
+  
+    {#if data.length != 0}
+        <br/>
+        <table >
         <thead>
             <tr>
                 <td>State</td>
@@ -94,45 +85,26 @@
             {/each}
         </tbody>
     </table >
+        <a href="/">Volver</a>
+    {:else}
+    <br/>
+    <p style="text-align: center; background-color: antiquewhite;"> Para ver los datos pulse el botón.</p>
+    <a href="/">Volver</a>
+    {/if}
 
- <!-- Alerts -->
- <div>
- {#if error === 0}
- <UncontrolledAlert  color="success" >
-     Operación realizada correctamente.
-   
- </UncontrolledAlert>
-{/if}
-
-{#if error === 409}
- <UncontrolledAlert  color="warning" >
-     Los datos ya se encuentran cargados.
-   
- </UncontrolledAlert>
-{:else if error === 404}
- <UncontrolledAlert  color="danger">
-     No se encuentra en la base de datos.
-   
- </UncontrolledAlert>
-{:else if error ===1000}
- <UncontrolledAlert  color="danger" >
-  Error desconocido.
- </UncontrolledAlert>
-{/if}
-</div>
 </main>
 
 
-
-
-
-
 <style>
-
-table, tr, td {
-  border: 1px solid black;
-
-
-}
-
+    a {
+        font-size: 18px;
+        background-color:rgb(103, 131, 72);
+        color: white;
+        border-radius: 6px;
+        border: 1px solid grey;
+        padding:4px;
+    }
+    a:hover {
+        color:white;
+    }
 </style>
