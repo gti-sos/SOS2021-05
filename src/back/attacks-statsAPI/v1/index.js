@@ -124,15 +124,60 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 //(GET para cargar el array completo)
 
 app.get(BASE_API_PATH + "/attacks-stats", (req,res) => {
-	var mapita = db.getAllData();
+	
+	let query = {};
+        let offset = 0;
+        let limit = Number.MAX_SAFE_INTEGER;
+
+        // Pagination
+        if (req.query.limit) {
+            limit = parseInt(req.query.limit);
+            delete req.query.limit;
+        }
+
+        if (req.query.offset) {
+            offset = parseInt(req.query.offset);
+            delete req.query.offset;
+        }
+
+        // Search
+        if (req.query.state) query["state"] = req.query.state;
+        if (req.query.year) query["year"] = req.query.year;
+        if (req.query.month) query["month"] = req.query.month;
+        if (req.query.arms_sold) query["arms_sold"] =req.query.arms_sold;
+        if (req.query.percent_of_people) query["percent_of_people"] = req.query.query.percent_of_people;
+	
+	 db.find(query).sort({ state: 1, year: -1 }).skip(offset).limit(limit).exec(function (err, resources) {
+            if (err) {
+                console.error(DATABASE_ERR_MSSG + err);
+                res.sendStatus(500);
+            } else {
+                if (resources.length != 0) {
+                   
+					var aux = resources.map((c)=>{
+						return {state : c.state, year: c.year, sex_male:c.sex_male, sex_female: c.sex_female, sex_unknown:c.sex_unknown , 		age_range_20_29:c.age_range_20_29, age_range_30_39:c.age_range_30_39, age_range_other: c.age_range_other, type_of_attack_personal_weapons:c.type_of_attack_personal_weapons, type_of_attack_gun: c.type_of_attack_gun, type_of_attack_knife:c.type_of_attack_knife   }
+					});
+					
+
+                    // res.status(200).send(JSON.stringify(resourcesToSend, null, 2));
+                    res.status(200).send(aux);
+                } else {
+					var array = [];
+                    res.status(200).send(array);
+                }
+
+            }
+
+        });
+    });
+
+
+
 		
-	var aux = mapita.map((c)=>{
-				return {state : c.state, year: c.year, sex_male:c.sex_male, sex_female: c.sex_female, sex_unknown:c.sex_unknown , 		age_range_20_29:c.age_range_20_29, age_range_30_39:c.age_range_30_39, age_range_other: c.age_range_other, type_of_attack_personal_weapons:c.type_of_attack_personal_weapons, type_of_attack_gun: c.type_of_attack_gun, type_of_attack_knife:c.type_of_attack_knife   }
-			});
-			res.status(200).send(aux);
+	
 	
 	res.send(200, aux);
-})
+
 
 
 

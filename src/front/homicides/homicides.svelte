@@ -60,6 +60,7 @@
 
     table, tr, td {
       border: 1px solid black;
+  
     }
     
     </style>
