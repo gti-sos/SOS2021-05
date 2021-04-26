@@ -3,7 +3,8 @@
         onMount
     } from "svelte";
 
-    
+    import Table from "./sveltestrap/src/Table.svelte";
+	
     let data = [];
     async function getGames(){
         
@@ -23,7 +24,7 @@
 </script>
 
 <main>
-    <table >
+    <Table bordered>
         <thead>
             <tr>
                 <td>State</td>
@@ -58,7 +59,7 @@
                 </tr>
             {/each}
         </tbody>
-    </table >
+    </Table>
 
     
 
