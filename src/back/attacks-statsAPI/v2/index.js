@@ -109,6 +109,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 		},
 	];
 
+	
 	db.insert(attacks_stats_initial_data);
 
 	//Lanzamos el código 200 indicando que se han cargado los datos iniciales de forma satisfactoria
