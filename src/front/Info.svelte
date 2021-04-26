@@ -49,9 +49,15 @@ import {
             </li>
             <li>
                 <b>APIs Postman´s Documentation:</b>
-                    <b></b> <a href="https://documenter.getpostman.com/view/14948327/TzJsfdKb">Homicides by firearms</a>
-                    <b></b> <a href="https://documenter.getpostman.com/view/14942846/TzJrCewR">Arms sales stats</a>
-                    <b></b> <a href="https://documenter.getpostman.com/view/14948357/TzJsfdFD">Attacks stats</a>
+                    <b></b> <a href="https://documenter.getpostman.com/view/14948327/TzJsfdKb">Homicides by firearms v1</a>
+                    <b></b> <a href="https://documenter.getpostman.com/view/14948327/TzJydbLX">Homicides by firearms v2</a>
+
+                    <b></b> <a href="https://documenter.getpostman.com/view/14942846/TzJrCewR">Arms sales stats v1</a>
+                    <b></b> <a href="https://documenter.getpostman.com/view/14942846/TzJydbG4">Arms sales stats v2</a>
+
+                    <b></b> <a href="https://documenter.getpostman.com/view/14948357/TzJsfdFD">Attacks stats v1</a>
+                    <b></b> <a href="https://documenter.getpostman.com/view/14948357/TzJydbLY">Attacks stats v2</a>
+
             </li>
             <li>
                 <b>Font End APIs</b>
