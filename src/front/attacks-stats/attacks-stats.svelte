@@ -26,20 +26,20 @@
 <main>
     <Table bordered>
         <thead>
-            <tr><b>
-                <td>State</td>
-                <td>Year</td>
-                <td>Sex male</td>
-                <td>Sex female</td>
-                <td>Sex unknown</td>
-				<td>Age range 20-29</td>
-				<td>Age range 30-39</td>
-				<td>Age range other</td>
-				<td>Type of attack personal weapons</td>
-				<td>Type of attack gun</td>
-				<td>Type of attack knife</td>
+            <tr>
+                <td><b>State</b></td>
+                <td><b>Year</b></td>
+                <td><b>Sex male</b></td>
+                <td><b>Sex female</b></td>
+                <td><b>Sex unknown</b></td>
+				<td><b>Age range 20-29</b></td>
+				<td><b>Age range 30-39</b></td>
+				<td><b>Age range other</b></td>
+				<td><b>Type of attack personal weapons</b></td>
+				<td><b>Type of attack gun</b></td>
+				<td><b>Type of attack knife</b></td>
 
-            </b></tr>
+            </tr>
         </thead>
         <tbody>
             {#each data as data}
