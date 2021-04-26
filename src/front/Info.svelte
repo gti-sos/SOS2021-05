@@ -1,105 +1,172 @@
 <script>
+    import {
+      Button,
+      Icon,
+      Card,
+      CardBody,
+      CardFooter,
+      CardHeader,
+      CardSubtitle,
+      CardText,
+      CardTitle,
+      Col,
+      Container,
+      Row,
+    } from "sveltestrap";
+  </script>
+  
+  <main>
+    <h1>SOS2021-05 </h1>
+  
+    <h2>Team</h2>
+    <Container>
+      <Col>
+        <a href = " http://github.com/ivanmartinsk " > Iván Martín Jiménez </a>
+      </Col>
+      <Col>
+        <a href = " http://github.com/manu261998 " > Manuel Sanchez López </a>
+      </Col>
+      <Col>
+        <a href = " http://github.com/josanmegias " > José Antonio Megías Macías </a>
+      </Col>
+    </Container>
+  
+    <h2>Project description</h2>
+    <p>
+      Research on attacks, homicides caused by guns and firearms sold in recent years in the US.
+    </p>
+  
+    <Container>
+      <Col>
+        <a href="http://github.com/gti-sos/SOS2021-05"
+          ><b>Repository: </b>http://github.com/gti-sos/SOS2021-05</a
+        >
+      </Col>
+      <Col>
+        <a href="http://sos2021-05.herokuapp.com"
+          ><b>URL: </b>http://sos2021-05.herokuapp.com</a
+        >
+      </Col>
+    </Container>
+  
+    <h2>APIs</h2>
+    <Container>
+      <Col xs="auto">
+        <Card class="mb-3">
+          <CardHeader>
+            <CardTitle><h5>Homicides by firearms</h5></CardTitle>
+          </CardHeader>
+          <CardBody>
+            <CardSubtitle />
+            <CardText
+              >Homicides by firearms in the recent years in USA</CardText
+            >
+            <a href="http://sos2021-05.herokuapp.com/api/v1/homicides-by-firearms">
+              <Button color="primary">Backend</Button></a
+            >
+            <a href="/#/homicides">
+              <Button color="primary">Frontend</Button>
+            </a>
+            <a href="https://documenter.getpostman.com/view/14948327/TzJsfdKb"
+              ><Button color="info">Postman Documentation v1</Button></a
+            >
 
-import {
-    Button,
-    CardBody,
-    CardFooter,
-    CardHeader,
-    CardSubtitle,
-    CardText,
-    CardTitle,
-} from "sveltestrap";
-    
-</script>
-    
-    
-<main>
-       
-        <h2>  SOS2021-05 </h2>
-        <ul>
-            <li>
-                <b> Team </b>
-                <ul>
-                    
-                    <li><a href = " http://github.com/ivanmartinsk " > Iván Martín Jiménez </a></li>
-                    <li><a href = " http://github.com/manu261998 " > Manuel Sanchez López </a></li>
-                    <li><a href = " http://github.com/josanmegias " > José Antonio Megías Macías </a></li>
-                </ul>
-            </li>
-    
-            <li>
-                <b>Project description:</b>: Research on attacks, homicides caused by guns and firearms sold in recent years in the US.
-            </li>
-    
-            <li>
-                <b>Repository:</b> <a href="http://github.com/gti-sos/SOS2021-05">SOS2021-05</a>
-             
-                
-            </li>
-    
-            <li>
-                        <b>URL</b>: <a href="http://sos2021-05.herokuapp.com">Heroku sos2021-05</a>
-                </li>
-    
-            <li>
-                <b>Back End APIs:</b>
-                    <b></b> <a href="http://sos2021-05.herokuapp.com/api/v1/homicides-by-firearms">Homicides by firearms</a>
-                    <b></b> <a href="http://sos2021-05.herokuapp.com/api/v1/arms-sales-stats">Arms sales stats</a>
-                    <b></b> <a href="http://sos2021-05.herokuapp.com/api/v1/attacks-stats">Attacks stats</a>
-            </li>
-            <li>
-                <b>APIs Postman´s Documentation:</b>
-                    <b></b> <a href="https://documenter.getpostman.com/view/14948327/TzJsfdKb">Homicides by firearms v1</a>
-                    <b></b> <a href="https://documenter.getpostman.com/view/14948327/TzJydbLX">Homicides by firearms v2</a>
+            <a href="https://documenter.getpostman.com/view/14948327/TzJydbLX "
+            ><Button color="info">Postman Documentation v2</Button></a
+          >
 
-                    <b></b> <a href="https://documenter.getpostman.com/view/14942846/TzJrCewR">Arms sales stats v1</a>
-                    <b></b> <a href="https://documenter.getpostman.com/view/14942846/TzJydbG4">Arms sales stats v2</a>
+          </CardBody>
+          <CardFooter
+            >developed by
+            <a href="http://github.com/ivanmartinsk">Iván Martín Jiménez</a
+            ></CardFooter
+          >
+        </Card>
+      </Col>
+      <Col xs="auto">
+        <Card class="mb-3">
+          <CardHeader>
+            <CardTitle><h5>Arms sales stats</h5></CardTitle>
+          </CardHeader>
+          <CardBody>
+            <CardSubtitle />
+            <CardText
+              >Arms sales stats in the recent years in USA</CardText
+            >
+            <a href=" http://sos2021-05.herokuapp.com/api/v1/arms-sales-stats">
+              <Button color="primary">Backend</Button>
+            </a>
+            <a href="/#/sales">
+              <Button color="primary">Frontend</Button>
+            </a>
+            <a href=" https://documenter.getpostman.com/view/14942846/TzJrCewR">
+              <Button color="info">Postman Documentation v1</Button>
+            </a>
 
-                    <b></b> <a href="https://documenter.getpostman.com/view/14948357/TzJsfdFD">Attacks stats v1</a>
-                    <b></b> <a href="https://documenter.getpostman.com/view/14948357/TzJydbLY">Attacks stats v2</a>
+            <a href="https://documenter.getpostman.com/view/14942846/TzJydbG4"
+            ><Button color="info">Postman Documentation v2</Button></a
+          >
 
-            </li>
-            <li>
-                <b>Font End APIs</b>
-                    <b></b> <a href="https://sos2021-05.herokuapp.com/#/homicides">Homicides by firearms</a>
-                    <b></b> <a href="https://sos2021-05.herokuapp.com/#/sales">Arms sales stats</a>
-                    <b></b> <a href="https://sos2021-05.herokuapp.com/#/attacks">Attacks stats</a>
-            </li>
-    
-        </ul>
-    
-        
-    
-    <style type="text/css">
-      table, th, td {
-      border: 1px solid black;
-      text-align:center;
-      margin: auto;
+          </CardBody>
+          <CardFooter
+            >developed by
+            <a href="http://github.com/manu261998 ">Manuel Sanchez López</a>
+          </CardFooter>
+        </Card>
+      </Col>
+      <Col xs="auto">
+        <Card class="mb-3">
+          <CardHeader>
+            <CardTitle><h5>Attacks stats</h5></CardTitle>
+          </CardHeader>
+          <CardBody>
+            <CardSubtitle />
+            <CardText>
+             Attacks stats in the recent years in USA.
+            </CardText>
+            <a href="http://sos2021-05.herokuapp.com/api/v1/attacks-stats"
+              ><Button color="primary">Backend</Button></a
+            >
+            <a href="/#/attacks"
+              ><Button color="primary">Frontend</Button></a
+            >
+            <a href=" https://documenter.getpostman.com/view/14948357/TzJsfdFD"
+              ><Button color="info">Postman Documentation v1</Button></a
+            >
+            <a href=" https://documenter.getpostman.com/view/14948357/TzJydbLY"
+              ><Button color="info">Postman Documentation v2</Button></a
+            >
+
+          </CardBody>
+          <CardFooter
+            >developed by
+            <a href="http://github.com/josanmegia"> José Antonio Megías Macías </a
+            ></CardFooter
+          >
+        </Card>
+      </Col>
+    </Container>
+  </main>
+  
+  <style>
+    main {
+      text-align: center;
+      padding: 1em;
+      max-width: 240px;
+      margin: 0 auto;
     }
-    
-      </style>
-</main>
-    
-<style>
-        main {
-            
-            padding: 1em;
-            max-width: 240px;
-            margin: 0 auto;
-        }
-    
-        h2 {
-            color: #ff3e00;
-            text-transform: uppercase;
-            font-size: 2em;
-            font-weight: 100;
-        }
-    
-        
-    
-        @media (min-width: 640px) {
-            main {
-                max-width: none;
-            }
-        }
-</style>
+    h1 {
+      color: #680606;
+      text-transform: uppercase;
+      font-size: 4em;
+      font-weight: 100;
+    }
+    b {
+      color: #058d76;
+    }
+    @media (min-width: 640px) {
+      main {
+        max-width: none;
+      }
+    }
+  </style>
