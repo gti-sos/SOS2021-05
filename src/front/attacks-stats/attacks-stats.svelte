@@ -31,13 +31,13 @@
                 <td>Sex male</td>
                 <td>Sex female</td>
                 <td>Sex unknown</td>
-	<td>Age range 20-29</td>
-	<td>Age range 30-39</td>
-	<td>Age range other</td>
-	<td>Type of attack personal weapons</td>
-	<td>Type of attack gun</td>
-	<td>Type of attack knife</td>
-                
+				<td>Age range 20-29</td>
+				<td>Age range 30-39</td>
+				<td>Age range other</td>
+				<td>Type of attack personal weapons</td>
+				<td>Type of attack gun</td>
+				<td>Type of attack knife</td>
+
             </tr>
         </thead>
         <tbody>
