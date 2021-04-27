@@ -117,12 +117,12 @@
       <Col xs="auto">
         <Card class="mb-3">
           <CardHeader>
-            <CardTitle><h5>Attacks stats</h5></CardTitle>
+            <CardTitle><h5>Ataques por estados</h5></CardTitle>
           </CardHeader>
           <CardBody>
             <CardSubtitle />
             <CardText>
-             Attacks stats in the recent years in USA.
+             Ataques por estados de los años recienes en EEUU.
             </CardText>
             <a href="http://sos2021-05.herokuapp.com/api/v1/attacks-stats"
               ><Button color="primary">Backend</Button></a
