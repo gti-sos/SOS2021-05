@@ -140,7 +140,7 @@
           </CardBody>
           <CardFooter
             >developed by
-            <a href="http://github.com/josanmegia"> José Antonio Megías Macías </a
+            <a href="http://github.com/josanmegias"> José Antonio Megías Macías </a
             ></CardFooter
           >
         </Card>
