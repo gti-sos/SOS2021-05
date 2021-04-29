@@ -60,17 +60,10 @@
 }
 
 
-
-
-
-
-
-
-
 #hero {
   
- 
-  height: 93vh;
+  
+  height: 94vh;
   min-height: 375px;
   position: center;
 }
