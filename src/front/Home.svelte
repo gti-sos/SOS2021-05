@@ -70,7 +70,7 @@
 #hero {
   
  
-  height: 95vh;
+  height: 93vh;
   min-height: 375px;
   position: center;
 }
