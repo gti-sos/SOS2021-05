@@ -6,6 +6,7 @@ import {Button, Table, Toast, ToastBody, ToastHeader } from 'sveltestrap';
     let cargados = false;
     let data = [];
     async function loadStats(){
+        deleteStats();
         console.log("Loading data...");
         const carga =  await fetch(BASE_API_URL + "/loadInitialData");
         cargados = true;
