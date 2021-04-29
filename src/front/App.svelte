@@ -3,13 +3,15 @@
 	import Sales from "./arms-sales-stats/arms-sales-stats.svelte";
 	import Homicides from "./homicides/homicides.svelte";
 	import Attacks from "./attacks-stats/attacks-stats.svelte";
+	import Home from "./Home.svelte";
 	
 	import Info from "./Info.svelte";
 	const routes = {
-		"/": Info,
+		"/info": Info,
 		"/homicides": Homicides,
 		"/sales": Sales,		
-		"/attacks": Attacks
+		"/attacks": Attacks,
+		"/": Home
 	};
 </script>
 
