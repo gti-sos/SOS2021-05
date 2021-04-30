@@ -1,11 +1,95 @@
 <script lang="ts">
    
-import {Button, Table, Toast, ToastBody, ToastHeader } from 'sveltestrap';
+   import {
+        Nav,
+        Modal,
+        ModalBody,
+        ModalFooter,
+        ModalHeader,
+        NavItem,
+        NavLink,
+        Button,
+        Table,
+        UncontrolledAlert,
+        Card,
+        CardBody,
+        CardFooter,
+        CardHeader,
+        CardSubtitle,
+        CardText,
+        CardTitle,
+    } from "sveltestrap";
+
+    
     const BASE_API_URL = "/api/v2/attacks-stats"; //tiene que llamar a la API para tratar los datos
 	
     let cargados = false;
     let data = [];
-    async function loadStats(){
+
+    let isOpen = false;
+
+    getData();
+
+    let newData = {
+            state:"",
+            year:"",
+            sex_male: "",
+            sex_female:"",
+			sex_unknown:"",
+			age_range_20_29:"",
+			age_range_30_39:"",
+			age_range_other:"",
+			type_of_attack_personal_weapons:"",
+			type_of_attack_gun:"",
+            type_of_attack_knife:""
+
+	
+        }
+
+     //funcion asincrona para cargar (get) los recursos existentes
+     async function getData() {
+            console.log("Fetching homicides resourcers...");
+            const res = await fetch(BASE_API_URL);
+            if(res.ok){
+                const json = await res.json();
+                data = json;
+                console.log(`Received ${data.length} resources`);
+
+            }else{
+                console.log("ERROR!");
+            }
+
+        }
+
+        async function insertData() { //insertar un recurso en concreto
+            console.log("Inserting new resource " + JSON.stringify(newData));
+            const res = await fetch(BASE_API_URL, {
+                method: "POST",
+                body: JSON.stringify(newData),
+                headers: {
+                    "Content-Type": "application/json",
+                }
+            }
+            ).then( (res) => {
+                getData();
+            })
+            
+        }
+
+
+
+        async function deleteData( a, b, c) { //elimina un recurso en concreto
+            
+            console.log("Deleting resource " + JSON.stringify(data));
+            const res = await fetch(BASE_API_URL+"/"+a+"/"+b+"/"+c, {
+                method: "DELETE",
+              
+            })
+            getData();
+        }
+
+        async function loadStats(){
+        deleteStats();
         console.log("Loading data...");
         const carga =  await fetch(BASE_API_URL + "/loadInitialData");
         cargados = true;
@@ -42,9 +126,24 @@ import {Button, Table, Toast, ToastBody, ToastHeader } from 'sveltestrap';
 			
 		});
 	}
+
+     //Insert
+    let open1 = false;
+    const toggle1 = () => (open1 = !open1);
+    const toggle1P = () => {
+        open1 = !open1;
+        insertData()
+       getData();
+    };
+
+    
+
+    
+
 </script>
   
 
+<!-- svelte-ignore missing-declaration -->
 <main>
     <div>
         {#if cargados}  
@@ -53,29 +152,86 @@ import {Button, Table, Toast, ToastBody, ToastHeader } from 'sveltestrap';
         <Button style="background-color: crimson;" on:click={loadStats}> Cargar datos</Button>
         {/if}
         <Button style="background-color: darkgray" on:click={deleteStats}> Eliminar datos</Button>
-        
+        <Button style="background-color: darkgray" on:click={toggle1}> Insertar</Button>
+
+       
+            
+            <Modal  isOpen={open1} toggle={toggle1} transitionOptions>
+                <ModalHeader {toggle1}>¿Insertar un nuevo dato?</ModalHeader>
+                <ModalBody >
+                    Por favor, rellene el formulario.
+                    <tr>
+                        <Table bordered>
+                            <thead>
+                                <tr>
+                			<td><b>Estado</b></td>
+                			<td><b>Año</b></td>
+                			<td><b>Sexo masculino</b></td>
+                			<td><b>Sexo femenino</b></td>
+                			<td><b>Sexo desconocido</b></td>
+							<td><b>Rango de edad 20-29</b></td>
+							<td><b>Rango de edad 30-39</b></td>
+							<td><b>Otro rango de edad</b></td>
+							<td><b>Tipo de ataque Armas personales</b></td>
+							<td><b>Tipo de ataque Pistola</b></td>
+							<td><b>Tipo de ataque Navaja</b></td>
+
+            			</tr>
+                            </thead>
+                            <tbody>
+                                
+                                    <tr>
+                                        <td><input bind:value="{newData.state}"> </td>
+                                        <td><input bind:value="{newData.year}"> </td>
+                                        <td><input bind:value="{newData.sex_male}"> </td>
+                                        <td><input bind:value="{newData.sex_female}"> </td>
+										<td><input bind:value="{newData.sex_unknown}"> </td>
+										<td><input bind:value="{newData.age_range_20_29}"> </td>
+										<td><input bind:value="{newData.age_range_30_39}"> </td>
+										<td><input bind:value="{newData.age_range_other}"> </td>
+										<td><input bind:value="{newData.type_of_attack_personal_weapons}"> </td>
+										<td><input bind:value="{newData.type_of_attack_gun}"> </td>
+                                        <td><input bind:value="{newData.type_of_attack_knife}"> </td>
+                    
+                                    </tr>
+                               
+                            </tbody>
+                        </Table >
+                    </tr>
+                </ModalBody>
+                <ModalFooter>
+                    <Button color="primary" on:click={toggle1P}>Insertar</Button>
+                    <Button color="secondary" on:click={toggle1}
+                        >Cancelar</Button
+                    >
+                </ModalFooter>
+            </Modal>
+      
+
     </div>
     
   
     {#if data.length != 0}
         <br/>
-        <table>
-        <thead>
-            <tr>
-                <td><b>State</b></td>
-                <td><b>Year</b></td>
-                <td><b>Sex male</b></td>
-                <td><b>Sex female</b></td>
-                <td><b>Sex unknown</b></td>
-				<td><b>Age range 20-29</b></td>
-				<td><b>Age range 30-39</b></td>
-				<td><b>Age range other</b></td>
-				<td><b>Type of attack personal weapons</b></td>
-				<td><b>Type of attack gun</b></td>
-				<td><b>Type of attack knife</b></td>
+        <Table bordered>
+            <thead>
+            	<tr>
+                
+                	<td><b>Estado</b></td>
+               		<td><b>Año</b></td>
+              		<td><b>Sexo masculino</b></td>
+              		<td><b>Sexo femenino</b></td>
+                	<td><b>Sexo desconocido</b></td>
+					<td><b>Rango de edad 20-29</b></td>
+					<td><b>Rango de edad 30-39</b></td>
+					<td><b>Otro rango de edad</b></td>
+					<td><b>Tipo de ataque Armas personales</b></td>
+					<td><b>Tipo de ataque Pistola</b></td>
+					<td><b>Tipo de ataque Navaja</b></td>
 
-            </tr>
-        </thead>
+            			
+		</tr>
+            </thead>
         <tbody>
             {#each data as data}
                 <tr>
@@ -85,21 +241,28 @@ import {Button, Table, Toast, ToastBody, ToastHeader } from 'sveltestrap';
                     <td>{data.sex_female}</td>
                     <td>{data.sex_unknown}</td>
                     <td>{data.age_range_20_29}</td>
-		    		<td>{data.age_range_30_39}</td>
-		    		<td>{data.age_range_other}</td>
-		    		<td>{data.type_of_attack_personal_weapons}</td>
-		    		<td>{data.type_of_attack_gun}</td>
-		    		<td>{data.type_of_attack_knife}</td>
+					<td>{data.age_range_30_39}</td>
+					<td>{data.age_range_other}</td>
+					<td>{data.type_of_attack_personal_weapons}</td>
+					<td>{data.type_of_attack_gun}</td>
+					<td>{data.type_of_attack_knife}</td>
+                    
 
+		    <td>
+                        
+                        <Button style="background-color: darkgray" on:click={() =>deleteData(data.state,data.year)}> Eliminar</Button>
+                        <Button style="background-color: darkgray" on:click={deleteStats}> Actualizar</Button>
+                    </td>
+                  
                 </tr>
             {/each}
         </tbody>
-    </table>
-        <a href="/">Volver</a>
+    </Table >
+        <a href="/#/info">Volver</a>
     {:else}
     <br/>
     <p style="text-align: center; background-color: antiquewhite;"> Para ver los datos pulse el botón.</p>
-    <a href="/">Volver</a>
+    <a href="/#/info">Volver</a>
     {/if}
 
 </main>
@@ -117,4 +280,9 @@ import {Button, Table, Toast, ToastBody, ToastHeader } from 'sveltestrap';
     a:hover {
         color:white;
     }
+
+  
+
+
+    
 </style>
