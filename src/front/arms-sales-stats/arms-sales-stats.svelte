@@ -261,7 +261,6 @@
                     <td>{data.arms_sold}</td>
                     <td>{data.percent_of_people}</td>
                     <td>
-                        
                         <Button style="background-color: #F08080" on:click={() =>deleteData(data.state,data.year,data.month)}> Eliminar</Button>
                         <Button style="background-color: #28B463" on:click={deleteStats}> Actualizar</Button>
                     </td>
