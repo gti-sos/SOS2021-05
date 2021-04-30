@@ -19,6 +19,10 @@
         CardText,
         CardTitle,
     } from "sveltestrap";
+    
+    import {
+       pop
+    } from "svelte-spa-router";
 
     
     const BASE_API_URL = "/api/v2/arms-sales-stats"; //tiene que llamar a la API para tratar los datos
@@ -158,12 +162,12 @@
 <main>
     <div>
         {#if cargados}  
-        <Button style="background-color: crimson;" disabled> Cargar datos</Button>
+        <Button style="background-color: #F39C12;" disabled> Cargar datos</Button>
         {:else}
-        <Button style="background-color: crimson;" on:click={loadStats}> Cargar datos</Button>
+        <Button style="background-color: #F39C12;" on:click={loadStats}> Cargar datos</Button>
         {/if}
-        <Button style="background-color: darkgray" on:click={deleteStats}> Eliminar datos</Button>
-        <Button style="background-color: darkgray" on:click={toggle1}> Insertar</Button>
+        <Button style="background-color: #F08080" on:click={deleteStats}> Eliminar datos</Button>
+        <Button style="background-color: #28B463" on:click={toggle1}> Insertar</Button>
 
        
             <div id="modal">
@@ -237,8 +241,8 @@
   
     {#if data.length != 0}
         <br/>
-        <Table bordered>
-        <thead>
+        <Table bordered  style="background-color: #F5EEF8 ; width:75% ; text-align: center; ">
+        <thead style="background-color: #E8DAEF; color:black">
             <tr>
                 <td>Estados</td>
                 <td>Año</td>
@@ -251,15 +255,15 @@
         <tbody>
             {#each data as data}
                 <tr>
-                    <td>{data.state}</td>
+                    <td><a href="/data.state/data.year/data.month">{data.state}</a></td>
                     <td>{data.year}</td>
                     <td>{data.month}</td>
                     <td>{data.arms_sold}</td>
                     <td>{data.percent_of_people}</td>
                     <td>
                         
-                        <Button style="background-color: darkgray" on:click={() =>deleteData(data.state,data.year,data.month)}> Eliminar</Button>
-                        <Button style="background-color: darkgray" on:click={deleteStats}> Actualizar</Button>
+                        <Button style="background-color: #F08080" on:click={() =>deleteData(data.state,data.year,data.month)}> Eliminar</Button>
+                        <Button style="background-color: #28B463" on:click={deleteStats}> Actualizar</Button>
                     </td>
                   
 
@@ -269,25 +273,19 @@
             {/each}
         </tbody>
     </Table >
-        <a href="/#/info">Volver</a>
+        <Button color="dark" on:click={pop}>Volver</Button>
     {:else}
     <br/>
     <p style="text-align: center; background-color: antiquewhite;"> Para ver los datos pulse el botón.</p>
-    <a href="/#/info">Volver</a>
+    
+        <Button color="dark" on:click={pop}>Volver</Button>
     {/if}
 
 </main>
 
 
 <style>
-    a {
-        font-size: 18px;
-        background-color:rgb(103, 131, 72);
-        color: white;
-        border-radius: 6px;
-        border: 1px solid grey;
-        padding:4px;
-    }
+   
     a:hover {
         color:white;
     }
