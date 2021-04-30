@@ -5,7 +5,6 @@
         
         let cargados = false;
         let data = [];
-
         let newData = {
             state:"",
             year:"",
@@ -19,6 +18,7 @@
 
         //funcion asincrona para cargar los datos iniciales (loadInitialData)
         async function loadStats(){
+            deleteStats();
             console.log("Loading data...");
             const carga =  await fetch(BASE_API_URL + "/loadInitialData");
             cargados = true;
@@ -76,7 +76,7 @@
         }
         
         
-        async function insertData() {
+        async function insertData() { //insertar un recurso en concreto
             console.log("Inserting new resource " + JSON.stringify(newData));
             const res = await fetch(BASE_API_URL, {
                 method: "POST",
@@ -84,6 +84,19 @@
                 headers: {
                     "Content-Type": "application/json",
                 }
+            }
+            ).then( (res) => {
+                getData();
+            })
+            
+        }
+
+
+        async function deleteData() { //elimina un recurso en concreto
+            console.log("Deleting resource " + JSON.stringify(data));
+            const res = await fetch(BASE_API_URL, {
+                method: "DELETE",
+                body: JSON.stringify(newData),
             }
             ).then( (res) => {
                 getData();
