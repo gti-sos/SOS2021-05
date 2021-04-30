@@ -35,15 +35,13 @@
             year:"",
             sex_male: "",
             sex_female:"",
-			sex_unknown:"",
-			age_range_20_29:"",
-			age_range_30_39:"",
-			age_range_other:"",
-			type_of_attack_personal_weapons:"",
-			type_of_attack_gun:"",
+	    sex_unknown:"",
+	    age_range_20_29:"",
+	    age_range_30_39:"",
+	    age_range_other:"",
+	    type_of_attack_personal_weapons:"",
+	    type_of_attack_gun:"",
             type_of_attack_knife:""
-
-	
         }
 
      //funcion asincrona para cargar (get) los recursos existentes
@@ -63,6 +61,7 @@
 
         async function insertData() { //insertar un recurso en concreto
             console.log("Inserting new resource " + JSON.stringify(newData));
+            
             const res = await fetch(BASE_API_URL, {
                 method: "POST",
                 body: JSON.stringify(newData),
@@ -132,12 +131,36 @@
     const toggle1 = () => (open1 = !open1);
     const toggle1P = () => {
         open1 = !open1;
+        console.log("Imprimo: "+newData.state.length)
+        if(newData.state.replace(' ', '').length!=0 
+        && newData.year.replace(' ', '').length!=0
+        && newData.sex_male.length!=0 
+	&& newData.sex_female.length!=0
+	&& newData.sex_unknown.length!=0
+	&& newData.age_range_20_29.length!=0
+	&& newData.age_range_30_39.length!=0
+	&& newData.age_range_other.length!=0
+	&& newData.type_of_attack_personal_weapons.length!=0
+	&& newData.type_of_attack_gun.length!=0
+        && newData.type_of_attack_knife.length!=0 ){
+
         insertData()
-       getData();
+        getData();
+        }
+        else{
+
+            console.log("Nada añadido")
+            popinsert=true;
+        }
+
     };
 
+    let popinsert = false;
+    const togglepop = () => (popinsert = !popinsert);
+    const togglepopok = () => {
+        popinsert = !popinsert;
+        open1=true}
     
-
     
 
 </script>
@@ -155,45 +178,70 @@
         <Button style="background-color: darkgray" on:click={toggle1}> Insertar</Button>
 
        
-            
-            <Modal  isOpen={open1} toggle={toggle1} transitionOptions>
-                <ModalHeader {toggle1}>¿Insertar un nuevo dato?</ModalHeader>
+            <div id="modal">
+            <Modal isOpen={open1} toggle={toggle1} transitionOptions>
+                <ModalHeader {toggle1}>¿Quieres insertar un nuevo dato?</ModalHeader>
                 <ModalBody >
-                    Por favor, rellene el formulario.
+                    Por favor, rellene el formulario. Todos los campos tienen que tener un valor. De lo contrario no se añadirá nada.
                     <tr>
-                        <Table bordered>
-                            <thead>
-                                <tr>
-                			<td><b>Estado</b></td>
-                			<td><b>Año</b></td>
-                			<td><b>Sexo masculino</b></td>
-                			<td><b>Sexo femenino</b></td>
-                			<td><b>Sexo desconocido</b></td>
-							<td><b>Rango de edad 20-29</b></td>
-							<td><b>Rango de edad 30-39</b></td>
-							<td><b>Otro rango de edad</b></td>
-							<td><b>Tipo de ataque Armas personales</b></td>
-							<td><b>Tipo de ataque Pistola</b></td>
-							<td><b>Tipo de ataque Navaja</b></td>
-
-            			</tr>
-                            </thead>
+                        <Table >
+                            
                             <tbody>
                                 
+                                   
                                     <tr>
-                                        <td><input bind:value="{newData.state}"> </td>
+                                        <td>Estado</td>
+                                        <td><input bind:value="{newData.state}"></td>
+                                        
+                                        
+                                    </tr><tr>
+                                        <td>Año</td>
                                         <td><input bind:value="{newData.year}"> </td>
+                                   
+                                        
+                                    </tr><tr>
+                                        <td>Sexo masculino</td>
                                         <td><input bind:value="{newData.sex_male}"> </td>
+                                       
+                                    </tr><tr>
+                                        <td>Sexo femenino</td>
                                         <td><input bind:value="{newData.sex_female}"> </td>
-										<td><input bind:value="{newData.sex_unknown}"> </td>
-										<td><input bind:value="{newData.age_range_20_29}"> </td>
-										<td><input bind:value="{newData.age_range_30_39}"> </td>
-										<td><input bind:value="{newData.age_range_other}"> </td>
-										<td><input bind:value="{newData.type_of_attack_personal_weapons}"> </td>
-										<td><input bind:value="{newData.type_of_attack_gun}"> </td>
+                                        
+                                        
+                                    </tr><tr>
+                                        <td>Sexo desconocido</td>
+                                        <td><input bind:value="{newData.sex_unknown}"> </td>
+
+				    </tr><tr>
+                                        <td>Rango de edad 20-29</td>
+                                        <td><input bind:value="{newData.age_range_20_29}"> </td>
+
+				    </tr><tr>
+                                        <td>Rango de edad 30-39</td>
+                                        <td><input bind:value="{newData.age_range_30_39}"> </td>
+
+				    </tr><tr>
+                                        <td>Otro rango de edad</td>
+                                        <td><input bind:value="{newData.age_range_other}"> </td>
+
+				    </tr><tr>
+                                        <td>Tipo de ataque Armas personales</td>
+                                        <td><input bind:value="{newData.type_of_attack_personal_weapons}"> </td>
+                                     
+
+				    </tr><tr>
+                                        <td>Tipo de ataque Pistola</td>
+                                        <td><input bind:value="{newData.type_of_attack_gun}"> </td>
+                                    
+
+				     </tr><tr>
+                                        <td>Tipo de ataque Navaja</td>
                                         <td><input bind:value="{newData.type_of_attack_knife}"> </td>
-                    
+                                        
                                     </tr>
+
+
+
                                
                             </tbody>
                         </Table >
@@ -206,7 +254,21 @@
                     >
                 </ModalFooter>
             </Modal>
-      
+
+
+            <Modal isOpen={popinsert} toggle={togglepop} transitionOptions>
+                <ModalHeader {togglepop}>Se ha producido un error</ModalHeader>
+                <ModalBody >
+                    No se ha podido insertar el dato. El Nombre, Año o Mes no tiene un formato correcto o hay un campo vacio.
+                   
+                </ModalBody>
+                <ModalFooter>
+                    <Button color="primary" on:click={togglepopok}>Probaré de nuevo!</Button>
+                    <Button color="secondary" on:click={togglepop}>Cancelar</Button>
+                </ModalFooter>
+            </Modal>
+        </div>
+
 
     </div>
     
@@ -214,24 +276,21 @@
     {#if data.length != 0}
         <br/>
         <Table bordered>
-            <thead>
-            	<tr>
-                
-                	<td><b>Estado</b></td>
-               		<td><b>Año</b></td>
-              		<td><b>Sexo masculino</b></td>
-              		<td><b>Sexo femenino</b></td>
-                	<td><b>Sexo desconocido</b></td>
-					<td><b>Rango de edad 20-29</b></td>
-					<td><b>Rango de edad 30-39</b></td>
-					<td><b>Otro rango de edad</b></td>
-					<td><b>Tipo de ataque Armas personales</b></td>
-					<td><b>Tipo de ataque Pistola</b></td>
-					<td><b>Tipo de ataque Navaja</b></td>
-
-            			
-		</tr>
-            </thead>
+        <thead>
+            <tr>
+                <td><b>Estado</b></td>
+               	<td><b>Año</b></td>
+              	<td><b>Sexo masculino</b></td>
+              	<td><b>Sexo femenino</b></td>
+                <td><b>Sexo desconocido</b></td>
+		<td><b>Rango de edad 20-29</b></td>
+		<td><b>Rango de edad 30-39</b></td>
+		<td><b>Otro rango de edad</b></td>
+		<td><b>Tipo de ataque Armas personales</b></td>
+		<td><b>Tipo de ataque Pistola</b></td>
+		<td><b>Tipo de ataque Navaja</b></td>
+            </tr>
+        </thead>
         <tbody>
             {#each data as data}
                 <tr>
@@ -241,19 +300,21 @@
                     <td>{data.sex_female}</td>
                     <td>{data.sex_unknown}</td>
                     <td>{data.age_range_20_29}</td>
-					<td>{data.age_range_30_39}</td>
-					<td>{data.age_range_other}</td>
-					<td>{data.type_of_attack_personal_weapons}</td>
-					<td>{data.type_of_attack_gun}</td>
-					<td>{data.type_of_attack_knife}</td>
+		    <td>{data.age_range_30_39}</td>
+		    <td>{data.age_range_other}</td>
+		    <td>{data.type_of_attack_personal_weapons}</td>
+		    <td>{data.type_of_attack_gun}</td>
+		    <td>{data.type_of_attack_knife}</td>
                     
-
 		    <td>
                         
                         <Button style="background-color: darkgray" on:click={() =>deleteData(data.state,data.year)}> Eliminar</Button>
                         <Button style="background-color: darkgray" on:click={deleteStats}> Actualizar</Button>
                     </td>
                   
+
+
+
                 </tr>
             {/each}
         </tbody>
@@ -282,7 +343,7 @@
     }
 
   
-
+   
 
     
 </style>
