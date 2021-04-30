@@ -147,7 +147,7 @@
         <Button style="background-color: darkgray" on:click={toggle1}> Insertar</Button>
 
        
-            
+            <div id="modal">
             <Modal  isOpen={open1} toggle={toggle1} transitionOptions>
                 <ModalHeader {toggle1}>¿Insertar un nuevo dato?</ModalHeader>
                 <ModalBody >
@@ -189,7 +189,7 @@
                     >
                 </ModalFooter>
             </Modal>
-      
+        </div>
 
 
 
@@ -255,6 +255,9 @@
         color:white;
     }
 
+    div#modal{
+       width: 1000px;
+    }
   
 
 
