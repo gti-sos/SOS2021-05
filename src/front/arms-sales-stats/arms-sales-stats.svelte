@@ -5,6 +5,8 @@ import {Button, Table, Toast, ToastBody, ToastHeader } from 'sveltestrap';
 	
     let cargados = false;
     let data = [];
+    loadStats();
+
     async function loadStats(){
         deleteStats();
         console.log("Loading data...");
@@ -60,7 +62,7 @@ import {Button, Table, Toast, ToastBody, ToastHeader } from 'sveltestrap';
   
     {#if data.length != 0}
         <br/>
-        <table >
+        <Table bordered>
         <thead>
             <tr>
                 <td>State</td>
@@ -85,7 +87,7 @@ import {Button, Table, Toast, ToastBody, ToastHeader } from 'sveltestrap';
                 </tr>
             {/each}
         </tbody>
-    </table >
+    </Table >
         <a href="/">Volver</a>
     {:else}
     <br/>
