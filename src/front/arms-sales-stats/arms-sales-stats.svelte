@@ -1,10 +1,33 @@
 <script lang="ts">
    
-import {Button, Table, Toast, ToastBody, ToastHeader } from 'sveltestrap';
+   import {
+        Nav,
+        Modal,
+        ModalBody,
+        ModalFooter,
+        ModalHeader,
+        NavItem,
+        NavLink,
+        Button,
+        Table,
+        UncontrolledAlert,
+        Card,
+        CardBody,
+        CardFooter,
+        CardHeader,
+        CardSubtitle,
+        CardText,
+        CardTitle,
+    } from "sveltestrap";
+
+    
     const BASE_API_URL = "/api/v2/arms-sales-stats"; //tiene que llamar a la API para tratar los datos
 	
     let cargados = false;
     let data = [];
+
+    let isOpen = false;
+
     getData();
 
     let newData = {
@@ -95,9 +118,24 @@ import {Button, Table, Toast, ToastBody, ToastHeader } from 'sveltestrap';
 			
 		});
 	}
+
+     //Insert
+    let open1 = false;
+    const toggle1 = () => (open1 = !open1);
+    const toggle1P = () => {
+        open1 = !open1;
+        insertData()
+       getData();
+    };
+
+    
+
+    
+
 </script>
   
 
+<!-- svelte-ignore missing-declaration -->
 <main>
     <div>
         {#if cargados}  
@@ -106,7 +144,57 @@ import {Button, Table, Toast, ToastBody, ToastHeader } from 'sveltestrap';
         <Button style="background-color: crimson;" on:click={loadStats}> Cargar datos</Button>
         {/if}
         <Button style="background-color: darkgray" on:click={deleteStats}> Eliminar datos</Button>
-        <Button style="background-color: darkgray" on:click={deleteStats}> Insertar</Button>
+        <Button style="background-color: darkgray" on:click={toggle1}> Insertar</Button>
+
+       
+            
+            <Modal  isOpen={open1} toggle={toggle1} transitionOptions>
+                <ModalHeader {toggle1}>¿Insertar un nuevo dato?</ModalHeader>
+                <ModalBody >
+                    Por favor, rellene el formulario.
+                    <tr>
+                        <Table bordered>
+                            <thead>
+                                <tr>
+                                    <td>Estado</td>
+                                    <td>Año</td>
+                                    <td>Mes</td>
+                                    <td>Armas Vendidas</td>
+                                    <td>Porcentaje de la población</td>
+                                   
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+                                    <tr>
+                                        <td><input bind:value="{newData.state}"> </td>
+                                        <td><input bind:value="{newData.year}"> </td>
+                                        <td><input bind:value="{newData.month}"> </td>
+                                        <td><input bind:value="{newData.arms_sold}"> </td>
+                                        <td><input bind:value="{newData.percent_of_people}"> </td>
+                                                                             
+                    
+                    
+                    
+                                    </tr>
+                               
+                            </tbody>
+                        </Table >
+                    </tr>
+                </ModalBody>
+                <ModalFooter>
+                    <Button color="primary" on:click={toggle1P}>Insertar</Button>
+                    <Button color="secondary" on:click={toggle1}
+                        >Cancelar</Button
+                    >
+                </ModalFooter>
+            </Modal>
+      
+
+
+
+
+
     </div>
     
   
@@ -166,4 +254,9 @@ import {Button, Table, Toast, ToastBody, ToastHeader } from 'sveltestrap';
     a:hover {
         color:white;
     }
+
+  
+
+
+    
 </style>
