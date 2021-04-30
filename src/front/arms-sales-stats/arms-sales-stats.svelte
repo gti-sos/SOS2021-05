@@ -55,6 +55,7 @@
 
         async function insertData() { //insertar un recurso en concreto
             console.log("Inserting new resource " + JSON.stringify(newData));
+            
             const res = await fetch(BASE_API_URL, {
                 method: "POST",
                 body: JSON.stringify(newData),
@@ -124,12 +125,30 @@
     const toggle1 = () => (open1 = !open1);
     const toggle1P = () => {
         open1 = !open1;
+        console.log("Imprimo: "+newData.state.length)
+        if(newData.state.replace(' ', '').length!=0 
+        &&newData.year.replace(' ', '').length!=0 
+        && newData.month.replace(' ', '').length!=0 
+        && newData.arms_sold.length!=0 
+        && newData.percent_of_people.length!=0 ){
+
         insertData()
-       getData();
+        getData();
+        }
+        else{
+
+            console.log("Nada añadido")
+            popinsert=true;
+        }
+
     };
 
+    let popinsert = false;
+    const togglepop = () => (popinsert = !popinsert);
+    const togglepopok = () => {
+        popinsert = !popinsert;
+        open1=true}
     
-
     
 
 </script>
@@ -148,35 +167,43 @@
 
        
             <div id="modal">
-            <Modal  isOpen={open1} toggle={toggle1} transitionOptions>
-                <ModalHeader {toggle1}>¿Insertar un nuevo dato?</ModalHeader>
+            <Modal isOpen={open1} toggle={toggle1} transitionOptions>
+                <ModalHeader {toggle1}>¿Quieres insertar un nuevo dato?</ModalHeader>
                 <ModalBody >
-                    Por favor, rellene el formulario.
+                    Por favor, rellene el formulario. Todos los campos tienen que tener un valor. De lo contrario no se añadirá nada.
                     <tr>
-                        <Table bordered>
-                            <thead>
-                                <tr>
-                                    <td>Estado</td>
-                                    <td>Año</td>
-                                    <td>Mes</td>
-                                    <td>Armas Vendidas</td>
-                                    <td>Porcentaje de la población</td>
-                                   
-                                </tr>
-                            </thead>
+                        <Table >
+                            
                             <tbody>
                                 
+                                   
                                     <tr>
-                                        <td><input bind:value="{newData.state}"> </td>
+                                        <td>Estado</td>
+                                        <td><input bind:value="{newData.state}"></td>
+                                        
+                                        
+                                    </tr><tr>
+                                        <td>Año</td>
                                         <td><input bind:value="{newData.year}"> </td>
+                                   
+                                        
+                                    </tr><tr>
+                                        <td>Mes</td>
                                         <td><input bind:value="{newData.month}"> </td>
+                                       
+                                    </tr><tr>
+                                        <td>Armas Vendidas</td>
                                         <td><input bind:value="{newData.arms_sold}"> </td>
+                                        
+                                        
+                                    </tr><tr>
+                                        <td>Porcentaje de la población</td>
                                         <td><input bind:value="{newData.percent_of_people}"> </td>
-                                                                             
-                    
-                    
-                    
+                                        
                                     </tr>
+
+
+
                                
                             </tbody>
                         </Table >
@@ -187,6 +214,19 @@
                     <Button color="secondary" on:click={toggle1}
                         >Cancelar</Button
                     >
+                </ModalFooter>
+            </Modal>
+
+
+            <Modal isOpen={popinsert} toggle={togglepop} transitionOptions>
+                <ModalHeader {togglepop}>Se ha producido un error</ModalHeader>
+                <ModalBody >
+                    No se ha podido insertar el dato. El Nombre, Año o Mes no tiene un formato correcto o hay un campo vacio.
+                   
+                </ModalBody>
+                <ModalFooter>
+                    <Button color="primary" on:click={togglepopok}>Probaré de nuevo!</Button>
+                    <Button color="secondary" on:click={togglepop}>Cancelar</Button>
                 </ModalFooter>
             </Modal>
         </div>
@@ -252,11 +292,8 @@
         color:white;
     }
 
-    div#modal{
-       width: 1000px;
-    }
   
-
+   
 
     
 </style>
