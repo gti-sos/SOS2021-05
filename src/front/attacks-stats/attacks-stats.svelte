@@ -66,7 +66,8 @@
                 method: "POST",
                 body: JSON.stringify(newData),
                 headers: {
-                    "Content-Type": "application/json",
+                    "Content-Type": "application/json"
+
                 }
             }
             ).then( (res) => {
