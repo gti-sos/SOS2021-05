@@ -5,9 +5,59 @@ import {Button, Table, Toast, ToastBody, ToastHeader } from 'sveltestrap';
 	
     let cargados = false;
     let data = [];
-    loadStats();
+    getData();
 
-    async function loadStats(){
+    let newData = {
+            state:"",
+            year:"",
+            month: "" ,
+            arms_sold:"",
+            percent_of_people:""
+        }
+
+     //funcion asincrona para cargar (get) los recursos existentes
+     async function getData() {
+            console.log("Fetching homicides resourcers...");
+            const res = await fetch(BASE_API_URL);
+            if(res.ok){
+                const json = await res.json();
+                data = json;
+                console.log(`Received ${data.length} resources`);
+
+            }else{
+                console.log("ERROR!");
+            }
+
+        }
+
+        async function insertData() { //insertar un recurso en concreto
+            console.log("Inserting new resource " + JSON.stringify(newData));
+            const res = await fetch(BASE_API_URL, {
+                method: "POST",
+                body: JSON.stringify(newData),
+                headers: {
+                    "Content-Type": "application/json",
+                }
+            }
+            ).then( (res) => {
+                getData();
+            })
+            
+        }
+
+
+
+        async function deleteData( a, b, c) { //elimina un recurso en concreto
+            
+            console.log("Deleting resource " + JSON.stringify(data));
+            const res = await fetch(BASE_API_URL+"/"+a+"/"+b+"/"+c, {
+                method: "DELETE",
+              
+            })
+            getData();
+        }
+
+        async function loadStats(){
         deleteStats();
         console.log("Loading data...");
         const carga =  await fetch(BASE_API_URL + "/loadInitialData");
@@ -56,7 +106,7 @@ import {Button, Table, Toast, ToastBody, ToastHeader } from 'sveltestrap';
         <Button style="background-color: crimson;" on:click={loadStats}> Cargar datos</Button>
         {/if}
         <Button style="background-color: darkgray" on:click={deleteStats}> Eliminar datos</Button>
-        
+        <Button style="background-color: darkgray" on:click={deleteStats}> Insertar</Button>
     </div>
     
   
@@ -65,12 +115,12 @@ import {Button, Table, Toast, ToastBody, ToastHeader } from 'sveltestrap';
         <Table bordered>
         <thead>
             <tr>
-                <td>State</td>
-                <td>Year</td>
-                <td>Month</td>
-                <td>Arms Sold</td>
-                <td>Percent of People</td>
-                
+                <td>Estados</td>
+                <td>Año</td>
+                <td>Mes</td>
+                <td>Armas Vendidas</td>
+                <td>Porcentaje de la población</td>
+                <td>Acciones</td>
             </tr>
         </thead>
         <tbody>
@@ -81,18 +131,24 @@ import {Button, Table, Toast, ToastBody, ToastHeader } from 'sveltestrap';
                     <td>{data.month}</td>
                     <td>{data.arms_sold}</td>
                     <td>{data.percent_of_people}</td>
+                    <td>
+                        
+                        <Button style="background-color: darkgray" on:click={() =>deleteData(data.state,data.year,data.month)}> Eliminar</Button>
+                        <Button style="background-color: darkgray" on:click={deleteStats}> Actualizar</Button>
+                    </td>
                   
+
 
 
                 </tr>
             {/each}
         </tbody>
     </Table >
-        <a href="/">Volver</a>
+        <a href="/#/info">Volver</a>
     {:else}
     <br/>
     <p style="text-align: center; background-color: antiquewhite;"> Para ver los datos pulse el botón.</p>
-    <a href="/">Volver</a>
+    <a href="/#/info">Volver</a>
     {/if}
 
 </main>
