@@ -4,6 +4,7 @@
 	import Homicides from "./homicides/homicides.svelte";
 	import Attacks from "./attacks-stats/attacks-stats.svelte";
 	import Home from "./Home.svelte";
+	import NotFound from "./NotFound.svelte";
 	
 	import Info from "./Info.svelte";
 	const routes = {
@@ -11,7 +12,8 @@
 		"/homicides": Homicides,
 		"/sales": Sales,		
 		"/attacks": Attacks,
-		"/": Home
+		"/": Home,
+		"*": NotFound
 	};
 </script>
 
