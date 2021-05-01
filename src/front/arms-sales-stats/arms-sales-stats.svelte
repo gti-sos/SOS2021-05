@@ -153,7 +153,9 @@
         popinsert = !popinsert;
         open1=true}
     
-    
+    function gotoupdate(a,b,c) {
+    location.href = '#/sales/'+a+'/'+b+'/'+c;
+}
 
 </script>
   
@@ -255,14 +257,14 @@
         <tbody>
             {#each data as data}
                 <tr>
-                    <td><a href="/data.state/data.year/data.month">{data.state}</a></td>
+                    <td><a href="#/sales/{data.state}/{data.year}/{data.month}">{data.state}</a></td>
                     <td>{data.year}</td>
                     <td>{data.month}</td>
                     <td>{data.arms_sold}</td>
                     <td>{data.percent_of_people}</td>
                     <td>
                         <Button style="background-color: #F08080" on:click={() =>deleteData(data.state,data.year,data.month)}> Eliminar</Button>
-                        <Button style="background-color: #28B463" on:click={deleteStats}> Actualizar</Button>
+                        <Button style="background-color: #28B463" on:click={() =>gotoupdate(data.state,data.year,data.month) }> Actualizar</Button>
                     </td>
                   
 

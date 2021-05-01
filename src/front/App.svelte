@@ -1,6 +1,7 @@
 <script>
 	import Router from 'svelte-spa-router'; //modulo svelte para SPA
 	import Sales from "./arms-sales-stats/arms-sales-stats.svelte";
+	import EditSale from "./arms-sales-stats/editData.svelte";
 	import Homicides from "./homicides/homicides.svelte";
 	import Attacks from "./attacks-stats/attacks-stats.svelte";
 	import Home from "./Home.svelte";
@@ -13,7 +14,13 @@
 		"/sales": Sales,		
 		"/attacks": Attacks,
 		"/": Home,
-		"*": NotFound
+		"/sales/:state/:year/:month": EditSale,
+		"*": NotFound,
+		
+	
+
+
+
 	};
 </script>
 

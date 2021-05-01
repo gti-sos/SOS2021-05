@@ -5,6 +5,7 @@
     import {pop} from "svelte-spa-router";
     export let params = {};
     
+    
     let crime = {};
     let state;
     let year; 
