@@ -19,6 +19,10 @@
         CardText,
         CardTitle,
     } from "sveltestrap";
+    
+    import {
+       pop
+    } from "svelte-spa-router";
 
     
     const BASE_API_URL = "/api/v2/attacks-stats"; //tiene que llamar a la API para tratar los datos
@@ -33,7 +37,7 @@
     let newData = {
             state:"",
             year:"",
-            sex_male: "",
+            sex_male:"",
             sex_female:"",
 	    sex_unknown:"",
 	    age_range_20_29:"",
@@ -66,8 +70,7 @@
                 method: "POST",
                 body: JSON.stringify(newData),
                 headers: {
-                    "Content-Type": "application/json"
-
+                    "Content-Type": "application/json",
                 }
             }
             ).then( (res) => {
@@ -80,13 +83,12 @@
 
         async function deleteData( a, b) { //elimina un recurso en concreto
             
-            console.log("Deleting resource " + a + b);
+            console.log("Deleting resource " + JSON.stringify(data));
             const res = await fetch(BASE_API_URL+"/"+a+"/"+b, {
-                method: "DELETE"
+                method: "DELETE",
               
-            }).then( (res) => {
-                getData();
-			})
+            })
+            getData();
         }
 
         async function loadStats(){
@@ -135,15 +137,15 @@
         open1 = !open1;
         console.log("Imprimo: "+newData.state.length)
         if(newData.state.replace(' ', '').length!=0 
-        && newData.year.replace(' ', '').length!=0
-        && newData.sex_male.length!=0 
-	&& newData.sex_female.length!=0
-	&& newData.sex_unknown.length!=0
-	&& newData.age_range_20_29.length!=0
-	&& newData.age_range_30_39.length!=0
-	&& newData.age_range_other.length!=0
-	&& newData.type_of_attack_personal_weapons.length!=0
-	&& newData.type_of_attack_gun.length!=0
+        &&newData.year.replace(' ', '').length!=0 
+        && newData.sex_male.replace(' ', '').length!=0 
+        && newData.sex_female.length!=0 
+	&& newData.sex_unknown.length!=0 
+	&& newData.age_range_20_29.length!=0 
+	&& newData.age_range_30_39.length!=0 
+	&& newData.age_range_other.length!=0 
+	&& newData.type_of_attack_personal_weapons.length!=0 
+	&& newData.type_of_attack_gun.length!=0 
         && newData.type_of_attack_knife.length!=0 ){
 
         insertData()
@@ -163,7 +165,9 @@
         popinsert = !popinsert;
         open1=true}
     
-    
+    function gotoupdate(a,b) {
+    location.href = '#/attacks/'+a+'/'+b;
+}
 
 </script>
   
@@ -172,12 +176,12 @@
 <main>
     <div>
         {#if cargados}  
-        <Button style="background-color: crimson;" disabled> Cargar datos</Button>
+        <Button style="background-color: #F39C12;" disabled> Cargar datos</Button>
         {:else}
-        <Button style="background-color: crimson;" on:click={loadStats}> Cargar datos</Button>
+        <Button style="background-color: #F39C12;" on:click={loadStats}> Cargar datos</Button>
         {/if}
-        <Button style="background-color: darkgray" on:click={deleteStats}> Eliminar datos</Button>
-        <Button style="background-color: darkgray" on:click={toggle1}> Insertar</Button>
+        <Button style="background-color: #F08080" on:click={deleteStats}> Eliminar datos</Button>
+        <Button style="background-color: #28B463" on:click={toggle1}> Insertar</Button>
 
        
             <div id="modal">
@@ -261,7 +265,7 @@
             <Modal isOpen={popinsert} toggle={togglepop} transitionOptions>
                 <ModalHeader {togglepop}>Se ha producido un error</ModalHeader>
                 <ModalBody >
-                    No se ha podido insertar el dato. El Nombre, Año o Mes no tiene un formato correcto o hay un campo vacio.
+                    No se ha podido insertar el dato. El Nombre o Año no tiene un formato correcto o hay un campo vacio.
                    
                 </ModalBody>
                 <ModalFooter>
@@ -277,10 +281,10 @@
   
     {#if data.length != 0}
         <br/>
-        <Table bordered>
-        <thead>
+        <Table bordered  style="background-color: #F5EEF8 ; width:75% ; text-align: center; ">
+        <thead style="background-color: #E8DAEF; color:black">
             <tr>
-                <td><b>Estado</b></td>
+                 <td><b>Estado</b></td>
                	<td><b>Año</b></td>
               	<td><b>Sexo masculino</b></td>
               	<td><b>Sexo femenino</b></td>
@@ -296,7 +300,7 @@
         <tbody>
             {#each data as data}
                 <tr>
-                    <td>{data.state}</td>
+                    <td><a href="#/attacks/{data.state}/{data.year}">{data.state}</a></td>
                     <td>{data.year}</td>
                     <td>{data.sex_male}</td>
                     <td>{data.sex_female}</td>
@@ -307,11 +311,9 @@
 		    <td>{data.type_of_attack_personal_weapons}</td>
 		    <td>{data.type_of_attack_gun}</td>
 		    <td>{data.type_of_attack_knife}</td>
-                    
-		    <td>
-                        
-                        <Button style="background-color: darkgray" on:click={() =>deleteData(data.state,data.year)}> Eliminar</Button>
-                        <Button style="background-color: darkgray" on:click={deleteStats}> Actualizar</Button>
+                    <td>
+                        <Button style="background-color: #F08080" on:click={() =>deleteData(data.state,data.year,data.month)}> Eliminar</Button>
+                        <Button style="background-color: #28B463" on:click={() =>gotoupdate(data.state,data.year,data.month) }> Actualizar</Button>
                     </td>
                   
 
@@ -321,25 +323,19 @@
             {/each}
         </tbody>
     </Table >
-        <a href="/#/info">Volver</a>
+        <Button color="dark" on:click={pop}>Volver</Button>
     {:else}
     <br/>
     <p style="text-align: center; background-color: antiquewhite;"> Para ver los datos pulse el botón.</p>
-    <a href="/#/info">Volver</a>
+    
+        <Button color="dark" on:click={pop}>Volver</Button>
     {/if}
 
 </main>
 
 
 <style>
-    a {
-        font-size: 18px;
-        background-color:rgb(103, 131, 72);
-        color: white;
-        border-radius: 6px;
-        border: 1px solid grey;
-        padding:4px;
-    }
+   
     a:hover {
         color:white;
     }
