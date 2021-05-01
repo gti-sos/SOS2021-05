@@ -5,6 +5,7 @@
 	import Homicides from "./homicides/homicides.svelte";
 	import EditHomicides from "./homicides/editHomicideData.svelte";
 	import Attacks from "./attacks-stats/attacks-stats.svelte";
+	import EditAttacks from "./attacks-stats/editAttacksData.svelte";
 	import Home from "./Home.svelte";
 	import NotFound from "./NotFound.svelte";
 	
@@ -17,6 +18,7 @@
 		"/": Home,
 		"/sales/:state/:year/:month": EditSale,
 		"/homicides/:state/:year": EditHomicides,
+		"/attacks/:state/:year": EditAttacks,
 		"*": NotFound,
 		
 	
