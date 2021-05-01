@@ -136,7 +136,6 @@
 		    <td><input bind:value="{age_range_20_29}"> </td>
                     <td><input bind:value="{age_range_30_39}"> </td>
 		    <td><input bind:value="{age_range_other}"> </td>
-                    <td><input bind:value="{percent_of_peopleU}"> </td>
 		    <td><input bind:value="{type_of_attack_personal_weapons}"> </td>
                     <td><input bind:value="{type_of_attack_gun}"> </td>
                     <td><input bind:value="{type_of_attack_knife}"> </td>
