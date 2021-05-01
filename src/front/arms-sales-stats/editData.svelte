@@ -80,8 +80,11 @@
 
     let popactualizar = false;
     const toggleactualizar = () => (popactualizar = !popactualizar);
-    const actualiza = () => {updateCrime(); popactualizar = !popactualizar};
+    const actualiza = () => {updateCrime(); popactualizar = !popactualizar; gomain()};
  
+    function gomain() {
+    location.href = '#/sales';
+}
     
     
  </script>
