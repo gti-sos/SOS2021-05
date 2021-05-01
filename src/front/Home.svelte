@@ -16,7 +16,7 @@
   </script>
   
   <main >
-   <body  id= "silverfox" style="background-image: url(city.jpg); width: 100%; height: 95%;
+   <body  id= "silverfox" style="background-image: url(https://d3i6fh83elv35t.cloudfront.net/static/2019/05/2019-04-28T203439Z_1736859717_RC13D8614730_RTRMADP_3_USA-GUNS-NRA-1200x800.jpg); width: 100%; height: 95%;
    object-fit: cover ">
         <section id="hero" class="text-white tm-font-big tm-parallax" style="background-position: center -400px;">
          

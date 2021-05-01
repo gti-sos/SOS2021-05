@@ -1,8 +1,6 @@
-{"state":"Alabama","year":"2019","homicide_by_firearm":"3","handgun":"3","rifle":"0","shotgun":"0","type_not_stated":"0","_id":"0JWiQdKNqFAD2qSw"}
-{"state":"Arkansas","year":"2019","homicide_by_firearm":"255","handgun":"87","rifle":"10","shotgun":"5","type_not_stated":"74","_id":"NRTnB8My9vjqD2kT"}
-{"state":"Alaska","year":"2019","homicide_by_firearm":"70","handgun":"17","rifle":"1","shotgun":"6","type_not_stated":"20","_id":"PVoWInGwuj3wPaNf"}
-{"state":"Wyoming","year":"2019","homicide_by_firearm":"11","handgun":"7","rifle":"0","shotgun":"0","type_not_stated":"2","_id":"RUJMdYa01ucajwXC"}
-{"state":"New_Mexico","year":"2019","homicide_by_firearm":"146","handgun":"53","rifle":"1","shotgun":"3","type_not_stated":"43","_id":"TfJ8no93m3O8QzpG"}
-{"state":"Montana","year":"2019","homicide_by_firearm":"20","handgun":"13","rifle":"1","shotgun":"1","type_not_stated":"2","_id":"WhTw1K7UmywrUOIK"}
-{"state":"West_Virginia","year":"2019","homicide:by_firearm":"69","handgun":"24","rifle":"7","shotgun":"2","type_not_stated":"17","_id":"jD1rorTVRvMWI4xE"}
-{"state":"Idaho","year":"2019","homicide_by_firearm":"23","handgun":"9","rifle":"0","shotgun":"0","type_not_stated":"7","_id":"xxlL1o86ObPQIg6w"}
+{"state":"Idaho","year":"2019","homicide_by_firearm":"23","handgun":"9","rifle":"0","shotgun":"0","type_not_stated":"7","_id":"9EWBYD84mLxJYEP2"}
+{"state":"New_Mexico","year":"2019","homicide_by_firearm":"146","handgun":"53","rifle":"1","shotgun":"3","type_not_stated":"43","_id":"DQDkQReEU9zb1H2L"}
+{"state":"Arkansas","year":"2019","homicide_by_firearm":"255","handgun":"87","rifle":"10","shotgun":"5","type_not_stated":"74","_id":"GQSVWsF6i0HzSwKI"}
+{"state":"West_Virginia","year":"2019","homicide:by_firearm":"69","handgun":"24","rifle":"7","shotgun":"2","type_not_stated":"17","_id":"mu2pCy1O1drFRzcN"}
+{"state":"Wyoming","year":"2019","homicide_by_firearm":"11","handgun":"7","rifle":"0","shotgun":"0","type_not_stated":"2","_id":"x4UdHXP7PQCht7nW"}
+{"state":"Montana","year":"2019","homicide_by_firearm":"20","handgun":"13","rifle":"1","shotgun":"1","type_not_stated":"2","_id":"xxdQTvL7KDcAqB9y"}

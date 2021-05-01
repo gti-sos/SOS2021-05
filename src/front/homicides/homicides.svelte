@@ -151,6 +151,11 @@
  
      };
  
+
+     function gotoupdate(a,b) {
+    location.href = '#/homicides/'+a+'/'+b;
+    }
+
      let popinsert = false;
      const togglepop = () => (popinsert = !popinsert);
      const togglepopok = () => {
@@ -279,7 +284,8 @@
 
                      <td>
                          <Button style="background-color: #F08080" on:click={() =>deleteData(data.state,data.year)}> Eliminar</Button>
-                         <Button style="background-color: #28B463" on:click={deleteStats}> Actualizar</Button>
+                         <Button style="background-color: #28B463" on:click={() =>gotoupdate(data.state,data.year) }> Actualizar</Button>
+
                      </td>
                    
  
