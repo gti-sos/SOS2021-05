@@ -78,14 +78,15 @@
 
 
 
-        async function deleteData( a, b, c) { //elimina un recurso en concreto
+        async function deleteData( a, b) { //elimina un recurso en concreto
             
-            console.log("Deleting resource " + JSON.stringify(data));
-            const res = await fetch(BASE_API_URL+"/"+a+"/"+b+"/"+c, {
-                method: "DELETE",
+            console.log("Deleting resource " + a + b;
+            const res = await fetch(BASE_API_URL+"/"+a+"/"+b, {
+                method: "DELETE"
               
-            })
-            getData();
+            }).then( (res) => {
+                getData();
+			})
         }
 
         async function loadStats(){
