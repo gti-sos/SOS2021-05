@@ -84,6 +84,7 @@
  
     function gomain() {
     location.href = '#/sales';
+    
 }
     
     
