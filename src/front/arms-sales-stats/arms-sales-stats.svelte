@@ -56,7 +56,7 @@
                 const json = await res.json();
                 datos = json;
                 num_paginas=(datos.length/10)+1|0;
-                if(datos.length%10==0){
+                if(datos.length%10==0&&num_paginas!==1){
                     num_paginas--;
                 }
 
