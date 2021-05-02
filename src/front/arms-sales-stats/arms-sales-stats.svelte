@@ -32,6 +32,11 @@
 
     let isOpen = false;
 
+    let limit =10;
+    let ofset =0;
+    let pagina = (ofset/10)+1;
+    let num_paginas=0;
+
     getData();
 
     let newData = {
@@ -43,14 +48,36 @@
         }
 
      //funcion asincrona para cargar (get) los recursos existentes
-     async function getData() {
+     async function getNumPaginas() {
             console.log("Fetching homicides resourcers...");
             const res = await fetch(BASE_API_URL);
+            let datos=[]
+            if(res.ok){
+                const json = await res.json();
+                datos = json;
+                num_paginas=(datos.length/10)+1|0;
+                if(datos.length%10==0){
+                    num_paginas--;
+                }
+
+            }else{
+                console.log("ERROR!");
+            }
+
+        }
+
+
+     async function getData() {
+            getNumPaginas()
+            console.log(num_paginas)
+            console.log("Fetching homicides resourcers...");
+          
+            const res = await fetch(BASE_API_URL+"?limit="+limit+"&offset="+ofset);
             if(res.ok){
                 const json = await res.json();
                 data = json;
                 console.log(`Received ${data.length} resources`);
-
+                pagina = (ofset/10)+1
             }else{
                 console.log("ERROR!");
             }
@@ -83,7 +110,12 @@
                 method: "DELETE",
               
             })
+            if(data.length==1){
+                ofset-=10; getData()
+            }else{
+            
             getData();
+            }
         }
 
         async function loadStats(){
@@ -157,6 +189,10 @@
     function gotoupdate(a,b,c) {
     location.href = '#/sales/'+a+'/'+b+'/'+c;
 }
+//paginacion
+
+const siguiente= () => {ofset+=10; getData()}
+const anterior= () => {ofset-=10; getData()}
 
 </script>
   
@@ -275,10 +311,24 @@
             {/each}
         </tbody>
     </Table >
+
+        
+    <div style="text-align: center; " >
+        {#if pagina != 1}
+        <Button style="background-color: #7A05B5 " on:click={anterior}>Anterior</Button>
+        {/if}
+        <Button color="dark" >Pag. Nº: {pagina} / {num_paginas}</Button>    
+        {#if num_paginas-pagina!=0 }
+         <Button style="background-color: #7A05B5 " on:click={siguiente}>Siguiente</Button>
+         {/if}
+    </div>
+
+
         <Button color="dark" on:click={pop}>Volver</Button>
+        
     {:else}
     <br/>
-    <p style="text-align: center; background-color: antiquewhite;"> Para ver los datos pulse el botón.</p>
+    <p style="text-align: center; background-color: antiquewhite;">Lo sentimos, no existe ningun dato</p>
     
         <Button color="dark" on:click={pop}>Volver</Button>
     {/if}
