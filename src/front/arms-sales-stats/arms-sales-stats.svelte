@@ -110,7 +110,7 @@
                 method: "DELETE",
               
             })
-            if(data.length==1){
+            if(data.length==1&&num_paginas>1){
                 ofset-=10; getData()
             }else{
             
@@ -155,6 +155,8 @@
 			}
 			
 		});
+         
+     
 	}
 
      //Insert
