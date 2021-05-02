@@ -61,9 +61,9 @@
 		const res = await fetch("/api/v2/arms-sales-stats/"+params.state+"/"+params.year+"/"+params.month,{
 			method: "PUT",
 			body: JSON.stringify({
-                state: state,
-                year: year,
-                month: month,
+                state: params.state,
+                year: params.year,
+                month: params.month,
                 arms_sold: arms_soldU ,
                 percent_of_people: percent_of_peopleU 
                 
