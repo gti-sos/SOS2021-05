@@ -59,9 +59,10 @@
 
         async function insertData() { //insertar un recurso en concreto
             console.log("Inserting new resource " + JSON.stringify(newData));
-            
+            newData.state=newData.state.replace(" ","_")
             const res = await fetch(BASE_API_URL, {
                 method: "POST",
+                
                 body: JSON.stringify(newData),
                 headers: {
                     "Content-Type": "application/json",
