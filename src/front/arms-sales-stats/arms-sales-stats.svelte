@@ -101,8 +101,6 @@
             
         }
 
-
-
         async function deleteData( a, b, c) { //elimina un recurso en concreto
             
             console.log("Deleting resource " + JSON.stringify(data));
