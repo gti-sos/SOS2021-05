@@ -36,6 +36,8 @@
     let ofset =0;
     let pagina = (ofset/10)+1;
     let num_paginas=0;
+    let flags ="";
+    let filtros_act= false;
 
     getData();
 
@@ -46,7 +48,14 @@
             arms_sold:"",
             percent_of_people:""
         }
-
+        let databusqueda = {
+            state:"",
+            year:"",
+            month: "" ,
+            arms_sold:"",
+            percent_of_people:""
+        }
+        
      //funcion asincrona para cargar (get) los recursos existentes
      async function getNumPaginas() {
             console.log("Fetching homicides resourcers...");
@@ -72,7 +81,7 @@
             console.log(num_paginas)
             console.log("Fetching homicides resourcers...");
           
-            const res = await fetch(BASE_API_URL+"?limit="+limit+"&offset="+ofset);
+            const res = await fetch(BASE_API_URL+"?limit="+limit+"&offset="+ofset+flags);
             if(res.ok){
                 const json = await res.json();
                 data = json;
@@ -194,6 +203,42 @@
 const siguiente= () => {ofset+=10; getData()}
 const anterior= () => {ofset-=10; getData()}
 
+//Busqueda especifica
+
+
+
+    let popbusqueda = false;
+    const cancelarbusqueda = () => (popbusqueda = !popbusqueda);
+    const buscar = () => {
+        popbusqueda = !popbusqueda
+       
+        if(databusqueda.state.replace(" ","").length!=0){
+            flags= flags+"&state="+databusqueda.state;
+        }
+        if(databusqueda.year.replace(" ","").length!=0){
+            flags= flags+"&year="+databusqueda.year;
+        }
+        if(databusqueda.month.replace(" ","").length!=0){
+            flags= flags+"&month="+databusqueda.month;
+        }
+        if(databusqueda.arms_sold.replace(" ","").length!=0){
+            flags= flags+"&arms_sold="+databusqueda.arms_sold;
+        }
+        if(databusqueda.percent_of_people.replace(" ","").length!=0){
+            flags= flags+"&percent_of_people="+databusqueda.percent_of_people;
+        }
+        
+        filtros_act=true
+        getData()
+    }
+
+        const quitafiltros =() => {
+            flags="";
+            filtros_act=false;
+        }
+
+
+
 </script>
   
 
@@ -207,8 +252,16 @@ const anterior= () => {ofset-=10; getData()}
         {/if}
         <Button style="background-color: #F08080" on:click={deleteStats}> Eliminar datos</Button>
         <Button style="background-color: #28B463" on:click={toggle1}> Insertar</Button>
+        <p></p>
+        {#if !filtros_act} 
+        <Button style="background-color: #B833FF" on:click={cancelarbusqueda}> Buscar específica </Button>
+        {:else}
+        <Button style="background-color: #B833FF" on:click={quitafiltros}> Quitar filtros </Button>
+        <p style="text-align: rigth; background-color: antiquewhite;">↑(!) Existen filtros activos, para realizar otro filtrado desactivelos primero.</p>
+        {/if}
 
-       
+
+              <!-- Modal para insertar -->
             <div id="modal">
             <Modal isOpen={open1} toggle={toggle1} transitionOptions>
                 <ModalHeader {toggle1}>¿Quieres insertar un nuevo dato?</ModalHeader>
@@ -260,6 +313,57 @@ const anterior= () => {ofset-=10; getData()}
                 </ModalFooter>
             </Modal>
 
+            <!-- Modal para la busqueda -->
+
+            <Modal isOpen={popbusqueda} toggle={cancelarbusqueda} transitionOptions>
+                <ModalHeader {cancelarbusqueda}>¿Desea hacer una busqueda especifica?</ModalHeader>
+                <ModalBody >
+                   Por favor introduzca los valores exactos que desea que contengan los objetos filtrados.
+                    <tr>
+                        <Table >
+                            
+                            <tbody>
+                                
+                                   
+                                    <tr>
+                                        <td>Estado</td>
+                                        <td><input bind:value="{databusqueda.state}"></td>
+                                        
+                                        
+                                    </tr><tr>
+                                        <td>Año</td>
+                                        <td><input bind:value="{databusqueda.year}"> </td>
+                                   
+                                        
+                                    </tr><tr>
+                                        <td>Mes</td>
+                                        <td><input bind:value="{databusqueda.month}"> </td>
+                                       
+                                    </tr><tr>
+                                        <td>Armas Vendidas</td>
+                                        <td><input bind:value="{databusqueda.arms_sold}"> </td>
+                                        
+                                        
+                                    </tr><tr>
+                                        <td>Porcentaje de la población</td>
+                                        <td><input bind:value="{databusqueda.percent_of_people}"> </td>
+                                        
+                                    </tr>
+
+
+
+                               
+                            </tbody>
+                        </Table >
+                    </tr>
+                </ModalBody>
+                <ModalFooter>
+                    <Button color="primary" on:click={buscar}>Buscar</Button>
+                    <Button color="secondary" on:click={cancelarbusqueda}
+                        >Cancelar</Button
+                    >
+                </ModalFooter>
+            </Modal>
 
             <Modal isOpen={popinsert} toggle={togglepop} transitionOptions>
                 <ModalHeader {togglepop}>Se ha producido un error</ModalHeader>
