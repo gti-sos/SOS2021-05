@@ -73,8 +73,8 @@
 		const res = await fetch("/api/v2/attacks-stats/"+params.state+"/"+params.year,{
 			method: "PUT",
 			body: JSON.stringify({
-                state: state,
-                year: year,
+                state: params.state,
+                year: params.year,
                 sex_male: sex_male,
 	    	sex_female: sex_female,
 	    	sex_unknown: sex_unknown,
