@@ -67,6 +67,7 @@
                 arms_sold: arms_soldU ,
                 percent_of_people: percent_of_peopleU 
                 
+				
             }),
 			headers: {
 				"Content-Type": "application/json"
