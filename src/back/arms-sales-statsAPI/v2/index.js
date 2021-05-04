@@ -126,7 +126,7 @@ app.get(BASE_API_PATH + "/arms-sales-stats", (req,res) => {
         if (req.query.year) query["year"] = req.query.year;
         if (req.query.month) query["month"] = req.query.month;
         if (req.query.arms_sold) query["arms_sold"] =req.query.arms_sold;
-        if (req.query.percent_of_people) query["percent_of_people"] = req.query.query.percent_of_people;
+        if (req.query.percent_of_people) query["percent_of_people"] = req.query.percent_of_people;
 	
 	 db.find(query).sort({ state: 1, year: -1 }).skip(offset).limit(limit).exec(function (err, resources) {
             if (err) {
