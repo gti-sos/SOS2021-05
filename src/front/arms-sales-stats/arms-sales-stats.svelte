@@ -235,6 +235,7 @@ const anterior= () => {ofset-=10; getData()}
         const quitafiltros =() => {
             flags="";
             filtros_act=false;
+            getData();
         }
 
 
