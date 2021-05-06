@@ -22,6 +22,10 @@
     import {pop} from "svelte-spa-router";
     export let params = {};
     
+    
+   onMount(getCrime);
+    
+
     let noencontrado = false;
 
     let sale = {};
@@ -32,7 +36,14 @@
     let percent_of_peopleU;
     
     let userMsg;
-    onMount(getCrime);
+    
+
+    //Error code
+    let geterrorcode=0;
+    let geterror="";
+
+    let puterrorcode=0;
+    let puterror="";
     
 
     async function getCrime(){
@@ -50,9 +61,14 @@
             percent_of_peopleU= sale.percent_of_people;
            
             console.log("Crimen recibido.");
-        }else{
+        }else if(res.status==404){
             noencontrado = true;
             console.log("Error, algo ha ido mal");
+        }else{
+            geterrorcode=res.status;
+            geterror= res.statusText;
+            errorGet = true;
+            
         }
     }
     
@@ -73,22 +89,48 @@
 				"Content-Type": "application/json"
 			}
 		}).then(function(res){
+           
+            if(res.status==200){
+             ok=true;
+        
+            }else{
+             puterrorcode=res.status;
+             puterror= res.statusText;
+             errorPut = true;
+            }
             
             userMsg = "DATO ACTUALIZADO";
 		});	
+
+        
+
+       
     
     };
 
     let popactualizar = false;
     const toggleactualizar = () => (popactualizar = !popactualizar);
-    const actualiza = () => {updateCrime(); popactualizar = !popactualizar; gomain()};
+    const actualiza = () => {updateCrime(); popactualizar = !popactualizar};
  
+   
+
+
     function gomain() {
     location.href = '#/sales';
-    
 }
-    
-    
+
+  //Modal para errorGet
+  let errorGet = false;
+    const toggleerrorGet = () => (errorGet = !errorGet);
+
+    //Modal para errorPut
+  let errorPut = false;
+    const toggleerrorPut = () => (errorPut = !errorPut);
+
+    //Modal Actualizacion ok
+    let ok = false;
+    const toggleok = () => (ok = !ok);
+    const toggleback = () => (gomain());
  </script>
    
  
@@ -134,13 +176,59 @@
     </Modal>
  
     <Modal isOpen={noencontrado} toggle={toggleactualizar} transitionOptions>
-        <ModalHeader {toggleactualizar}>Lo sentimos, no se ha encontrado el dato buscado</ModalHeader>
+        <ModalHeader {toggleactualizar}>Lo sentimos, no se ha encontrado una entrada con los datos:
+        </ModalHeader>
+
+    <ModalBody >
+
+        <Table >
+            <tbody>
+                  <tr>
+                          <td>Estado</td>
+                          <td>{params.state}</td>
+                        </tr><tr>
+                          <td>Año</td>
+                          <td>{params.year}</td>
+                       </tr><tr>
+                          <td>Mes</td>
+                          <td>{params.month}</td>
+            
+              </tbody>
+          </Table >
+
+     </ModalBody>
+
         <ModalFooter>
             
             <Button color="secondary" on:click={pop}>Volver</Button>
         </ModalFooter>
     </Modal>
+
+    <Modal isOpen={errorGet} toggle={toggleerrorGet} transitionOptions>
+        <ModalHeader {toggleerrorGet}>Lo sentimos, ha habido un fallo en la consulta con codigo de error= {geterrorcode}: {geterror} </ModalHeader>
+        <ModalFooter>
+            
+            <Button color="secondary" on:click={toggleerrorGet}>Volver</Button>
+        </ModalFooter>
+    </Modal>
+
+    <Modal isOpen={errorPut} toggle={toggleerrorPut} transitionOptions>
+        <ModalHeader {toggleerrorPut}>Lo sentimos, ha habido un fallo en la consulta con codigo de error= {puterrorcode}: {puterror} </ModalHeader>
+        <ModalFooter>
+            
+            <Button color="secondary" on:click={toggleerrorPut}>Volver</Button>
+        </ModalFooter>
+    </Modal>
  
+    <Modal isOpen={ok} toggle={toggleok} transitionOptions>
+        <ModalHeader toggle={toggleok} style="text-align: center;">La Actualización se ha realizado satisfactoriamente. 
+        
+            <div>
+                <p></p>
+            <Button color="secondary" on:click={toggleback}>Volver a la tabla</Button>
+        </div>
+        </ModalHeader>
+    </Modal>
  
  
     </main>
