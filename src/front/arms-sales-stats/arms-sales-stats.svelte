@@ -82,13 +82,14 @@
             console.log("Fetching homicides resourcers...");
           
             const res = await fetch(BASE_API_URL+"?limit="+limit+"&offset="+ofset+flags);
-            if(res.ok){
+            if(res.status==200){
                 const json = await res.json();
                 data = json;
                 console.log(`Received ${data.length} resources`);
                 pagina = (ofset/10)+1
             }else{
                 console.log("ERROR!");
+               
             }
 
         }
@@ -106,6 +107,19 @@
             }
             ).then( (res) => {
                 getData();
+                switch (res.status){
+                    case 409:
+                    lanzamensaje(res.status,res.statusText,"Se ha producido un error en el Insert","Ya existe un dato que con los mismos creedenciales",true)
+                    break
+
+                    case 201:
+                    lanzamensaje(res.status,res.statusText,"El dato se ha insertado satisfactoriamente"," ",false)
+                    break
+
+                    default:
+                    lanzamensaje(res.status,res.statusText,"Se ha producido un error en el Insert","Vaya... Algo ha salido mal. Probablemente la Base de Datos haya tenido un problema. Vuelva a intentarlo mas adelante",true)
+                    break
+                }
             })
             
         }
@@ -138,10 +152,18 @@
                 const json = await res.json();
                 data = json;
                 console.log('Received ${data.length} life stats.');
+                let mensajeaux = " Se han cargado un total de " + data.length+ " elementos."
+                lanzamensaje(res.status,res.statusText,"Los datos se han cargado satisfactoriamente",mensajeaux,null)
             }else{
+                lanzamensaje(res.status,res.statusText,"Se ha producido un error al intentar cargar los datos",
+                "Vaya... Algo ha salido mal. Probablemente la Base de Datos haya tenido un problema. Vuelva a intentarlo mas adelante",
+                true)
+                   
                 console.log("Error, there is no data.")
             }
         }else{
+            lanzamensaje(carga.status,carga.statusText,"Se ha producido un error al intentar cargar los datos","Vaya... Algo ha salido mal al inicializar los datos",true)
+                   
             console.log("Error loading data.");
         }
     }
@@ -238,7 +260,27 @@ const anterior= () => {ofset-=10; getData()}
             getData();
         }
 
+//Modal alerta
+let rescodigo=0;
+let mensaje= "";
+let resstatus="";
+let mensajeespecifico="";
+let error=false;
 
+let alerta=false;
+const lanzamensaje=(rc,rs,m,me,err)=>{
+
+    rescodigo=rc;
+    resstatus=rs;
+    mensaje=m;
+    mensajeespecifico=me;
+    error=err;//booleano
+
+    alerta=true;
+}
+const togglealerta=()=>{
+    alerta=!alerta;
+}
 
 </script>
   
@@ -377,6 +419,36 @@ const anterior= () => {ofset-=10; getData()}
                     <Button color="secondary" on:click={togglepop}>Cancelar</Button>
                 </ModalFooter>
             </Modal>
+
+            <Modal isOpen={alerta} toggle={togglealerta} transitionOptions>
+                <ModalHeader toggle={togglealerta} style="text-align: center;">{mensaje}
+                
+                    
+                </ModalHeader>
+                <ModalBody style="text-align: center;">
+                    {#if error!=null}
+                        {#if error}
+                        Tras realizar la operación hemos obtenido un codigo de error:
+                        <p></p>
+                        <a href="https://docs.google.com/presentation/d/1i79Yihxsynbjtar05xFXLXHChqEbsO44oaxg8mXWL6g/edit#slide=id.g10ecd5ec32_1_14"> 
+                            {rescodigo} ({resstatus}).
+                        </a>
+                        <p>Causa posible:</p>
+                         
+                        <p>{mensajeespecifico}</p>
+                        
+                        {/if}
+                    {:else}
+                    <p>{mensajeespecifico}</p>
+                    {/if}
+
+                    <div>
+                        <p></p>
+                    <Button color="secondary" on:click={togglealerta}>Volver</Button>
+                </div>
+                </ModalBody>
+                
+            </Modal>
         </div>
 
 
@@ -446,9 +518,6 @@ const anterior= () => {ofset-=10; getData()}
     a:hover {
         color:white;
     }
-
-  
-   
 
     
 </style>

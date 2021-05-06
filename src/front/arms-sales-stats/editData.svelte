@@ -221,7 +221,7 @@
     </Modal>
  
     <Modal isOpen={ok} toggle={toggleok} transitionOptions>
-        <ModalHeader toggle={toggleok} style="text-align: center;">La Actualización se ha realizado satisfactoriamente. 
+        <ModalHeader toggle={toggleok} style="text-align: center;">La Actualización se del recurso {state} ha realizado satisfactoriamente. 
         
             <div>
                 <p></p>
