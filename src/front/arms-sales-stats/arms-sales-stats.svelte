@@ -87,9 +87,11 @@
                 data = json;
                 console.log(`Received ${data.length} resources`);
                 pagina = (ofset/10)+1
+
+                if(data.length==0 && filtros_act) lanzamensaje(res.status,res.statusText,"Advertencia","Hemos encontrado 0 elementos que concuerden con la busqueda",null)
             }else{
                 console.log("ERROR!");
-               
+                lanzamensaje(res.status,res.statusText,"Error al obtener los elementos","Vaya... Algo ha salido mal. Probablemente la Base de Datos haya tenido un problema. Vuelva a intentarlo mas adelante",true)
             }
 
         }
@@ -112,8 +114,13 @@
                     lanzamensaje(res.status,res.statusText,"Se ha producido un error en el Insert","Ya existe un dato que con los mismos creedenciales",true)
                     break
 
+                    case 409:
+                    lanzamensaje(res.status,res.statusText,"Se ha producido un error en el Insert","Ha habido un problema con el cuerpo de la petición",true)
+                    break
+
                     case 201:
-                    lanzamensaje(res.status,res.statusText,"El dato se ha insertado satisfactoriamente"," ",false)
+                        let mensajeaux= "El dato: "+newData.state+"/"+newData.year+"/"+newData.month+" ya forma parte de la base de datos." 
+                    lanzamensaje(res.status,res.statusText,"El dato se ha insertado satisfactoriamente",mensajeaux,null)
                     break
 
                     default:
@@ -174,13 +181,19 @@
 		const res = await fetch(BASE_API_URL, {
 			method: "DELETE"
 		}).then(function (res) {
-			if (res.ok){
+			if (res.status==200){
 				console.log("Ok.");
+                let mensajeespecifico ="Se han eliminado "+data.length+" elementos."
                 data = [];
+                lanzamensaje(res.status,res.statusText,"Los datos se han eliminado satisfactoriamente",mensajeespecifico ,null)
 			} else if (res.status==404){ //no data found
                 console.log("No data found");
+                lanzamensaje(res.status,res.statusText,"Fallo al eliminar los datos","No existen datos que eliminar" ,true)
 			} else  { 
 				console.log("Error deleting DB stats");
+                lanzamensaje(res.status,res.statusText,"Fallo al eliminar los datos",
+                "Vaya... Algo ha salido mal. Probablemente la Base de Datos haya tenido un problema. Vuelva a intentarlo mas adelante" 
+                ,true)
 			}
 			
 		});
