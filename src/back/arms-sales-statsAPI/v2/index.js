@@ -297,7 +297,7 @@ app.put(BASE_API_PATH+"/arms-sales-stats/:state/:year/:month", function(req,res)
 	
 	db.find({state:String(req.params.state), year:String(req.params.year),month: String(req.params.month)  }, function(err, record) {
 		
-		console.log(record);
+		//console.log(record);
 		if(err!=null){
 				console.error("ERROR deleting DB evictions in DELETE: "+err);
 				res.sendStatus(500);

@@ -88,7 +88,8 @@
                 console.log(`Received ${data.length} resources`);
                 pagina = (ofset/10)+1
 
-                if(data.length==0 && filtros_act) lanzamensaje(res.status,res.statusText,"Advertencia","Hemos encontrado 0 elementos que concuerden con la busqueda",null)
+                let mes="Hemos encontrado "+ data.length +" elementos que concuerden con la busqueda";
+                if(filtros_act) lanzamensaje(res.status,res.statusText,"Advertencia",mes,null)
             }else{
                 console.log("ERROR!");
                 lanzamensaje(res.status,res.statusText,"Error al obtener los elementos","Vaya... Algo ha salido mal. Probablemente la Base de Datos haya tenido un problema. Vuelva a intentarlo mas adelante",true)
@@ -138,12 +139,26 @@
                 method: "DELETE",
               
             })
-            if(data.length==1&&num_paginas>1){
-                ofset-=10; getData()
-            }else{
+            switch(res.status){
+            case 200:
+            let mensajeaux= "El dato: "+a+"/"+b+"/"+c+" ya forma no parte de la base de datos." 
+                    lanzamensaje(res.status,res.statusText,"El dato se ha eliminado satisfactoriamente",mensajeaux,null)
+                    if(data.length==1&&num_paginas>1){
+                        ofset-=10; getData()
+                     }else{
+                        getData();
+                    }
+            break;
+            case 404:
+            let mensajeaux2= "El dato: "+a+"/"+b+"/"+c+" no se ha encontrado"    
+            lanzamensaje(res.status,res.statusText,"Se ha producido un error al intentar borrar el elemento",mensajeaux2,true)
+
+            break;
+            default:
+            lanzamensaje(res.status,res.statusText,"Se ha producido un error al intentar borrar el elemento","Vaya... Algo ha salido mal. Probablemente la Base de Datos haya tenido un problema. Vuelva a intentarlo mas adelante",true)
+            break;
             
-            getData();
-            }
+        }
         }
 
         async function loadStats(){
@@ -327,9 +342,7 @@ const togglealerta=()=>{
                         <Table >
                             
                             <tbody>
-                                
-                                   
-                                    <tr>
+                                  <tr>
                                         <td>Estado</td>
                                         <td><input bind:value="{newData.state}"></td>
                                         
@@ -532,5 +545,4 @@ const togglealerta=()=>{
         color:white;
     }
 
-    
 </style>
