@@ -4,3 +4,16 @@
 {"state":"West_Virginia","year":"2019","homicide:by_firearm":"69","handgun":"24","rifle":"7","shotgun":"2","type_not_stated":"17","_id":"mu2pCy1O1drFRzcN"}
 {"state":"Wyoming","year":"2019","homicide_by_firearm":"11","handgun":"7","rifle":"0","shotgun":"0","type_not_stated":"2","_id":"x4UdHXP7PQCht7nW"}
 {"state":"Montana","year":"2019","homicide_by_firearm":"20","handgun":"13","rifle":"1","shotgun":"1","type_not_stated":"2","_id":"xxdQTvL7KDcAqB9y"}
+{"$$deleted":true,"_id":"GQSVWsF6i0HzSwKI"}
+{"$$deleted":true,"_id":"DQDkQReEU9zb1H2L"}
+{"state":"Idaho","year":"2019","homicide_by_firearm":"23","handgun":"15","rifle":"0","shotgun":"0","type_not_stated":"7","_id":"9EWBYD84mLxJYEP2"}
+{"state":"Idaho","year":"2019","homicide_by_firearm":"30","handgun":"15","rifle":"0","shotgun":"0","type_not_stated":"7","_id":"9EWBYD84mLxJYEP2"}
+{"state":"eee","year":"0299","homicide_by_firearm":"2992","handgun":"22","rifle":"2","shotgun":"2","type_not_stated":"2","_id":"PqwoYrur0d9BdBjZ"}
+{"$$deleted":true,"_id":"PqwoYrur0d9BdBjZ"}
+{"state":"Idaho","year":"2019","homicide_by_firearm":"30","handgun":"15","rifle":"0","shotgun":"9","type_not_stated":"7","_id":"9EWBYD84mLxJYEP2"}
+{"$$deleted":true,"_id":"9EWBYD84mLxJYEP2"}
+{"state":"Montana","year":"2019","homicide_by_firearm":"20","handgun":"500","rifle":"1","shotgun":"1","type_not_stated":"2","_id":"xxdQTvL7KDcAqB9y"}
+{"state":"Montana","year":"2019","homicide_by_firearm":"20","handgun":"500","rifle":"1","shotgun":"5","type_not_stated":"2","_id":"xxdQTvL7KDcAqB9y"}
+{"state":"Montana","year":"2019","homicide_by_firearm":"20","handgun":"500","rifle":"1","shotgun":"9","type_not_stated":"2","_id":"xxdQTvL7KDcAqB9y"}
+{"state":"Montana","year":"2019","homicide_by_firearm":"20","handgun":"500","rifle":"1","shotgun":"9","type_not_stated":"88","_id":"xxdQTvL7KDcAqB9y"}
+{"state":"Florida","year":"2018","homicide_by_firearm":"9","handgun":"0","rifle":"23","shotgun":"1","type_not_stated":"8","_id":"C0CEVJZ9e6FDlaeQ"}
