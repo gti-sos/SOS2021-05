@@ -52,14 +52,14 @@
             sale = json ;
             state = sale.state;
             year = sale.year;
-	    sex_male = sale.sex_male;
-	    sex_female = sale.sex_female;
-	    sex_unknown = sale.sex_unknown;
+	    	sex_male = sale.sex_male;
+	    	sex_female = sale.sex_female;
+	    	sex_unknown = sale.sex_unknown;
             age_range_20_29 = sale.age_range_20_29;
-	    age_range_30_39 = sale.age_range_30_39;
-	    age_range_other = sale.age_range_other;
-	    type_of_attack_personal_weapons = sale.type_of_attack_personal_weapons;
-	    type_of_attack_gun = sale.type_of_attack_gun;
+	    	age_range_30_39 = sale.age_range_30_39;
+	    	age_range_other = sale.age_range_other;
+	    	type_of_attack_personal_weapons = sale.type_of_attack_personal_weapons;
+	    	type_of_attack_gun = sale.type_of_attack_gun;
             type_of_attack_knife = sale.type_of_attack_knife;
 
             let mensajeaux= "El dato: "+params.state+"/"+params.year+" se encuentra en la Base de Datos"    
@@ -92,13 +92,13 @@
                 state: state,
                 year: year,
                 sex_male: sex_male,
-	    	sex_female: sex_female,
-	    	sex_unknown: sex_unknown,
+	    		sex_female: sex_female,
+	    		sex_unknown: sex_unknown,
             	age_range_20_29: age_range_20_29,
-	   	age_range_30_39: age_range_30_39,
-	    	age_range_other: age_range_other,
-	    	type_of_attack_personal_weapons: type_of_attack_personal_weapons,
-	    	type_of_attack_gun: type_of_attack_gun,
+	   			age_range_30_39: age_range_30_39,
+	    		age_range_other: age_range_other,
+	    		type_of_attack_personal_weapons: type_of_attack_personal_weapons,
+	    		type_of_attack_gun: type_of_attack_gun,
             	type_of_attack_knife: type_of_attack_knife
                 
 				
@@ -192,12 +192,12 @@
               	<td><b>Sexo masculino</b></td>
               	<td><b>Sexo femenino</b></td>
                 <td><b>Sexo desconocido</b></td>
-		<td><b>Rango de edad 20-29</b></td>
-		<td><b>Rango de edad 30-39</b></td>
-		<td><b>Otro rango de edad</b></td>
-		<td><b>Tipo de ataque Armas personales</b></td>
-		<td><b>Tipo de ataque Pistola</b></td>
-		<td><b>Tipo de ataque Navaja</b></td>
+				<td><b>Rango de edad 20-29</b></td>
+				<td><b>Rango de edad 30-39</b></td>
+				<td><b>Otro rango de edad</b></td>
+				<td><b>Tipo de ataque Armas personales</b></td>
+				<td><b>Tipo de ataque Pistola</b></td>
+				<td><b>Tipo de ataque Navaja</b></td>
                
              </tr>
          </thead>
@@ -208,12 +208,12 @@
                     <td><input readonly onmousedown="return false;" bind:value="{state}"></td>
                     <td><input readonly onmousedown="return false;" bind:value="{year}"> </td>
                     <td><input bind:value="{sex_male}"> </td>
-		    <td><input bind:value="{sex_female}"> </td>
+		    		<td><input bind:value="{sex_female}"> </td>
                     <td><input bind:value="{sex_unknown}"> </td>
-		    <td><input bind:value="{age_range_20_29}"> </td>
+		    		<td><input bind:value="{age_range_20_29}"> </td>
                     <td><input bind:value="{age_range_30_39}"> </td>
-		    <td><input bind:value="{age_range_other}"> </td>
-		    <td><input bind:value="{type_of_attack_personal_weapons}"> </td>
+		    		<td><input bind:value="{age_range_other}"> </td>
+		   	 		<td><input bind:value="{type_of_attack_personal_weapons}"> </td>
                     <td><input bind:value="{type_of_attack_gun}"> </td>
                     <td><input bind:value="{type_of_attack_knife}"> </td>
                     

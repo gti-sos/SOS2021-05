@@ -601,7 +601,8 @@ const togglealerta=()=>{
 		    		<td>{data.type_of_attack_personal_weapons}</td>
 		    		<td>{data.type_of_attack_gun}</td>
 		    		<td>{data.type_of_attack_knife}</td>
-                    <td>
+                    
+					<td>
                         <Button style="background-color: #F08080" on:click={() =>deleteData(data.state,data.year)}> Eliminar</Button>
                         <Button style="background-color: #28B463" on:click={() =>gotoupdate(data.state,data.year) }> Actualizar</Button>
                     </td>
