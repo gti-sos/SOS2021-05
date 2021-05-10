@@ -236,7 +236,7 @@
         console.log("Imprimo: "+newData.state.length)
         if(newData.state.replace(' ', '').length!=0 
         &&newData.year.replace(' ', '').length!=0 
-        && newData.sex_male.replace(' ', '').length!=0 
+        && newData.sex_male.length!=0 
         && newData.sex_female.length!=0 
 	&& newData.sex_unknown.length!=0 
 	&& newData.age_range_20_29.length!=0 
@@ -263,8 +263,8 @@
         popinsert = !popinsert;
         open1=true}
     
-    function gotoupdate(a,b,c) {
-    location.href = '#/sales/'+a+'/'+b;
+    function gotoupdate(a,b) {
+    location.href = '#/attacks/'+a+'/'+b;
 }
 //paginacion
 
