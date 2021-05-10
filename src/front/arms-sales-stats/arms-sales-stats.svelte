@@ -115,7 +115,7 @@
                     lanzamensaje(res.status,res.statusText,"Se ha producido un error en el Insert","Ya existe un dato que con los mismos creedenciales",true)
                     break
 
-                    case 409:
+                    case 400:
                     lanzamensaje(res.status,res.statusText,"Se ha producido un error en el Insert","Ha habido un problema con el cuerpo de la petición",true)
                     break
 
@@ -437,7 +437,7 @@ const togglealerta=()=>{
             <Modal isOpen={popinsert} toggle={togglepop} transitionOptions>
                 <ModalHeader {togglepop}>Se ha producido un error</ModalHeader>
                 <ModalBody >
-                    No se ha podido insertar el dato. El Nombre, Año o Mes no tiene un formato correcto o hay un campo vacio.
+                    No se ha podido insertar el dato. Existe(n) algun(os) campo(s) vacío(s).
                    
                 </ModalBody>
                 <ModalFooter>
