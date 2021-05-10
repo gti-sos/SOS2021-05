@@ -250,7 +250,7 @@ app.get(BASE_API_PATH+"/attacks-stats/:state/:year", (req,res)=>{ //Cuando llame
 			var aux = record.map((c)=>{
 				return {state : c.state, year: c.year, sex_male:c.sex_male, sex_female: c.sex_female, sex_unknown:c.sex_unknown , 		age_range_20_29:c.age_range_20_29, age_range_30_39:c.age_range_30_39, age_range_other: c.age_range_other, type_of_attack_personal_weapons:c.type_of_attack_personal_weapons, type_of_attack_gun: c.type_of_attack_gun, type_of_attack_knife:c.type_of_attack_knife   }
 			});
-			res.status(200).send(aux);
+			res.status(200).send(aux[0]);
 		}
 		
 		});

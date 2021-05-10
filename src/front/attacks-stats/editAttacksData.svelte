@@ -49,7 +49,7 @@
         case 200:
             console.log("OK!");
             const json= await res.json();
-            sale = json ;
+            sale = json;
             state = sale.state;
             year = sale.year;
 	    	sex_male = sale.sex_male;
@@ -65,7 +65,7 @@
             let mensajeaux= "El dato: "+params.state+"/"+params.year+" se encuentra en la Base de Datos"    
             lanzamensaje(res.status,res.statusText,"Se ha encontrado el recurso buscado",mensajeaux,null)
             
-           
+            console.log(sale);
             console.log("Crimen recibido.");
         break;
 
