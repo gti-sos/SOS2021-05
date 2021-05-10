@@ -462,7 +462,7 @@
              <Modal isOpen={popinsert} toggle={togglepop} transitionOptions>
                  <ModalHeader {togglepop}>Se ha producido un error</ModalHeader>
                  <ModalBody >
-                     No se ha podido insertar el dato. El Nombre o Año no tiene un formato correcto o hay un campo vacio.
+                     No se ha podido insertar el dato. Existe(n) algun(os) campo(s) vacío(s)
                     
                  </ModalBody>
                  <ModalFooter>
