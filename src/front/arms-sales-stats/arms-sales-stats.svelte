@@ -58,10 +58,12 @@
         
      //funcion asincrona para cargar (get) los recursos existentes
      async function getNumPaginas() {
-            console.log("Fetching homicides resourcers...");
+        if(!filtros_act){
+        console.log("Fetching homicides resourcers...");
             const res = await fetch(BASE_API_URL);
             let datos=[]
-            if(res.ok){
+            
+                if(res.ok){
                 const json = await res.json();
                 datos = json;
                 num_paginas=(datos.length/10)+1|0;
@@ -69,9 +71,27 @@
                     num_paginas--;
                 }
 
-            }else{
+             }else{
                 console.log("ERROR!");
+                }
+            }else{
+                console.log("Fetching homicides resourcers...");
+            const res = await fetch(BASE_API_URL+"?limit="+limit+"&offset="+ofset+flags);
+            let datos=[]
+            
+                if(res.ok){
+                const json = await res.json();
+                datos = json;
+                num_paginas=(datos.length/10)+1|0;
+                if(datos.length%10==0&&num_paginas!==1){
+                    num_paginas--;
+                }
+
+             }else{
+                console.log("ERROR!");
+                }
             }
+            
 
         }
 
