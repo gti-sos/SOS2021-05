@@ -518,6 +518,7 @@
                  <td>Armas largas</td>
                  <td>Escopetas</td>
                  <td>Tipo no indicado</td>
+                 <td>Acciones</td>
 
 
              </tr>

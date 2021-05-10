@@ -574,17 +574,18 @@ const togglealerta=()=>{
         <Table bordered  style="background-color: #F5EEF8 ; width:75% ; text-align: center; ">
         <thead style="background-color: #E8DAEF; color:black">
             <tr>
-                <td><b>Estado</b></td>
-               	<td><b>Año</b></td>
-              	<td><b>Sexo masculino</b></td>
-              	<td><b>Sexo femenino</b></td>
-                <td><b>Sexo desconocido</b></td>
-				<td><b>Rango de edad 20-29</b></td>
-				<td><b>Rango de edad 30-39</b></td>
-				<td><b>Otro rango de edad</b></td>
-				<td><b>Tipo de ataque Armas personales</b></td>
-				<td><b>Tipo de ataque Pistola</b></td>
-				<td><b>Tipo de ataque Navaja</b></td>
+                <td>Estado</td>
+               	<td>Año</td>
+              	<td>Sexo masculino</td>
+              	<td>Sexo femenino</td>
+                <td>Sexo desconocido</td>
+				<td>Rango de edad 20-29</td>
+				<td>Rango de edad 30-39</td>
+				<td>Otro rango de edad</td>
+				<td>Tipo de ataque Armas personales</td>
+				<td>Tipo de ataque Pistola</td>
+				<td>Tipo de ataque Navaja</td>
+                <td>Acciones</td>
             </tr>
         </thead>
         <tbody>
