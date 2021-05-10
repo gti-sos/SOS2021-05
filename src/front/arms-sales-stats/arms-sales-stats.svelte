@@ -351,21 +351,21 @@ const togglealerta=()=>{
                                         
                                     </tr><tr>
                                         <td>Año</td>
-                                        <td><input type="number" bind:value="{newData.year}"> </td>
+                                        <td><input  bind:value="{newData.year}"> </td>
                                    
                                         
                                     </tr><tr>
                                         <td>Mes</td>
-                                        <td><input type="number" bind:value="{newData.month}"> </td>
+                                        <td><input  bind:value="{newData.month}"> </td>
                                        
                                     </tr><tr>
                                         <td>Armas Vendidas</td>
-                                        <td><input type="number" bind:value="{newData.arms_sold}"> </td>
+                                        <td><input  bind:value="{newData.arms_sold}"> </td>
                                         
                                         
                                     </tr><tr>
                                         <td>Porcentaje de la población</td>
-                                        <td><input type="number" bind:value="{newData.percent_of_people}"> </td>
+                                        <td><input  bind:value="{newData.percent_of_people}"> </td>
                                         
                                     </tr>
 
