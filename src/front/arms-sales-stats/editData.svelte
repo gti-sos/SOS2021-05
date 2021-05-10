@@ -184,11 +184,11 @@
              
                   <tr>
                     
-                    <td><input readonly onmousedown="return false;" bind:value="{state}"></td>
-                    <td><input readonly onmousedown="return false;" bind:value="{year}"> </td>
-                    <td><input readonly onmousedown="return false;" bind:value="{month}"> </td>
-                    <td><input bind:value="{arms_soldU}"> </td>
-                    <td><input bind:value="{percent_of_peopleU}"> </td>
+                    <td><input  readonly onmousedown="return false;" bind:value="{state}"></td>
+                    <td><input type="number" readonly onmousedown="return false;" bind:value="{year}"> </td>
+                    <td><input type="number" readonly onmousedown="return false;" bind:value="{month}"> </td>
+                    <td><input type="number" bind:value="{arms_soldU}"> </td>
+                    <td><input type="number" bind:value="{percent_of_peopleU}"> </td>
                     
                 </tr>
              
