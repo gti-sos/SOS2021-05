@@ -85,6 +85,13 @@ app.get(BASE_API_PATH+"/arms-sales-stats/loadInitialData", (req,res)=>{
 			"month": "10" ,
 			"arms_sold":"80.934",
 			"percent_of_people":"0.0138",
+		},
+		{
+			"state":"Arkansas",
+			"year":"2018",
+			"month": "3" ,
+			"arms_sold":"31.934",
+			"percent_of_people":"0.0024",
 		}
 
 	];
