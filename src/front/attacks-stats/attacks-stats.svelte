@@ -132,7 +132,7 @@
                     break
 
                     case 201:
-                        let mensajeaux= "El dato: "+newData.state+"/"+newData.year+"/"+newData.month+" ya forma parte de la base de datos." 
+                        let mensajeaux= "El dato: "+newData.state+"/"+newData.year+" ya forma parte de la base de datos." 
                     lanzamensaje(res.status,res.statusText,"El dato se ha insertado satisfactoriamente",mensajeaux,null)
                     break
 
