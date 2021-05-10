@@ -95,6 +95,58 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"type_of_attack_knife":"1165"
 		},
 		{
+			"state":"Mississippi",
+			"year":"2019",
+			"sex_male":"2302" ,
+			"sex_female":"365",
+			"sex_unknown":"57",
+			"age_range_20_29":"708",
+			"age_range_30_39":"572",
+			"age_range_other":"4862",
+			"type_of_attack_personal_weapons":"1281",
+			"type_of_attack_gun":"184",
+			"type_of_attack_knife":"1064"
+		},
+		{
+			"state":"Nebraska",
+			"year":"2019",
+			"sex_male":"1835" ,
+			"sex_female":"731",
+			"sex_unknown":"21",
+			"age_range_20_29":"420",
+			"age_range_30_39":"678",
+			"age_range_other":"3107",
+			"type_of_attack_personal_weapons":"978",
+			"type_of_attack_gun":"345",
+			"type_of_attack_knife":"863"
+		},
+		{
+			"state":"Nevada",
+			"year":"2019",
+			"sex_male":"1423" ,
+			"sex_female":"416",
+			"sex_unknown":"56",
+			"age_range_20_29":"370",
+			"age_range_30_39":"702",
+			"age_range_other":"2609",
+			"type_of_attack_personal_weapons":"654",
+			"type_of_attack_gun":"260",
+			"type_of_attack_knife":"378"
+		},
+		{
+			"state":"New-York",
+			"year":"2019",
+			"sex_male":"956" ,
+			"sex_female":"273",
+			"sex_unknown":"43",
+			"age_range_20_29":"167",
+			"age_range_30_39":"527",
+			"age_range_other":"1145",
+			"type_of_attack_personal_weapons":"408",
+			"type_of_attack_gun":"143",
+			"type_of_attack_knife":"254"
+		},
+		{
 			"state":"New-Mexico",
 			"year":"2019",
 			"sex_male":"6736" ,
