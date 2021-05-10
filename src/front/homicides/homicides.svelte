@@ -179,6 +179,7 @@
                  data = json;
                  console.log('Received ${data.length} life stats.');
                  let mensajeaux = " Se han cargado un total de " + data.length+ " elementos."
+                 getData()
                  lanzamensaje(res.status,res.statusText,"Los datos se han cargado satisfactoriamente",mensajeaux,null)
              }else{
                  lanzamensaje(res.status,res.statusText,"Se ha producido un error al intentar cargar los datos",
