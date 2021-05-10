@@ -46,12 +46,12 @@
             year:"",
             sex_male:"",
             sex_female:"",
-	    sex_unknown:"",
-	    age_range_20_29:"",
-	    age_range_30_39:"",
-	    age_range_other:"",
-	    type_of_attack_personal_weapons:"",
-	    type_of_attack_gun:"",
+	    	sex_unknown:"",
+	    	age_range_20_29:"",
+	    	age_range_30_39:"",
+	    	age_range_other:"",
+	    	type_of_attack_personal_weapons:"",
+	    	type_of_attack_gun:"",
             type_of_attack_knife:""
         }
         let databusqueda = {
@@ -59,12 +59,12 @@
             year:"",
             sex_male:"",
             sex_female:"",
-	    sex_unknown:"",
-	    age_range_20_29:"",
-	    age_range_30_39:"",
-	    age_range_other:"",
-	    type_of_attack_personal_weapons:"",
-	    type_of_attack_gun:"",
+	    	sex_unknown:"",
+	    	age_range_20_29:"",
+	    	age_range_30_39:"",
+	    	age_range_other:"",
+	    	type_of_attack_personal_weapons:"",
+	    	type_of_attack_gun:"",
             type_of_attack_knife:""
         }
         
@@ -238,12 +238,12 @@
         &&newData.year.replace(' ', '').length!=0 
         && newData.sex_male.length!=0 
         && newData.sex_female.length!=0 
-	&& newData.sex_unknown.length!=0 
-	&& newData.age_range_20_29.length!=0 
-	&& newData.age_range_30_39.length!=0 
-	&& newData.age_range_other.length!=0 
-	&& newData.type_of_attack_personal_weapons.length!=0 
-	&& newData.type_of_attack_gun.length!=0 
+		&& newData.sex_unknown.length!=0 
+		&& newData.age_range_20_29.length!=0 
+		&& newData.age_range_30_39.length!=0 
+		&& newData.age_range_other.length!=0 
+		&& newData.type_of_attack_personal_weapons.length!=0 
+		&& newData.type_of_attack_gun.length!=0 
         && newData.type_of_attack_knife.length!=0 ){
 
         insertData()
@@ -579,12 +579,12 @@ const togglealerta=()=>{
               	<td><b>Sexo masculino</b></td>
               	<td><b>Sexo femenino</b></td>
                 <td><b>Sexo desconocido</b></td>
-		<td><b>Rango de edad 20-29</b></td>
-		<td><b>Rango de edad 30-39</b></td>
-		<td><b>Otro rango de edad</b></td>
-		<td><b>Tipo de ataque Armas personales</b></td>
-		<td><b>Tipo de ataque Pistola</b></td>
-		<td><b>Tipo de ataque Navaja</b></td>
+				<td><b>Rango de edad 20-29</b></td>
+				<td><b>Rango de edad 30-39</b></td>
+				<td><b>Otro rango de edad</b></td>
+				<td><b>Tipo de ataque Armas personales</b></td>
+				<td><b>Tipo de ataque Pistola</b></td>
+				<td><b>Tipo de ataque Navaja</b></td>
             </tr>
         </thead>
         <tbody>
@@ -596,11 +596,11 @@ const togglealerta=()=>{
                     <td>{data.sex_female}</td>
                     <td>{data.sex_unknown}</td>
                     <td>{data.age_range_20_29}</td>
-		    <td>{data.age_range_30_39}</td>
-		    <td>{data.age_range_other}</td>
-		    <td>{data.type_of_attack_personal_weapons}</td>
-		    <td>{data.type_of_attack_gun}</td>
-		    <td>{data.type_of_attack_knife}</td>
+		    		<td>{data.age_range_30_39}</td>
+		    		<td>{data.age_range_other}</td>
+		    		<td>{data.type_of_attack_personal_weapons}</td>
+		    		<td>{data.type_of_attack_gun}</td>
+		    		<td>{data.type_of_attack_knife}</td>
                     <td>
                         <Button style="background-color: #F08080" on:click={() =>deleteData(data.state,data.year)}> Eliminar</Button>
                         <Button style="background-color: #28B463" on:click={() =>gotoupdate(data.state,data.year) }> Actualizar</Button>
