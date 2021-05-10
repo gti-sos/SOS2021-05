@@ -161,6 +161,7 @@
         }
         }
 
+        
         async function loadStats(){
         deleteStats();
         console.log("Loading data...");
