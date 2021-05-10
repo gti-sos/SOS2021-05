@@ -80,7 +80,7 @@ app.get(BASE_API_PATH+"/arms-sales-stats/loadInitialData", (req,res)=>{
 			"percent_of_people":"0.0133",
 		},
 		{
-			"state":"Alabama",
+			"state":"Monatana",
 			"year":"2018",
 			"month": "10" ,
 			"arms_sold":"80.934",
