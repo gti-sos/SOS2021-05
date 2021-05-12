@@ -76,7 +76,7 @@
                 }
             }else{
                 console.log("Fetching homicides resourcers...");
-            const res = await fetch(BASE_API_URL+"?limit="+limit+"&offset="+ofset+flags);
+            const res = await fetch(BASE_API_URL+"?"+flags);
             let datos=[]
             
                 if(res.ok){
@@ -107,9 +107,15 @@
                 data = json;
                 console.log(`Received ${data.length} resources`);
                 pagina = (ofset/10)+1
-
-                let mes="Hemos encontrado "+ data.length +" elementos que concuerden con la busqueda";
-                if(filtros_act) lanzamensaje(res.status,res.statusText,"Advertencia",mes,null)
+                
+                
+                if(filtros_act && ofset==0&&data.length>0 ){
+                    let mes="Hemos encontrado "+ num_paginas+" paginas que contienen elementos que concuerden con la busqueda";
+                    lanzamensaje(res.status,res.statusText,"Advertencia",mes,null)
+                }else if(filtros_act &&ofset==0 ){
+                    let mes="No hemos encontrado elementos que concuerden con la busqueda";
+                    lanzamensaje(res.status,res.statusText,"Advertencia",mes,null)
+                }
             }else{
                 console.log("ERROR!");
                 lanzamensaje(res.status,res.statusText,"Error al obtener los elementos","Vaya... Algo ha salido mal. Probablemente la Base de Datos haya tenido un problema. Vuelva a intentarlo mas adelante",true)
@@ -283,7 +289,8 @@ const anterior= () => {ofset-=10; getData()}
     const cancelarbusqueda = () => (popbusqueda = !popbusqueda);
     const buscar = () => {
         popbusqueda = !popbusqueda
-       
+       flags="";
+       ofset=0;
         if(databusqueda.state.replace(" ","").length!=0){
             flags= flags+"&state="+databusqueda.state;
         }
