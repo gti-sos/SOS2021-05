@@ -108,7 +108,7 @@
                 console.log(`Received ${data.length} resources`);
                 pagina = (ofset/10)+1
                 
-                
+                setTimeout(() => {  }, 1000)
                 if(filtros_act && ofset==0&&data.length>0 ){
                     let mes="Hemos encontrado "+ num_paginas+" paginas que contienen elementos que concuerden con la busqueda";
                     lanzamensaje(res.status,res.statusText,"Advertencia",mes,null)
