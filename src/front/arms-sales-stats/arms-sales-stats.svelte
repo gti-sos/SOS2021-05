@@ -38,7 +38,7 @@
     let num_paginas=0;
     let flags ="";
     let filtros_act= false;
-
+    let cargardatos =false;
     getData();
 
     let newData = {
@@ -108,8 +108,10 @@
                 console.log(`Received ${data.length} resources`);
                 pagina = (ofset/10)+1
                 
+                
                 setTimeout(() => {  }, 1000)
                 if(filtros_act && ofset==0&&data.length>0 ){
+                    
                     let mes="Hemos encontrado "+ num_paginas+" paginas que contienen elementos que concuerden con la busqueda";
                     lanzamensaje(res.status,res.statusText,"Advertencia",mes,null)
                 }else if(filtros_act &&ofset==0 ){
@@ -189,6 +191,7 @@
 
         
         async function loadStats(){
+            cargardatos=true;
         deleteStats();
         console.log("Loading data...");
         const carga =  await fetch(BASE_API_URL + "/loadInitialData");
@@ -226,9 +229,20 @@
 		}).then(function (res) {
 			if (res.status==200){
 				console.log("Ok.");
-                let mensajeespecifico ="Se han eliminado "+data.length+" elementos."
+                let mensajeespecifico ="Se han eliminado todos elementos."
+                if(cargardatos){
+                    mensajeespecifico ="Se procede a cargar los datos. Espere unos segundos..."
+                    
+                    cargardatos=!cargardatos;
+                    lanzamensaje(res.status,res.statusText,"Se está procesando la petición",mensajeespecifico ,null)
+                }else{
+                    mensajeespecifico ="Se han eliminado todos elementos."
+                    lanzamensaje(res.status,res.statusText,"Los datos se han eliminado satisfactoriamente",mensajeespecifico ,null)
+                }
+                 
                 data = [];
-                lanzamensaje(res.status,res.statusText,"Los datos se han eliminado satisfactoriamente",mensajeespecifico ,null)
+                
+                
 			} else if (res.status==404){ //no data found
                 console.log("No data found");
                 lanzamensaje(res.status,res.statusText,"Fallo al eliminar los datos","No existen datos que eliminar" ,true)
@@ -310,12 +324,13 @@ const anterior= () => {ofset-=10; getData()}
         filtros_act=true
         getData()
     }
-
+    //Quitar filtros
         const quitafiltros =() => {
             flags="";
             filtros_act=false;
             getData();
         }
+
 
 //Modal alerta
 let rescodigo=0;
@@ -338,7 +353,23 @@ const lanzamensaje=(rc,rs,m,me,err)=>{
 const togglealerta=()=>{
     alerta=!alerta;
 }
-
+//Buscar pagina especifica
+let bpagina=false;
+const nbuscapagina=()=>{
+    bpagina=!bpagina;
+}
+const buscapagina=(n)=>{
+    bpagina=!bpagina;
+    if(n<num_paginas){
+        ofset=n*10-10;
+         getData()
+    }else{
+        ofset=num_paginas*10-10;
+        getData()
+    }
+   
+}
+let paginabuscada= pagina;
 </script>
   
 
@@ -475,6 +506,24 @@ const togglealerta=()=>{
                 </ModalFooter>
             </Modal>
 
+ <!-- Modal para cambiar de pagina easy -->
+            <Modal isOpen={bpagina} toggle={nbuscapagina} transitionOptions>
+                <ModalHeader {nbuscapagina}>¿Quiere ir a una Página especifica?</ModalHeader>
+                <ModalBody style="text-align: center;" >
+                    <p>Introduzaca el número de pagina al quie desea desplazarse.</p>
+                    <div style="text-align: center;" >
+                        <input type="number" min="1" max="{num_paginas}" bind:value="{paginabuscada}">/{num_paginas}
+                    </div>
+                </ModalBody>
+                <ModalFooter>
+                    <Button color="primary" on:click={() =>buscapagina(paginabuscada)}>Ir a la pagina!</Button>
+                    <Button color="secondary" on:click={nbuscapagina}>Cancelar</Button>
+                </ModalFooter>
+            </Modal>
+
+
+
+
             <Modal isOpen={alerta} toggle={togglealerta} transitionOptions>
                 <ModalHeader toggle={togglealerta} style="text-align: center;">{mensaje}
                 
@@ -544,12 +593,13 @@ const togglealerta=()=>{
         </tbody>
     </Table >
 
-        
+    
+
     <div style="text-align: center; " >
         {#if pagina != 1}
         <Button style="background-color: #7A05B5 " on:click={anterior}>Anterior</Button>
         {/if}
-        <Button color="dark" >Pag. Nº: {pagina} / {num_paginas}</Button>    
+        <Button color="dark"  on:click={nbuscapagina}>Pag. Nº: {pagina} / {num_paginas}</Button>    
         {#if num_paginas-pagina!=0 }
          <Button style="background-color: #7A05B5 " on:click={siguiente}>Siguiente</Button>
          {/if}
