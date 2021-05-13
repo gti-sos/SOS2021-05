@@ -1,5 +1,5 @@
 
-var au = [
+module.exports = [
     
 //año 2020
 {
@@ -45301,4 +45301,3 @@ var au = [
    
 
 ];
-module.exports ={au}
