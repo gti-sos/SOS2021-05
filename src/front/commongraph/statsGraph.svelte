@@ -1,10 +1,7 @@
 
 <svelte:head>
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/modules/series-label.js"></script>
-    <script src="https://code.highcharts.com/modules/exporting.js"></script>
-    <script src="https://code.highcharts.com/modules/export-data.js"></script>
-    <script src="https://code.highcharts.com/modules/accessibility.js" on:load="{loadGraph}"></script>
+    <script src="https://code.highcharts.com/highcharts.src.js" on:load="{loadGraph}"></script>
+       
 </svelte:head>
 
 <script>
@@ -13,19 +10,26 @@
     } from "svelte";
  
     let data = [];
+    let array = [];
     async function getData(){
         console.log("Fetching data...");
-        const res = await fetch("/data");
+        const res = await fetch("/api/v2/arms-sales-stats?state=Alabama&year=2020");
         if(res.ok){
             console.log("Ok.");
             const json = await res.json();
             data = json;
             console.log(`We have received ${data.length} data points.`);
+            for(let i=0;i<data.length;i++){
+                let aux= data[i].arms_sold.replace(".","")
+                array[i]=parseInt(aux,10)
+            }
+            
+            console.log(array);
         }else{
             console.log("Error!");
         }
     }   
-    
+    onMount(getData)
   async function loadGraph(){  
     Highcharts.chart('container', {
         title: {
@@ -51,12 +55,12 @@
                 label: {
                     connectorAllowed: false
                 },
-                pointStart: 2010
+                pointStart: 1
             }
         },
         series: [{
             name: 'Installation',
-            data: [1,1,1,2,3,2,1,5,1,2,1,5,12,1]
+            data: array
         }],
         responsive: {
             rules: [{
@@ -74,6 +78,8 @@
         }
     });
   }
+
+  
 </script>
 
 

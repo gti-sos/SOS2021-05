@@ -8,6 +8,10 @@
 	import EditAttacks from "./attacks-stats/editAttacksData.svelte";
 	import Home from "./Home.svelte";
 	import Graph from "./commongraph/statsGraph.svelte";
+	import GraphArms from "./arms-sales-stats/graphs/lineArms.svelte";
+
+	
+
 	import NotFound from "./NotFound.svelte";
 	
 	import Info from "./Info.svelte";
@@ -18,9 +22,15 @@
 		"/attacks": Attacks,
 		"/": Home,
 		"/analytics": Graph,
+		//Arms Sales Stats
+		"/sales/analytics": GraphArms,
 		"/sales/:state/:year/:month": EditSale,
+		
 		"/homicides/:state/:year": EditHomicides,
 		"/attacks/:state/:year": EditAttacks,
+		
+
+
 		"*": NotFound,
 		
 	
