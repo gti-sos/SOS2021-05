@@ -7,6 +7,7 @@
 	import Attacks from "./attacks-stats/attacks-stats.svelte";
 	import EditAttacks from "./attacks-stats/editAttacksData.svelte";
 	import Home from "./Home.svelte";
+	import Graph from "./commongraph/statsGraph.svelte";
 	import NotFound from "./NotFound.svelte";
 	
 	import Info from "./Info.svelte";
@@ -16,6 +17,7 @@
 		"/sales": Sales,		
 		"/attacks": Attacks,
 		"/": Home,
+		"/analytics": Graph,
 		"/sales/:state/:year/:month": EditSale,
 		"/homicides/:state/:year": EditHomicides,
 		"/attacks/:state/:year": EditAttacks,
