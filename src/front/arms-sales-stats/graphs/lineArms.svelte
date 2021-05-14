@@ -1,10 +1,3 @@
-
-<svelte:head>
-    <script src="https://code.highcharts.com/highcharts.src.js" on:load="{loadGraph}"></script>
-  
-       
-</svelte:head>
-
 <script>
     
     
@@ -18,10 +11,10 @@
 "Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island",
 "South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"]	
   
-    
+   
     let data = [];
     let array = [];
-
+    onMount(datos)
     async function getData(agno){
         console.log("Fetching data...");
         const res = await fetch("/api/v2/arms-sales-stats?year="+agno);
@@ -35,14 +28,19 @@
                 array[i]=parseInt(aux,10)
             }
             
-            console.log(array);
+           
         }else{
             console.log("Error!");
         }
     }   
-    onMount(getData(agno))
-    
-    function getVisibilidad( n) {
+   
+     function datos() {
+        
+        getData(2019)
+        
+    }
+
+    function getVisibilidad(n) {
         
         return n.includes("Alab")||n.includes("Main")||n.includes("Idaho");
     }
@@ -138,14 +136,19 @@ function gomain() {
 
 </script>
 
+<svelte:head>
+    
+    <script src="https://code.highcharts.com/highcharts.src.js" on:load="{loadGraph}"></script>
+    
+    
+       
+</svelte:head>
 
 <main>
     
     <figure class="highcharts-figure">
         <div id="container"></div>
-        <p class="highcharts-description">
-           
-        </p>
+        
     </figure>  
   
 </main>
