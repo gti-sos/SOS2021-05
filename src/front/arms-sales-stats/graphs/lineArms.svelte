@@ -15,6 +15,7 @@
     let data = [];
     let array = [];
     onMount(datos)
+    
     async function getData(agno){
         console.log("Fetching data...");
         const res = await fetch("/api/v2/arms-sales-stats?year="+agno);
