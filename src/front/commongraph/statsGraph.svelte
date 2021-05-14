@@ -1,42 +1,44 @@
+
+<svelte:head>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/series-label.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js" on:load="{loadGraph}"></script>
+</svelte:head>
+
 <script>
     import {
         onMount
     } from "svelte";
  
     let data = [];
-    let array = [];
-    const BASE_API_URL = "/api/v2/arms-sales-stats"; //tiene que llamar a la API para tratar los datos
     async function getData(){
         console.log("Fetching data...");
-        const res = await fetch(BASE_API_URL+"?state=Alabama&year=2020");
+        const res = await fetch("/data");
         if(res.ok){
             console.log("Ok.");
             const json = await res.json();
             data = json;
-            for(let i=0;i<data.length;i++){
-                array[i]=data[i].arms_sold.replace(".","").replace("\"","")
-            }
-            console.log(array);
             console.log(`We have received ${data.length} data points.`);
         }else{
             console.log("Error!");
         }
     }   
     
-    onMount(getData);
   async function loadGraph(){  
     Highcharts.chart('container', {
         title: {
-            text: 'Alabama'
+            text: 'My data'
         },
         yAxis: {
             title: {
-                text: 'Armas Vendidas'
+                text: 'Quantity'
             }
         },
         xAxis: {
             accessibility: {
-                rangeDescription: 'Month'
+                rangeDescription: 'Year'
             }
         },
         legend: {
@@ -49,13 +51,12 @@
                 label: {
                     connectorAllowed: false
                 },
-                pointStart: 1
-                        }
+                pointStart: 2010
+            }
         },
         series: [{
-            name: 'Line',
-
-            data: [1,1,2,2,3,3,3]
+            name: 'Installation',
+            data: [1,1,1,2,3,2,1,5,1,2,1,5,12,1]
         }],
         responsive: {
             rules: [{
@@ -75,14 +76,6 @@
   }
 </script>
 
-
-<svelte:head>
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/modules/series-label.js"></script>
-    <script src="https://code.highcharts.com/modules/exporting.js"></script>
-    <script src="https://code.highcharts.com/modules/export-data.js"></script>
-    <script src="https://code.highcharts.com/modules/accessibility.js" on:load="{loadGraph}"></script>
-</svelte:head>
 
 <main>
     <figure class="highcharts-figure">
