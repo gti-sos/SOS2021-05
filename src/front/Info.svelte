@@ -104,8 +104,10 @@
             </a>
 
             <a href="https://documenter.getpostman.com/view/14942846/TzJydbG4"
-            ><Button color="info">Postman Documentation v2</Button></a
-          >
+            ><Button color="info">Postman Documentation v2</Button></a>
+
+            <a href="http://sos2021-05.herokuapp.com/#/sales/analytics"
+            ><Button style="background-color: #D992FF">Gráfica</Button></a>
 
           </CardBody>
           <CardFooter

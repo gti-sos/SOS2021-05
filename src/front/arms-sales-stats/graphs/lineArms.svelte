@@ -1,6 +1,28 @@
 <script>
     
-    
+    import {
+        Nav,
+        Modal,
+        ModalBody,
+        ModalFooter,
+        ModalHeader,
+        NavItem,
+        NavLink,
+        Button,
+        Table,
+        UncontrolledAlert,
+        Card,
+        CardBody,
+        CardFooter,
+        CardHeader,
+        CardSubtitle,
+        CardText,
+        CardTitle,
+    } from "sveltestrap";
+     
+    import {
+       pop
+    } from "svelte-spa-router";
     import {
         onMount
     } from "svelte";
@@ -15,7 +37,7 @@
     let data = [];
     let array = [];
     onMount(datos)
-    
+
     async function getData(agno){
         console.log("Fetching data...");
         const res = await fetch("/api/v2/arms-sales-stats?year="+agno);
@@ -29,7 +51,7 @@
                 array[i]=parseInt(aux,10)
             }
             
-           
+            console.log(array);
         }else{
             console.log("Error!");
         }
@@ -37,7 +59,7 @@
    
      function datos() {
         
-        getData(2019)
+        getData(agno)
         
     }
 
@@ -46,7 +68,7 @@
         return n.includes("Alab")||n.includes("Main")||n.includes("Idaho");
     }
 
-  async function loadGraph(){  
+   function loadGraph(){  
     
     //SERIES PARA LOS ESTADOS
     var seriesaux = [],
@@ -127,14 +149,27 @@
     });
   }
 
-
-  function gotable() {
-    location.href = '#/sales';
+  let b=false;
+const busqueda=()=>{
+    b=!b;
 }
-function gomain() {
-    location.href = '#/info';
+async function buscar(){
+    b=!b;
+   
+   getData(agno)
+   await delay(200);
+   recarga()
+   
+  
+   
 }
+const recarga=()=>{
 
+    loadGraph()
+   
+}
+ 
+const delay = ms => new Promise(res => setTimeout(res, ms));
 </script>
 
 <svelte:head>
@@ -151,5 +186,26 @@ function gomain() {
         <div id="container"></div>
         
     </figure>  
-  
+    <div>
+        <Button color="secondary" on:click={pop}>Volver</Button>
+        <Button color="secondary" on:click={busqueda}>Cambiar año</Button>
+    </div>
+
+    <Modal isOpen={b} toggle={busqueda} transitionOptions>
+        <ModalHeader {busqueda}>¿Desea cambiar el año?</ModalHeader>
+        <ModalBody >
+            <p>Introduzaca el año del que quiera obtener los datos.</p>
+                    <div style="text-align: center;" >
+                        <input type="number" min="2010" max="2020" bind:value="{agno}">
+                    </div>
+           
+        </ModalBody>
+        <ModalFooter>
+            <Button color="primary" on:click={buscar}>Vamos allá!</Button>
+            <Button color="secondary" on:click={busqueda}>Cancelar</Button>
+        </ModalFooter>
+    </Modal>
 </main>
+<style>
+    
+</style>
