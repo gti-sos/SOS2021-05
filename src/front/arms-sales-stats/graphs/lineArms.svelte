@@ -36,7 +36,7 @@
    
     let data = [];
     let array = [];
-    onMount(datos)
+    onMount(buscar)
 
     async function getData(agno){
         console.log("Fetching data...");
