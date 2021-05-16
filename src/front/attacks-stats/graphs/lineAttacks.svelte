@@ -39,9 +39,9 @@
     let array = [];
     onMount(buscar)
 
-    async function getData(agno){
+    async function getData(){
         console.log("Fetching data...");
-        const res = await fetch("/api/v2/attacks-stats?year="+agno);
+        const res = await fetch("/api/v2/attacks-stats");
         if(res.ok){
             console.log("Ok.");
             const json = await res.json();
@@ -60,7 +60,7 @@
    
      function datos() {
         
-        getData(agno)
+        getData()
         
     }
 
@@ -77,28 +77,27 @@
     i = 0;
    
     for(i;i<len;i++){
-        let comienzo=i*12
-         let fin=comienzo +12
+        let comienzo=i*10
+         let fin=comienzo +10
         let arraytroceada=array.slice(comienzo,fin)
         const arrayoredenada=[]
         //ordenamos la array en funcion de como salen los datos del get
-        arrayoredenada[0]=arraytroceada[11]
-        arrayoredenada[1]=arraytroceada[7]
-        arrayoredenada[2]=arraytroceada[6]
-        arrayoredenada[3]=arraytroceada[5]
+        arrayoredenada[0]=arraytroceada[0]
+        arrayoredenada[1]=arraytroceada[1]
+        arrayoredenada[2]=arraytroceada[2]
+        arrayoredenada[3]=arraytroceada[3]
         arrayoredenada[4]=arraytroceada[4]
-        arrayoredenada[5]=arraytroceada[3]
-        arrayoredenada[6]=arraytroceada[2]
-        arrayoredenada[7]=arraytroceada[1]
-        arrayoredenada[8]=arraytroceada[0]
-        arrayoredenada[9]=arraytroceada[10]
-        arrayoredenada[10]=arraytroceada[9]
-        arrayoredenada[11]=arraytroceada[8]
+        arrayoredenada[5]=arraytroceada[5]
+        arrayoredenada[6]=arraytroceada[6]
+        arrayoredenada[7]=arraytroceada[7]
+        arrayoredenada[8]=arraytroceada[8]
+        arrayoredenada[9]=arraytroceada[9]
         
-        
+
+
        seriesaux.push({
         name: estados[i],
-        data:   arrayoredenada,
+        data: arrayoredenada,
         visible: getVisibilidad(estados[i])
     });
 
@@ -106,48 +105,57 @@
 
     //SERIES PARA LOS ESTADOS
     Highcharts.chart('container', {
-        title: {
-            text: 'Ataques por armas personales en '+ agno
+
+title: {
+
+    text: 'Ataques por armas personales 2010-2019'
+},
+
+yAxis: {
+    title: {
+        text: 'Tipo de ataque: armas personales'
+    }
+},
+
+xAxis: {
+    accessibility: {
+        rangeDescription: 'Range: 2010 to 2019'
+    }
+},
+
+legend: {
+    layout: 'vertical',
+    align: 'right',
+    verticalAlign: 'middle'
+},
+
+plotOptions: {
+    series: {
+        label: {
+            connectorAllowed: false
         },
-        yAxis: {
-            title: {
-                text: 'Tipo de ataque: armas personales'
+        pointStart: 2010
+    }
+},
+
+series: seriesaux,
+
+responsive: {
+    rules: [{
+        condition: {
+            maxWidth: 500
+        },
+        chartOptions: {
+            legend: {
+                layout: 'horizontal',
+                align: 'center',
+                verticalAlign: 'bottom'
             }
-        },
-        xAxis: {
-            accessibility: {
-                rangeDescription: 'Año'
-            }
-        },
-        legend: {
-            layout: 'vertical',
-            align: 'right',
-            verticalAlign: 'middle'
-        },
-        plotOptions: {
-            series: {
-                label: {
-                    connectorAllowed: false
-                },
-                pointStart: 1
-            }
-        },
-        series: seriesaux,
-        responsive: {
-            rules: [{
-                condition: {
-                    maxWidth: 500
-                },
-                chartOptions: {
-                    legend: {
-                        layout: 'horizontal',
-                        align: 'center',
-                        verticalAlign: 'bottom'
-                    }
-                }
-            }]
         }
-    });
+    }]
+}
+
+});
   }
 
   let b=false;
