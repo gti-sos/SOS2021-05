@@ -1,4 +1,3 @@
-
 <script>
     
     import {
@@ -29,42 +28,20 @@
     } from "svelte";
     
     
-    
+    let agno= 2019
     let estados=["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts",
 "Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island",
 "South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"]	
-let state= "Alabama"
-
+  
+  
    
     let data = [];
-    let arraysales = [];
-    let arrayattacks = [];
+    let array = [];
     onMount(buscar)
 
-    async function getDataSales(state){
-        arraysales = [];
+    async function getData(agno){
         console.log("Fetching data...");
-        const res = await fetch("/api/v2/arms-sales-stats?state="+state);
-        if(res.status==200){
-            console.log("Ok.");
-            const json = await res.json();
-            data = json;
-            console.log(`We have received ${data.length} data points.`);
-            for(let i=0;i<data.length;i++){
-                let aux= data[i].arms_sold.replace(".","")
-                arraysales[i]=parseInt(aux,10)
-            }
-            arraysales=arraysales.reverse()
-            console.log(arraysales);
-        }else{
-            console.log("Error!");
-        }
-    }
-    
-    async function getDataAttacks(state){
-        arrayattacks = [];
-        console.log("Fetching data...");
-        const res = await fetch("/api/v2/attacks-stats?state="+state);
+        const res = await fetch("/api/v2/attacks-stats?year="+agno);
         if(res.ok){
             console.log("Ok.");
             const json = await res.json();
@@ -72,70 +49,74 @@ let state= "Alabama"
             console.log(`We have received ${data.length} data points.`);
             for(let i=0;i<data.length;i++){
                 let aux= data[i].type_of_attack_personal_weapons.replace(".","")
-                arrayattacks [i]=parseInt(aux,10)
+                array[i]=parseInt(aux,10)
             }
-            arrayattacks= arrayattacks.reverse()
-            console.log(arrayattacks );
+            
+            console.log(array);
         }else{
             console.log("Error!");
         }
-    }
+    }   
    
-  
+     function datos() {
+        
+        getData(agno)
+        
+    }
 
     function getVisibilidad(n) {
         
-        return true
+        return n.includes("Alab")||n.includes("Main")||n.includes("Idaho");
     }
 
    function loadGraph(){  
     
     //SERIES PARA LOS ESTADOS
     var seriesaux = [],
-    len = arraysales.length / 12,
+    len = estados.length,
     i = 0;
    
-    let arrayporagno=[]
-    for(i;i<len-1;i++){
-        let j=0
-       
-        
-         let comienzo=i*12
+    for(i;i<len;i++){
+        let comienzo=i*12
          let fin=comienzo +12
-         let arraytroceada=arraysales.slice(comienzo,fin)
-         let a=0;
-         
+        let arraytroceada=array.slice(comienzo,fin)
+        const arrayoredenada=[]
         //ordenamos la array en funcion de como salen los datos del get
-             a= arraytroceada[11]+arraytroceada[7]+arraytroceada[6]+arraytroceada[5]+arraytroceada[4]+arraytroceada[3]+
-             arraytroceada[2]+arraytroceada[1]+arraytroceada[0]+arraytroceada[10]+arraytroceada[9]+arraytroceada[8]
-            
-             console.log(a)
-             arrayporagno.push(arrayattacks[i]/a)
-         
+        arrayoredenada[0]=arraytroceada[11]
+        arrayoredenada[1]=arraytroceada[7]
+        arrayoredenada[2]=arraytroceada[6]
+        arrayoredenada[3]=arraytroceada[5]
+        arrayoredenada[4]=arraytroceada[4]
+        arrayoredenada[5]=arraytroceada[3]
+        arrayoredenada[6]=arraytroceada[2]
+        arrayoredenada[7]=arraytroceada[1]
+        arrayoredenada[8]=arraytroceada[0]
+        arrayoredenada[9]=arraytroceada[10]
+        arrayoredenada[10]=arraytroceada[9]
+        arrayoredenada[11]=arraytroceada[8]
+        
+        
+       seriesaux.push({
+        name: estados[i],
+        data:   arrayoredenada,
+        visible: getVisibilidad(estados[i])
+    });
+
     }
-    
-    seriesaux.push({
-            name: "Ataques/Armas Vendidas",
-            data:  arrayporagno,
-            visible: getVisibilidad(state)
-              
-         });
-    
-    
 
     //SERIES PARA LOS ESTADOS
     Highcharts.chart('container', {
         title: {
-            text: state
+            text: 'Ataques por armas personales en '+ agno
         },
         yAxis: {
             title: {
-                text: state
+                text: 'Tipo de ataque: armas personales'
             }
         },
         xAxis: {
             accessibility: {
-                rangeDescription: 'Month'
+                rangeDescription: 'Año'
             }
         },
         legend: {
@@ -148,7 +129,7 @@ let state= "Alabama"
                 label: {
                     connectorAllowed: false
                 },
-                pointStart: 2010
+                pointStart: 1
             }
         },
         series: seriesaux,
@@ -167,7 +148,6 @@ let state= "Alabama"
             }]
         }
     });
-    
   }
 
   let b=false;
@@ -176,10 +156,9 @@ const busqueda=()=>{
 }
 async function buscar(){
     b=!b;
-   console.log(state)
-   getDataSales(state)
-   getDataAttacks(state)
-   await delay(500);
+   
+   getData(agno)
+   await delay(200);
    recarga()
    
   
@@ -210,15 +189,15 @@ const delay = ms => new Promise(res => setTimeout(res, ms));
     </figure>  
     <div>
         <Button color="secondary" on:click={pop}>Volver</Button>
-        <Button color="secondary" on:click={busqueda}>Cambiar Estado</Button>
+        <Button color="secondary" on:click={busqueda}>Cambiar año</Button>
     </div>
 
     <Modal isOpen={b} toggle={busqueda} transitionOptions>
-        <ModalHeader {busqueda}>¿Desea cambiar el Estado?</ModalHeader>
+        <ModalHeader {busqueda}>¿Desea cambiar el año?</ModalHeader>
         <ModalBody >
-            <p>Seleccione el estado del que quiera obtener los datos.</p>
+            <p>Introduzaca el año del que quiera obtener los datos.</p>
                     <div style="text-align: center;" >
-                        <input type="text"  bind:value="{state}">   
+                        <input type="number" min="2010" max="2020" bind:value="{agno}">
                     </div>
            
         </ModalBody>

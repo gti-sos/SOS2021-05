@@ -121,12 +121,12 @@
       <Col xs="auto">
         <Card class="mb-3">
           <CardHeader>
-            <CardTitle><h5>Ataques por estados</h5></CardTitle>
+            <CardTitle><h5>Attacks stats</h5></CardTitle>
           </CardHeader>
           <CardBody>
             <CardSubtitle />
             <CardText>
-             Ataques por estados de los años recienes en EEUU.
+             Attacks stats in the recent years in USA
             </CardText>
             <a href="http://sos2021-05.herokuapp.com/api/v1/attacks-stats"
               ><Button color="primary">Backend</Button></a
@@ -141,10 +141,14 @@
               ><Button color="info">Postman Documentation v2</Button></a
             >
 
+            <a href="http://sos2021-05.herokuapp.com/#/attacks/analytics"
+            ><Button style="background-color: #D992FF">Gráfica</Button></a>
+
+
           </CardBody>
           <CardFooter
             >developed by
-            <a href="http://github.com/josanmegia"> José Antonio Megías Macías </a
+            <a href="http://github.com/josanmegias"> José Antonio Megías Macías </a
             ></CardFooter
           >
         </Card>
