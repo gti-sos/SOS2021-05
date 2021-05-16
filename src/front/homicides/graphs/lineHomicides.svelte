@@ -28,7 +28,7 @@
     } from "svelte";
     
     
-    let agno= 2019
+    let estado = "Alabama";
     let estados=["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts",
 "Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island",
 "South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"]	
@@ -38,9 +38,9 @@
     let array = [];
     onMount(buscar)
 
-    async function getData(agno){
+    async function getData(estado){
         console.log("Fetching data...");
-        const res = await fetch("/api/v2/homicides-by-firearms?year="+agno);
+        const res = await fetch("/api/v2/homicides-by-firearms?state="+estado);
         if(res.ok){
             console.log("Ok.");
             const json = await res.json();
@@ -59,7 +59,7 @@
    
      function datos() {
         
-        getData(agno)
+        getData(estado)
         
     }
 
@@ -76,23 +76,13 @@
     i = 0;
    
     for(i;i<len;i++){
-        let comienzo=i*12
-         let fin=comienzo +12
-        let arraytroceada=array.slice(comienzo,fin)
+        let comienzo=2019;
+        let fin=2017;
+        let arraytroceada=array.slice(comienzo,fin); //divide el array, de modo que cada trozo corresponde a un estado
         const arrayoredenada=[]
         //ordenamos la array en funcion de como salen los datos del get
-        arrayoredenada[0]=arraytroceada[11]
-        arrayoredenada[1]=arraytroceada[7]
-        arrayoredenada[2]=arraytroceada[6]
-        arrayoredenada[3]=arraytroceada[5]
-        arrayoredenada[4]=arraytroceada[4]
-        arrayoredenada[5]=arraytroceada[3]
-        arrayoredenada[6]=arraytroceada[2]
-        arrayoredenada[7]=arraytroceada[1]
-        arrayoredenada[8]=arraytroceada[0]
-        arrayoredenada[9]=arraytroceada[10]
-        arrayoredenada[10]=arraytroceada[9]
-        arrayoredenada[11]=arraytroceada[8]
+        //aqui manu tiene 12 porque son los meses
+
         
         
        seriesaux.push({
@@ -106,11 +96,11 @@
     //SERIES PARA LOS ESTADOS
     Highcharts.chart('container', {
         title: {
-            text: 'Homicidios por armas de fuego en '+ agno
+            text: 'Homicidios por armas de fuego en '+ estado
         },
         yAxis: {
             title: {
-                text: 'Armas vendidas'
+                text: 'Homicidios'
             }
         },
         xAxis: {
@@ -156,7 +146,7 @@ const busqueda=()=>{
 async function buscar(){
     b=!b;
    
-   getData(agno)
+   getData(estado)
    await delay(200);
    recarga()
    
@@ -188,7 +178,7 @@ const delay = ms => new Promise(res => setTimeout(res, ms));
     </figure>  
     <div>
         <Button color="secondary" on:click={pop}>Volver</Button>
-        <Button color="secondary" on:click={busqueda}>Cambiar año</Button>
+        <Button color="secondary" on:click={busqueda}>Cambiar Estado</Button>
     </div>
 
     <Modal isOpen={b} toggle={busqueda} transitionOptions>
@@ -196,7 +186,7 @@ const delay = ms => new Promise(res => setTimeout(res, ms));
         <ModalBody >
             <p>Introduzaca el año del que quiera obtener los datos.</p>
                     <div style="text-align: center;" >
-                        <input type="number" min="2010" max="2020" bind:value="{agno}">
+                        <input type="string" min="Alabama" max="Wyoming" bind:value="{estado}">
                     </div>
            
         </ModalBody>
