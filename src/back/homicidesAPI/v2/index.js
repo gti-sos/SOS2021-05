@@ -33,11 +33,92 @@ var db = new Datastore({ filename: "./src/back/homicidesAPI/v2/homicides.db", au
             {
                 "state":"Idaho",
                 "year":"2019",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Idaho",
+                "year":"2018",
                 "homicide_by_firearm": "23" ,
                 "handgun":"9",
                 "rifle":"0",
                 "shotgun":"0",
                 "type_not_stated": "7"
+            },
+            {
+                "state":"Idaho",
+                "year":"2017",
+                "homicide_by_firearm": "22" ,
+                "handgun":"16",
+                "rifle":"6",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Idaho",
+                "year":"2016",
+                "homicide_by_firearm": "19" ,
+                "handgun":"14",
+                "rifle":"1",
+                "shotgun":"1",
+                "type_not_stated": "3"
+            },
+            {
+                "state":"Idaho",
+                "year":"2015",
+                "homicide_by_firearm": "20" ,
+                "handgun":"15",
+                "rifle":"3",
+                "shotgun":"0",
+                "type_not_stated": "2"
+            },
+            {
+                "state":"Idaho",
+                "year":"2014",
+                "homicide_by_firearm": "12" ,
+                "handgun":"8",
+                "rifle":"0",
+                "shotgun":"1",
+                "type_not_stated": "3"
+            },
+            {
+                "state":"Idaho",
+                "year":"2013",
+                "homicide_by_firearm": "23" ,
+                "handgun":"10",
+                "rifle":"1",
+                "shotgun":"0",
+                "type_not_stated": "2"
+            },
+            {
+                "state":"Idaho",
+                "year":"2012",
+                "homicide_by_firearm": "15" ,
+                "handgun":"10",
+                "rifle":"1",
+                "shotgun":"2",
+                "type_not_stated": "2"
+            },
+            {
+                "state":"Idaho",
+                "year":"2011",
+                "homicide_by_firearm": "14" ,
+                "handgun":"12",
+                "rifle":"1",
+                "shotgun":"0",
+                "type_not_stated": "1"
+            },
+            {
+                "state":"Idaho",
+                "year":"2010",
+                "homicide_by_firearm": "17" ,
+                "handgun":"12",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "5"
             },
             {
                 "state":"West_Virginia",
@@ -238,6 +319,88 @@ var db = new Datastore({ filename: "./src/back/homicidesAPI/v2/homicides.db", au
                 "type_not_stated": "4"
             },
             {
+                "state":"Maine",
+                "year":"2018",
+                "homicide_by_firearm": "7" ,
+                "handgun":"6",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "1"
+            },
+            {
+                "state":"Maine",
+                "year":"2017",
+                "homicide_by_firearm": "12" ,
+                "handgun":"4",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "8"
+            },
+            {
+                "state":"Maine",
+                "year":"2016",
+                "homicide_by_firearm": "15" ,
+                "handgun":"6",
+                "rifle":"0",
+                "shotgun":"1",
+                "type_not_stated": "8"
+            },
+            {
+                "state":"Maine",
+                "year":"2015",
+                "homicide_by_firearm": "12" ,
+                "handgun":"11",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "1"
+            },
+            {
+                "state":"Maine",
+                "year":"2014",
+                "homicide_by_firearm": "3" ,
+                "handgun":"2",
+                "rifle":"0",
+                "shotgun":"1",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Maine",
+                "year":"2013",
+                "homicide_by_firearm": "11" ,
+                "handgun":"3",
+                "rifle":"2",
+                "shotgun":"1",
+                "type_not_stated": "5"
+            },
+            {
+                "state":"Maine",
+                "year":"2012",
+                "homicide_by_firearm": "10" ,
+                "handgun":"4",
+                "rifle":"1",
+                "shotgun":"0",
+                "type_not_stated": "5"
+            },
+            {
+                "state":"Maine",
+                "year":"2011",
+                "homicide_by_firearm": "9" ,
+                "handgun":"2",
+                "rifle":"1",
+                "shotgun":"1",
+                "type_not_stated": "5"
+            },
+            {
+                "state":"Maine",
+                "year":"2010",
+                "homicide_by_firearm": "11" ,
+                "handgun":"4",
+                "rifle":"2",
+                "shotgun":"1",
+                "type_not_stated": "4"
+            },
+
+            {
                 "state":"Michigan",
                 "year":"2019",
                 "homicide_by_firearm": "379" ,
@@ -251,6 +414,87 @@ var db = new Datastore({ filename: "./src/back/homicidesAPI/v2/homicides.db", au
                 "year":"2019",
                 "homicide_by_firearm": "79" ,
                 "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"Alabama",
+                "year":"2018",
+                "homicide_by_firearm": "2" ,
+                "handgun":"2",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Alabama",
+                "year":"2017",
+                "homicide_by_firearm": "2" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"1",
+                "type_not_stated": "1"
+            },
+            {
+                "state":"Alabama",
+                "year":"2016",
+                "homicide_by_firearm": "2" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"1",
+                "type_not_stated": "1"
+            },
+            {
+                "state":"Alabama",
+                "year":"2015",
+                "homicide_by_firearm": "2" ,
+                "handgun":"1",
+                "rifle":"0",
+                "shotgun":"1",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Alabama",
+                "year":"2014",
+                "homicide_by_firearm": "1" ,
+                "handgun":"1",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Alabama",
+                "year":"2013",
+                "homicide_by_firearm": "3" ,
+                "handgun":"1",
+                "rifle":"0",
+                "shotgun":"1",
+                "type_not_stated": "3"
+            },
+            {
+                "state":"Alabama",
+                "year":"2012",
+                "homicide_by_firearm": "3" ,
+                "handgun":"1",
+                "rifle":"0",
+                "shotgun":"1",
+                "type_not_stated": "1"
+            },
+            {
+                "state":"Alabama",
+                "year":"2011",
+                "homicide_by_firearm": "9" ,
+                "handgun":"3",
+                "rifle":"0",
+                "shotgun":"1",
+                "type_not_stated": "6"
+            },
+            {
+                "state":"Alabama",
+                "year":"2010",
+                "homicide_by_firearm": "21" ,
+                "handgun":"3",
                 "rifle":"0",
                 "shotgun":"0",
                 "type_not_stated": "18"
