@@ -16,7 +16,7 @@ var attacks_stats = [];
 app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{ 
 
 	var attacks_stats_initial_data = [
-		// ----------------- AÑO 2018 ----------------------------------------------
+		// ----------------- AÑO 2019 ----------------------------------------------
 		{
 			"state":"Alabama",
 			"year":"2019",
@@ -107,32 +107,6 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"type_of_attack_personal_weapons":"1622",
 			"type_of_attack_gun":"-",
 			"type_of_attack_knife":"803"
-		},
-		{
-			"state":"Canal-Zone",
-			"year":"2019",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
-		},
-		{
-			"state":"District-of-Columbia",
-			"year":"2019",
-			"sex_male":"619" ,
-			"sex_female":"157",
-			"sex_unknown":"16",
-			"age_range_20_29":"183",
-			"age_range_30_39":"36",
-			"age_range_other":"503",
-			"type_of_attack_personal_weapons":"209",
-			"type_of_attack_gun":"38",
-			"type_of_attack_knife":"83"
 		},
 		{
 			"state":"Delaware",
@@ -536,19 +510,6 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"type_of_attack_personal_weapons":"58",
 			"type_of_attack_gun":"7",
 			"type_of_attack_knife":"12"
-		},
-		{
-			"state":"Puerto-Rico",
-			"year":"2019",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
 		},
 		{
 			"state":"Rhode-Island",
@@ -799,32 +760,6 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"type_of_attack_knife":"803"
 		},
 		{
-			"state":"Canal-Zone",
-			"year":"2018",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
-		},
-		{
-			"state":"District-of-Columbia",
-			"year":"2018",
-			"sex_male":"619" ,
-			"sex_female":"157",
-			"sex_unknown":"16",
-			"age_range_20_29":"183",
-			"age_range_30_39":"36",
-			"age_range_other":"503",
-			"type_of_attack_personal_weapons":"209",
-			"type_of_attack_gun":"38",
-			"type_of_attack_knife":"83"
-		},
-		{
 			"state":"Delaware",
 			"year":"2018",
 			"sex_male":"3675" ,
@@ -1226,19 +1161,6 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"type_of_attack_personal_weapons":"58",
 			"type_of_attack_gun":"7",
 			"type_of_attack_knife":"12"
-		},
-		{
-			"state":"Puerto-Rico",
-			"year":"2018",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
 		},
 		{
 			"state":"Rhode-Island",
