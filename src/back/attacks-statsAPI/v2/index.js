@@ -182,9 +182,9 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_20_29":"1139",
 			"age_range_30_39":"927",
 			"age_range_other":"1992",
-			"type_of_attack_personal_weapons":"1964",
-			"type_of_attack_gun":"329",
-			"type_of_attack_knife":"455"
+			"type_of_attack_personal_weapons":"1908",
+			"type_of_attack_gun":"268",
+			"type_of_attack_knife":"424"
 		},
 		{
 			"state":"Illinois",
@@ -286,7 +286,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_20_29":"182",
 			"age_range_30_39":"145",
 			"age_range_other":"234",
-			"type_of_attack_personal_weapons":"291",
+			"type_of_attack_personal_weapons":"394",
 			"type_of_attack_gun":"-",
 			"type_of_attack_knife":"73"
 		},
@@ -1484,9 +1484,9 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_20_29":"1139",
 			"age_range_30_39":"927",
 			"age_range_other":"1992",
-			"type_of_attack_personal_weapons":"1964",
-			"type_of_attack_gun":"329",
-			"type_of_attack_knife":"455"
+			"type_of_attack_personal_weapons":"1809",
+			"type_of_attack_gun":"286",
+			"type_of_attack_knife":"461"
 		},
 		{
 			"state":"Illinois",
@@ -1588,7 +1588,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_20_29":"182",
 			"age_range_30_39":"145",
 			"age_range_other":"234",
-			"type_of_attack_personal_weapons":"291",
+			"type_of_attack_personal_weapons":"266",
 			"type_of_attack_gun":"-",
 			"type_of_attack_knife":"73"
 		},
@@ -2135,9 +2135,9 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_20_29":"1139",
 			"age_range_30_39":"927",
 			"age_range_other":"1992",
-			"type_of_attack_personal_weapons":"1964",
-			"type_of_attack_gun":"329",
-			"type_of_attack_knife":"455"
+			"type_of_attack_personal_weapons":"1707",
+			"type_of_attack_gun":"277",
+			"type_of_attack_knife":"431"
 		},
 		{
 			"state":"Illinois",
@@ -2239,7 +2239,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_20_29":"182",
 			"age_range_30_39":"145",
 			"age_range_other":"234",
-			"type_of_attack_personal_weapons":"291",
+			"type_of_attack_personal_weapons":"250",
 			"type_of_attack_gun":"-",
 			"type_of_attack_knife":"73"
 		},
@@ -2786,9 +2786,9 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_20_29":"1139",
 			"age_range_30_39":"927",
 			"age_range_other":"1992",
-			"type_of_attack_personal_weapons":"1964",
-			"type_of_attack_gun":"329",
-			"type_of_attack_knife":"455"
+			"type_of_attack_personal_weapons":"1535",
+			"type_of_attack_gun":"238",
+			"type_of_attack_knife":"412"
 		},
 		{
 			"state":"Illinois",
@@ -2890,7 +2890,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_20_29":"182",
 			"age_range_30_39":"145",
 			"age_range_other":"234",
-			"type_of_attack_personal_weapons":"291",
+			"type_of_attack_personal_weapons":"210",
 			"type_of_attack_gun":"-",
 			"type_of_attack_knife":"73"
 		},
@@ -3437,9 +3437,9 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_20_29":"1139",
 			"age_range_30_39":"927",
 			"age_range_other":"1992",
-			"type_of_attack_personal_weapons":"1964",
-			"type_of_attack_gun":"329",
-			"type_of_attack_knife":"455"
+			"type_of_attack_personal_weapons":"1414",
+			"type_of_attack_gun":"-",
+			"type_of_attack_knife":"442"
 		},
 		{
 			"state":"Illinois",
@@ -3541,7 +3541,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_20_29":"182",
 			"age_range_30_39":"145",
 			"age_range_other":"234",
-			"type_of_attack_personal_weapons":"291",
+			"type_of_attack_personal_weapons":"225",
 			"type_of_attack_gun":"-",
 			"type_of_attack_knife":"73"
 		},
@@ -4088,9 +4088,9 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_20_29":"1139",
 			"age_range_30_39":"927",
 			"age_range_other":"1992",
-			"type_of_attack_personal_weapons":"1964",
-			"type_of_attack_gun":"329",
-			"type_of_attack_knife":"455"
+			"type_of_attack_personal_weapons":"1463",
+			"type_of_attack_gun":"-",
+			"type_of_attack_knife":"451"
 		},
 		{
 			"state":"Illinois",
@@ -4192,7 +4192,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_20_29":"182",
 			"age_range_30_39":"145",
 			"age_range_other":"234",
-			"type_of_attack_personal_weapons":"291",
+			"type_of_attack_personal_weapons":"200",
 			"type_of_attack_gun":"-",
 			"type_of_attack_knife":"73"
 		},
@@ -4739,9 +4739,9 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_20_29":"1139",
 			"age_range_30_39":"927",
 			"age_range_other":"1992",
-			"type_of_attack_personal_weapons":"1964",
-			"type_of_attack_gun":"329",
-			"type_of_attack_knife":"455"
+			"type_of_attack_personal_weapons":"1460",
+			"type_of_attack_gun":"209",
+			"type_of_attack_knife":"423"
 		},
 		{
 			"state":"Illinois",
@@ -4843,7 +4843,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_20_29":"182",
 			"age_range_30_39":"145",
 			"age_range_other":"234",
-			"type_of_attack_personal_weapons":"291",
+			"type_of_attack_personal_weapons":"177",
 			"type_of_attack_gun":"-",
 			"type_of_attack_knife":"73"
 		},
@@ -5390,9 +5390,9 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_20_29":"1139",
 			"age_range_30_39":"927",
 			"age_range_other":"1992",
-			"type_of_attack_personal_weapons":"1964",
-			"type_of_attack_gun":"329",
-			"type_of_attack_knife":"455"
+			"type_of_attack_personal_weapons":"1259",
+			"type_of_attack_gun":"172",
+			"type_of_attack_knife":"431"
 		},
 		{
 			"state":"Illinois",
@@ -5494,7 +5494,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_20_29":"182",
 			"age_range_30_39":"145",
 			"age_range_other":"234",
-			"type_of_attack_personal_weapons":"291",
+			"type_of_attack_personal_weapons":"153",
 			"type_of_attack_gun":"-",
 			"type_of_attack_knife":"73"
 		},
@@ -6041,9 +6041,9 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_20_29":"1139",
 			"age_range_30_39":"927",
 			"age_range_other":"1992",
-			"type_of_attack_personal_weapons":"1964",
-			"type_of_attack_gun":"329",
-			"type_of_attack_knife":"455"
+			"type_of_attack_personal_weapons":"1496",
+			"type_of_attack_gun":"186",
+			"type_of_attack_knife":"423"
 		},
 		{
 			"state":"Illinois",
@@ -6145,7 +6145,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_20_29":"182",
 			"age_range_30_39":"145",
 			"age_range_other":"234",
-			"type_of_attack_personal_weapons":"291",
+			"type_of_attack_personal_weapons":"156",
 			"type_of_attack_gun":"-",
 			"type_of_attack_knife":"73"
 		},
