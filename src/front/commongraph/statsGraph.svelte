@@ -37,7 +37,8 @@ let state= estados[0]
 
    
     let data = [];
-    let array = [];
+    let arraysales = [];
+    let arrayattacks = [];
     onMount(buscar)
 
     async function getDataSales(state){
@@ -50,14 +51,33 @@ let state= estados[0]
             console.log(`We have received ${data.length} data points.`);
             for(let i=0;i<data.length;i++){
                 let aux= data[i].arms_sold.replace(".","")
-                array[i]=parseInt(aux,10)
+                arraysales[i]=parseInt(aux,10)
             }
-            
-            console.log(array);
+            arraysales=arraysales.reverse()
+            console.log(arraysales);
         }else{
             console.log("Error!");
         }
-    }   
+    }
+    
+    async function getDataAttacks(state){
+        console.log("Fetching data...");
+        const res = await fetch("/api/v2/attacks-stats?state="+state);
+        if(res.ok){
+            console.log("Ok.");
+            const json = await res.json();
+            data = json;
+            console.log(`We have received ${data.length} data points.`);
+            for(let i=0;i<data.length;i++){
+                let aux= data[i].type_of_attack_personal_weapons.replace(".","")
+                arrayattacks [i]=parseInt(aux,10)
+            }
+            
+            console.log(arrayattacks );
+        }else{
+            console.log("Error!");
+        }
+    }
    
   
 
@@ -70,29 +90,30 @@ let state= estados[0]
     
     //SERIES PARA LOS ESTADOS
     var seriesaux = [],
-    len = array.length / 12,
+    len = arraysales.length / 12,
     i = 0;
    
     let arrayporagno=[]
-    for(i;i<len;i++){
+    for(i;i<len-1;i++){
         let j=0
        
         
          let comienzo=i*12
          let fin=comienzo +12
-         let arraytroceada=array.slice(comienzo,fin)
+         let arraytroceada=arraysales.slice(comienzo,fin)
          let a=0;
          
         //ordenamos la array en funcion de como salen los datos del get
              a= arraytroceada[11]+arraytroceada[7]+arraytroceada[6]+arraytroceada[5]+arraytroceada[4]+arraytroceada[3]+
              arraytroceada[2]+arraytroceada[1]+arraytroceada[0]+arraytroceada[10]+arraytroceada[9]+arraytroceada[8]
             
-             arrayporagno.push(a)
+             arrayporagno.push(arrayattacks [i]/a)
          
     }
+    
     seriesaux.push({
-            name: state,
-            data:  arrayporagno,
+            name: "Ataques/Armas Vendidas",
+            data:  arrayporagno.reverse(),
             visible: getVisibilidad(estados[i])
               
          });
@@ -102,11 +123,11 @@ let state= estados[0]
     //SERIES PARA LOS ESTADOS
     Highcharts.chart('container', {
         title: {
-            text: 'Venta de armas '
+            text: state
         },
         yAxis: {
             title: {
-                text: 'Armas vendidas'
+                text: state
             }
         },
         xAxis: {
@@ -154,6 +175,7 @@ async function buscar(){
     b=!b;
    
    getDataSales(state)
+   getDataAttacks(state)
    await delay(500);
    recarga()
    
