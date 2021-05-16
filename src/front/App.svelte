@@ -10,6 +10,7 @@
 	import Graph from "./commongraph/statsGraph.svelte";
 	import GraphArms from "./arms-sales-stats/graphs/lineArms.svelte";
 	import GraphHomicides from "./homicides/graphs/lineHomicides.svelte";
+	import GraphAttacks from "./attacks-stats/graphs/lineAttacks.svelte";
 
 
 	
@@ -32,7 +33,10 @@
 		"/sales/analytics": GraphArms,
 		"/sales/:state/:year/:month": EditSale,
 		
+		//Attacks stats
+		"/attacks/analytics": GraphAttacks,
 		"/attacks/:state/:year": EditAttacks,
+		
 		
 
 
