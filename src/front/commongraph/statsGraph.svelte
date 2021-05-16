@@ -33,7 +33,7 @@
     let estados=["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts",
 "Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island",
 "South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"]	
-let state= estados[0]
+let state= "Alabama"
 
    
     let data = [];
@@ -42,9 +42,10 @@ let state= estados[0]
     onMount(buscar)
 
     async function getDataSales(state){
+        arraysales = [];
         console.log("Fetching data...");
         const res = await fetch("/api/v2/arms-sales-stats?state="+state);
-        if(res.ok){
+        if(res.status==200){
             console.log("Ok.");
             const json = await res.json();
             data = json;
@@ -61,6 +62,7 @@ let state= estados[0]
     }
     
     async function getDataAttacks(state){
+        arrayattacks = [];
         console.log("Fetching data...");
         const res = await fetch("/api/v2/attacks-stats?state="+state);
         if(res.ok){
@@ -72,7 +74,7 @@ let state= estados[0]
                 let aux= data[i].type_of_attack_personal_weapons.replace(".","")
                 arrayattacks [i]=parseInt(aux,10)
             }
-            
+            arrayattacks= arrayattacks.reverse()
             console.log(arrayattacks );
         }else{
             console.log("Error!");
@@ -107,14 +109,15 @@ let state= estados[0]
              a= arraytroceada[11]+arraytroceada[7]+arraytroceada[6]+arraytroceada[5]+arraytroceada[4]+arraytroceada[3]+
              arraytroceada[2]+arraytroceada[1]+arraytroceada[0]+arraytroceada[10]+arraytroceada[9]+arraytroceada[8]
             
-             arrayporagno.push(arrayattacks [i]/a)
+             console.log(a)
+             arrayporagno.push(arrayattacks[i]/a)
          
     }
     
     seriesaux.push({
             name: "Ataques/Armas Vendidas",
-            data:  arrayporagno.reverse(),
-            visible: getVisibilidad(estados[i])
+            data:  arrayporagno,
+            visible: getVisibilidad(state)
               
          });
     
@@ -173,7 +176,7 @@ const busqueda=()=>{
 }
 async function buscar(){
     b=!b;
-   
+   console.log(state)
    getDataSales(state)
    getDataAttacks(state)
    await delay(500);
@@ -207,15 +210,15 @@ const delay = ms => new Promise(res => setTimeout(res, ms));
     </figure>  
     <div>
         <Button color="secondary" on:click={pop}>Volver</Button>
-        <Button color="secondary" on:click={busqueda}>Cambiar año</Button>
+        <Button color="secondary" on:click={busqueda}>Cambiar Estado</Button>
     </div>
 
     <Modal isOpen={b} toggle={busqueda} transitionOptions>
-        <ModalHeader {busqueda}>¿Desea cambiar el año?</ModalHeader>
+        <ModalHeader {busqueda}>¿Desea cambiar el Estado?</ModalHeader>
         <ModalBody >
-            <p>Introduzaca el año del que quiera obtener los datos.</p>
+            <p>Seleccione el estado del que quiera obtener los datos.</p>
                     <div style="text-align: center;" >
-                        <input type="number" min="2010" max="2020" bind:value="{state}">
+                        <input type="text"  bind:value="{state}">   
                     </div>
            
         </ModalBody>
