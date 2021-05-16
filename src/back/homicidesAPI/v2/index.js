@@ -83,6 +83,96 @@ var db = new Datastore({ filename: "./src/back/homicidesAPI/v2/homicides.db", au
                 "rifle":"0",
                 "shotgun":"0",
                 "type_not_stated": "0"
+            },
+            {
+                "state":"Arizona",
+                "year":"2019",
+                "homicide_by_firearm": "253" ,
+                "handgun":"170",
+                "rifle":"6",
+                "shotgun":"10",
+                "type_not_stated": "47"
+            },
+            {
+                "state":"California",
+                "year":"2019",
+                "homicide_by_firearm": "991" ,
+                "handgun":"762",
+                "rifle":"64",
+                "shotgun":"34",
+                "type_not_stated": "319"
+            },
+            {
+                "state":"Colorado",
+                "year":"2019",
+                "homicide_by_firearm": "138" ,
+                "handgun":"84",
+                "rifle":"7",
+                "shotgun":"5",
+                "type_not_stated": "42"
+            },
+            {
+                "state":"Connecticut",
+                "year":"2019",
+                "homicide_by_firearm": "170" ,
+                "handgun":"15",
+                "rifle":"1",
+                "shotgun":"1",
+                "type_not_stated": "53"
+            },
+            {
+                "state":"Columbia",
+                "year":"2019",
+                "homicide_by_firearm": "136" ,
+                "handgun":"52",
+                "rifle":"0",
+                "shotgun":"2",
+                "type_not_stated": "84"
+            },
+            {
+                "state":"Delaware",
+                "year":"2019",
+                "homicide_by_firearm": "41" ,
+                "handgun":"13",
+                "rifle":"0",
+                "shotgun":"1",
+                "type_not_stated": "27"
+            },
+            {
+                "state":"Florida",
+                "year":"2019",
+                "homicide_by_firearm": "1" ,
+                "handgun":"1",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Georgia",
+                "year":"2019",
+                "homicide_by_firearm": "372" ,
+                "handgun":"309",
+                "rifle":"14",
+                "shotgun":"3",
+                "type_not_stated": "46"
+            },
+            {
+                "state":"Hawaii",
+                "year":"2019",
+                "homicide_by_firearm": "9" ,
+                "handgun":"5",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "4"
+            },
+            {
+                "state":"Iowa",
+                "year":"2019",
+                "homicide_by_firearm": "36" ,
+                "handgun":"21",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "15"
             }
         ];
 
