@@ -197,7 +197,7 @@ const delay = ms => new Promise(res => setTimeout(res, ms));
     </figure>  
     <div>
         <Button color="secondary" on:click={pop}>Volver</Button>
-        <Button color="secondary" on:click={busqueda}>Cambiar año</Button>
+        
     </div>
 
     <Modal isOpen={b} toggle={busqueda} transitionOptions>
