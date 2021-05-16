@@ -1317,6 +1317,118 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"type_of_attack_personal_weapons":"-",
 			"type_of_attack_gun":"-",
 			"type_of_attack_knife":"-"
+		},
+		// ----------------- AÑO 2017 ----------------------------------------------
+		{
+			"state":"Alabama",
+			"year":"2017",
+			"sex_male":"111" ,
+			"sex_female":"18",
+			"sex_unknown":"14",
+			"age_range_20_29":"44",
+			"age_range_30_39":"14",
+			"age_range_other":"85",
+			"type_of_attack_personal_weapons":"38",
+			"type_of_attack_gun":"20",
+			"type_of_attack_knife":"8"
+		},
+		// ----------------- AÑO 2016 ----------------------------------------------
+		{
+			"state":"Alabama",
+			"year":"2016",
+			"sex_male":"111" ,
+			"sex_female":"18",
+			"sex_unknown":"14",
+			"age_range_20_29":"44",
+			"age_range_30_39":"14",
+			"age_range_other":"85",
+			"type_of_attack_personal_weapons":"38",
+			"type_of_attack_gun":"20",
+			"type_of_attack_knife":"8"
+		},
+		// ----------------- AÑO 2015 ----------------------------------------------
+		{
+			"state":"Alabama",
+			"year":"2015",
+			"sex_male":"111" ,
+			"sex_female":"18",
+			"sex_unknown":"14",
+			"age_range_20_29":"44",
+			"age_range_30_39":"14",
+			"age_range_other":"85",
+			"type_of_attack_personal_weapons":"38",
+			"type_of_attack_gun":"20",
+			"type_of_attack_knife":"8"
+		},
+		// ----------------- AÑO 2014 ----------------------------------------------
+		{
+			"state":"Alabama",
+			"year":"2014",
+			"sex_male":"111" ,
+			"sex_female":"18",
+			"sex_unknown":"14",
+			"age_range_20_29":"44",
+			"age_range_30_39":"14",
+			"age_range_other":"85",
+			"type_of_attack_personal_weapons":"38",
+			"type_of_attack_gun":"20",
+			"type_of_attack_knife":"8"
+		},
+		// ----------------- AÑO 2013 ----------------------------------------------
+		{
+			"state":"Alabama",
+			"year":"2013",
+			"sex_male":"111" ,
+			"sex_female":"18",
+			"sex_unknown":"14",
+			"age_range_20_29":"44",
+			"age_range_30_39":"14",
+			"age_range_other":"85",
+			"type_of_attack_personal_weapons":"38",
+			"type_of_attack_gun":"20",
+			"type_of_attack_knife":"8"
+		},
+		// ----------------- AÑO 2012 ----------------------------------------------
+		{
+			"state":"Alabama",
+			"year":"2012",
+			"sex_male":"111" ,
+			"sex_female":"18",
+			"sex_unknown":"14",
+			"age_range_20_29":"44",
+			"age_range_30_39":"14",
+			"age_range_other":"85",
+			"type_of_attack_personal_weapons":"38",
+			"type_of_attack_gun":"20",
+			"type_of_attack_knife":"8"
+		},
+		// ----------------- AÑO 2011 ----------------------------------------------
+		{
+			"state":"Alabama",
+			"year":"2011",
+			"sex_male":"111" ,
+			"sex_female":"18",
+			"sex_unknown":"14",
+			"age_range_20_29":"44",
+			"age_range_30_39":"14",
+			"age_range_other":"85",
+			"type_of_attack_personal_weapons":"38",
+			"type_of_attack_gun":"20",
+			"type_of_attack_knife":"8"
+		},
+		// ----------------- AÑO 2010 ----------------------------------------------
+		{
+			"state":"Alabama",
+			"year":"2010",
+			"sex_male":"111" ,
+			"sex_female":"18",
+			"sex_unknown":"14",
+			"age_range_20_29":"44",
+			"age_range_30_39":"14",
+			"age_range_other":"85",
+			"type_of_attack_personal_weapons":"38",
+			"type_of_attack_gun":"20",
+			"type_of_attack_knife":"8"
 		}
 	];
 
