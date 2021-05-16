@@ -42,7 +42,7 @@ var db = new Datastore({ filename: "./src/back/homicidesAPI/v2/homicides.db", au
             {
                 "state":"West_Virginia",
                 "year":"2019",
-                "homicide:by_firearm": "69" ,
+                "homicide_by_firearm": "69" ,
                 "handgun":"24",
                 "rifle":"7",
                 "shotgun":"2",

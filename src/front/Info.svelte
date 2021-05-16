@@ -74,6 +74,8 @@
             <a href="https://documenter.getpostman.com/view/14948327/TzJydbLX "
             ><Button color="info">Postman Documentation v2</Button></a
           >
+          <a href="./#/homicides/analytics"
+            ><Button style="background-color: #D992FF">Gráfica</Button></a>
 
           </CardBody>
           <CardFooter
