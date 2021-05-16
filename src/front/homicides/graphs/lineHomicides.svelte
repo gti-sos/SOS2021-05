@@ -38,16 +38,16 @@
     let array = [];
     onMount(buscar)
 
-    async function getData(estado){
+    async function getData(){
         console.log("Fetching data...");
-        const res = await fetch("/api/v2/homicides-by-firearms?state="+estado);
+        const res = await fetch("/api/v2/homicides-by-firearms");
         if(res.ok){
             console.log("Ok.");
             const json = await res.json();
             data = json;
             console.log(`We have received ${data.length} data points.`);
             for(let i=0;i<data.length;i++){
-                let aux= data[i].arms_sold.replace(".","")
+                let aux= data[i].homicide_by_firearm.replace(".","")
                 array[i]=parseInt(aux,10)
             }
             
@@ -75,14 +75,23 @@
     len = estados.length,
     i = 0;
    
-    for(i;i<len;i++){
-        let comienzo=2019;
-        let fin=2017;
+    for(i;i<len;i++){ //itero por todos los estados..
+        let comienzo=i*10;
+        let fin= comienzo + 10;
         let arraytroceada=array.slice(comienzo,fin); //divide el array, de modo que cada trozo corresponde a un estado
         const arrayoredenada=[]
         //ordenamos la array en funcion de como salen los datos del get
         //aqui manu tiene 12 porque son los meses
-
+        arrayoredenada[0]=arraytroceada[0]
+        arrayoredenada[1]=arraytroceada[1]
+        arrayoredenada[2]=arraytroceada[2]
+        arrayoredenada[3]=arraytroceada[3]
+        arrayoredenada[4]=arraytroceada[4]
+        arrayoredenada[5]=arraytroceada[5]
+        arrayoredenada[6]=arraytroceada[6]
+        arrayoredenada[7]=arraytroceada[7]
+        arrayoredenada[8]=arraytroceada[8]
+        arrayoredenada[9]=arraytroceada[9]
         
         
        seriesaux.push({
@@ -100,7 +109,7 @@
         },
         yAxis: {
             title: {
-                text: 'Homicidios'
+                text: 'Homicidios por armas de fuego'
             }
         },
         xAxis: {
@@ -118,7 +127,7 @@
                 label: {
                     connectorAllowed: false
                 },
-                pointStart: 1
+                pointStart: 2010
             }
         },
         series: seriesaux,
