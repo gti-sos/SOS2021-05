@@ -275,7 +275,11 @@ const delay = ms => new Promise(res => setTimeout(res, ms));
     <figure class="highcharts-figure">
         <div id="container"></div>
         
-    </figure>  
+    </figure> 
+    <div>
+        El objetivo de este gráfico se centra en interelacionar el % de ataques y de homicidios respecto a la venta de armas. 
+        Como podemos comprobar, pese a que un gran número de personas compra armas en EEUU, no existe un gran numero de homicidios/ataques
+    </div> 
     <div>
         <Button color="secondary" on:click={pop}>Volver</Button>
         <Button color="secondary" on:click={busqueda}>Cambiar Estado</Button>

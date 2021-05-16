@@ -47,6 +47,11 @@
           ><b>URL: </b>http://sos2021-05.herokuapp.com</a
         >
       </Col>
+      <Col>
+        <a href="./#/analytics"
+          ><b>Line Graph: </b> http://sos2021-05.herokuapp.com/#/analytics</a
+        >
+      </Col>
     </Container>
   
     <h2>APIs</h2>
