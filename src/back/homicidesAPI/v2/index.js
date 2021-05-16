@@ -166,6 +166,15 @@ var db = new Datastore({ filename: "./src/back/homicidesAPI/v2/homicides.db", au
                 "type_not_stated": "4"
             },
             {
+                "state":"Illinois",
+                "year":"2019",
+                "homicide_by_firearm": "648" ,
+                "handgun":"564",
+                "rifle":"7",
+                "shotgun":"4",
+                "type_not_stated": "73"
+            },
+            {
                 "state":"Iowa",
                 "year":"2019",
                 "homicide_by_firearm": "36" ,
