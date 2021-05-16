@@ -175,6 +175,87 @@ var db = new Datastore({ filename: "./src/back/homicidesAPI/v2/homicides.db", au
                 "type_not_stated": "73"
             },
             {
+                "state":"Indiana",
+                "year":"2019",
+                "homicide_by_firearm": "10437" ,
+                "handgun":"6385",
+                "rifle":"398",
+                "shotgun":"364",
+                "type_not_stated": "3290"
+            },
+            {
+                "state":"Kansas",
+                "year":"2019",
+                "homicide_by_firearm": "56" ,
+                "handgun":"37",
+                "rifle":"1",
+                "shotgun":"1",
+                "type_not_stated": "17"
+            },
+            {
+                "state":"Kentucky",
+                "year":"2019",
+                "homicide_by_firearm": "175" ,
+                "handgun":"101",
+                "rifle":"9",
+                "shotgun":"7",
+                "type_not_stated": "58"
+            },
+            {
+                "state":"Louisiana",
+                "year":"2019",
+                "homicide_by_firearm": "56" ,
+                "handgun":"200",
+                "rifle":"24",
+                "shotgun":"4",
+                "type_not_stated": "205"
+            },
+            {
+                "state":"Massachusetts",
+                "year":"2019",
+                "homicide_by_firearm": "72" ,
+                "handgun":"38",
+                "rifle":"0",
+                "shotgun":"1",
+                "type_not_stated": "53"
+            },
+            {
+                "state":"Maryland",
+                "year":"2019",
+                "homicide_by_firearm": "56" ,
+                "handgun":"414",
+                "rifle":"3",
+                "shotgun":"13",
+                "type_not_stated": "43"
+            },
+            {
+                "state":"Maine",
+                "year":"2019",
+                "homicide_by_firearm": "13" ,
+                "handgun":"6",
+                "rifle":"0",
+                "shotgun":"3",
+                "type_not_stated": "4"
+            },
+            {
+                "state":"Michigan",
+                "year":"2019",
+                "homicide_by_firearm": "379" ,
+                "handgun":"172",
+                "rifle":"13",
+                "shotgun":"5",
+                "type_not_stated": "189"
+            },
+            {
+                "state":"Minnesota",
+                "year":"2019",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
                 "state":"Iowa",
                 "year":"2019",
                 "homicide_by_firearm": "36" ,
