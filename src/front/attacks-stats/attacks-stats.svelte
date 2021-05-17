@@ -282,6 +282,7 @@ const anterior= () => {ofset-=10; getData()}
         popbusqueda = !popbusqueda
         flags="";
        ofset=0;
+       
         if(databusqueda.state.replace(" ","").length!=0){
             flags= flags+"&state="+databusqueda.state;
         }
