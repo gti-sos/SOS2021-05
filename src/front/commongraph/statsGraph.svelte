@@ -67,7 +67,7 @@ let state= "Alabama"
     async function getDataAttacks(state){
         arrayattacks = [];
         console.log("Fetching data...");
-        const res = await fetch("/api/v2/attacks-stats?state="+state);
+        const res = await fetch("/api/v2/attacks-stats?state="+state.replace("_","-"));
         if(res.ok){
             console.log("Ok.");
             const json = await res.json();
@@ -89,7 +89,7 @@ let state= "Alabama"
     async function getDataHomicides(state){
         arrayhomicides = [];
         console.log("Fetching data...");
-        const res = await fetch("/api/v2/homicides-by-firearms?state="+state);
+        const res = await fetch("/api/v2/homicides-by-firearms?state="+state.replace("_","-"));
         if(res.ok){
             console.log("Ok.");
             const json = await res.json();
