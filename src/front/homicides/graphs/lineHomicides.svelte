@@ -108,7 +108,7 @@
 
 title: {
 
-    text: 'Ataques por armas personales 2010-2019'
+    text: 'Homicidios por armas de fuego 2010-2019'
 },
 
 yAxis: {

@@ -12,6 +12,19 @@ var db = new Datastore({ filename: "./src/back/homicidesAPI/v2/homicides.db", au
     app.get(BASE_API_PATH+"/homicides-by-firearms/loadInitialData", (req,res)=>{ 
 
         var homicides_by_firearms_initial_data = [
+
+            		// ----------------- AÑO 2019 ----------------------------------------------
+
+            {
+                "state":"Alabama",
+                "year":"2019",
+                "homicide_by_firearm": "3" ,
+                "handgun":"3",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+                    
             {
                 "state":"Alaska",
                 "year":"2019",
@@ -30,6 +43,82 @@ var db = new Datastore({ filename: "./src/back/homicidesAPI/v2/homicides.db", au
                 "shotgun":"5",
                 "type_not_stated": "74"
             },
+
+            {
+                "state":"Arizona",
+                "year":"2019",
+                "homicide_by_firearm": "253" ,
+                "handgun":"170",
+                "rifle":"6",
+                "shotgun":"10",
+                "type_not_stated": "47"
+            },
+
+            {
+                "state":"California",
+                "year":"2019",
+                "homicide_by_firearm": "991" ,
+                "handgun":"762",
+                "rifle":"64",
+                "shotgun":"34",
+                "type_not_stated": "319"
+            },
+            {
+                "state":"Colorado",
+                "year":"2019",
+                "homicide_by_firearm": "138" ,
+                "handgun":"84",
+                "rifle":"7",
+                "shotgun":"5",
+                "type_not_stated": "42"
+            },
+            {
+                "state":"Connecticut",
+                "year":"2019",
+                "homicide_by_firearm": "170" ,
+                "handgun":"15",
+                "rifle":"1",
+                "shotgun":"1",
+                "type_not_stated": "53"
+            },
+            {
+                "state":"Delaware",
+                "year":"2019",
+                "homicide_by_firearm": "41" ,
+                "handgun":"13",
+                "rifle":"0",
+                "shotgun":"1",
+                "type_not_stated": "27"
+            },
+        
+            {
+                "state":"Florida",
+                "year":"2019",
+                "homicide_by_firearm": "1" ,
+                "handgun":"1",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Georgia",
+                "year":"2019",
+                "homicide_by_firearm": "372" ,
+                "handgun":"309",
+                "rifle":"14",
+                "shotgun":"3",
+                "type_not_stated": "46"
+            },
+            {
+                "state":"Hawaii",
+                "year":"2019",
+                "homicide_by_firearm": "9" ,
+                "handgun":"5",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "4"
+            },
+          
             {
                 "state":"Idaho",
                 "year":"2019",
@@ -39,6 +128,4503 @@ var db = new Datastore({ filename: "./src/back/homicidesAPI/v2/homicides.db", au
                 "shotgun":"0",
                 "type_not_stated": "0"
             },
+            {
+                "state":"Iowa",
+                "year":"2019",
+                "homicide_by_firearm": "36" ,
+                "handgun":"21",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "15"
+            },
+            {
+                "state":"Illinois",
+                "year":"2019",
+                "homicide_by_firearm": "648" ,
+                "handgun":"564",
+                "rifle":"7",
+                "shotgun":"4",
+                "type_not_stated": "73"
+            },
+            {
+                "state":"Indiana",
+                "year":"2019",
+                "homicide_by_firearm": "10437" ,
+                "handgun":"6385",
+                "rifle":"398",
+                "shotgun":"364",
+                "type_not_stated": "3290"
+            },
+            {
+                "state":"Kansas",
+                "year":"2019",
+                "homicide_by_firearm": "56" ,
+                "handgun":"37",
+                "rifle":"1",
+                "shotgun":"1",
+                "type_not_stated": "17"
+            },
+            {
+                "state":"Kentucky",
+                "year":"2019",
+                "homicide_by_firearm": "175" ,
+                "handgun":"101",
+                "rifle":"9",
+                "shotgun":"7",
+                "type_not_stated": "58"
+            },
+            {
+                "state":"Louisiana",
+                "year":"2019",
+                "homicide_by_firearm": "56" ,
+                "handgun":"200",
+                "rifle":"24",
+                "shotgun":"4",
+                "type_not_stated": "205"
+            },
+            {
+                "state":"Massachusetts",
+                "year":"2019",
+                "homicide_by_firearm": "72" ,
+                "handgun":"38",
+                "rifle":"0",
+                "shotgun":"1",
+                "type_not_stated": "53"
+            },
+            {
+                "state":"Maryland",
+                "year":"2019",
+                "homicide_by_firearm": "56" ,
+                "handgun":"414",
+                "rifle":"3",
+                "shotgun":"13",
+                "type_not_stated": "43"
+            },
+            {
+                "state":"Maine",
+                "year":"2019",
+                "homicide_by_firearm": "13" ,
+                "handgun":"6",
+                "rifle":"0",
+                "shotgun":"3",
+                "type_not_stated": "4"
+            },
+            {
+                "state":"Michigan",
+                "year":"2019",
+                "homicide_by_firearm": "379" ,
+                "handgun":"172",
+                "rifle":"13",
+                "shotgun":"5",
+                "type_not_stated": "189"
+            },
+            
+            {
+                "state":"Minnesota",
+                "year":"2019",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"Missouri",
+                "year":"2019",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"Mississippi",
+                "year":"2019",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"Montana",
+                "year":"2019",
+                "homicide_by_firearm": "20" ,
+                "handgun":"13",
+                "rifle":"1",
+                "shotgun":"1",
+                "type_not_stated": "2"
+            },
+            {
+                "state":"Nebraska",
+                "year":"2019",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"North-Carolina",
+                "year":"2019",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"North-Dakota",
+                "year":"2019",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"New-Hampshire",
+                "year":"2019",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"New-Jersey",
+                "year":"2019",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+           
+            {
+                "state":"New-Mexico",
+                "year":"2019",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Nevada",
+                "year":"2019",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"New-York",
+                "year":"2019",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Ohio",
+                "year":"2019",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Oklahoma",
+                "year":"2019",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Oregon",
+                "year":"2019",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Pennsylvania",
+                "year":"2019",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Rhode-Island",
+                "year":"2019",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"South-Carolina",
+                "year":"2019",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"South-Dakota",
+                "year":"2019",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Tennessee",
+                "year":"2019",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Texas",
+                "year":"2019",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Utah",
+                "year":"2019",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Virginia",
+                "year":"2019",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Vermont",
+                "year":"2019",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Washington",
+                "year":"2019",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Wisconsin",
+                "year":"2019",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"West-Virginia",
+                "year":"2019",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Wyoming",
+                "year":"2019",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            
+
+            //-----2018------------------------------------
+            {
+                "state":"Alabama",
+                "year":"2018",
+                "homicide_by_firearm": "3" ,
+                "handgun":"3",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+                    
+            {
+                "state":"Alaska",
+                "year":"2018",
+                "homicide_by_firearm": "70" ,
+                "handgun":"17",
+                "rifle":"1",
+                "shotgun":"6",
+                "type_not_stated": "20"
+            },
+            {
+                "state":"Arkansas",
+                "year":"2018",
+                "homicide_by_firearm": "255" ,
+                "handgun":"87",
+                "rifle":"10",
+                "shotgun":"5",
+                "type_not_stated": "74"
+            },
+
+            {
+                "state":"Arizona",
+                "year":"2018",
+                "homicide_by_firearm": "253" ,
+                "handgun":"170",
+                "rifle":"6",
+                "shotgun":"10",
+                "type_not_stated": "47"
+            },
+
+            {
+                "state":"California",
+                "year":"2018",
+                "homicide_by_firearm": "991" ,
+                "handgun":"762",
+                "rifle":"64",
+                "shotgun":"34",
+                "type_not_stated": "319"
+            },
+            {
+                "state":"Colorado",
+                "year":"2018",
+                "homicide_by_firearm": "138" ,
+                "handgun":"84",
+                "rifle":"7",
+                "shotgun":"5",
+                "type_not_stated": "42"
+            },
+            {
+                "state":"Connecticut",
+                "year":"2018",
+                "homicide_by_firearm": "170" ,
+                "handgun":"15",
+                "rifle":"1",
+                "shotgun":"1",
+                "type_not_stated": "53"
+            },
+            {
+                "state":"Delaware",
+                "year":"2018",
+                "homicide_by_firearm": "41" ,
+                "handgun":"13",
+                "rifle":"0",
+                "shotgun":"1",
+                "type_not_stated": "27"
+            },
+        
+            {
+                "state":"Florida",
+                "year":"2018",
+                "homicide_by_firearm": "1" ,
+                "handgun":"1",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Georgia",
+                "year":"2018",
+                "homicide_by_firearm": "372" ,
+                "handgun":"309",
+                "rifle":"14",
+                "shotgun":"3",
+                "type_not_stated": "46"
+            },
+            {
+                "state":"Hawaii",
+                "year":"2018",
+                "homicide_by_firearm": "9" ,
+                "handgun":"5",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "4"
+            },
+          
+            {
+                "state":"Idaho",
+                "year":"2018",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Iowa",
+                "year":"2018",
+                "homicide_by_firearm": "36" ,
+                "handgun":"21",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "15"
+            },
+            {
+                "state":"Illinois",
+                "year":"2018",
+                "homicide_by_firearm": "648" ,
+                "handgun":"564",
+                "rifle":"7",
+                "shotgun":"4",
+                "type_not_stated": "73"
+            },
+            {
+                "state":"Indiana",
+                "year":"2018",
+                "homicide_by_firearm": "10437" ,
+                "handgun":"6385",
+                "rifle":"398",
+                "shotgun":"364",
+                "type_not_stated": "3290"
+            },
+            {
+                "state":"Kansas",
+                "year":"2018",
+                "homicide_by_firearm": "56" ,
+                "handgun":"37",
+                "rifle":"1",
+                "shotgun":"1",
+                "type_not_stated": "17"
+            },
+            {
+                "state":"Kentucky",
+                "year":"2018",
+                "homicide_by_firearm": "175" ,
+                "handgun":"101",
+                "rifle":"9",
+                "shotgun":"7",
+                "type_not_stated": "58"
+            },
+            {
+                "state":"Louisiana",
+                "year":"2018",
+                "homicide_by_firearm": "56" ,
+                "handgun":"200",
+                "rifle":"24",
+                "shotgun":"4",
+                "type_not_stated": "205"
+            },
+            {
+                "state":"Massachusetts",
+                "year":"2018",
+                "homicide_by_firearm": "72" ,
+                "handgun":"38",
+                "rifle":"0",
+                "shotgun":"1",
+                "type_not_stated": "53"
+            },
+            {
+                "state":"Maryland",
+                "year":"2018",
+                "homicide_by_firearm": "56" ,
+                "handgun":"414",
+                "rifle":"3",
+                "shotgun":"13",
+                "type_not_stated": "43"
+            },
+            {
+                "state":"Maine",
+                "year":"2018",
+                "homicide_by_firearm": "13" ,
+                "handgun":"6",
+                "rifle":"0",
+                "shotgun":"3",
+                "type_not_stated": "4"
+            },
+            {
+                "state":"Michigan",
+                "year":"2018",
+                "homicide_by_firearm": "379" ,
+                "handgun":"172",
+                "rifle":"13",
+                "shotgun":"5",
+                "type_not_stated": "189"
+            },
+            
+            {
+                "state":"Minnesota",
+                "year":"2018",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"Missouri",
+                "year":"2018",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"Mississippi",
+                "year":"2018",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"Montana",
+                "year":"2018",
+                "homicide_by_firearm": "20" ,
+                "handgun":"13",
+                "rifle":"1",
+                "shotgun":"1",
+                "type_not_stated": "2"
+            },
+            {
+                "state":"Nebraska",
+                "year":"2018",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"North-Carolina",
+                "year":"2018",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"North-Dakota",
+                "year":"2018",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"New-Hampshire",
+                "year":"2018",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"New-Jersey",
+                "year":"2018",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+           
+            {
+                "state":"New-Mexico",
+                "year":"2018",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Nevada",
+                "year":"2018",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"New-York",
+                "year":"2018",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Ohio",
+                "year":"2018",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Oklahoma",
+                "year":"2018",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Oregon",
+                "year":"2018",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Pennsylvania",
+                "year":"2018",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Rhode-Island",
+                "year":"2018",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"South-Carolina",
+                "year":"2018",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"South-Dakota",
+                "year":"2018",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Tennessee",
+                "year":"2018",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Texas",
+                "year":"2018",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Utah",
+                "year":"2018",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Virginia",
+                "year":"2018",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Vermont",
+                "year":"2018",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Washington",
+                "year":"2018",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Wisconsin",
+                "year":"2018",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"West-Virginia",
+                "year":"2018",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Wyoming",
+                "year":"2018",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+
+
+            //2017-----
+
+            {
+                "state":"Alabama",
+                "year":"2017",
+                "homicide_by_firearm": "3" ,
+                "handgun":"3",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+                    
+            {
+                "state":"Alaska",
+                "year":"2017",
+                "homicide_by_firearm": "70" ,
+                "handgun":"17",
+                "rifle":"1",
+                "shotgun":"6",
+                "type_not_stated": "20"
+            },
+            {
+                "state":"Arkansas",
+                "year":"2017",
+                "homicide_by_firearm": "255" ,
+                "handgun":"87",
+                "rifle":"10",
+                "shotgun":"5",
+                "type_not_stated": "74"
+            },
+
+            {
+                "state":"Arizona",
+                "year":"2017",
+                "homicide_by_firearm": "253" ,
+                "handgun":"170",
+                "rifle":"6",
+                "shotgun":"10",
+                "type_not_stated": "47"
+            },
+
+            {
+                "state":"California",
+                "year":"2017",
+                "homicide_by_firearm": "991" ,
+                "handgun":"762",
+                "rifle":"64",
+                "shotgun":"34",
+                "type_not_stated": "319"
+            },
+            {
+                "state":"Colorado",
+                "year":"2017",
+                "homicide_by_firearm": "138" ,
+                "handgun":"84",
+                "rifle":"7",
+                "shotgun":"5",
+                "type_not_stated": "42"
+            },
+            {
+                "state":"Connecticut",
+                "year":"2017",
+                "homicide_by_firearm": "170" ,
+                "handgun":"15",
+                "rifle":"1",
+                "shotgun":"1",
+                "type_not_stated": "53"
+            },
+            {
+                "state":"Delaware",
+                "year":"2017",
+                "homicide_by_firearm": "41" ,
+                "handgun":"13",
+                "rifle":"0",
+                "shotgun":"1",
+                "type_not_stated": "27"
+            },
+        
+            {
+                "state":"Florida",
+                "year":"2017",
+                "homicide_by_firearm": "1" ,
+                "handgun":"1",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Georgia",
+                "year":"2017",
+                "homicide_by_firearm": "372" ,
+                "handgun":"309",
+                "rifle":"14",
+                "shotgun":"3",
+                "type_not_stated": "46"
+            },
+            {
+                "state":"Hawaii",
+                "year":"2017",
+                "homicide_by_firearm": "9" ,
+                "handgun":"5",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "4"
+            },
+          
+            {
+                "state":"Idaho",
+                "year":"2017",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Iowa",
+                "year":"2017",
+                "homicide_by_firearm": "36" ,
+                "handgun":"21",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "15"
+            },
+            {
+                "state":"Illinois",
+                "year":"2017",
+                "homicide_by_firearm": "648" ,
+                "handgun":"564",
+                "rifle":"7",
+                "shotgun":"4",
+                "type_not_stated": "73"
+            },
+            {
+                "state":"Indiana",
+                "year":"2017",
+                "homicide_by_firearm": "10437" ,
+                "handgun":"6385",
+                "rifle":"398",
+                "shotgun":"364",
+                "type_not_stated": "3290"
+            },
+            {
+                "state":"Kansas",
+                "year":"2017",
+                "homicide_by_firearm": "56" ,
+                "handgun":"37",
+                "rifle":"1",
+                "shotgun":"1",
+                "type_not_stated": "17"
+            },
+            {
+                "state":"Kentucky",
+                "year":"2017",
+                "homicide_by_firearm": "175" ,
+                "handgun":"101",
+                "rifle":"9",
+                "shotgun":"7",
+                "type_not_stated": "58"
+            },
+            {
+                "state":"Louisiana",
+                "year":"2017",
+                "homicide_by_firearm": "56" ,
+                "handgun":"200",
+                "rifle":"24",
+                "shotgun":"4",
+                "type_not_stated": "205"
+            },
+            {
+                "state":"Massachusetts",
+                "year":"2017",
+                "homicide_by_firearm": "72" ,
+                "handgun":"38",
+                "rifle":"0",
+                "shotgun":"1",
+                "type_not_stated": "53"
+            },
+            {
+                "state":"Maryland",
+                "year":"2017",
+                "homicide_by_firearm": "56" ,
+                "handgun":"414",
+                "rifle":"3",
+                "shotgun":"13",
+                "type_not_stated": "43"
+            },
+            {
+                "state":"Maine",
+                "year":"2017",
+                "homicide_by_firearm": "13" ,
+                "handgun":"6",
+                "rifle":"0",
+                "shotgun":"3",
+                "type_not_stated": "4"
+            },
+            {
+                "state":"Michigan",
+                "year":"2017",
+                "homicide_by_firearm": "379" ,
+                "handgun":"172",
+                "rifle":"13",
+                "shotgun":"5",
+                "type_not_stated": "189"
+            },
+            
+            {
+                "state":"Minnesota",
+                "year":"2017",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"Missouri",
+                "year":"2017",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"Mississippi",
+                "year":"2017",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"Montana",
+                "year":"2017",
+                "homicide_by_firearm": "20" ,
+                "handgun":"13",
+                "rifle":"1",
+                "shotgun":"1",
+                "type_not_stated": "2"
+            },
+            {
+                "state":"Nebraska",
+                "year":"2017",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"North-Carolina",
+                "year":"2017",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"North-Dakota",
+                "year":"2017",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"New-Hampshire",
+                "year":"2017",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"New-Jersey",
+                "year":"2017",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+           
+            {
+                "state":"New-Mexico",
+                "year":"2017",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Nevada",
+                "year":"2017",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"New-York",
+                "year":"2017",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Ohio",
+                "year":"2017",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Oklahoma",
+                "year":"2017",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Oregon",
+                "year":"2017",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Pennsylvania",
+                "year":"2017",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Rhode-Island",
+                "year":"2017",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"South-Carolina",
+                "year":"2017",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"South-Dakota",
+                "year":"2017",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Tennessee",
+                "year":"2017",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Texas",
+                "year":"2017",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Utah",
+                "year":"2017",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Virginia",
+                "year":"2017",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Vermont",
+                "year":"2017",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Washington",
+                "year":"2017",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Wisconsin",
+                "year":"2017",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"West-Virginia",
+                "year":"2017",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Wyoming",
+                "year":"2017",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+
+            //2016-----------------------------------------------
+            {
+                "state":"Alabama",
+                "year":"2016",
+                "homicide_by_firearm": "3" ,
+                "handgun":"3",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+                    
+            {
+                "state":"Alaska",
+                "year":"2016",
+                "homicide_by_firearm": "70" ,
+                "handgun":"17",
+                "rifle":"1",
+                "shotgun":"6",
+                "type_not_stated": "20"
+            },
+            {
+                "state":"Arkansas",
+                "year":"2016",
+                "homicide_by_firearm": "255" ,
+                "handgun":"87",
+                "rifle":"10",
+                "shotgun":"5",
+                "type_not_stated": "74"
+            },
+
+            {
+                "state":"Arizona",
+                "year":"2016",
+                "homicide_by_firearm": "253" ,
+                "handgun":"170",
+                "rifle":"6",
+                "shotgun":"10",
+                "type_not_stated": "47"
+            },
+
+            {
+                "state":"California",
+                "year":"2016",
+                "homicide_by_firearm": "991" ,
+                "handgun":"762",
+                "rifle":"64",
+                "shotgun":"34",
+                "type_not_stated": "319"
+            },
+            {
+                "state":"Colorado",
+                "year":"2016",
+                "homicide_by_firearm": "138" ,
+                "handgun":"84",
+                "rifle":"7",
+                "shotgun":"5",
+                "type_not_stated": "42"
+            },
+            {
+                "state":"Connecticut",
+                "year":"2016",
+                "homicide_by_firearm": "170" ,
+                "handgun":"15",
+                "rifle":"1",
+                "shotgun":"1",
+                "type_not_stated": "53"
+            },
+            {
+                "state":"Delaware",
+                "year":"2016",
+                "homicide_by_firearm": "41" ,
+                "handgun":"13",
+                "rifle":"0",
+                "shotgun":"1",
+                "type_not_stated": "27"
+            },
+        
+            {
+                "state":"Florida",
+                "year":"2016",
+                "homicide_by_firearm": "1" ,
+                "handgun":"1",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Georgia",
+                "year":"2016",
+                "homicide_by_firearm": "372" ,
+                "handgun":"309",
+                "rifle":"14",
+                "shotgun":"3",
+                "type_not_stated": "46"
+            },
+            {
+                "state":"Hawaii",
+                "year":"2016",
+                "homicide_by_firearm": "9" ,
+                "handgun":"5",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "4"
+            },
+          
+            {
+                "state":"Idaho",
+                "year":"2016",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Iowa",
+                "year":"2016",
+                "homicide_by_firearm": "36" ,
+                "handgun":"21",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "15"
+            },
+            {
+                "state":"Illinois",
+                "year":"2016",
+                "homicide_by_firearm": "648" ,
+                "handgun":"564",
+                "rifle":"7",
+                "shotgun":"4",
+                "type_not_stated": "73"
+            },
+            {
+                "state":"Indiana",
+                "year":"2016",
+                "homicide_by_firearm": "10437" ,
+                "handgun":"6385",
+                "rifle":"398",
+                "shotgun":"364",
+                "type_not_stated": "3290"
+            },
+            {
+                "state":"Kansas",
+                "year":"2016",
+                "homicide_by_firearm": "56" ,
+                "handgun":"37",
+                "rifle":"1",
+                "shotgun":"1",
+                "type_not_stated": "17"
+            },
+            {
+                "state":"Kentucky",
+                "year":"2016",
+                "homicide_by_firearm": "175" ,
+                "handgun":"101",
+                "rifle":"9",
+                "shotgun":"7",
+                "type_not_stated": "58"
+            },
+            {
+                "state":"Louisiana",
+                "year":"2016",
+                "homicide_by_firearm": "56" ,
+                "handgun":"200",
+                "rifle":"24",
+                "shotgun":"4",
+                "type_not_stated": "205"
+            },
+            {
+                "state":"Massachusetts",
+                "year":"2016",
+                "homicide_by_firearm": "72" ,
+                "handgun":"38",
+                "rifle":"0",
+                "shotgun":"1",
+                "type_not_stated": "53"
+            },
+            {
+                "state":"Maryland",
+                "year":"2016",
+                "homicide_by_firearm": "56" ,
+                "handgun":"414",
+                "rifle":"3",
+                "shotgun":"13",
+                "type_not_stated": "43"
+            },
+            {
+                "state":"Maine",
+                "year":"2016",
+                "homicide_by_firearm": "13" ,
+                "handgun":"6",
+                "rifle":"0",
+                "shotgun":"3",
+                "type_not_stated": "4"
+            },
+            {
+                "state":"Michigan",
+                "year":"2016",
+                "homicide_by_firearm": "379" ,
+                "handgun":"172",
+                "rifle":"13",
+                "shotgun":"5",
+                "type_not_stated": "189"
+            },
+            
+            {
+                "state":"Minnesota",
+                "year":"2016",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"Missouri",
+                "year":"2016",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"Mississippi",
+                "year":"2016",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"Montana",
+                "year":"2016",
+                "homicide_by_firearm": "20" ,
+                "handgun":"13",
+                "rifle":"1",
+                "shotgun":"1",
+                "type_not_stated": "2"
+            },
+            {
+                "state":"Nebraska",
+                "year":"2016",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"North-Carolina",
+                "year":"2016",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"North-Dakota",
+                "year":"2016",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"New-Hampshire",
+                "year":"2016",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"New-Jersey",
+                "year":"2016",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+           
+            {
+                "state":"New-Mexico",
+                "year":"2016",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Nevada",
+                "year":"2016",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"New-York",
+                "year":"2016",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Ohio",
+                "year":"2016",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Oklahoma",
+                "year":"2016",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Oregon",
+                "year":"2016",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Pennsylvania",
+                "year":"2016",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Rhode-Island",
+                "year":"2016",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"South-Carolina",
+                "year":"2016",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"South-Dakota",
+                "year":"2016",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Tennessee",
+                "year":"2016",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Texas",
+                "year":"2016",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Utah",
+                "year":"2016",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Virginia",
+                "year":"2016",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Vermont",
+                "year":"2016",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Washington",
+                "year":"2016",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Wisconsin",
+                "year":"2016",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"West-Virginia",
+                "year":"2016",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Wyoming",
+                "year":"2016",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+
+            //2015-------------------------
+            {
+                "state":"Alabama",
+                "year":"2015",
+                "homicide_by_firearm": "3" ,
+                "handgun":"3",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+                    
+            {
+                "state":"Alaska",
+                "year":"2015",
+                "homicide_by_firearm": "70" ,
+                "handgun":"17",
+                "rifle":"1",
+                "shotgun":"6",
+                "type_not_stated": "20"
+            },
+            {
+                "state":"Arkansas",
+                "year":"2015",
+                "homicide_by_firearm": "255" ,
+                "handgun":"87",
+                "rifle":"10",
+                "shotgun":"5",
+                "type_not_stated": "74"
+            },
+
+            {
+                "state":"Arizona",
+                "year":"2015",
+                "homicide_by_firearm": "253" ,
+                "handgun":"170",
+                "rifle":"6",
+                "shotgun":"10",
+                "type_not_stated": "47"
+            },
+
+            {
+                "state":"California",
+                "year":"2015",
+                "homicide_by_firearm": "991" ,
+                "handgun":"762",
+                "rifle":"64",
+                "shotgun":"34",
+                "type_not_stated": "319"
+            },
+            {
+                "state":"Colorado",
+                "year":"2015",
+                "homicide_by_firearm": "138" ,
+                "handgun":"84",
+                "rifle":"7",
+                "shotgun":"5",
+                "type_not_stated": "42"
+            },
+            {
+                "state":"Connecticut",
+                "year":"2015",
+                "homicide_by_firearm": "170" ,
+                "handgun":"15",
+                "rifle":"1",
+                "shotgun":"1",
+                "type_not_stated": "53"
+            },
+            {
+                "state":"Delaware",
+                "year":"2015",
+                "homicide_by_firearm": "41" ,
+                "handgun":"13",
+                "rifle":"0",
+                "shotgun":"1",
+                "type_not_stated": "27"
+            },
+        
+            {
+                "state":"Florida",
+                "year":"2015",
+                "homicide_by_firearm": "1" ,
+                "handgun":"1",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Georgia",
+                "year":"2015",
+                "homicide_by_firearm": "372" ,
+                "handgun":"309",
+                "rifle":"14",
+                "shotgun":"3",
+                "type_not_stated": "46"
+            },
+            {
+                "state":"Hawaii",
+                "year":"2015",
+                "homicide_by_firearm": "9" ,
+                "handgun":"5",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "4"
+            },
+          
+            {
+                "state":"Idaho",
+                "year":"2015",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Iowa",
+                "year":"2015",
+                "homicide_by_firearm": "36" ,
+                "handgun":"21",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "15"
+            },
+            {
+                "state":"Illinois",
+                "year":"2015",
+                "homicide_by_firearm": "648" ,
+                "handgun":"564",
+                "rifle":"7",
+                "shotgun":"4",
+                "type_not_stated": "73"
+            },
+            {
+                "state":"Indiana",
+                "year":"2015",
+                "homicide_by_firearm": "10437" ,
+                "handgun":"6385",
+                "rifle":"398",
+                "shotgun":"364",
+                "type_not_stated": "3290"
+            },
+            {
+                "state":"Kansas",
+                "year":"2015",
+                "homicide_by_firearm": "56" ,
+                "handgun":"37",
+                "rifle":"1",
+                "shotgun":"1",
+                "type_not_stated": "17"
+            },
+            {
+                "state":"Kentucky",
+                "year":"2015",
+                "homicide_by_firearm": "175" ,
+                "handgun":"101",
+                "rifle":"9",
+                "shotgun":"7",
+                "type_not_stated": "58"
+            },
+            {
+                "state":"Louisiana",
+                "year":"2015",
+                "homicide_by_firearm": "56" ,
+                "handgun":"200",
+                "rifle":"24",
+                "shotgun":"4",
+                "type_not_stated": "205"
+            },
+            {
+                "state":"Massachusetts",
+                "year":"2015",
+                "homicide_by_firearm": "72" ,
+                "handgun":"38",
+                "rifle":"0",
+                "shotgun":"1",
+                "type_not_stated": "53"
+            },
+            {
+                "state":"Maryland",
+                "year":"2015",
+                "homicide_by_firearm": "56" ,
+                "handgun":"414",
+                "rifle":"3",
+                "shotgun":"13",
+                "type_not_stated": "43"
+            },
+            {
+                "state":"Maine",
+                "year":"2015",
+                "homicide_by_firearm": "13" ,
+                "handgun":"6",
+                "rifle":"0",
+                "shotgun":"3",
+                "type_not_stated": "4"
+            },
+            {
+                "state":"Michigan",
+                "year":"2015",
+                "homicide_by_firearm": "379" ,
+                "handgun":"172",
+                "rifle":"13",
+                "shotgun":"5",
+                "type_not_stated": "189"
+            },
+            
+            {
+                "state":"Minnesota",
+                "year":"2015",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"Missouri",
+                "year":"2015",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"Mississippi",
+                "year":"2015",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"Montana",
+                "year":"2015",
+                "homicide_by_firearm": "20" ,
+                "handgun":"13",
+                "rifle":"1",
+                "shotgun":"1",
+                "type_not_stated": "2"
+            },
+            {
+                "state":"Nebraska",
+                "year":"2015",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"North-Carolina",
+                "year":"2015",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"North-Dakota",
+                "year":"2015",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"New-Hampshire",
+                "year":"2015",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"New-Jersey",
+                "year":"2015",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+           
+            {
+                "state":"New-Mexico",
+                "year":"2015",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Nevada",
+                "year":"2015",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"New-York",
+                "year":"2015",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Ohio",
+                "year":"2015",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Oklahoma",
+                "year":"2015",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Oregon",
+                "year":"2015",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Pennsylvania",
+                "year":"2015",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Rhode-Island",
+                "year":"2015",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"South-Carolina",
+                "year":"2015",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"South-Dakota",
+                "year":"2015",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Tennessee",
+                "year":"2015",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Texas",
+                "year":"2015",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Utah",
+                "year":"2015",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Virginia",
+                "year":"2015",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Vermont",
+                "year":"2015",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Washington",
+                "year":"2015",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Wisconsin",
+                "year":"2015",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"West-Virginia",
+                "year":"2015",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Wyoming",
+                "year":"2015",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+
+
+            //2014----------------------
+
+            {
+                "state":"Alabama",
+                "year":"2014",
+                "homicide_by_firearm": "3" ,
+                "handgun":"3",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+                    
+            {
+                "state":"Alaska",
+                "year":"2014",
+                "homicide_by_firearm": "70" ,
+                "handgun":"17",
+                "rifle":"1",
+                "shotgun":"6",
+                "type_not_stated": "20"
+            },
+            {
+                "state":"Arkansas",
+                "year":"2014",
+                "homicide_by_firearm": "255" ,
+                "handgun":"87",
+                "rifle":"10",
+                "shotgun":"5",
+                "type_not_stated": "74"
+            },
+
+            {
+                "state":"Arizona",
+                "year":"2014",
+                "homicide_by_firearm": "253" ,
+                "handgun":"170",
+                "rifle":"6",
+                "shotgun":"10",
+                "type_not_stated": "47"
+            },
+
+            {
+                "state":"California",
+                "year":"2014",
+                "homicide_by_firearm": "991" ,
+                "handgun":"762",
+                "rifle":"64",
+                "shotgun":"34",
+                "type_not_stated": "319"
+            },
+            {
+                "state":"Colorado",
+                "year":"2014",
+                "homicide_by_firearm": "138" ,
+                "handgun":"84",
+                "rifle":"7",
+                "shotgun":"5",
+                "type_not_stated": "42"
+            },
+            {
+                "state":"Connecticut",
+                "year":"2014",
+                "homicide_by_firearm": "170" ,
+                "handgun":"15",
+                "rifle":"1",
+                "shotgun":"1",
+                "type_not_stated": "53"
+            },
+            {
+                "state":"Delaware",
+                "year":"2014",
+                "homicide_by_firearm": "41" ,
+                "handgun":"13",
+                "rifle":"0",
+                "shotgun":"1",
+                "type_not_stated": "27"
+            },
+        
+            {
+                "state":"Florida",
+                "year":"2014",
+                "homicide_by_firearm": "1" ,
+                "handgun":"1",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Georgia",
+                "year":"2014",
+                "homicide_by_firearm": "372" ,
+                "handgun":"309",
+                "rifle":"14",
+                "shotgun":"3",
+                "type_not_stated": "46"
+            },
+            {
+                "state":"Hawaii",
+                "year":"2014",
+                "homicide_by_firearm": "9" ,
+                "handgun":"5",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "4"
+            },
+          
+            {
+                "state":"Idaho",
+                "year":"2014",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Iowa",
+                "year":"2014",
+                "homicide_by_firearm": "36" ,
+                "handgun":"21",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "15"
+            },
+            {
+                "state":"Illinois",
+                "year":"2014",
+                "homicide_by_firearm": "648" ,
+                "handgun":"564",
+                "rifle":"7",
+                "shotgun":"4",
+                "type_not_stated": "73"
+            },
+            {
+                "state":"Indiana",
+                "year":"2014",
+                "homicide_by_firearm": "10437" ,
+                "handgun":"6385",
+                "rifle":"398",
+                "shotgun":"364",
+                "type_not_stated": "3290"
+            },
+            {
+                "state":"Kansas",
+                "year":"2014",
+                "homicide_by_firearm": "56" ,
+                "handgun":"37",
+                "rifle":"1",
+                "shotgun":"1",
+                "type_not_stated": "17"
+            },
+            {
+                "state":"Kentucky",
+                "year":"2014",
+                "homicide_by_firearm": "175" ,
+                "handgun":"101",
+                "rifle":"9",
+                "shotgun":"7",
+                "type_not_stated": "58"
+            },
+            {
+                "state":"Louisiana",
+                "year":"2014",
+                "homicide_by_firearm": "56" ,
+                "handgun":"200",
+                "rifle":"24",
+                "shotgun":"4",
+                "type_not_stated": "205"
+            },
+            {
+                "state":"Massachusetts",
+                "year":"2014",
+                "homicide_by_firearm": "72" ,
+                "handgun":"38",
+                "rifle":"0",
+                "shotgun":"1",
+                "type_not_stated": "53"
+            },
+            {
+                "state":"Maryland",
+                "year":"2014",
+                "homicide_by_firearm": "56" ,
+                "handgun":"414",
+                "rifle":"3",
+                "shotgun":"13",
+                "type_not_stated": "43"
+            },
+            {
+                "state":"Maine",
+                "year":"2014",
+                "homicide_by_firearm": "13" ,
+                "handgun":"6",
+                "rifle":"0",
+                "shotgun":"3",
+                "type_not_stated": "4"
+            },
+            {
+                "state":"Michigan",
+                "year":"2014",
+                "homicide_by_firearm": "379" ,
+                "handgun":"172",
+                "rifle":"13",
+                "shotgun":"5",
+                "type_not_stated": "189"
+            },
+            
+            {
+                "state":"Minnesota",
+                "year":"2014",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"Missouri",
+                "year":"2014",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"Mississippi",
+                "year":"2014",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"Montana",
+                "year":"2014",
+                "homicide_by_firearm": "20" ,
+                "handgun":"13",
+                "rifle":"1",
+                "shotgun":"1",
+                "type_not_stated": "2"
+            },
+            {
+                "state":"Nebraska",
+                "year":"2014",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"North-Carolina",
+                "year":"2014",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"North-Dakota",
+                "year":"2014",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"New-Hampshire",
+                "year":"2014",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"New-Jersey",
+                "year":"2014",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+           
+            {
+                "state":"New-Mexico",
+                "year":"2014",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Nevada",
+                "year":"2014",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"New-York",
+                "year":"2014",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Ohio",
+                "year":"2014",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Oklahoma",
+                "year":"2014",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Oregon",
+                "year":"2014",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Pennsylvania",
+                "year":"2014",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Rhode-Island",
+                "year":"2014",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"South-Carolina",
+                "year":"2014",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"South-Dakota",
+                "year":"2014",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Tennessee",
+                "year":"2014",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Texas",
+                "year":"2014",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Utah",
+                "year":"2014",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Virginia",
+                "year":"2014",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Vermont",
+                "year":"2014",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Washington",
+                "year":"2014",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Wisconsin",
+                "year":"2014",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"West-Virginia",
+                "year":"2014",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Wyoming",
+                "year":"2014",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+
+            //---------2013-----------
+
+            {
+                "state":"Alabama",
+                "year":"2013",
+                "homicide_by_firearm": "3" ,
+                "handgun":"3",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+                    
+            {
+                "state":"Alaska",
+                "year":"2013",
+                "homicide_by_firearm": "70" ,
+                "handgun":"17",
+                "rifle":"1",
+                "shotgun":"6",
+                "type_not_stated": "20"
+            },
+            {
+                "state":"Arkansas",
+                "year":"2013",
+                "homicide_by_firearm": "255" ,
+                "handgun":"87",
+                "rifle":"10",
+                "shotgun":"5",
+                "type_not_stated": "74"
+            },
+
+            {
+                "state":"Arizona",
+                "year":"2013",
+                "homicide_by_firearm": "253" ,
+                "handgun":"170",
+                "rifle":"6",
+                "shotgun":"10",
+                "type_not_stated": "47"
+            },
+
+            {
+                "state":"California",
+                "year":"2013",
+                "homicide_by_firearm": "991" ,
+                "handgun":"762",
+                "rifle":"64",
+                "shotgun":"34",
+                "type_not_stated": "319"
+            },
+            {
+                "state":"Colorado",
+                "year":"2013",
+                "homicide_by_firearm": "138" ,
+                "handgun":"84",
+                "rifle":"7",
+                "shotgun":"5",
+                "type_not_stated": "42"
+            },
+            {
+                "state":"Connecticut",
+                "year":"2013",
+                "homicide_by_firearm": "170" ,
+                "handgun":"15",
+                "rifle":"1",
+                "shotgun":"1",
+                "type_not_stated": "53"
+            },
+            {
+                "state":"Delaware",
+                "year":"2013",
+                "homicide_by_firearm": "41" ,
+                "handgun":"13",
+                "rifle":"0",
+                "shotgun":"1",
+                "type_not_stated": "27"
+            },
+        
+            {
+                "state":"Florida",
+                "year":"2013",
+                "homicide_by_firearm": "1" ,
+                "handgun":"1",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Georgia",
+                "year":"2013",
+                "homicide_by_firearm": "372" ,
+                "handgun":"309",
+                "rifle":"14",
+                "shotgun":"3",
+                "type_not_stated": "46"
+            },
+            {
+                "state":"Hawaii",
+                "year":"2013",
+                "homicide_by_firearm": "9" ,
+                "handgun":"5",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "4"
+            },
+          
+            {
+                "state":"Idaho",
+                "year":"2013",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Iowa",
+                "year":"2013",
+                "homicide_by_firearm": "36" ,
+                "handgun":"21",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "15"
+            },
+            {
+                "state":"Illinois",
+                "year":"2013",
+                "homicide_by_firearm": "648" ,
+                "handgun":"564",
+                "rifle":"7",
+                "shotgun":"4",
+                "type_not_stated": "73"
+            },
+            {
+                "state":"Indiana",
+                "year":"2013",
+                "homicide_by_firearm": "10437" ,
+                "handgun":"6385",
+                "rifle":"398",
+                "shotgun":"364",
+                "type_not_stated": "3290"
+            },
+            {
+                "state":"Kansas",
+                "year":"2013",
+                "homicide_by_firearm": "56" ,
+                "handgun":"37",
+                "rifle":"1",
+                "shotgun":"1",
+                "type_not_stated": "17"
+            },
+            {
+                "state":"Kentucky",
+                "year":"2013",
+                "homicide_by_firearm": "175" ,
+                "handgun":"101",
+                "rifle":"9",
+                "shotgun":"7",
+                "type_not_stated": "58"
+            },
+            {
+                "state":"Louisiana",
+                "year":"2013",
+                "homicide_by_firearm": "56" ,
+                "handgun":"200",
+                "rifle":"24",
+                "shotgun":"4",
+                "type_not_stated": "205"
+            },
+            {
+                "state":"Massachusetts",
+                "year":"2013",
+                "homicide_by_firearm": "72" ,
+                "handgun":"38",
+                "rifle":"0",
+                "shotgun":"1",
+                "type_not_stated": "53"
+            },
+            {
+                "state":"Maryland",
+                "year":"2013",
+                "homicide_by_firearm": "56" ,
+                "handgun":"414",
+                "rifle":"3",
+                "shotgun":"13",
+                "type_not_stated": "43"
+            },
+            {
+                "state":"Maine",
+                "year":"2013",
+                "homicide_by_firearm": "13" ,
+                "handgun":"6",
+                "rifle":"0",
+                "shotgun":"3",
+                "type_not_stated": "4"
+            },
+            {
+                "state":"Michigan",
+                "year":"2013",
+                "homicide_by_firearm": "379" ,
+                "handgun":"172",
+                "rifle":"13",
+                "shotgun":"5",
+                "type_not_stated": "189"
+            },
+            
+            {
+                "state":"Minnesota",
+                "year":"2013",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"Missouri",
+                "year":"2013",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"Mississippi",
+                "year":"2013",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"Montana",
+                "year":"2013",
+                "homicide_by_firearm": "20" ,
+                "handgun":"13",
+                "rifle":"1",
+                "shotgun":"1",
+                "type_not_stated": "2"
+            },
+            {
+                "state":"Nebraska",
+                "year":"2013",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"North-Carolina",
+                "year":"2013",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"North-Dakota",
+                "year":"2013",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"New-Hampshire",
+                "year":"2013",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"New-Jersey",
+                "year":"2013",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+           
+            {
+                "state":"New-Mexico",
+                "year":"2013",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Nevada",
+                "year":"2013",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"New-York",
+                "year":"2013",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Ohio",
+                "year":"2013",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Oklahoma",
+                "year":"2013",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Oregon",
+                "year":"2013",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Pennsylvania",
+                "year":"2013",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Rhode-Island",
+                "year":"2013",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"South-Carolina",
+                "year":"2013",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"South-Dakota",
+                "year":"2013",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Tennessee",
+                "year":"2013",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Texas",
+                "year":"2013",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Utah",
+                "year":"2013",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Virginia",
+                "year":"2013",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Vermont",
+                "year":"2013",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Washington",
+                "year":"2013",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Wisconsin",
+                "year":"2013",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"West-Virginia",
+                "year":"2013",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Wyoming",
+                "year":"2013",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+
+            //---------2012
+
+            {
+                "state":"Alabama",
+                "year":"2012",
+                "homicide_by_firearm": "3" ,
+                "handgun":"3",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+                    
+            {
+                "state":"Alaska",
+                "year":"2012",
+                "homicide_by_firearm": "70" ,
+                "handgun":"17",
+                "rifle":"1",
+                "shotgun":"6",
+                "type_not_stated": "20"
+            },
+            {
+                "state":"Arkansas",
+                "year":"2012",
+                "homicide_by_firearm": "255" ,
+                "handgun":"87",
+                "rifle":"10",
+                "shotgun":"5",
+                "type_not_stated": "74"
+            },
+
+            {
+                "state":"Arizona",
+                "year":"2012",
+                "homicide_by_firearm": "253" ,
+                "handgun":"170",
+                "rifle":"6",
+                "shotgun":"10",
+                "type_not_stated": "47"
+            },
+
+            {
+                "state":"California",
+                "year":"2012",
+                "homicide_by_firearm": "991" ,
+                "handgun":"762",
+                "rifle":"64",
+                "shotgun":"34",
+                "type_not_stated": "319"
+            },
+            {
+                "state":"Colorado",
+                "year":"2012",
+                "homicide_by_firearm": "138" ,
+                "handgun":"84",
+                "rifle":"7",
+                "shotgun":"5",
+                "type_not_stated": "42"
+            },
+            {
+                "state":"Connecticut",
+                "year":"2012",
+                "homicide_by_firearm": "170" ,
+                "handgun":"15",
+                "rifle":"1",
+                "shotgun":"1",
+                "type_not_stated": "53"
+            },
+            {
+                "state":"Delaware",
+                "year":"2012",
+                "homicide_by_firearm": "41" ,
+                "handgun":"13",
+                "rifle":"0",
+                "shotgun":"1",
+                "type_not_stated": "27"
+            },
+        
+            {
+                "state":"Florida",
+                "year":"2012",
+                "homicide_by_firearm": "1" ,
+                "handgun":"1",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Georgia",
+                "year":"2012",
+                "homicide_by_firearm": "372" ,
+                "handgun":"309",
+                "rifle":"14",
+                "shotgun":"3",
+                "type_not_stated": "46"
+            },
+            {
+                "state":"Hawaii",
+                "year":"2012",
+                "homicide_by_firearm": "9" ,
+                "handgun":"5",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "4"
+            },
+          
+            {
+                "state":"Idaho",
+                "year":"2012",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Iowa",
+                "year":"2012",
+                "homicide_by_firearm": "36" ,
+                "handgun":"21",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "15"
+            },
+            {
+                "state":"Illinois",
+                "year":"2012",
+                "homicide_by_firearm": "648" ,
+                "handgun":"564",
+                "rifle":"7",
+                "shotgun":"4",
+                "type_not_stated": "73"
+            },
+            {
+                "state":"Indiana",
+                "year":"2012",
+                "homicide_by_firearm": "10437" ,
+                "handgun":"6385",
+                "rifle":"398",
+                "shotgun":"364",
+                "type_not_stated": "3290"
+            },
+            {
+                "state":"Kansas",
+                "year":"2012",
+                "homicide_by_firearm": "56" ,
+                "handgun":"37",
+                "rifle":"1",
+                "shotgun":"1",
+                "type_not_stated": "17"
+            },
+            {
+                "state":"Kentucky",
+                "year":"2012",
+                "homicide_by_firearm": "175" ,
+                "handgun":"101",
+                "rifle":"9",
+                "shotgun":"7",
+                "type_not_stated": "58"
+            },
+            {
+                "state":"Louisiana",
+                "year":"2012",
+                "homicide_by_firearm": "56" ,
+                "handgun":"200",
+                "rifle":"24",
+                "shotgun":"4",
+                "type_not_stated": "205"
+            },
+            {
+                "state":"Massachusetts",
+                "year":"2012",
+                "homicide_by_firearm": "72" ,
+                "handgun":"38",
+                "rifle":"0",
+                "shotgun":"1",
+                "type_not_stated": "53"
+            },
+            {
+                "state":"Maryland",
+                "year":"2012",
+                "homicide_by_firearm": "56" ,
+                "handgun":"414",
+                "rifle":"3",
+                "shotgun":"13",
+                "type_not_stated": "43"
+            },
+            {
+                "state":"Maine",
+                "year":"2012",
+                "homicide_by_firearm": "13" ,
+                "handgun":"6",
+                "rifle":"0",
+                "shotgun":"3",
+                "type_not_stated": "4"
+            },
+            {
+                "state":"Michigan",
+                "year":"2012",
+                "homicide_by_firearm": "379" ,
+                "handgun":"172",
+                "rifle":"13",
+                "shotgun":"5",
+                "type_not_stated": "189"
+            },
+            
+            {
+                "state":"Minnesota",
+                "year":"2012",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"Missouri",
+                "year":"2012",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"Mississippi",
+                "year":"2012",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"Montana",
+                "year":"2012",
+                "homicide_by_firearm": "20" ,
+                "handgun":"13",
+                "rifle":"1",
+                "shotgun":"1",
+                "type_not_stated": "2"
+            },
+            {
+                "state":"Nebraska",
+                "year":"2012",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"North-Carolina",
+                "year":"2012",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"North-Dakota",
+                "year":"2012",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"New-Hampshire",
+                "year":"2012",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"New-Jersey",
+                "year":"2012",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+           
+            {
+                "state":"New-Mexico",
+                "year":"2012",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Nevada",
+                "year":"2012",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"New-York",
+                "year":"2012",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Ohio",
+                "year":"2012",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Oklahoma",
+                "year":"2012",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Oregon",
+                "year":"2012",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Pennsylvania",
+                "year":"2012",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Rhode-Island",
+                "year":"2012",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"South-Carolina",
+                "year":"2012",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"South-Dakota",
+                "year":"2012",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Tennessee",
+                "year":"2012",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Texas",
+                "year":"2012",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Utah",
+                "year":"2012",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Virginia",
+                "year":"2012",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Vermont",
+                "year":"2012",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Washington",
+                "year":"2012",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Wisconsin",
+                "year":"2012",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"West-Virginia",
+                "year":"2012",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Wyoming",
+                "year":"2012",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+
+            //----------2011---------------
+
+            {
+                "state":"Alabama",
+                "year":"2011",
+                "homicide_by_firearm": "3" ,
+                "handgun":"3",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+                    
+            {
+                "state":"Alaska",
+                "year":"2011",
+                "homicide_by_firearm": "70" ,
+                "handgun":"17",
+                "rifle":"1",
+                "shotgun":"6",
+                "type_not_stated": "20"
+            },
+            {
+                "state":"Arkansas",
+                "year":"2011",
+                "homicide_by_firearm": "255" ,
+                "handgun":"87",
+                "rifle":"10",
+                "shotgun":"5",
+                "type_not_stated": "74"
+            },
+
+            {
+                "state":"Arizona",
+                "year":"2011",
+                "homicide_by_firearm": "253" ,
+                "handgun":"170",
+                "rifle":"6",
+                "shotgun":"10",
+                "type_not_stated": "47"
+            },
+
+            {
+                "state":"California",
+                "year":"2011",
+                "homicide_by_firearm": "991" ,
+                "handgun":"762",
+                "rifle":"64",
+                "shotgun":"34",
+                "type_not_stated": "319"
+            },
+            {
+                "state":"Colorado",
+                "year":"2011",
+                "homicide_by_firearm": "138" ,
+                "handgun":"84",
+                "rifle":"7",
+                "shotgun":"5",
+                "type_not_stated": "42"
+            },
+            {
+                "state":"Connecticut",
+                "year":"2011",
+                "homicide_by_firearm": "170" ,
+                "handgun":"15",
+                "rifle":"1",
+                "shotgun":"1",
+                "type_not_stated": "53"
+            },
+            {
+                "state":"Delaware",
+                "year":"2011",
+                "homicide_by_firearm": "41" ,
+                "handgun":"13",
+                "rifle":"0",
+                "shotgun":"1",
+                "type_not_stated": "27"
+            },
+        
+            {
+                "state":"Florida",
+                "year":"2011",
+                "homicide_by_firearm": "1" ,
+                "handgun":"1",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Georgia",
+                "year":"2011",
+                "homicide_by_firearm": "372" ,
+                "handgun":"309",
+                "rifle":"14",
+                "shotgun":"3",
+                "type_not_stated": "46"
+            },
+            {
+                "state":"Hawaii",
+                "year":"2011",
+                "homicide_by_firearm": "9" ,
+                "handgun":"5",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "4"
+            },
+          
+            {
+                "state":"Idaho",
+                "year":"2011",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Iowa",
+                "year":"2011",
+                "homicide_by_firearm": "36" ,
+                "handgun":"21",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "15"
+            },
+            {
+                "state":"Illinois",
+                "year":"2011",
+                "homicide_by_firearm": "648" ,
+                "handgun":"564",
+                "rifle":"7",
+                "shotgun":"4",
+                "type_not_stated": "73"
+            },
+            {
+                "state":"Indiana",
+                "year":"2011",
+                "homicide_by_firearm": "10437" ,
+                "handgun":"6385",
+                "rifle":"398",
+                "shotgun":"364",
+                "type_not_stated": "3290"
+            },
+            {
+                "state":"Kansas",
+                "year":"2011",
+                "homicide_by_firearm": "56" ,
+                "handgun":"37",
+                "rifle":"1",
+                "shotgun":"1",
+                "type_not_stated": "17"
+            },
+            {
+                "state":"Kentucky",
+                "year":"2011",
+                "homicide_by_firearm": "175" ,
+                "handgun":"101",
+                "rifle":"9",
+                "shotgun":"7",
+                "type_not_stated": "58"
+            },
+            {
+                "state":"Louisiana",
+                "year":"2011",
+                "homicide_by_firearm": "56" ,
+                "handgun":"200",
+                "rifle":"24",
+                "shotgun":"4",
+                "type_not_stated": "205"
+            },
+            {
+                "state":"Massachusetts",
+                "year":"2011",
+                "homicide_by_firearm": "72" ,
+                "handgun":"38",
+                "rifle":"0",
+                "shotgun":"1",
+                "type_not_stated": "53"
+            },
+            {
+                "state":"Maryland",
+                "year":"2011",
+                "homicide_by_firearm": "56" ,
+                "handgun":"414",
+                "rifle":"3",
+                "shotgun":"13",
+                "type_not_stated": "43"
+            },
+            {
+                "state":"Maine",
+                "year":"2011",
+                "homicide_by_firearm": "13" ,
+                "handgun":"6",
+                "rifle":"0",
+                "shotgun":"3",
+                "type_not_stated": "4"
+            },
+            {
+                "state":"Michigan",
+                "year":"2011",
+                "homicide_by_firearm": "379" ,
+                "handgun":"172",
+                "rifle":"13",
+                "shotgun":"5",
+                "type_not_stated": "189"
+            },
+            
+            {
+                "state":"Minnesota",
+                "year":"2011",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"Missouri",
+                "year":"2011",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"Mississippi",
+                "year":"2011",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"Montana",
+                "year":"2011",
+                "homicide_by_firearm": "20" ,
+                "handgun":"13",
+                "rifle":"1",
+                "shotgun":"1",
+                "type_not_stated": "2"
+            },
+            {
+                "state":"Nebraska",
+                "year":"2011",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"North-Carolina",
+                "year":"2011",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"North-Dakota",
+                "year":"2011",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"New-Hampshire",
+                "year":"2011",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"New-Jersey",
+                "year":"2011",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+           
+            {
+                "state":"New-Mexico",
+                "year":"2011",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Nevada",
+                "year":"2011",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"New-York",
+                "year":"2011",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Ohio",
+                "year":"2011",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Oklahoma",
+                "year":"2011",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Oregon",
+                "year":"2011",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Pennsylvania",
+                "year":"2011",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Rhode-Island",
+                "year":"2011",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"South-Carolina",
+                "year":"2011",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"South-Dakota",
+                "year":"2011",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Tennessee",
+                "year":"2011",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Texas",
+                "year":"2011",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Utah",
+                "year":"2011",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Virginia",
+                "year":"2011",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Vermont",
+                "year":"2011",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Washington",
+                "year":"2011",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Wisconsin",
+                "year":"2011",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"West-Virginia",
+                "year":"2011",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Wyoming",
+                "year":"2011",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+
+            //-------2010-------------
+
+            {
+                "state":"Alabama",
+                "year":"2010",
+                "homicide_by_firearm": "3" ,
+                "handgun":"3",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+                    
+            {
+                "state":"Alaska",
+                "year":"2010",
+                "homicide_by_firearm": "70" ,
+                "handgun":"17",
+                "rifle":"1",
+                "shotgun":"6",
+                "type_not_stated": "20"
+            },
+            {
+                "state":"Arkansas",
+                "year":"2010",
+                "homicide_by_firearm": "255" ,
+                "handgun":"87",
+                "rifle":"10",
+                "shotgun":"5",
+                "type_not_stated": "74"
+            },
+
+            {
+                "state":"Arizona",
+                "year":"2010",
+                "homicide_by_firearm": "253" ,
+                "handgun":"170",
+                "rifle":"6",
+                "shotgun":"10",
+                "type_not_stated": "47"
+            },
+
+            {
+                "state":"California",
+                "year":"2010",
+                "homicide_by_firearm": "991" ,
+                "handgun":"762",
+                "rifle":"64",
+                "shotgun":"34",
+                "type_not_stated": "319"
+            },
+            {
+                "state":"Colorado",
+                "year":"2010",
+                "homicide_by_firearm": "138" ,
+                "handgun":"84",
+                "rifle":"7",
+                "shotgun":"5",
+                "type_not_stated": "42"
+            },
+            {
+                "state":"Connecticut",
+                "year":"2010",
+                "homicide_by_firearm": "170" ,
+                "handgun":"15",
+                "rifle":"1",
+                "shotgun":"1",
+                "type_not_stated": "53"
+            },
+            {
+                "state":"Delaware",
+                "year":"2010",
+                "homicide_by_firearm": "41" ,
+                "handgun":"13",
+                "rifle":"0",
+                "shotgun":"1",
+                "type_not_stated": "27"
+            },
+        
+            {
+                "state":"Florida",
+                "year":"2010",
+                "homicide_by_firearm": "1" ,
+                "handgun":"1",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Georgia",
+                "year":"2010",
+                "homicide_by_firearm": "372" ,
+                "handgun":"309",
+                "rifle":"14",
+                "shotgun":"3",
+                "type_not_stated": "46"
+            },
+            {
+                "state":"Hawaii",
+                "year":"2010",
+                "homicide_by_firearm": "9" ,
+                "handgun":"5",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "4"
+            },
+          
+            {
+                "state":"Idaho",
+                "year":"2010",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Iowa",
+                "year":"2010",
+                "homicide_by_firearm": "36" ,
+                "handgun":"21",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "15"
+            },
+            {
+                "state":"Illinois",
+                "year":"2010",
+                "homicide_by_firearm": "648" ,
+                "handgun":"564",
+                "rifle":"7",
+                "shotgun":"4",
+                "type_not_stated": "73"
+            },
+            {
+                "state":"Indiana",
+                "year":"2010",
+                "homicide_by_firearm": "10437" ,
+                "handgun":"6385",
+                "rifle":"398",
+                "shotgun":"364",
+                "type_not_stated": "3290"
+            },
+            {
+                "state":"Kansas",
+                "year":"2010",
+                "homicide_by_firearm": "56" ,
+                "handgun":"37",
+                "rifle":"1",
+                "shotgun":"1",
+                "type_not_stated": "17"
+            },
+            {
+                "state":"Kentucky",
+                "year":"2010",
+                "homicide_by_firearm": "175" ,
+                "handgun":"101",
+                "rifle":"9",
+                "shotgun":"7",
+                "type_not_stated": "58"
+            },
+            {
+                "state":"Louisiana",
+                "year":"2010",
+                "homicide_by_firearm": "56" ,
+                "handgun":"200",
+                "rifle":"24",
+                "shotgun":"4",
+                "type_not_stated": "205"
+            },
+            {
+                "state":"Massachusetts",
+                "year":"2010",
+                "homicide_by_firearm": "72" ,
+                "handgun":"38",
+                "rifle":"0",
+                "shotgun":"1",
+                "type_not_stated": "53"
+            },
+            {
+                "state":"Maryland",
+                "year":"2010",
+                "homicide_by_firearm": "56" ,
+                "handgun":"414",
+                "rifle":"3",
+                "shotgun":"13",
+                "type_not_stated": "43"
+            },
+            {
+                "state":"Maine",
+                "year":"2010",
+                "homicide_by_firearm": "13" ,
+                "handgun":"6",
+                "rifle":"0",
+                "shotgun":"3",
+                "type_not_stated": "4"
+            },
+            {
+                "state":"Michigan",
+                "year":"2010",
+                "homicide_by_firearm": "379" ,
+                "handgun":"172",
+                "rifle":"13",
+                "shotgun":"5",
+                "type_not_stated": "189"
+            },
+            
+            {
+                "state":"Minnesota",
+                "year":"2010",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"Missouri",
+                "year":"2010",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"Mississippi",
+                "year":"2010",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"Montana",
+                "year":"2010",
+                "homicide_by_firearm": "20" ,
+                "handgun":"13",
+                "rifle":"1",
+                "shotgun":"1",
+                "type_not_stated": "2"
+            },
+            {
+                "state":"Nebraska",
+                "year":"2010",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"North-Carolina",
+                "year":"2010",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"North-Dakota",
+                "year":"2010",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"New-Hampshire",
+                "year":"2010",
+                "homicide_by_firearm": "79" ,
+                "handgun":"61",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "18"
+            },
+            {
+                "state":"New-Jersey",
+                "year":"2010",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+           
+            {
+                "state":"New-Mexico",
+                "year":"2010",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Nevada",
+                "year":"2010",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"New-York",
+                "year":"2010",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Ohio",
+                "year":"2010",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Oklahoma",
+                "year":"2010",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Oregon",
+                "year":"2010",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Pennsylvania",
+                "year":"2010",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Rhode-Island",
+                "year":"2010",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"South-Carolina",
+                "year":"2010",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"South-Dakota",
+                "year":"2010",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Tennessee",
+                "year":"2010",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Texas",
+                "year":"2010",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Utah",
+                "year":"2010",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Virginia",
+                "year":"2010",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Vermont",
+                "year":"2010",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Washington",
+                "year":"2010",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Wisconsin",
+                "year":"2010",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"West-Virginia",
+                "year":"2010",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            {
+                "state":"Wyoming",
+                "year":"2010",
+                "homicide_by_firearm": "0" ,
+                "handgun":"0",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+
+            //----------------------------------
+
+            {
+                "state":"Alabama",
+                "year":"2016",
+                "homicide_by_firearm": "2" ,
+                "handgun":"2",
+                "rifle":"0",
+                "shotgun":"0",
+                "type_not_stated": "0"
+            },
+            
             {
                 "state":"Idaho",
                 "year":"2018",
@@ -138,15 +4724,7 @@ var db = new Datastore({ filename: "./src/back/homicidesAPI/v2/homicides.db", au
                 "shotgun":"0",
                 "type_not_stated": "2"
             },
-            {
-                "state":"Montana",
-                "year":"2019",
-                "homicide_by_firearm": "20" ,
-                "handgun":"13",
-                "rifle":"1",
-                "shotgun":"1",
-                "type_not_stated": "2"
-            },
+
             {
                 "state":"New_Mexico",
                 "year":"2019",
@@ -156,51 +4734,7 @@ var db = new Datastore({ filename: "./src/back/homicidesAPI/v2/homicides.db", au
                 "shotgun":"3",
                 "type_not_stated": "43"
             },
-            {
-                "state":"Alabama",
-                "year":"2019",
-                "homicide_by_firearm": "3" ,
-                "handgun":"3",
-                "rifle":"0",
-                "shotgun":"0",
-                "type_not_stated": "0"
-            },
-            {
-                "state":"Arizona",
-                "year":"2019",
-                "homicide_by_firearm": "253" ,
-                "handgun":"170",
-                "rifle":"6",
-                "shotgun":"10",
-                "type_not_stated": "47"
-            },
-            {
-                "state":"California",
-                "year":"2019",
-                "homicide_by_firearm": "991" ,
-                "handgun":"762",
-                "rifle":"64",
-                "shotgun":"34",
-                "type_not_stated": "319"
-            },
-            {
-                "state":"Colorado",
-                "year":"2019",
-                "homicide_by_firearm": "138" ,
-                "handgun":"84",
-                "rifle":"7",
-                "shotgun":"5",
-                "type_not_stated": "42"
-            },
-            {
-                "state":"Connecticut",
-                "year":"2019",
-                "homicide_by_firearm": "170" ,
-                "handgun":"15",
-                "rifle":"1",
-                "shotgun":"1",
-                "type_not_stated": "53"
-            },
+           
             {
                 "state":"Columbia",
                 "year":"2019",
@@ -209,114 +4743,6 @@ var db = new Datastore({ filename: "./src/back/homicidesAPI/v2/homicides.db", au
                 "rifle":"0",
                 "shotgun":"2",
                 "type_not_stated": "84"
-            },
-            {
-                "state":"Delaware",
-                "year":"2019",
-                "homicide_by_firearm": "41" ,
-                "handgun":"13",
-                "rifle":"0",
-                "shotgun":"1",
-                "type_not_stated": "27"
-            },
-            {
-                "state":"Florida",
-                "year":"2019",
-                "homicide_by_firearm": "1" ,
-                "handgun":"1",
-                "rifle":"0",
-                "shotgun":"0",
-                "type_not_stated": "0"
-            },
-            {
-                "state":"Georgia",
-                "year":"2019",
-                "homicide_by_firearm": "372" ,
-                "handgun":"309",
-                "rifle":"14",
-                "shotgun":"3",
-                "type_not_stated": "46"
-            },
-            {
-                "state":"Hawaii",
-                "year":"2019",
-                "homicide_by_firearm": "9" ,
-                "handgun":"5",
-                "rifle":"0",
-                "shotgun":"0",
-                "type_not_stated": "4"
-            },
-            {
-                "state":"Illinois",
-                "year":"2019",
-                "homicide_by_firearm": "648" ,
-                "handgun":"564",
-                "rifle":"7",
-                "shotgun":"4",
-                "type_not_stated": "73"
-            },
-            {
-                "state":"Indiana",
-                "year":"2019",
-                "homicide_by_firearm": "10437" ,
-                "handgun":"6385",
-                "rifle":"398",
-                "shotgun":"364",
-                "type_not_stated": "3290"
-            },
-            {
-                "state":"Kansas",
-                "year":"2019",
-                "homicide_by_firearm": "56" ,
-                "handgun":"37",
-                "rifle":"1",
-                "shotgun":"1",
-                "type_not_stated": "17"
-            },
-            {
-                "state":"Kentucky",
-                "year":"2019",
-                "homicide_by_firearm": "175" ,
-                "handgun":"101",
-                "rifle":"9",
-                "shotgun":"7",
-                "type_not_stated": "58"
-            },
-            {
-                "state":"Louisiana",
-                "year":"2019",
-                "homicide_by_firearm": "56" ,
-                "handgun":"200",
-                "rifle":"24",
-                "shotgun":"4",
-                "type_not_stated": "205"
-            },
-            {
-                "state":"Massachusetts",
-                "year":"2019",
-                "homicide_by_firearm": "72" ,
-                "handgun":"38",
-                "rifle":"0",
-                "shotgun":"1",
-                "type_not_stated": "53"
-            },
-            {
-                "state":"Maryland",
-                "year":"2019",
-                "homicide_by_firearm": "56" ,
-                "handgun":"414",
-                "rifle":"3",
-                "shotgun":"13",
-                "type_not_stated": "43"
-            },
-            {
-                "state":"Maine",
-                "year":"2019",
-                "homicide_by_firearm": "13" ,
-                "handgun":"6",
-                "rifle":"0",
-                "shotgun":"3",
-                "type_not_stated": "4"
             },
             {
                 "state":"Maine",
@@ -399,34 +4825,7 @@ var db = new Datastore({ filename: "./src/back/homicidesAPI/v2/homicides.db", au
                 "shotgun":"1",
                 "type_not_stated": "4"
             },
-
-            {
-                "state":"Michigan",
-                "year":"2019",
-                "homicide_by_firearm": "379" ,
-                "handgun":"172",
-                "rifle":"13",
-                "shotgun":"5",
-                "type_not_stated": "189"
-            },
-            {
-                "state":"Minnesota",
-                "year":"2019",
-                "homicide_by_firearm": "79" ,
-                "handgun":"61",
-                "rifle":"0",
-                "shotgun":"0",
-                "type_not_stated": "18"
-            },
-            {
-                "state":"Alabama",
-                "year":"2018",
-                "homicide_by_firearm": "2" ,
-                "handgun":"2",
-                "rifle":"0",
-                "shotgun":"0",
-                "type_not_stated": "0"
-            },
+        
             {
                 "state":"Alabama",
                 "year":"2017",
@@ -499,15 +4898,7 @@ var db = new Datastore({ filename: "./src/back/homicidesAPI/v2/homicides.db", au
                 "shotgun":"0",
                 "type_not_stated": "18"
             },
-            {
-                "state":"Iowa",
-                "year":"2019",
-                "homicide_by_firearm": "36" ,
-                "handgun":"21",
-                "rifle":"0",
-                "shotgun":"0",
-                "type_not_stated": "15"
-            }
+        
         ];
 
         db.insert(homicides_by_firearms_initial_data);
