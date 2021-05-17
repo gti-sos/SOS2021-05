@@ -33,15 +33,15 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 		{
 			"state":"Alaska",
 			"year":"2019",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20-29":"-",
-			"age_range_30-39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Arkansas",
@@ -72,15 +72,15 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 		{
 			"state":"California",
 			"year":"2019",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Colorado",
@@ -105,7 +105,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"928",
 			"age_range_other":"2397",
 			"type_of_attack_personal_weapons":"1622",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"803"
 		},
 		{
@@ -124,41 +124,41 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 		{
 			"state":"Florida",
 			"year":"2019",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Georgia",
 			"year":"2019",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Hawaii",
 			"year":"2019",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Lowa",
@@ -202,9 +202,9 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 		{
 			"state":"Indiana",
 			"year":"2019",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
 			"age_range_20_29":"529",
 			"age_range_30_39":"213",
 			"age_range_other":"1403",
@@ -261,7 +261,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"3892",
 			"age_range_other":"7893",
 			"type_of_attack_personal_weapons":"4495",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"2908"
 		},
 		{
@@ -275,7 +275,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_other":"1832",
 			"type_of_attack_personal_weapons":"422",
 			"type_of_attack_gun":"152",
-			"type_of_attack_knife":"-"
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Maine",
@@ -287,7 +287,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"145",
 			"age_range_other":"234",
 			"type_of_attack_personal_weapons":"394",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"73"
 		},
 		{
@@ -313,7 +313,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"167",
 			"age_range_other":"412",
 			"type_of_attack_personal_weapons":"161",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"106"
 		},
 		{
@@ -340,7 +340,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_other":"754",
 			"type_of_attack_personal_weapons":"151",
 			"type_of_attack_gun":"247",
-			"type_of_attack_knife":"-"
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Montana",
@@ -365,21 +365,21 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"374",
 			"age_range_other":"793",
 			"type_of_attack_personal_weapons":"616",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"134"
 		},
 		{
 			"state":"North-Carolina",
 			"year":"2019",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"North-Dakota",
@@ -391,7 +391,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"498",
 			"age_range_other":"912",
 			"type_of_attack_personal_weapons":"1093",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"168"
 		},
 		{
@@ -410,54 +410,54 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 		{
 			"state":"New-Jersey",
 			"year":"2019",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"New-Mexico",
 			"year":"2019",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Nevada",
 			"year":"2019",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"New-York",
 			"year":"2019",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Ohio",
@@ -521,7 +521,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"440",
 			"age_range_other":"803",
 			"type_of_attack_personal_weapons":"796",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"407"
 		},
 		{
@@ -547,7 +547,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"637",
 			"age_range_other":"902",
 			"type_of_attack_personal_weapons":"747",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"391"
 		},
 		{
@@ -657,17 +657,17 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 		{
 			"state":"Wyoming",
 			"year":"2019",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
-// ----------------- AÑO 2018 ----------------------------------------------------------
+// 00000000000000000 AÑO 2018 0000000000000000000000000000000000000000000000000000000000
 		{
 			"state":"Alabama",
 			"year":"2018",
@@ -684,15 +684,15 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 		{
 			"state":"Alaska",
 			"year":"2018",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20-29":"-",
-			"age_range_30-39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20029":"0",
+			"age_range_30039":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Arkansas",
@@ -723,15 +723,15 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 		{
 			"state":"California",
 			"year":"2018",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Colorado",
@@ -756,7 +756,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"928",
 			"age_range_other":"2397",
 			"type_of_attack_personal_weapons":"1622",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"803"
 		},
 		{
@@ -775,41 +775,41 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 		{
 			"state":"Florida",
 			"year":"2018",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Georgia",
 			"year":"2018",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Hawaii",
 			"year":"2018",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Lowa",
@@ -853,9 +853,9 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 		{
 			"state":"Indiana",
 			"year":"2018",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
 			"age_range_20_29":"529",
 			"age_range_30_39":"213",
 			"age_range_other":"1403",
@@ -912,7 +912,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"3892",
 			"age_range_other":"7893",
 			"type_of_attack_personal_weapons":"4495",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"2908"
 		},
 		{
@@ -926,7 +926,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_other":"1832",
 			"type_of_attack_personal_weapons":"422",
 			"type_of_attack_gun":"152",
-			"type_of_attack_knife":"-"
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Maine",
@@ -938,7 +938,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"145",
 			"age_range_other":"234",
 			"type_of_attack_personal_weapons":"291",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"73"
 		},
 		{
@@ -964,7 +964,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"167",
 			"age_range_other":"412",
 			"type_of_attack_personal_weapons":"161",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"106"
 		},
 		{
@@ -991,7 +991,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_other":"754",
 			"type_of_attack_personal_weapons":"151",
 			"type_of_attack_gun":"247",
-			"type_of_attack_knife":"-"
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Montana",
@@ -1016,21 +1016,21 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"374",
 			"age_range_other":"793",
 			"type_of_attack_personal_weapons":"616",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"134"
 		},
 		{
 			"state":"North-Carolina",
 			"year":"2018",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"North-Dakota",
@@ -1042,7 +1042,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"498",
 			"age_range_other":"912",
 			"type_of_attack_personal_weapons":"1093",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"168"
 		},
 		{
@@ -1061,54 +1061,54 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 		{
 			"state":"New-Jersey",
 			"year":"2018",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"New-Mexico",
 			"year":"2018",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Nevada",
 			"year":"2018",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"New-York",
 			"year":"2018",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Ohio",
@@ -1172,7 +1172,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"440",
 			"age_range_other":"803",
 			"type_of_attack_personal_weapons":"796",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"407"
 		},
 		{
@@ -1198,7 +1198,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"637",
 			"age_range_other":"902",
 			"type_of_attack_personal_weapons":"747",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"391"
 		},
 		{
@@ -1308,17 +1308,17 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 		{
 			"state":"Wyoming",
 			"year":"2018",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
-// ----------------- AÑO 2017 ----------------------------------------------------------
+// 00000000000000000 AÑO 2017 0000000000000000000000000000000000000000000000000000000000
 		{
 			"state":"Alabama",
 			"year":"2017",
@@ -1335,15 +1335,15 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 		{
 			"state":"Alaska",
 			"year":"2017",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20-29":"-",
-			"age_range_30-39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20029":"0",
+			"age_range_30039":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Arkansas",
@@ -1374,15 +1374,15 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 		{
 			"state":"California",
 			"year":"2017",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Colorado",
@@ -1407,7 +1407,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"928",
 			"age_range_other":"2397",
 			"type_of_attack_personal_weapons":"1622",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"803"
 		},
 		{
@@ -1426,41 +1426,41 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 		{
 			"state":"Florida",
 			"year":"2017",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Georgia",
 			"year":"2017",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Hawaii",
 			"year":"2017",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Lowa",
@@ -1504,9 +1504,9 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 		{
 			"state":"Indiana",
 			"year":"2017",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
 			"age_range_20_29":"529",
 			"age_range_30_39":"213",
 			"age_range_other":"1403",
@@ -1563,7 +1563,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"3892",
 			"age_range_other":"7893",
 			"type_of_attack_personal_weapons":"4495",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"2908"
 		},
 		{
@@ -1577,7 +1577,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_other":"1832",
 			"type_of_attack_personal_weapons":"422",
 			"type_of_attack_gun":"152",
-			"type_of_attack_knife":"-"
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Maine",
@@ -1589,7 +1589,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"145",
 			"age_range_other":"234",
 			"type_of_attack_personal_weapons":"266",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"73"
 		},
 		{
@@ -1615,7 +1615,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"167",
 			"age_range_other":"412",
 			"type_of_attack_personal_weapons":"161",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"106"
 		},
 		{
@@ -1642,7 +1642,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_other":"754",
 			"type_of_attack_personal_weapons":"151",
 			"type_of_attack_gun":"247",
-			"type_of_attack_knife":"-"
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Montana",
@@ -1667,21 +1667,21 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"374",
 			"age_range_other":"793",
 			"type_of_attack_personal_weapons":"616",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"134"
 		},
 		{
 			"state":"North-Carolina",
 			"year":"2017",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"North-Dakota",
@@ -1693,7 +1693,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"498",
 			"age_range_other":"912",
 			"type_of_attack_personal_weapons":"1093",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"168"
 		},
 		{
@@ -1712,54 +1712,54 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 		{
 			"state":"New-Jersey",
 			"year":"2017",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"New-Mexico",
 			"year":"2017",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Nevada",
 			"year":"2017",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"New-York",
 			"year":"2017",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Ohio",
@@ -1823,7 +1823,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"440",
 			"age_range_other":"803",
 			"type_of_attack_personal_weapons":"796",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"407"
 		},
 		{
@@ -1849,7 +1849,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"637",
 			"age_range_other":"902",
 			"type_of_attack_personal_weapons":"747",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"391"
 		},
 		{
@@ -1959,17 +1959,17 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 		{
 			"state":"Wyoming",
 			"year":"2017",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
-// ----------------- AÑO 2016 ----------------------------------------------------------
+// 00000000000000000 AÑO 2016 0000000000000000000000000000000000000000000000000000000000
 		{
 			"state":"Alabama",
 			"year":"2016",
@@ -1986,15 +1986,15 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 		{
 			"state":"Alaska",
 			"year":"2016",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20-29":"-",
-			"age_range_30-39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20029":"0",
+			"age_range_30039":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Arkansas",
@@ -2025,15 +2025,15 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 		{
 			"state":"California",
 			"year":"2016",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Colorado",
@@ -2058,7 +2058,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"928",
 			"age_range_other":"2397",
 			"type_of_attack_personal_weapons":"1622",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"803"
 		},
 		{
@@ -2077,41 +2077,41 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 		{
 			"state":"Florida",
 			"year":"2016",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Georgia",
 			"year":"2016",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Hawaii",
 			"year":"2016",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Lowa",
@@ -2155,9 +2155,9 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 		{
 			"state":"Indiana",
 			"year":"2016",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
 			"age_range_20_29":"529",
 			"age_range_30_39":"213",
 			"age_range_other":"1403",
@@ -2214,7 +2214,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"3892",
 			"age_range_other":"7893",
 			"type_of_attack_personal_weapons":"4495",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"2908"
 		},
 		{
@@ -2228,7 +2228,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_other":"1832",
 			"type_of_attack_personal_weapons":"422",
 			"type_of_attack_gun":"152",
-			"type_of_attack_knife":"-"
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Maine",
@@ -2240,7 +2240,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"145",
 			"age_range_other":"234",
 			"type_of_attack_personal_weapons":"250",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"73"
 		},
 		{
@@ -2266,7 +2266,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"167",
 			"age_range_other":"412",
 			"type_of_attack_personal_weapons":"161",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"106"
 		},
 		{
@@ -2293,7 +2293,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_other":"754",
 			"type_of_attack_personal_weapons":"151",
 			"type_of_attack_gun":"247",
-			"type_of_attack_knife":"-"
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Montana",
@@ -2318,21 +2318,21 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"374",
 			"age_range_other":"793",
 			"type_of_attack_personal_weapons":"616",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"134"
 		},
 		{
 			"state":"North-Carolina",
 			"year":"2016",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"North-Dakota",
@@ -2344,7 +2344,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"498",
 			"age_range_other":"912",
 			"type_of_attack_personal_weapons":"1093",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"168"
 		},
 		{
@@ -2363,54 +2363,54 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 		{
 			"state":"New-Jersey",
 			"year":"2016",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"New-Mexico",
 			"year":"2016",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Nevada",
 			"year":"2016",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"New-York",
 			"year":"2016",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Ohio",
@@ -2474,7 +2474,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"440",
 			"age_range_other":"803",
 			"type_of_attack_personal_weapons":"796",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"407"
 		},
 		{
@@ -2500,7 +2500,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"637",
 			"age_range_other":"902",
 			"type_of_attack_personal_weapons":"747",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"391"
 		},
 		{
@@ -2610,17 +2610,17 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 		{
 			"state":"Wyoming",
 			"year":"2016",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
-// ----------------- AÑO 2015 ----------------------------------------------------------
+// 00000000000000000 AÑO 2015 0000000000000000000000000000000000000000000000000000000000
 		{
 			"state":"Alabama",
 			"year":"2015",
@@ -2637,15 +2637,15 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 		{
 			"state":"Alaska",
 			"year":"2015",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20-29":"-",
-			"age_range_30-39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20029":"0",
+			"age_range_30039":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Arkansas",
@@ -2676,15 +2676,15 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 		{
 			"state":"California",
 			"year":"2015",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Colorado",
@@ -2709,7 +2709,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"928",
 			"age_range_other":"2397",
 			"type_of_attack_personal_weapons":"1622",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"803"
 		},
 		{
@@ -2728,41 +2728,41 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 		{
 			"state":"Florida",
 			"year":"2015",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Georgia",
 			"year":"2015",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Hawaii",
 			"year":"2015",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Lowa",
@@ -2806,9 +2806,9 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 		{
 			"state":"Indiana",
 			"year":"2015",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
 			"age_range_20_29":"529",
 			"age_range_30_39":"213",
 			"age_range_other":"1403",
@@ -2865,7 +2865,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"3892",
 			"age_range_other":"7893",
 			"type_of_attack_personal_weapons":"4495",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"2908"
 		},
 		{
@@ -2879,7 +2879,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_other":"1832",
 			"type_of_attack_personal_weapons":"422",
 			"type_of_attack_gun":"152",
-			"type_of_attack_knife":"-"
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Maine",
@@ -2891,7 +2891,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"145",
 			"age_range_other":"234",
 			"type_of_attack_personal_weapons":"210",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"73"
 		},
 		{
@@ -2917,7 +2917,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"167",
 			"age_range_other":"412",
 			"type_of_attack_personal_weapons":"161",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"106"
 		},
 		{
@@ -2944,7 +2944,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_other":"754",
 			"type_of_attack_personal_weapons":"151",
 			"type_of_attack_gun":"247",
-			"type_of_attack_knife":"-"
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Montana",
@@ -2969,21 +2969,21 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"374",
 			"age_range_other":"793",
 			"type_of_attack_personal_weapons":"616",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"134"
 		},
 		{
 			"state":"North-Carolina",
 			"year":"2015",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"North-Dakota",
@@ -2995,7 +2995,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"498",
 			"age_range_other":"912",
 			"type_of_attack_personal_weapons":"1093",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"168"
 		},
 		{
@@ -3014,54 +3014,54 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 		{
 			"state":"New-Jersey",
 			"year":"2015",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"New-Mexico",
 			"year":"2015",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Nevada",
 			"year":"2015",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"New-York",
 			"year":"2015",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Ohio",
@@ -3125,7 +3125,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"440",
 			"age_range_other":"803",
 			"type_of_attack_personal_weapons":"796",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"407"
 		},
 		{
@@ -3151,7 +3151,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"637",
 			"age_range_other":"902",
 			"type_of_attack_personal_weapons":"747",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"391"
 		},
 		{
@@ -3261,17 +3261,17 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 		{
 			"state":"Wyoming",
 			"year":"2015",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
-// ----------------- AÑO 2014 ----------------------------------------------------------
+// 00000000000000000 AÑO 2014 0000000000000000000000000000000000000000000000000000000000
 		{
 			"state":"Alabama",
 			"year":"2014",
@@ -3288,15 +3288,15 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 		{
 			"state":"Alaska",
 			"year":"2014",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20-29":"-",
-			"age_range_30-39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20029":"0",
+			"age_range_30039":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Arkansas",
@@ -3327,15 +3327,15 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 		{
 			"state":"California",
 			"year":"2014",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Colorado",
@@ -3360,7 +3360,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"928",
 			"age_range_other":"2397",
 			"type_of_attack_personal_weapons":"1622",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"803"
 		},
 		{
@@ -3379,41 +3379,41 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 		{
 			"state":"Florida",
 			"year":"2014",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Georgia",
 			"year":"2014",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Hawaii",
 			"year":"2014",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Lowa",
@@ -3438,7 +3438,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"927",
 			"age_range_other":"1992",
 			"type_of_attack_personal_weapons":"1414",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"442"
 		},
 		{
@@ -3457,9 +3457,9 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 		{
 			"state":"Indiana",
 			"year":"2014",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
 			"age_range_20_29":"529",
 			"age_range_30_39":"213",
 			"age_range_other":"1403",
@@ -3516,7 +3516,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"3892",
 			"age_range_other":"7893",
 			"type_of_attack_personal_weapons":"4495",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"2908"
 		},
 		{
@@ -3530,7 +3530,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_other":"1832",
 			"type_of_attack_personal_weapons":"422",
 			"type_of_attack_gun":"152",
-			"type_of_attack_knife":"-"
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Maine",
@@ -3542,7 +3542,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"145",
 			"age_range_other":"234",
 			"type_of_attack_personal_weapons":"225",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"73"
 		},
 		{
@@ -3568,7 +3568,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"167",
 			"age_range_other":"412",
 			"type_of_attack_personal_weapons":"161",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"106"
 		},
 		{
@@ -3595,7 +3595,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_other":"754",
 			"type_of_attack_personal_weapons":"151",
 			"type_of_attack_gun":"247",
-			"type_of_attack_knife":"-"
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Montana",
@@ -3620,21 +3620,21 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"374",
 			"age_range_other":"793",
 			"type_of_attack_personal_weapons":"616",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"134"
 		},
 		{
 			"state":"North-Carolina",
 			"year":"2014",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"North-Dakota",
@@ -3646,7 +3646,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"498",
 			"age_range_other":"912",
 			"type_of_attack_personal_weapons":"1093",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"168"
 		},
 		{
@@ -3665,54 +3665,54 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 		{
 			"state":"New-Jersey",
 			"year":"2014",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"New-Mexico",
 			"year":"2014",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Nevada",
 			"year":"2014",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"New-York",
 			"year":"2014",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Ohio",
@@ -3776,7 +3776,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"440",
 			"age_range_other":"803",
 			"type_of_attack_personal_weapons":"796",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"407"
 		},
 		{
@@ -3802,7 +3802,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"637",
 			"age_range_other":"902",
 			"type_of_attack_personal_weapons":"747",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"391"
 		},
 		{
@@ -3912,17 +3912,17 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 		{
 			"state":"Wyoming",
 			"year":"2014",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
-// ----------------- AÑO 2013 ----------------------------------------------------------
+// 00000000000000000 AÑO 2013 0000000000000000000000000000000000000000000000000000000000
 		{
 			"state":"Alabama",
 			"year":"2013",
@@ -3939,15 +3939,15 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 		{
 			"state":"Alaska",
 			"year":"2013",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20-29":"-",
-			"age_range_30-39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20029":"0",
+			"age_range_30039":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Arkansas",
@@ -3978,15 +3978,15 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 		{
 			"state":"California",
 			"year":"2013",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Colorado",
@@ -4011,7 +4011,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"928",
 			"age_range_other":"2397",
 			"type_of_attack_personal_weapons":"1622",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"803"
 		},
 		{
@@ -4030,41 +4030,41 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 		{
 			"state":"Florida",
 			"year":"2013",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Georgia",
 			"year":"2013",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Hawaii",
 			"year":"2013",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Lowa",
@@ -4089,7 +4089,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"927",
 			"age_range_other":"1992",
 			"type_of_attack_personal_weapons":"1463",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"451"
 		},
 		{
@@ -4108,9 +4108,9 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 		{
 			"state":"Indiana",
 			"year":"2013",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
 			"age_range_20_29":"529",
 			"age_range_30_39":"213",
 			"age_range_other":"1403",
@@ -4167,7 +4167,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"3892",
 			"age_range_other":"7893",
 			"type_of_attack_personal_weapons":"4495",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"2908"
 		},
 		{
@@ -4181,7 +4181,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_other":"1832",
 			"type_of_attack_personal_weapons":"422",
 			"type_of_attack_gun":"152",
-			"type_of_attack_knife":"-"
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Maine",
@@ -4193,7 +4193,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"145",
 			"age_range_other":"234",
 			"type_of_attack_personal_weapons":"200",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"73"
 		},
 		{
@@ -4219,7 +4219,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"167",
 			"age_range_other":"412",
 			"type_of_attack_personal_weapons":"161",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"106"
 		},
 		{
@@ -4246,7 +4246,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_other":"754",
 			"type_of_attack_personal_weapons":"151",
 			"type_of_attack_gun":"247",
-			"type_of_attack_knife":"-"
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Montana",
@@ -4271,21 +4271,21 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"374",
 			"age_range_other":"793",
 			"type_of_attack_personal_weapons":"616",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"134"
 		},
 		{
 			"state":"North-Carolina",
 			"year":"2013",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"North-Dakota",
@@ -4297,7 +4297,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"498",
 			"age_range_other":"912",
 			"type_of_attack_personal_weapons":"1093",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"168"
 		},
 		{
@@ -4316,54 +4316,54 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 		{
 			"state":"New-Jersey",
 			"year":"2013",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"New-Mexico",
 			"year":"2013",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Nevada",
 			"year":"2013",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"New-York",
 			"year":"2013",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Ohio",
@@ -4427,7 +4427,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"440",
 			"age_range_other":"803",
 			"type_of_attack_personal_weapons":"796",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"407"
 		},
 		{
@@ -4453,7 +4453,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"637",
 			"age_range_other":"902",
 			"type_of_attack_personal_weapons":"747",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"391"
 		},
 		{
@@ -4563,17 +4563,17 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 		{
 			"state":"Wyoming",
 			"year":"2013",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
-// ----------------- AÑO 2012 ----------------------------------------------------------
+// 00000000000000000 AÑO 2012 0000000000000000000000000000000000000000000000000000000000
 		{
 			"state":"Alabama",
 			"year":"2012",
@@ -4590,15 +4590,15 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 		{
 			"state":"Alaska",
 			"year":"2012",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20-29":"-",
-			"age_range_30-39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20029":"0",
+			"age_range_30039":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Arkansas",
@@ -4629,15 +4629,15 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 		{
 			"state":"California",
 			"year":"2012",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Colorado",
@@ -4662,7 +4662,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"928",
 			"age_range_other":"2397",
 			"type_of_attack_personal_weapons":"1622",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"803"
 		},
 		{
@@ -4681,41 +4681,41 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 		{
 			"state":"Florida",
 			"year":"2012",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Georgia",
 			"year":"2012",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Hawaii",
 			"year":"2012",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Lowa",
@@ -4759,9 +4759,9 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 		{
 			"state":"Indiana",
 			"year":"2012",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
 			"age_range_20_29":"529",
 			"age_range_30_39":"213",
 			"age_range_other":"1403",
@@ -4818,7 +4818,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"3892",
 			"age_range_other":"7893",
 			"type_of_attack_personal_weapons":"4495",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"2908"
 		},
 		{
@@ -4832,7 +4832,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_other":"1832",
 			"type_of_attack_personal_weapons":"422",
 			"type_of_attack_gun":"152",
-			"type_of_attack_knife":"-"
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Maine",
@@ -4844,7 +4844,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"145",
 			"age_range_other":"234",
 			"type_of_attack_personal_weapons":"177",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"73"
 		},
 		{
@@ -4870,7 +4870,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"167",
 			"age_range_other":"412",
 			"type_of_attack_personal_weapons":"161",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"106"
 		},
 		{
@@ -4897,7 +4897,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_other":"754",
 			"type_of_attack_personal_weapons":"151",
 			"type_of_attack_gun":"247",
-			"type_of_attack_knife":"-"
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Montana",
@@ -4922,21 +4922,21 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"374",
 			"age_range_other":"793",
 			"type_of_attack_personal_weapons":"616",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"134"
 		},
 		{
 			"state":"North-Carolina",
 			"year":"2012",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"North-Dakota",
@@ -4948,7 +4948,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"498",
 			"age_range_other":"912",
 			"type_of_attack_personal_weapons":"1093",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"168"
 		},
 		{
@@ -4967,54 +4967,54 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 		{
 			"state":"New-Jersey",
 			"year":"2012",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"New-Mexico",
 			"year":"2012",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Nevada",
 			"year":"2012",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"New-York",
 			"year":"2012",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Ohio",
@@ -5078,7 +5078,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"440",
 			"age_range_other":"803",
 			"type_of_attack_personal_weapons":"796",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"407"
 		},
 		{
@@ -5104,7 +5104,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"637",
 			"age_range_other":"902",
 			"type_of_attack_personal_weapons":"747",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"391"
 		},
 		{
@@ -5214,17 +5214,17 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 		{
 			"state":"Wyoming",
 			"year":"2012",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
-// ----------------- AÑO 2011 ----------------------------------------------------------
+// 00000000000000000 AÑO 2011 0000000000000000000000000000000000000000000000000000000000
 		{
 			"state":"Alabama",
 			"year":"2011",
@@ -5241,15 +5241,15 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 		{
 			"state":"Alaska",
 			"year":"2011",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20-29":"-",
-			"age_range_30-39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20029":"0",
+			"age_range_30039":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Arkansas",
@@ -5280,15 +5280,15 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 		{
 			"state":"California",
 			"year":"2011",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Colorado",
@@ -5313,7 +5313,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"928",
 			"age_range_other":"2397",
 			"type_of_attack_personal_weapons":"1622",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"803"
 		},
 		{
@@ -5332,41 +5332,41 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 		{
 			"state":"Florida",
 			"year":"2011",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Georgia",
 			"year":"2011",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Hawaii",
 			"year":"2011",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Lowa",
@@ -5410,9 +5410,9 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 		{
 			"state":"Indiana",
 			"year":"2011",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
 			"age_range_20_29":"529",
 			"age_range_30_39":"213",
 			"age_range_other":"1403",
@@ -5469,7 +5469,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"3892",
 			"age_range_other":"7893",
 			"type_of_attack_personal_weapons":"4495",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"2908"
 		},
 		{
@@ -5483,7 +5483,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_other":"1832",
 			"type_of_attack_personal_weapons":"422",
 			"type_of_attack_gun":"152",
-			"type_of_attack_knife":"-"
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Maine",
@@ -5495,7 +5495,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"145",
 			"age_range_other":"234",
 			"type_of_attack_personal_weapons":"153",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"73"
 		},
 		{
@@ -5521,7 +5521,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"167",
 			"age_range_other":"412",
 			"type_of_attack_personal_weapons":"161",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"106"
 		},
 		{
@@ -5548,7 +5548,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_other":"754",
 			"type_of_attack_personal_weapons":"151",
 			"type_of_attack_gun":"247",
-			"type_of_attack_knife":"-"
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Montana",
@@ -5573,21 +5573,21 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"374",
 			"age_range_other":"793",
 			"type_of_attack_personal_weapons":"616",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"134"
 		},
 		{
 			"state":"North-Carolina",
 			"year":"2011",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"North-Dakota",
@@ -5599,7 +5599,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"498",
 			"age_range_other":"912",
 			"type_of_attack_personal_weapons":"1093",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"168"
 		},
 		{
@@ -5618,54 +5618,54 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 		{
 			"state":"New-Jersey",
 			"year":"2011",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"New-Mexico",
 			"year":"2011",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Nevada",
 			"year":"2011",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"New-York",
 			"year":"2011",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Ohio",
@@ -5729,7 +5729,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"440",
 			"age_range_other":"803",
 			"type_of_attack_personal_weapons":"796",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"407"
 		},
 		{
@@ -5755,7 +5755,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"637",
 			"age_range_other":"902",
 			"type_of_attack_personal_weapons":"747",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"391"
 		},
 		{
@@ -5865,17 +5865,17 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 		{
 			"state":"Wyoming",
 			"year":"2011",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
-// ----------------- AÑO 2010 ----------------------------------------------------------
+// 00000000000000000 AÑO 2010 0000000000000000000000000000000000000000000000000000000000
 		{
 			"state":"Alabama",
 			"year":"2010",
@@ -5892,15 +5892,15 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 		{
 			"state":"Alaska",
 			"year":"2010",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20-29":"-",
-			"age_range_30-39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20029":"0",
+			"age_range_30039":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Arkansas",
@@ -5931,15 +5931,15 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 		{
 			"state":"California",
 			"year":"2010",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Colorado",
@@ -5964,7 +5964,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"928",
 			"age_range_other":"2397",
 			"type_of_attack_personal_weapons":"1622",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"803"
 		},
 		{
@@ -5983,41 +5983,41 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 		{
 			"state":"Florida",
 			"year":"2010",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Georgia",
 			"year":"2010",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Hawaii",
 			"year":"2010",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Lowa",
@@ -6061,9 +6061,9 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 		{
 			"state":"Indiana",
 			"year":"2010",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
 			"age_range_20_29":"529",
 			"age_range_30_39":"213",
 			"age_range_other":"1403",
@@ -6120,7 +6120,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"3892",
 			"age_range_other":"7893",
 			"type_of_attack_personal_weapons":"4495",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"2908"
 		},
 		{
@@ -6134,7 +6134,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_other":"1832",
 			"type_of_attack_personal_weapons":"422",
 			"type_of_attack_gun":"152",
-			"type_of_attack_knife":"-"
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Maine",
@@ -6146,7 +6146,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"145",
 			"age_range_other":"234",
 			"type_of_attack_personal_weapons":"156",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"73"
 		},
 		{
@@ -6172,7 +6172,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"167",
 			"age_range_other":"412",
 			"type_of_attack_personal_weapons":"161",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"106"
 		},
 		{
@@ -6199,7 +6199,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_other":"754",
 			"type_of_attack_personal_weapons":"151",
 			"type_of_attack_gun":"247",
-			"type_of_attack_knife":"-"
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Montana",
@@ -6224,21 +6224,21 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"374",
 			"age_range_other":"793",
 			"type_of_attack_personal_weapons":"616",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"134"
 		},
 		{
 			"state":"North-Carolina",
 			"year":"2010",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"North-Dakota",
@@ -6250,7 +6250,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"498",
 			"age_range_other":"912",
 			"type_of_attack_personal_weapons":"1093",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"168"
 		},
 		{
@@ -6269,54 +6269,54 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 		{
 			"state":"New-Jersey",
 			"year":"2010",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"New-Mexico",
 			"year":"2010",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Nevada",
 			"year":"2010",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"New-York",
 			"year":"2010",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		},
 		{
 			"state":"Ohio",
@@ -6380,7 +6380,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"440",
 			"age_range_other":"803",
 			"type_of_attack_personal_weapons":"796",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"407"
 		},
 		{
@@ -6406,7 +6406,7 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 			"age_range_30_39":"637",
 			"age_range_other":"902",
 			"type_of_attack_personal_weapons":"747",
-			"type_of_attack_gun":"-",
+			"type_of_attack_gun":"0",
 			"type_of_attack_knife":"391"
 		},
 		{
@@ -6516,15 +6516,15 @@ app.get(BASE_API_PATH+"/attacks-stats/loadInitialData", (req,res)=>{
 		{
 			"state":"Wyoming",
 			"year":"2010",
-			"sex_male":"-" ,
-			"sex_female":"-",
-			"sex_unknown":"-",
-			"age_range_20_29":"-",
-			"age_range_30_39":"-",
-			"age_range_other":"-",
-			"type_of_attack_personal_weapons":"-",
-			"type_of_attack_gun":"-",
-			"type_of_attack_knife":"-"
+			"sex_male":"0" ,
+			"sex_female":"0",
+			"sex_unknown":"0",
+			"age_range_20_29":"0",
+			"age_range_30_39":"0",
+			"age_range_other":"0",
+			"type_of_attack_personal_weapons":"0",
+			"type_of_attack_gun":"0",
+			"type_of_attack_knife":"0"
 		}
 	];
 
