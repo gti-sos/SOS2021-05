@@ -274,15 +274,13 @@ const anterior= () => {ofset-=10; getData()}
 
 //Busqueda especifica
 
-
-
     let popbusqueda = false;
     const cancelarbusqueda = () => (popbusqueda = !popbusqueda);
     const buscar = () => {
         popbusqueda = !popbusqueda
         flags="";
        ofset=0;
-       
+
         if(databusqueda.state.replace(" ","").length!=0){
             flags= flags+"&state="+databusqueda.state;
         }
