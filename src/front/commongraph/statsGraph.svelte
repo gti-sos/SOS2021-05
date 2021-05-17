@@ -133,14 +133,19 @@ let state= "Alabama"
              a= arraytroceada[11]+arraytroceada[7]+arraytroceada[6]+arraytroceada[5]+arraytroceada[4]+arraytroceada[3]+
              arraytroceada[2]+arraytroceada[1]+arraytroceada[0]+arraytroceada[10]+arraytroceada[9]+arraytroceada[8]
             
-             console.log(a)
-             arrayporagno.push(arrayattacks[i]/a)
+             
+            
+            arrayporagno.push(arrayattacks[i]/a)
+             
+            
              arrayhomicidesarms.push(arrayhomicides[i]/a)
              arrayhomicidesattacks.push(arrayhomicides[i]/arrayattacks[i])
          
     }
     
-    seriesaux.push({
+    seriesaux.push(
+        
+        {
             name: "Ataques/Armas Vendidas",
             data:  arrayporagno,
             visible: true
