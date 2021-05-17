@@ -267,6 +267,8 @@
      let popbusqueda = false;
      const cancelarbusqueda = () => (popbusqueda = !popbusqueda);
      const buscar = () => {
+         flags="";
+         ofset=0;
          popbusqueda = !popbusqueda
         
          if(databusqueda.state.replace(" ","").length!=0){
