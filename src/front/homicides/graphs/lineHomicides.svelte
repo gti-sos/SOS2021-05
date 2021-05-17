@@ -28,10 +28,11 @@
     } from "svelte";
     
     
-    let estado = "Alabama";
-    let estados=["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts",
+    let agno= 2019
+    let estados=["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Kansas","Kentucky","Louisiana","Lowa","Maine","Maryland","Massachusetts",
 "Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island",
 "South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"]	
+  
   
    
     let data = [];
@@ -59,7 +60,7 @@
    
      function datos() {
         
-        getData(estado)
+        getData()
         
     }
 
@@ -75,13 +76,12 @@
     len = estados.length,
     i = 0;
    
-    for(i;i<len;i++){ //itero por todos los estados..
-        let comienzo=i*10;
-        let fin= comienzo + 10;
-        let arraytroceada=array.slice(comienzo,fin); //divide el array, de modo que cada trozo corresponde a un estado
+    for(i;i<len;i++){
+        let comienzo=i*10
+         let fin=comienzo +10
+        let arraytroceada=array.slice(comienzo,fin)
         const arrayoredenada=[]
         //ordenamos la array en funcion de como salen los datos del get
-        //aqui manu tiene 12 porque son los meses
         arrayoredenada[0]=arraytroceada[0]
         arrayoredenada[1]=arraytroceada[1]
         arrayoredenada[2]=arraytroceada[2]
@@ -93,10 +93,11 @@
         arrayoredenada[8]=arraytroceada[8]
         arrayoredenada[9]=arraytroceada[9]
         
-        
+
+
        seriesaux.push({
         name: estados[i],
-        data:   arrayoredenada,
+        data: arrayoredenada,
         visible: getVisibilidad(estados[i])
     });
 
@@ -104,48 +105,57 @@
 
     //SERIES PARA LOS ESTADOS
     Highcharts.chart('container', {
-        title: {
-            text: 'Homicidios por armas de fuego en '+ estado
+
+title: {
+
+    text: 'Ataques por armas personales 2010-2019'
+},
+
+yAxis: {
+    title: {
+        text: 'Tipo de ataque: armas personales'
+    }
+},
+
+xAxis: {
+    accessibility: {
+        rangeDescription: 'Range: 2010 to 2019'
+    }
+},
+
+legend: {
+    layout: 'vertical',
+    align: 'right',
+    verticalAlign: 'middle'
+},
+
+plotOptions: {
+    series: {
+        label: {
+            connectorAllowed: false
         },
-        yAxis: {
-            title: {
-                text: 'Homicidios por armas de fuego'
+        pointStart: 2010
+    }
+},
+
+series: seriesaux,
+
+responsive: {
+    rules: [{
+        condition: {
+            maxWidth: 500
+        },
+        chartOptions: {
+            legend: {
+                layout: 'horizontal',
+                align: 'center',
+                verticalAlign: 'bottom'
             }
-        },
-        xAxis: {
-            accessibility: {
-                rangeDescription: 'Año'
-            }
-        },
-        legend: {
-            layout: 'vertical',
-            align: 'right',
-            verticalAlign: 'middle'
-        },
-        plotOptions: {
-            series: {
-                label: {
-                    connectorAllowed: false
-                },
-                pointStart: 2010
-            }
-        },
-        series: seriesaux,
-        responsive: {
-            rules: [{
-                condition: {
-                    maxWidth: 500
-                },
-                chartOptions: {
-                    legend: {
-                        layout: 'horizontal',
-                        align: 'center',
-                        verticalAlign: 'bottom'
-                    }
-                }
-            }]
         }
-    });
+    }]
+}
+
+});
   }
 
   let b=false;
@@ -155,7 +165,7 @@ const busqueda=()=>{
 async function buscar(){
     b=!b;
    
-   getData(estado)
+   getData(agno)
    await delay(200);
    recarga()
    
@@ -167,7 +177,7 @@ const recarga=()=>{
     loadGraph()
    
 }
- 
+
 const delay = ms => new Promise(res => setTimeout(res, ms));
 </script>
 
@@ -187,7 +197,7 @@ const delay = ms => new Promise(res => setTimeout(res, ms));
     </figure>  
     <div>
         <Button color="secondary" on:click={pop}>Volver</Button>
-        <Button color="secondary" on:click={busqueda}>Cambiar Estado</Button>
+        
     </div>
 
     <Modal isOpen={b} toggle={busqueda} transitionOptions>
@@ -195,7 +205,7 @@ const delay = ms => new Promise(res => setTimeout(res, ms));
         <ModalBody >
             <p>Introduzaca el año del que quiera obtener los datos.</p>
                     <div style="text-align: center;" >
-                        <input type="string" min="Alabama" max="Wyoming" bind:value="{estado}">
+                        <input type="number" min="2010" max="2020" bind:value="{agno}">
                     </div>
            
         </ModalBody>
