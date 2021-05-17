@@ -214,8 +214,9 @@ const busqueda=()=>{
 }
 async function buscar(){
     b=!b;
+    
     if(estados.includes(state)){
-
+        state=state.replace(" ","_")
         console.log(state)
    getDataSales(state)
    getDataAttacks(state)
