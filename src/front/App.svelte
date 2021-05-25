@@ -8,7 +8,9 @@
 	import EditAttacks from "./attacks-stats/editAttacksData.svelte";
 	import Home from "./Home.svelte";
 	import Graph from "./commongraph/statsGraph.svelte";
-	import GraphArms from "./arms-sales-stats/graphs/lineArms.svelte";
+	import GraphsArms from "./arms-sales-stats/graphs/indexgraficas.svelte";
+	import GraphLineArms from "./arms-sales-stats/graphs/lineArms.svelte";
+	import GraphExternal1Arms from "./arms-sales-stats/graphs/external1.svelte";
 	import GraphHomicides from "./homicides/graphs/lineHomicides.svelte";
 	import GraphAttacks from "./attacks-stats/graphs/lineAttacks.svelte";
 
@@ -30,7 +32,9 @@
 		"/homicides/:state/:year": EditHomicides,
 
 		//Arms Sales Stats
-		"/sales/analytics": GraphArms,
+		"/sales/analytics": GraphsArms,
+		"/sales/line": GraphLineArms,
+		"/sales/external1": GraphExternal1Arms,
 		"/sales/:state/:year/:month": EditSale,
 		
 		//Attacks stats
