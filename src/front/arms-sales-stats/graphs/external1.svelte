@@ -107,6 +107,7 @@ const delay = ms => new Promise(res => setTimeout(res, ms));
 		name: Calcio.data[i].name,
 		value:  10,
 
+
 		});
     }
 	
