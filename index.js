@@ -10,6 +10,8 @@ var port = (process.env.PORT || 10000);
 //Para modificar y definiar las rutas, modulo 'path'
 var path = require("path");
 
+var request = require("request");
+
 
 app.use("/", express.static( path.join(__dirname ,"./public")));
 
@@ -95,18 +97,26 @@ app.get("/info/attacks-stats", (request,response) => {
 
 
 //INTEGRACIONES
+
 //IVÁN
 
-//INTEGRACIÓN 1 API POBREZA (GRUPO 04)
+//INTEGRACIÓN 1 API POBREZA (GRUPO 04) (PROXY)
+//el servidor de datos se encontraría en apiServerHostPovertyRisks
+// "/poverty_risks" es la ruta dónde decido configurar el recurso
+//esto lo que va a hacer es que cada vez que llamemos a "/poverty_risks",
+//será como si llamaramos a la variable apiServerHostPovertyRisks.
+//se define una var url que tendrá la ruta de la api + url original
 
-app.use("/anxiety-stats", function(req, res) {
-    var apiServerHostPovertyRisks = ' https://endpoint-poverty-risks.herokuapp.com/api/v1/';
+app.use("/poverty_risks", function(req, res) {
+    var apiServerHostPovertyRisks = ' https://endpoint-poverty-risks.herokuapp.com/api/v1';
     var url = apiServerHostPovertyRisks + req.url;
-    console.log('piped: /poverty-risks -> ' + url);
+    console.log('piped: /poverty_risks -> ' + url);
     // request solo hace get, investigar como hacer put, post, delete, etc.
     req.pipe(request(url)).pipe(res);
 });
 
+//de este modo y gracias al request, esto se conecta a la URL y todo lo que le llega lo envía a esa URL
+//y todo lo que devuelve, lo devuelve por response (flujos request/response)
 
 
 

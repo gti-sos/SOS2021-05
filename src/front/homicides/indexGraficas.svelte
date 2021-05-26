@@ -49,7 +49,7 @@
                 </CardBody>
                 <CardFooter style="background-color: #C7EFF3;">
                     
-                    <a href="/#/homicides/line ">
+                    <a href="/#/homicides/line">
                     <Button style="background-color:  #22A3B0 ; ">Ir a la gráfica</Button></a>
                     
                     </CardFooter>
@@ -74,7 +74,7 @@
 
                 <CardFooter style="background-color: #C7EFF3;">
                     
-                <a href=" "
+                <a href="/#/homicides/riesgosPobreza"
                 ><Button style="background-color:  #22A3B0 ; ">Ir a la gráfica</Button></a>
                 
                 

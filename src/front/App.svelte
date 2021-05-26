@@ -9,7 +9,7 @@
 	import EditHomicides from "./homicides/editHomicideData.svelte";
 	import GraphsIndex from "./homicides/indexGraficas.svelte";
 	import GraphHomicidesLine from "./homicides/lineHomicides.svelte";
-	//import Pobreza from "./homicides/integrations/riesgosPobreza.svelte"
+	import Pobreza from "./homicides/integrations/riesgosPobreza.svelte"
 
 	//Aqui hago 2 imports uno para cada API externa
 	
@@ -44,7 +44,7 @@
 		"/homicides/analytics": GraphsIndex, //redirige al "home" de mis graficos, tanto mio como de las API externa
 		"/homicides/line": GraphHomicidesLine,//redirige al grafico de mi API
 		"/homicides/:state/:year": EditHomicides,//redirige a la página de edición de un recurso
-		//"/homicides/riesgosPobreza": Pobreza,
+		"/homicides/riesgosPobreza": Pobreza,
 		//Arms Sales Stats
 		"/sales/analytics": GraphsArms,
 		"/sales/line": GraphLineArms,
