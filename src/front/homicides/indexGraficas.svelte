@@ -68,7 +68,7 @@
 
                 <CardBody style="background-color: #F0FEFF;">
                 <CardSubtitle />
-                <CardText>Gráfico para riesgos de pobreza</CardText>
+                <CardText>Gráfico para riesgos de pobrezas</CardText>
                 <img alt={" "} src={"/build/mediaSales/ext1.png"}>
                 </CardBody>
 
