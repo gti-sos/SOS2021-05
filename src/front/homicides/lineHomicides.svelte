@@ -113,7 +113,7 @@ title: {
 
 yAxis: {
     title: {
-        text: 'Tipo de ataque: armas personales'
+        text: 'Homicidios'
     }
 },
 

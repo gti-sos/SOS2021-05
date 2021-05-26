@@ -1,17 +1,28 @@
 <script>
+	//IMPORTS COMUNES
 	import Router from 'svelte-spa-router'; //modulo svelte para SPA
-	import Sales from "./arms-sales-stats/arms-sales-stats.svelte";
-	import EditSale from "./arms-sales-stats/editData.svelte";
-	import Homicides from "./homicides/homicides.svelte";
-	import EditHomicides from "./homicides/editHomicideData.svelte";
-	import Attacks from "./attacks-stats/attacks-stats.svelte";
-	import EditAttacks from "./attacks-stats/editAttacksData.svelte";
 	import Home from "./Home.svelte";
 	import Graph from "./commongraph/statsGraph.svelte";
+
+	//IMPORTS HOMICIDES
+	import Homicides from "./homicides/homicides.svelte";
+	import EditHomicides from "./homicides/editHomicideData.svelte";
+	import GraphsIndex from "./homicides/indexGraficas.svelte";
+	import GraphHomicidesLine from "./homicides/lineHomicides.svelte";
+	//Aqui hago 2 imports uno para cada API externa
+	
+
+
+	//IMPORTS SALES
+	import Sales from "./arms-sales-stats/arms-sales-stats.svelte";
+	import EditSale from "./arms-sales-stats/editData.svelte";
 	import GraphsArms from "./arms-sales-stats/graphs/indexgraficas.svelte";
 	import GraphLineArms from "./arms-sales-stats/graphs/lineArms.svelte";
 	import GraphExternal1Arms from "./arms-sales-stats/graphs/external1.svelte";
-	import GraphHomicides from "./homicides/graphs/lineHomicides.svelte";
+
+	//IMPORTS ATTACKS
+	import Attacks from "./attacks-stats/attacks-stats.svelte";
+	import EditAttacks from "./attacks-stats/editAttacksData.svelte";
 	import GraphAttacks from "./attacks-stats/graphs/lineAttacks.svelte";
 
 
@@ -28,8 +39,9 @@
 		"/": Home,
 		"/analytics": Graph,
 		//Homicides Stats
-		"/homicides/analytics": GraphHomicides,
-		"/homicides/:state/:year": EditHomicides,
+		"/homicides/analytics": GraphsIndex, //redirige al "home" de mis graficos, tanto mio como de las API externa
+		"/homicides/line": GraphHomicidesLine,//redirige al grafico de mi API
+		"/homicides/:state/:year": EditHomicides,//redirige a la página de edición de un recurso
 
 		//Arms Sales Stats
 		"/sales/analytics": GraphsArms,
