@@ -121,11 +121,6 @@
       font-size: 4em;
       font-weight: 100;
     }
-   img{
-   
-        border: 3px solid rgb(27, 27, 27);
-        width: 50%; height: 50%;
-    }
    
     @media (min-width: 640px) {
       main {
