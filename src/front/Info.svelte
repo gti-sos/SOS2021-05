@@ -147,7 +147,7 @@
             >
 
             <a href="http://sos2021-05.herokuapp.com/#/attacks/analytics"
-            ><Button style="background-color: #D992FF">Gráfica</Button></a>
+            ><Button style="background-color: #D992FF">Gráficas</Button></a>
 
 
           </CardBody>
