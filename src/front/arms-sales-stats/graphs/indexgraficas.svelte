@@ -82,6 +82,30 @@
       
   </Col>
     
+  <Col xs="auto">
+        
+    <Card  class="mb-3">
+      <CardHeader style="background-color: #C7EFF3;">
+        <CardTitle><h5>Api Externa: Casos de Covid por país.</h5></CardTitle>
+      </CardHeader>
+      <CardBody style="background-color: #F0FEFF;">
+        <CardSubtitle />
+        <CardText>Gráfico de Burbujas que muestra los casos de covid, casos recuperados y decesos en los principales paises afectados por la pandemia.</CardText>
+        <CardText>Ha sido desarrollada utilizando la libreria Chartist. Lamentablemente no es interactiva.</CardText>
+        <img alt={" "} src={"/build/mediaSales/ext2.png"}>
+      </CardBody>
+      <CardFooter style="background-color: #C7EFF3;">
+          
+        <a href="/#/sales/external2 "
+        ><Button style="background-color:  #22A3B0 ; ">Ir a la gráfica</Button></a
+      >
+        
+    </CardFooter
+      >
+    </Card>
+    
+</Col>
+  
 
     </Container>
   </main>
