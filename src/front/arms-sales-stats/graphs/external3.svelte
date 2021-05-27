@@ -13,19 +13,20 @@ import { element } from "svelte/internal";
         const url = "http://acnhapi.com/v1/bugs";
       
         
-		
-async function inicio(){
+		onMount(inicio)
+ async function inicio(){
    
 	await getData()
     delay(2000);
-   recarga()
+    console.log("Datos Cargados")
+    await recarga()
    
 }
 const recarga=()=>{
 
     loadGraph()
    
-    
+
 }
 const delay = ms => new Promise(res => setTimeout(res, ms));
 
@@ -65,26 +66,15 @@ const delay = ms => new Promise(res => setTimeout(res, ms));
 		} else {
 			console.log("Error al cargar API externa "+ i);
         }
-    
-       
-    
-    
     }
-        
-        
         console.log(data)
         
-
-
-          
-
     }
 
 
 
 async function loadGraph(){
-    var data = data;
-
+  
 Highcharts.chart('container', {
 
     chart: {
@@ -130,11 +120,19 @@ Highcharts.chart('container', {
 </script>
 
 <svelte:head>
-    <script src="https://code.highcharts.com/highcharts.src.js" on:load="{inicio}"></script>
-<script src="https://code.highcharts.com/highcharts-more.js"></script>
+   
+
+
+
 
 </svelte:head>
 <main>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/highcharts-more.js"></script>
+    <script src="https://code.highcharts.com/modules/dumbbell.js"></script>
+      
+    <div>   <Button outline style=" background-color:#6C00AF; color:aliceblue" on:click="{pop}"> Volver</Button></div>   
+
     <figure class="highcharts-figure">
         <div id="container"></div>
         <p class="highcharts-description">
@@ -144,7 +142,8 @@ Highcharts.chart('container', {
             a dumbbell.
         </p>
     </figure>
-    
+    <div>   <Button outline style=" background-color:#6C00AF; color:aliceblue" on:click="{loadGraph}">Recargar</Button></div>   
+
 </main>
 
 <style>
