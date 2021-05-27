@@ -67,10 +67,11 @@ const delay = ms => new Promise(res => setTimeout(res, ms));
 			console.log("Error al cargar API externa "+ i);
         }
     }
+            
         console.log(data)
         
 
-        
+
     }
 
 async function loadGraph(){
@@ -87,11 +88,11 @@ Highcharts.chart('container', {
     },
 
     subtitle: {
-        text: '1960 vs 2018'
+        text: 'New Horizons'
     },
 
     title: {
-        text: 'Change in Life Expectancy'
+        text: 'Insectos Animal Crossing '
     },
 
     tooltip: {
@@ -104,12 +105,12 @@ Highcharts.chart('container', {
 
     yAxis: {
         title: {
-            text: 'Life Expectancy (years)'
+            text: 'Meses en los que aparece'
         }
     },
 
     series: [{
-        name: 'Life expectancy change',
+        name: 'Insectos',
         data: data
     }]
 
