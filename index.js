@@ -113,9 +113,17 @@ app.use("/poverty_risks", function(req, res) {
     req.pipe(request(url)).pipe(res);
 });
 
+
+
+//USO 1 (API F1)
+
 //de este modo y gracias al request, esto se conecta a la URL y todo lo que le llega lo envía a esa URL
 //y todo lo que devuelve, lo devuelve por response (flujos request/response)
 
+
+//INTEGRACIONES
+
+//JOSE ANTONIO
 
 
 
