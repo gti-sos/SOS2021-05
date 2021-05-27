@@ -117,6 +117,10 @@ app.use("/poverty_risks", function(req, res) {
 //y todo lo que devuelve, lo devuelve por response (flujos request/response)
 
 
+//INTEGRACIONES
+
+//JOSE ANTONIO
+
 
 
 
