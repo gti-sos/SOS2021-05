@@ -69,9 +69,9 @@ const delay = ms => new Promise(res => setTimeout(res, ms));
     }
         console.log(data)
         
+
+        
     }
-
-
 
 async function loadGraph(){
   
