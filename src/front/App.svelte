@@ -26,7 +26,9 @@
 	//IMPORTS ATTACKS
 	import Attacks from "./attacks-stats/attacks-stats.svelte";
 	import EditAttacks from "./attacks-stats/editAttacksData.svelte";
-	import GraphAttacks from "./attacks-stats/graphs/lineAttacks.svelte";
+	import GraphAttacks from "./attacks-stats/indexgraficas.svelte";
+	import GraphLineAttacks from "./attacks-stats/graphs/lineAttacks.svelte";
+	import GraphApiExterna1Attacks from "./attacks-stats/graphs/apiExterna1.svelte";
 
 
 	
@@ -55,7 +57,10 @@
 		
 		//Attacks stats
 		"/attacks/analytics": GraphAttacks,
+		"/attacks/line": GraphLineAttacks,
 		"/attacks/:state/:year": EditAttacks,
+		"/attacks/apiexterna1": GraphApiExterna1Attacks,
+		
 		
 		
 
