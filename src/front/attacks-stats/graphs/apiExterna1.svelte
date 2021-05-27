@@ -1,5 +1,7 @@
 <script>
-    import{
+    import {pop} from "svelte-spa-router";
+    import Button from "sveltestrap/src/Button.svelte";
+	import {
         onMount
     } from "svelte";
 
@@ -13,8 +15,27 @@
         redirect: 'follow'
 };
     let data = [];
-    let circuitos = [];
-    let distancias = [];
+    let dataResponse = [];
+    let circuitos = []; // AQUI METEMOS LOS NOMBRES DE LOS CIRCUITOS
+    let capacidades = []; // AQUI METEMOS LAS CAPACIDADES DE LOS CIRCUITOS
+
+    onMount(inicio)
+async function inicio(){
+   
+	await getData()
+    delay(29);
+   recarga()
+   
+}
+const recarga=()=>{
+
+    loadGraph()
+   
+}
+const delay = ms => new Promise(res => setTimeout(res, ms));
+
+
+
 
     async function getData(){
         console.log("Fetching data...");
@@ -22,26 +43,33 @@
             .then(response => response.text())
             .then(result => console.log(result))
             .catch(error => console.log('error', error));
-
-        if(res.ok){
+        const res1 = await fetch("https://v1.formula-1.api-sports.io/circuits", requestOptions);
+        if(res1.ok){
             console.log("Ok.");
-            const json = await res.json();
+            const json = await res1.json();
             data = json;
-            console.log(`We have received ${data.length} data circuits.`);
-            for(let i=0;i<data.length;i++){
-                circuitos.push(data[i].name);
-                distancias.push(data[i].length);
-            }    
+            dataResponse = data.response;
+            console.log(data.response);
+            console.log(JSON.stringify(data,null,2));
+            for(let i=0;i<dataResponse.length;i++){
+                circuitos.push(dataResponse[i].name);
+                
+                capacidades.push(dataResponse[i].capacity);
+                
+            }
+            console.log(circuitos);
+            console.log(capacidades);
         }else{
-            console.log("Error!");
+            console.log("ERROR!");
         }
+            
     }
 
     async function loadGraph(){
 
     Highcharts.chart('container', {
     title: {
-        text: 'Distancia de los circuitos de la Formula 1'
+        text: 'Capacidad de los circuitos de la Formula 1'
     },
     
     xAxis: {
@@ -49,13 +77,13 @@
     },
     yAxis: {
         title: {
-            text: 'Kilómetros'
+            text: 'Capacidad'
     }
     },
     series: [{
         type: 'column',
         colorByPoint: true,
-        data: distancias, // AQUI METER LAS DISTANCIAS DE LOS CIRCUITOS
+        data: capacidades, // AQUI METER LAS CAPACIDADES DE LOS CIRCUITOS
         showInLegend: false
     }]
 });
@@ -67,16 +95,17 @@
 
 <svelte:head>
 
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/highcharts-more.js"></script>
-    <script src="https://code.highcharts.com/modules/exporting.js"></script>
-    <script src="https://code.highcharts.com/modules/export-data.js"></script>
-    <script src="https://code.highcharts.com/modules/accessibility.js" on:load="{loadGraph}"></script>
+  
+
 
 </svelte:head>
 
 
 <main>
+
+    <script src="https://code.highcharts.com/highcharts.js" on:load="{loadGraph}"></script>
+
+    <div>   <Button outline style=" background-color:#6C00AF; color:aliceblue" on:click="{pop}"> Volver</Button></div> 
 
     <figure class="highcharts-figure">
         <div id="container"></div>
