@@ -46,7 +46,7 @@
           <CardBody style="background-color: #F0FEFF;">
             <CardSubtitle />
             <CardText>Gráfico lineal que muestra los datos sobre los ataques.</CardText>
-            <img alt={" "} src={"/build/mediaSales/line.png"}>
+            
           </CardBody>
           <CardFooter style="background-color: #C7EFF3;">
               
@@ -68,7 +68,7 @@
         <CardBody style="background-color: #F0FEFF;">
           <CardSubtitle />
           <CardText>Gráfico de ...</CardText>
-          <img alt={" "} src={"/build/mediaSales/ext1.png"}>
+          
         </CardBody>
         <CardFooter style="background-color: #C7EFF3;">
             
@@ -91,7 +91,7 @@
       <CardBody style="background-color: #F0FEFF;">
         <CardSubtitle />
         <CardText>Gráfico de ...</CardText>
-        <img alt={" "} src={"/build/mediaSales/ext1.png"}>
+        
       </CardBody>
       <CardFooter style="background-color: #C7EFF3;">
           
