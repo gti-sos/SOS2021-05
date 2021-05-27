@@ -72,7 +72,7 @@
         </CardBody>
         <CardFooter style="background-color: #C7EFF3;">
             
-          <a href="/#//attacks/apiexterna1"
+          <a href="/#/attacks/apiexterna1"
           ><Button style="background-color:  #22A3B0 ; ">Ir a la gráfica</Button></a
         >
           
@@ -95,7 +95,7 @@
       </CardBody>
       <CardFooter style="background-color: #C7EFF3;">
           
-        <a href="/#//attacks/apiexterna2"
+        <a href="/#/attacks/apiexterna2"
         ><Button style="background-color:  #22A3B0 ; ">Ir a la gráfica</Button></a
       >
         
