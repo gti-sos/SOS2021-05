@@ -216,6 +216,7 @@ new Chartist.Bar('.ct-chart', data, options, responsiveOptions);
        
         
         
+        
     </div>
   
       
