@@ -24,6 +24,7 @@
 	import GraphLineArms from "./arms-sales-stats/graphs/lineArms.svelte";
 	import GraphExternal1Arms from "./arms-sales-stats/graphs/external1.svelte";
 	import GraphExternal2Arms from "./arms-sales-stats/graphs/external2.svelte";
+	import GraphExternal3Arms from "./arms-sales-stats/graphs/external3.svelte";
 
 	//IMPORTS ATTACKS
 	import Attacks from "./attacks-stats/attacks-stats.svelte";
@@ -57,6 +58,7 @@
 		"/sales/line": GraphLineArms,
 		"/sales/external1": GraphExternal1Arms,
 		"/sales/external2": GraphExternal2Arms,
+		"/sales/external3": GraphExternal3Arms,
 		"/sales/:state/:year/:month": EditSale,
 		
 		//Attacks stats

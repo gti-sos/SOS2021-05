@@ -203,7 +203,7 @@ new Chartist.Bar('.ct-chart', data, options, responsiveOptions);
         Estadísticas Covid en el mundo.
     </h5>
              
-           <div>   <Button outline color="secondary" on:click="{pop}"> Volver</Button></div>   
+           <div>   <Button outline style=" background-color:#6C00AF; color:aliceblue" on:click="{pop}"> Volver</Button></div>   
     <div id = "todo" class = "todo">
        
         <div   id = "chart" class = "chart">
