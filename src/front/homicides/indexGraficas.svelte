@@ -74,13 +74,33 @@
 
                 <CardFooter style="background-color: #C7EFF3;">
                     
-                <a href="/#/homicides/riesgosPobreza"
-                ><Button style="background-color:  #22A3B0 ; ">Ir a la gráfica</Button></a>
+                    <a href="/#/homicides/riesgosPobreza"
+                    ><Button style="background-color:  #22A3B0 ; ">Ir a la gráfica</Button></a>
                 
                 
-            </CardFooter
-                >
+                 </CardFooter>
             </Card>
+
+            <Card  class="mb-3">
+
+              <CardHeader style="background-color: #C7EFF3;">
+              <CardTitle><h5>API EXTERNA (USO): Estadísticas F1</h5></CardTitle>
+              </CardHeader>
+
+              <CardBody style="background-color: #F0FEFF;">
+              <CardSubtitle />
+              <CardText>Gráfico para estadísticas F1</CardText>
+              <img alt={" "} src={"/build/mediaSales/ext1.png"}>
+              </CardBody>
+
+              <CardFooter style="background-color: #C7EFF3;">
+                  
+                  <a href="/#/homicides/riesgosPobreza"
+                  ><Button style="background-color:  #22A3B0 ; ">Ir a la gráfica</Button></a>
+              
+              
+               </CardFooter>
+          </Card>
             
         </Col>
     
