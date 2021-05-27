@@ -63,7 +63,7 @@
             <Card  class="mb-3">
 
                 <CardHeader style="background-color: #C7EFF3;">
-                <CardTitle><h5>API Externa: Riesgos De Pobreza</h5></CardTitle>
+                <CardTitle><h5>API Externa (Integración): Riesgos De Pobreza</h5></CardTitle>
                 </CardHeader>
 
                 <CardBody style="background-color: #F0FEFF;">
