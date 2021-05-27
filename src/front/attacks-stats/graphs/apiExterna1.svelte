@@ -1,59 +1,63 @@
 <script>
+    import{
+        onMount
+    } from "svelte";
+
+    var myHeaders = new Headers();
+        myHeaders.append("x-rapidapi-key", "dfccd1d46ee28260bd279bcd449f0ad0");
+        myHeaders.append("x-rapidapi-host", "v1.formula-1.api-sports.io");
+
+    var requestOptions = {
+        method: 'GET',
+        headers: myHeaders,
+        redirect: 'follow'
+};
+    let data = [];
+    let circuitos = [];
+    let distancias = [];
+
+    async function getData(){
+        console.log("Fetching data...");
+        const res = await fetch("https://v1.formula-1.api-sports.io/circuits", requestOptions)
+            .then(response => response.text())
+            .then(result => console.log(result))
+            .catch(error => console.log('error', error));
+
+        if(res.ok){
+            console.log("Ok.");
+            const json = await res.json();
+            data = json;
+            console.log(`We have received ${data.length} data circuits.`);
+            for(let i=0;i<data.length;i++){
+                circuitos.push(data[i].name);
+                distancias.push(data[i].length);
+            }    
+        }else{
+            console.log("Error!");
+        }
+    }
 
     async function loadGraph(){
 
     Highcharts.chart('container', {
     title: {
-        text: 'Chart.update'
+        text: 'Distancia de los circuitos de la Formula 1'
     },
-    subtitle: {
-        text: 'Plain'
-    },
+    
     xAxis: {
-        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+        categories: circuitos // aqui meter los nombres de los circuitos
+    },
+    yAxis: {
+        title: {
+            text: 'Kilómetros'
+    }
     },
     series: [{
         type: 'column',
         colorByPoint: true,
-        data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4],
+        data: distancias, // AQUI METER LAS DISTANCIAS DE LOS CIRCUITOS
         showInLegend: false
     }]
-});
-
-document.getElementById('plain').addEventListener('click', () => {
-    chart.update({
-        chart: {
-            inverted: false,
-            polar: false
-        },
-        subtitle: {
-            text: 'Plain'
-        }
-    });
-});
-
-document.getElementById('inverted').addEventListener('click', () => {
-    chart.update({
-        chart: {
-            inverted: true,
-            polar: false
-        },
-        subtitle: {
-            text: 'Inverted'
-        }
-    });
-});
-
-document.getElementById('polar').addEventListener('click', () => {
-    chart.update({
-        chart: {
-            inverted: false,
-            polar: true
-        },
-        subtitle: {
-            text: 'Polar'
-        }
-    });
 });
 
 
@@ -76,14 +80,7 @@ document.getElementById('polar').addEventListener('click', () => {
 
     <figure class="highcharts-figure">
         <div id="container"></div>
-        <p class="highcharts-description">
-            Chart with buttons to modify options, showing how options can be changed
-            on the fly. This flexibility allows for more dynamic charts.
-        </p>
-    
-        <button id="plain">Plain</button>
-        <button id="inverted">Inverted</button>
-        <button id="polar">Polar</button>
+       
     </figure>
 
 </main>
