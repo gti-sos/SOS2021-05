@@ -194,6 +194,36 @@
   
 </Col>
 
+<Col xs="auto">
+        
+  <Card  class="mb-3">
+    <CardHeader style="background-color: #C7EFF3;">
+      <CardTitle><h5>Integracion: G.23 Personas con Trastornos Mentales propietarios de Armas (PROXY)</h5></CardTitle>
+    </CardHeader>
+    <CardBody style="background-color: #F0FEFF;">
+      <CardSubtitle />
+      <CardText>Gráfico orientado al estudio </CardText>
+      <CardText>Los datos sobre la Salud Mental pertenecen a la API desarrollada por Eduardo Carmona.
+        Pese a que las autoridades estadounidenses en las mayoria de los estados restringen la compra de armas a personas mentalmente inestables, muchos
+        no pasan estos filtros por lo que esta estimación es fiable sin embargo no deja de ser una estimación.
+        Para cargar los datos he implementado un proxy en nuestro index.js que puede ver en el siguiente enlace (al final del archivo):
+        <a href="https://github.com/gti-sos/SOS2021-05/blob/main/index.js">Ver código Proxy</a>
+      </CardText>
+     
+      <img alt={" "} src={"/mediaSales/int23.png"}>
+    </CardBody>
+    <CardFooter style="background-color: #C7EFF3;">
+        
+      <a href="/#/sales/integration23 "
+      ><Button style="background-color:  #22A3B0 ; ">Ir a la gráfica</Button></a
+    >
+      
+  </CardFooter
+    >
+  </Card>
+  
+</Col>
+
     </Container>
   </main>
   
