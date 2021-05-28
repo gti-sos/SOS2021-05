@@ -1,7 +1,5 @@
 <script>
   import {pop} from "svelte-spa-router";
-  import ApexCharts from 'apexcharts';
-  import { chart } from "svelte-apexcharts";
   import Button from "sveltestrap/src/Button.svelte";
 import {
       onMount
