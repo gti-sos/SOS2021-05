@@ -73,6 +73,7 @@
             statsFromPlayer.push(dataFromPlayer.summary.all.assists);
             statsFromPlayer.push(dataFromPlayer.summary.all.killsPerGame);
             statsFromPlayer.push(dataFromPlayer.summary.all.scorePerMinute);
+            statsFromPlayer.push(dataFromPlayer.summary.all.scorePerMinute);
             //console.log(statsFromPlayer)
 
         }else{
