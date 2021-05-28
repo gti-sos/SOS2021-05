@@ -221,6 +221,33 @@
   </CardFooter
     >
   </Card>
+
+  <Card  class="mb-3">
+    <CardHeader style="background-color: #C7EFF3;">
+      <CardTitle><h5>Integracion: G.30 Nombre de Estados Norteamericanos y Comunidades Autónomas (PROXY)</h5></CardTitle>
+    </CardHeader>
+    <CardBody style="background-color: #F0FEFF;">
+      <CardSubtitle />
+      
+      <CardText>Los datos sobre el nombre de los estados pertenecen a la API desarrollada por Alejandro Sánchez.
+        
+        Gráfico dicertido e interactivo que muestra todos los nombres de estados y comunidades autónomas. Si recargas el gráfico, las
+        palabras se duplican para hacerlo todo muy vistoso. (A las 7 recargas vuelve al principio)
+        Para cargar los datos he implementado un proxy en nuestro index.js que puede ver en el siguiente enlace (al final del archivo):
+        <a href="https://github.com/gti-sos/SOS2021-05/blob/main/index.js">Ver código Proxy</a>
+      </CardText>
+     
+      <img alt={" "} src={"/mediaSales/int30.png"}>
+    </CardBody>
+    <CardFooter style="background-color: #C7EFF3;">
+        
+      <a href="/#/sales/integration30 "
+      ><Button style="background-color:  #22A3B0 ; ">Ir a la gráfica</Button></a
+    >
+      
+  </CardFooter
+    >
+  </Card>
   
 </Col>
 
