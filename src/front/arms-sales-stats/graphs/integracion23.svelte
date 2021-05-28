@@ -28,7 +28,7 @@
     import "chartist/dist/scss/chartist.scss";
 import { create_bidirectional_transition } from "svelte/internal";
         let state = "Texas"
-        let agno= 2020
+        let agno= 2017
         let last= 2020
         let estados=["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts",
 "Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island",
@@ -213,10 +213,10 @@ const togglealerta=()=>{
                     justify-content: center;
                     align-items: center;">
                         Gracias a la API proporcionada por mi compañero Eduardo perteneciente al grupo 23 puedo obtener unos datos muy utiles 
-                        sobre el porcentaje personas en EEUU que tienen enfermedades mentales.
+                        sobre el porcentaje personas en EEUU que padecen trastornos mentales.
 
-                        Este estudio tratara de representar gráficamente que porcentaje de personas (Dado un Estado y un Año) padecen alguna de estas tres
-                        enfermedades mentales respecto del numero de personas que han comprado un arma. Comencemos:
+                        Este estudio tratara de representar gráficamente que porcentaje de personas (Dado un Estado y un Año) padecen alguno de estas tres
+                        trastornos mentales respecto del numero de personas que han comprado un arma. Comencemos:
 
                         <h5>Datos iniciales</h5>
                         Estos datos han sido obtenidos desde la API de mi compañero y la ultima columna desde mi API
@@ -268,7 +268,7 @@ const togglealerta=()=>{
                         <h5  style="text-align: left;">Personas con Esquizofrenia residentes en {state} que compraron un arma en {agno}</h5>
                         <div style="width:50%" class="ct-chart3 ct-perfect-fourth" ></div>
 
-                        <h5  style="text-align: left;">Personas con alguna enfermedad mental residentes en {state} que compraron un arma en {agno}</h5>
+                        <h5  style="text-align: left;">Personas con algún trastorno mental residentes en {state} que compraron un arma en {agno}</h5>
                         <div style="width:50%" class="ct-chart4 ct-perfect-fourth" ></div>
                     </CardBody>
                     <CardFooter style="background-color: #C7EFF3;">

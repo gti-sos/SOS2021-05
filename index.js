@@ -130,7 +130,7 @@ app.use("/ql", function(req, res) {
 });
 
 
-//INTEGRACIÓN 2 API SALUD MENTAL (GRUPO 01) (PROXY)
+//INTEGRACIÓN 2 API SALUD MENTAL (GRUPO 23) (PROXY)
 //el servidor de datos se encontraría en apiServerHostMH
 // "/mh" es la ruta dónde decido configurar el recurso
 //esto lo que va a hacer es que cada vez que llamemos a "/mh",
@@ -145,6 +145,20 @@ app.use("/mh", function(req, res) {
     req.pipe(request(url)).pipe(res);
 });
 
+//INTEGRACIÓN 3 API ESPERANZA DE VIDA (GRUPO 30) (PROXY)
+//el servidor de datos se encontraría en apiServerHostEV
+// "/ev" es la ruta dónde decido configurar el recurso
+//esto lo que va a hacer es que cada vez que llamemos a "/ev",
+//será como si llamaramos a la variable apiServerHostEV.
+//se define una var url que tendrá la ruta de la api + url original
+
+app.use("/ev", function(req, res) {
+    var apiServerHostEV = ' https://sos2021-30.herokuapp.com/api/v2/life-expectancy-stats';
+    var url = apiServerHostEV + req.url;
+    console.log('piped: /ev -> ' + url);
+    // request solo hace get, investigar como hacer put, post, delete, etc.
+    req.pipe(request(url)).pipe(res);
+});
 
 
 //JOSÉ ANTONIO MEGIAS MACIAS
