@@ -119,6 +119,7 @@
 
       
       </CardText>
+      <CardText>Esperad unos segundos, tarda en cargar.</CardText>
       <img alt={" "} src={"/mediaSales/ext3.png"}>
     </CardBody>
     <CardFooter style="background-color: #C7EFF3;">

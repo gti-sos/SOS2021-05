@@ -130,6 +130,22 @@ app.use("/ql", function(req, res) {
 });
 
 
+//INTEGRACIÓN 2 API SALUD MENTAL (GRUPO 01) (PROXY)
+//el servidor de datos se encontraría en apiServerHostMH
+// "/mh" es la ruta dónde decido configurar el recurso
+//esto lo que va a hacer es que cada vez que llamemos a "/mh",
+//será como si llamaramos a la variable apiServerHostMH.
+//se define una var url que tendrá la ruta de la api + url original
+
+app.use("/mh", function(req, res) {
+    var apiServerHostMH = ' https://sos2021-23.herokuapp.com/api/v1/mh-stats';
+    var url = apiServerHostMH + req.url;
+    console.log('piped: /mh -> ' + url);
+    // request solo hace get, investigar como hacer put, post, delete, etc.
+    req.pipe(request(url)).pipe(res);
+});
+
+
 
 //JOSÉ ANTONIO MEGIAS MACIAS
 
