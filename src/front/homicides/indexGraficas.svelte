@@ -95,7 +95,7 @@
 
               <CardFooter style="background-color: #C7EFF3;">
                   
-                  <a href="/#/homicides/usoF1"
+                  <a href="/#/homicides/usoIMDB"
                   ><Button style="background-color:  #22A3B0 ; ">Ir a la gráfica</Button></a>
               
               

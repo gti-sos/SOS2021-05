@@ -10,7 +10,8 @@
 	import GraphsIndex from "./homicides/indexGraficas.svelte";
 	import GraphHomicidesLine from "./homicides/lineHomicides.svelte";
 	import Pobreza from "./homicides/integrations/riesgosPobreza.svelte";
-	import f1 from "./homicides/integrations/usoF1.svelte";
+	import imdb from "./homicides/integrations/usoIMDB.svelte";
+	import test from "./homicides/integrations/testingGraph.svelte";
 
 
 	//Aqui hago 2 imports uno para cada API externa
@@ -40,6 +41,7 @@
 	import NotFound from "./NotFound.svelte";
 	
 	import Info from "./Info.svelte";
+import TestingGraph from './homicides/integrations/testingGraph.svelte';
 	const routes = {
 		"/info": Info,
 		"/homicides": Homicides,
@@ -52,7 +54,8 @@
 		"/homicides/line": GraphHomicidesLine,//redirige al grafico de mi API
 		"/homicides/:state/:year": EditHomicides,//redirige a la página de edición de un recurso
 		"/homicides/riesgosPobreza": Pobreza,
-		"/homicides/usoF1": f1,
+		"/homicides/usoIMDB": imdb,
+		"/homicides/testingGraph": test,
 		//Arms Sales Stats
 		"/sales/analytics": GraphsArms,
 		"/sales/line": GraphLineArms,
