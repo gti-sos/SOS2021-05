@@ -113,17 +113,40 @@ app.use("/poverty_risks", function(req, res) {
     req.pipe(request(url)).pipe(res);
 });
 
+//MANUEL
+//INTEGRACIÓN 1 API CALIDAD DE VIDA (GRUPO 01) (PROXY)
+//el servidor de datos se encontraría en apiServerHostQL
+// "/ql" es la ruta dónde decido configurar el recurso
+//esto lo que va a hacer es que cada vez que llamemos a "/ql",
+//será como si llamaramos a la variable apiServerHostQL.
+//se define una var url que tendrá la ruta de la api + url original
+
+app.use("/ql", function(req, res) {
+    var apiServerHostQL = ' http://sos2021-01.herokuapp.com/api/v2/life-stats';
+    var url = apiServerHostQL + req.url;
+    console.log('piped: /ql -> ' + url);
+    // request solo hace get, investigar como hacer put, post, delete, etc.
+    req.pipe(request(url)).pipe(res);
+});
 
 
-//USO 1 (API F1)
 
-//de este modo y gracias al request, esto se conecta a la URL y todo lo que le llega lo envía a esa URL
-//y todo lo que devuelve, lo devuelve por response (flujos request/response)
+//JOSÉ ANTONIO MEGIAS MACIAS
 
+//INTEGRACIÓN 1 API CALIDAD DE VIDA (GRUPO 01) (PROXY)
+//el servidor de datos se encontraría en apiServerHostVIH
+// "/vih" es la ruta dónde decido configurar el recurso
+//esto lo que va a hacer es que cada vez que llamemos a "/vih",
+//será como si llamaramos a la variable apiServerHostVIH.
+//se define una var url que tendrá la ruta de la api + url original
 
-//INTEGRACIONES
-
-//JOSE ANTONIO
+app.use("/vih", function(req, res) {
+    var apiServerHostVIH = 'https://sos2021-24.herokuapp.com/api/v2/children-with-hiv';
+    var url = apiServerHostVIH + req.url;
+    console.log('piped: /vih -> ' + url);
+    // request solo hace get, investigar como hacer put, post, delete, etc.
+    req.pipe(request(url)).pipe(res);
+});
 
 
 

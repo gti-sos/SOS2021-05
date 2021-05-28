@@ -26,6 +26,8 @@
 	import GraphExternal1Arms from "./arms-sales-stats/graphs/external1.svelte";
 	import GraphExternal2Arms from "./arms-sales-stats/graphs/external2.svelte";
 	import GraphExternal3Arms from "./arms-sales-stats/graphs/external3.svelte";
+	import  GraphIntegration01 from "./arms-sales-stats/graphs/integracion01.svelte";
+	import  GraphIntegration01b from "./arms-sales-stats/graphs/integracion01b.svelte";
 
 	//IMPORTS ATTACKS
 	import Attacks from "./attacks-stats/attacks-stats.svelte";
@@ -34,6 +36,7 @@
 	import GraphLineAttacks from "./attacks-stats/graphs/lineAttacks.svelte";
 	import GraphApiExterna1Attacks from "./attacks-stats/graphs/apiExterna1.svelte";
 	import GraphApiExterna2Attacks from "./attacks-stats/graphs/apiExterna2.svelte";
+	import GraphIntegracion1 from "./attacks-stats/graphs/integracion1.svelte";
 
 
 	
@@ -61,6 +64,8 @@
 		"/sales/external1": GraphExternal1Arms,
 		"/sales/external2": GraphExternal2Arms,
 		"/sales/external3": GraphExternal3Arms,
+		"/sales/integration01": GraphIntegration01,
+		"/sales/integration01b": GraphIntegration01b,
 		"/sales/:state/:year/:month": EditSale,
 		
 		//Attacks stats
@@ -69,6 +74,7 @@
 		"/attacks/:state/:year": EditAttacks,
 		"/attacks/apiexterna1": GraphApiExterna1Attacks,
 		"/attacks/apiexterna2": GraphApiExterna2Attacks,
+		"/attacks/integracion1": GraphIntegracion1,
 		
 		
 		

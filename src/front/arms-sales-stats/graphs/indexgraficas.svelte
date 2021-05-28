@@ -132,7 +132,66 @@
   </Card>
   
 </Col>
+<Col xs="auto">
+        
+  <Card  class="mb-3">
+    <CardHeader style="background-color: #C7EFF3;">
+      <CardTitle><h5>Integracion: G.01 Armas vendidas e índice de Calidad de Vida por estados (PROXY)</h5></CardTitle>
+    </CardHeader>
+    <CardBody style="background-color: #F0FEFF;">
+      <CardSubtitle />
+      <CardText>Gráfico orientado al estudio de la influencia de la calidad de vida en la venta de armas de EEUU</CardText>
+      <CardText>Los datos sobre la Calidad de Vida pertenecen a la API desarrollada por Lucía Castro.
+        He decidido acotarlo por estados y que el usuario decida cual quiere visualizar debido a que el calculo de todos los datos a la vez es
+        computacionalmente imposible de realizar en un tiempo que no se haga tedioso al usuario.
+        Para cargar los datos he implementado un proxy en nuestro index.js que puede ver en el siguiente enlace (al final del archivo):
+        <a href="https://github.com/gti-sos/SOS2021-05/blob/main/index.js">Ver código Proxy</a>
+      </CardText>
+     
+      <img alt={" "} src={"/mediaSales/int1.png"}>
+    </CardBody>
+    <CardFooter style="background-color: #C7EFF3;">
+        
+      <a href="/#/sales/integration01 "
+      ><Button style="background-color:  #22A3B0 ; ">Ir a la gráfica</Button></a
+    >
+      
+  </CardFooter
+    >
+  </Card>
   
+</Col>
+  
+
+<Col xs="auto">
+        
+  <Card  class="mb-3">
+    <CardHeader style="background-color: #C7EFF3;">
+      <CardTitle><h5>Integracion: G.01 Armas vendidas e índice de Seguridad por estados (PROXY)</h5></CardTitle>
+    </CardHeader>
+    <CardBody style="background-color: #F0FEFF;">
+      <CardSubtitle />
+      <CardText>Gráfico orientado al estudio de la influencia de la seguridad estimada de la población estadounidense en la venta de armas</CardText>
+      <CardText>Los datos sobre la Seguridad pertenecen a la API desarrollada por Lucía Castro.
+        He decidido acotarlo por estados y que el usuario decida cual quiere visualizar debido a que el calculo de todos los datos a la vez es
+        computacionalmente imposible de realizar en un tiempo que no se haga tedioso al usuario.
+        Para cargar los datos he implementado un proxy en nuestro index.js que puede ver en el siguiente enlace (al final del archivo):
+        <a href="https://github.com/gti-sos/SOS2021-05/blob/main/index.js">Ver código Proxy</a>
+      </CardText>
+     
+      <img alt={" "} src={"/mediaSales/int1b.png"}>
+    </CardBody>
+    <CardFooter style="background-color: #C7EFF3;">
+        
+      <a href="/#/sales/integration01b "
+      ><Button style="background-color:  #22A3B0 ; ">Ir a la gráfica</Button></a
+    >
+      
+  </CardFooter
+    >
+  </Card>
+  
+</Col>
 
     </Container>
   </main>
