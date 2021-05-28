@@ -6,7 +6,7 @@ import {
   } from "svelte";
 
   var myHeaders = new Headers();
-        myHeaders.append("x-rapidapi-key", "6ae08866a6msh5aba25d590f3b67p100c5ejsnc933aa2b9bcb");
+        myHeaders.append("x-rapidapi-key", "a282db27a6mshcd8db7cc3c89e60p11aee7jsn6069240f3501");
         myHeaders.append("x-rapidapi-host", "imdb8.p.rapidapi.com");
 
 
@@ -21,6 +21,7 @@ import {
   let ratings = [];
   let titlesId = [];
   let titles = [];
+  let totalRates = [];
 
   onMount(inicio)
 
@@ -46,10 +47,10 @@ const delay = ms => new Promise(res => setTimeout(res, ms));
 
   async function getData(){
       console.log("Fetching data...");
-      const res = await fetch("https://imdb8.p.rapidapi.com/title/get-top-rated-tv-shows", requestOptions)
+     /* const res = await fetch("https://imdb8.p.rapidapi.com/title/get-top-rated-tv-shows", requestOptions)
           .then(response => response.text())
           .then(result => console.log(result))
-          .catch(error => console.log('error', error));
+          .catch(error => console.log('error', error));*/
       const res1 = await fetch("https://imdb8.p.rapidapi.com/title/get-top-rated-tv-shows", requestOptions);
       if(res1.ok){
           console.log("Ok.");
@@ -70,13 +71,12 @@ const delay = ms => new Promise(res => setTimeout(res, ms));
           for(let j=0; j<titlesId.length; j++) {
             titlesId[j] = titlesId[j].replace("/title/" , "").replace("/","");
             const res2 = await fetch("https://imdb8.p.rapidapi.com/title/get-ratings?tconst=" + titlesId[j], requestOptions);
-            console.log(res2);
             if(res2.ok) {
               const json = await res2.json();
               data = json;
-              
-              //console.log(data.title);
               titles.push(data.title);
+              totalRates.push(data.ratingCount);
+
             }
           }
          
@@ -90,63 +90,64 @@ const delay = ms => new Promise(res => setTimeout(res, ms));
 
 
   async function loadGraph() {
-        Highcharts.chart('container', {
-        chart: {
-            type: 'bar'
-        },
-        title: {
-            text: 'Los 10 shows mejor puntuados en IMDB'
-        },
-        subtitle: {
-        },
-        xAxis: {
-            categories: titles,
-            title: {
-                text: null
-            }
-        },
-        yAxis: {
-            min: 0,
-            title: {
-                text: 'Puntuación',
-                align: 'high'
-            },
-            labels: {
-                overflow: 'justify'
-            }
-        },
-        tooltip: {
-            valueSuffix: ' score'
-        },
-        plotOptions: {
-            bar: {
-                dataLabels: {
-                    enabled: true
-                }
-            }
-        },
-        legend: {
-            layout: 'vertical',
-            align: 'right',
-            verticalAlign: 'top',
-            x: -40,
-            y: 80,
-            floating: true,
-            borderWidth: 1,
-            backgroundColor:
-                Highcharts.defaultOptions.legend.backgroundColor || '#FFFFFF',
-            shadow: true
-        },
-        credits: {
-            enabled: false
-        },
-        series: [{
-            name: '',
-            data: ratings,
-        }]
-    });
+      Highcharts.chart('container', {
+  chart: {
+      type: 'bar'
+  },
+  title: {
+      text: 'Top 10 shows con mejor puntuación en IMDB'
+  },
+  subtitle: {
+  },
+  xAxis: {
+      categories: titles,
+      title: {
+          text: null
+      }
+  },
+  yAxis: {
+      min: 0,
+      title: {
+          text: 'Número de veces puntuado',
+          align: 'high'
+      },
+      labels: {
+          overflow: 'justify'
+      }
+  },
+  tooltip: {
+  },
+  plotOptions: {
+      bar: {
+          dataLabels: {
+              enabled: true
+          }
+      }
+  },
+  legend: {
+      layout: 'vertical',
+      align: 'right',
+      verticalAlign: 'top',
+      x: -40,
+      y: 80,
+      floating: true,
+      borderWidth: 1,
+      backgroundColor:
+          Highcharts.defaultOptions.legend.backgroundColor || '#FFFFFF',
+      shadow: true
+  },
+  credits: {
+      enabled: false
+  },
+  series: [{
+      name: 'Rating',
+      data: ratings,
+  }, {
+      name: 'Rating Count',
+      data: totalRates,
+  }]
+  });
   }
-
 
 </script>
 
@@ -160,7 +161,7 @@ const delay = ms => new Promise(res => setTimeout(res, ms));
 
 <main>
 
-  <script src="https://code.highcharts.com/highcharts.js" on:load="{loadGraph}"></script>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
   <script src="https://code.highcharts.com/modules/exporting.js"></script>
   <script src="https://code.highcharts.com/modules/export-data.js"></script>
   <script src="https://code.highcharts.com/modules/accessibility.js"></script>
@@ -168,18 +169,25 @@ const delay = ms => new Promise(res => setTimeout(res, ms));
   <figure class="highcharts-figure">
       <div id="container"></div>
       <p class="highcharts-description">
-          
+          Gráfica que nos muestra los 10 shows (películas y series) mejor puntuadas en IMDB, así como el 
+          número total de veces que se ha puntuado cada uno.
       </p>
   </figure>
-  
+
+  <p></p>
+	<Button outline color="secondary" on:click="{pop}"> Volver</Button>
+	<p></p>
 
 </main>
 
 <style>
 
+
+
 #container {
-  height: 400px; 
+    height: 400px;
 }
+
 
 
 

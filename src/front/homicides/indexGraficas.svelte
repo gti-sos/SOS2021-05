@@ -45,7 +45,7 @@
                 <CardBody style="background-color: #F0FEFF;">
                     <CardSubtitle />
                     <CardText>Gráfico lineal que representa los datos de homicidios por armas de fuego en la última década.</CardText>
-                    <img alt={" "} src={"front/media/homicidesLineMin.jpg"}>
+                    <img alt={" "} src={"/mediaHomicides/homicidesGraph.jpg"}>
                 </CardBody>
                 <CardFooter style="background-color: #C7EFF3;">
                     
@@ -69,7 +69,7 @@
                 <CardBody style="background-color: #F0FEFF;">
                 <CardSubtitle />
                 <CardText>Gráfico COD</CardText>
-                <img alt={" "} src={"/build/mediaSales/ext1.png"}>
+                <img alt={" "} src={""}>
                 </CardBody>
 
                 <CardFooter style="background-color: #C7EFF3;">
@@ -90,7 +90,7 @@
               <CardBody style="background-color: #F0FEFF;">
               <CardSubtitle />
               <CardText>Gráfico para estadísticas IMDB</CardText>
-              <img alt={" "} src={"/build/mediaSales/ext1.png"}>
+              <img alt={" "} src={"/mediaHomicides/imdb.png"}>
               </CardBody>
 
               <CardFooter style="background-color: #C7EFF3;">

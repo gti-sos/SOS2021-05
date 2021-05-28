@@ -12,6 +12,7 @@
 	import Pobreza from "./homicides/integrations/riesgosPobreza.svelte";
 	import imdb from "./homicides/integrations/usoIMDB.svelte";
 	import cod from "./homicides/integrations/usoCOD.svelte";
+	import test from "./homicides/integrations/usoTEST.svelte";
 
 
 	//Aqui hago 2 imports uno para cada API externa
@@ -59,6 +60,7 @@
 		"/homicides/riesgosPobreza": Pobreza,
 		"/homicides/usoIMDB": imdb,
 		"/homicides/usoCOD": cod,
+		"/homicides/usoTEST": test,
 		//Arms Sales Stats
 		"/sales/analytics": GraphsArms,
 		"/sales/line": GraphLineArms,
