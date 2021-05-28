@@ -4,6 +4,7 @@
 	
     let data = [];
     let dataResponse = [];
+    let jugYpun = [];
     let puntosPorJugador = [];
 
 async function loadGraph(){
@@ -26,10 +27,12 @@ async function loadGraph(){
             dataResponse = data.results.rankings;
             console.log(dataResponse.length); // 250 TENISTAS
             for(let i=0;i<10;i++){
-                
+                jugYpun.push(dataResponse[i].full_name);
+                jugYpun.push(dataResponse[i].ranking_points)
+                puntosPorJugador.push(jugYpun);
+                jugYpun=[];
+                console.log(puntosPorJugador);
             }
-
-
             
             
         }else{
@@ -42,10 +45,10 @@ async function loadGraph(){
         type: 'column'
     },
     title: {
-        text: 'World\'s largest cities per 2017'
+        text: 'Ranking de los 10 mejores tenistas del mundo'
     },
     subtitle: {
-        text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
+        text: 'Información mundial del tenis: <a href="https://es.wikipedia.org/wiki/Asociaci%C3%B3n_de_Tenistas_Profesionales">Wikipedia</a>'
     },
     xAxis: {
         type: 'category',
@@ -60,45 +63,24 @@ async function loadGraph(){
     yAxis: {
         min: 0,
         title: {
-            text: 'Population (millions)'
+            text: 'Puntuación'
         }
     },
     legend: {
         enabled: false
     },
     tooltip: {
-        pointFormat: 'Population in 2017: <b>{point.y:.1f} millions</b>'
+        pointFormat: 'Actualmente: <b>{point.y:.0f} points</b>'
     },
     series: [{
         name: 'Population',
-        data: [
-            ['Shanghai', 24.2],
-            ['Beijing', 20.8],
-            ['Karachi', 14.9],
-            ['Shenzhen', 13.7],
-            ['Guangzhou', 13.1],
-            ['Istanbul', 12.7],
-            ['Mumbai', 12.4],
-            ['Moscow', 12.2],
-            ['São Paulo', 12.0],
-            ['Delhi', 11.7],
-            ['Kinshasa', 11.5],
-            ['Tianjin', 11.2],
-            ['Lahore', 11.1],
-            ['Jakarta', 10.6],
-            ['Dongguan', 10.6],
-            ['Lagos', 10.6],
-            ['Bengaluru', 10.3],
-            ['Seoul', 9.8],
-            ['Foshan', 9.3],
-            ['Tokyo', 9.3]
-        ],
+        data: puntosPorJugador,
         dataLabels: {
             enabled: true,
             rotation: -90,
             color: '#FFFFFF',
             align: 'right',
-            format: '{point.y:.1f}', // one decimal
+            format: '{point.y:.0f}', // one decimal
             y: 10, // 10 pixels down from the top
             style: {
                 fontSize: '13px',
@@ -116,14 +98,10 @@ async function loadGraph(){
 
     <script src="https://code.highcharts.com/highcharts.js" on:load="{loadGraph}"></script>
 
-
+    <div>   <Button outline style=" background-color:#6C00AF; color:aliceblue" on:click="{pop}"> Volver</Button></div> 
 <figure class="highcharts-figure">
     <div id="container"></div>
-    <p class="highcharts-description">
-        Chart showing use of rotated axis labels and data labels. This can be a
-        way to include more labels in the chart, but note that more labels can
-        sometimes make charts harder to read.
-    </p>
+    
 </figure>
 
 </main>
