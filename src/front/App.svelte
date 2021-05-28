@@ -34,6 +34,7 @@
 	import GraphLineAttacks from "./attacks-stats/graphs/lineAttacks.svelte";
 	import GraphApiExterna1Attacks from "./attacks-stats/graphs/apiExterna1.svelte";
 	import GraphApiExterna2Attacks from "./attacks-stats/graphs/apiExterna2.svelte";
+	import GraphIntegracion1 from "./attacks-stats/graphs/integracion1.svelte";
 
 
 	
@@ -69,6 +70,7 @@
 		"/attacks/:state/:year": EditAttacks,
 		"/attacks/apiexterna1": GraphApiExterna1Attacks,
 		"/attacks/apiexterna2": GraphApiExterna2Attacks,
+		"/attacks/integracion1": GraphIntegracion1,
 		
 		
 		
