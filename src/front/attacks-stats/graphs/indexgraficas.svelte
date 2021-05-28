@@ -63,11 +63,11 @@
         
       <Card  class="mb-3">
         <CardHeader style="background-color: #C7EFF3;">
-          <CardTitle><h5>Api Externa 1: .</h5></CardTitle>
+          <CardTitle><h5>Api Externa 1: Formula 1.</h5></CardTitle>
         </CardHeader>
         <CardBody style="background-color: #F0FEFF;">
           <CardSubtitle />
-          <CardText>Gráfico de ...</CardText>
+          <CardText>Gráfico de la capacidad de los circuitos de la Formula 1</CardText>
           
         </CardBody>
         <CardFooter style="background-color: #C7EFF3;">
@@ -86,11 +86,11 @@
         
     <Card  class="mb-3">
       <CardHeader style="background-color: #C7EFF3;">
-        <CardTitle><h5>Api Externa 2: .</h5></CardTitle>
+        <CardTitle><h5>Api Externa 2: Tenis.</h5></CardTitle>
       </CardHeader>
       <CardBody style="background-color: #F0FEFF;">
         <CardSubtitle />
-        <CardText>Gráfico de ...</CardText>
+        <CardText>Gráfico del Ranking de los 10 mejores tenistas del mundo</CardText>
         
       </CardBody>
       <CardFooter style="background-color: #C7EFF3;">
@@ -103,6 +103,29 @@
       >
     </Card>
     
+</Col>
+
+<Col xs="auto">
+        
+  <Card  class="mb-3">
+    <CardHeader style="background-color: #C7EFF3;">
+      <CardTitle><h5>Integracion 1: ...</h5></CardTitle>
+    </CardHeader>
+    <CardBody style="background-color: #F0FEFF;">
+      <CardSubtitle />
+      <CardText>Gráfico de ...</CardText>
+      
+    </CardBody>
+    <CardFooter style="background-color: #C7EFF3;">
+        
+      <a href="/#/attacks/integracion1"
+      ><Button style="background-color:  #22A3B0 ; ">Ir a la gráfica</Button></a
+    >
+      
+  </CardFooter
+    >
+  </Card>
+  
 </Col>
     
 
