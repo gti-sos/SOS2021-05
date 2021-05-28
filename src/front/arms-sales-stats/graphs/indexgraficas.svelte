@@ -46,7 +46,7 @@
           <CardBody style="background-color: #F0FEFF;">
             <CardSubtitle />
             <CardText>Gráfico lineal que muestra los datos sobre la venta de armas.</CardText>
-            <img alt={" "} src={"/build/mediaSales/line.png"}>
+            <img alt={" "} src={"/mediaSales/line.png"}>
           </CardBody>
           <CardFooter style="background-color: #C7EFF3;">
               
@@ -68,7 +68,7 @@
         <CardBody style="background-color: #F0FEFF;">
           <CardSubtitle />
           <CardText>Gráfico de Burbujas que muestra los equipos de Inglaterra, Estados Unidos, España e Italia</CardText>
-          <img alt={" "} src={"/build/mediaSales/ext1.png"}>
+          <img alt={" "} src={"/mediaSales/ext1.png"}>
         </CardBody>
         <CardFooter style="background-color: #C7EFF3;">
             
@@ -92,7 +92,7 @@
         <CardSubtitle />
         <CardText>Gráfico de Burbujas que muestra los casos de covid, casos recuperados y decesos en los principales paises afectados por la pandemia.</CardText>
         <CardText>Ha sido desarrollada utilizando la libreria Chartist. Lamentablemente no es interactiva.</CardText>
-        <img alt={" "} src={"/build/mediaSales/ext2.png"}>
+        <img alt={" "} src={"/mediaSales/ext2.png"}>
       </CardBody>
       <CardFooter style="background-color: #C7EFF3;">
           
@@ -104,6 +104,33 @@
       >
     </Card>
     
+</Col>
+<Col xs="auto">
+        
+  <Card  class="mb-3">
+    <CardHeader style="background-color: #C7EFF3;">
+      <CardTitle><h5>Api Externa: Insectos Animal Crossing.</h5></CardTitle>
+    </CardHeader>
+    <CardBody style="background-color: #F0FEFF;">
+      <CardSubtitle />
+      <CardText>Animal Crossing es un videojuego muy popular entre las personas jovenes.</CardText>
+      <CardText>Se trata de un simulador de vida digital a tiempo real que te permite pescar, cazar bichos e interactuar con el
+                entorno. Este widget nos muestra los meses en los que aparece por el mundo cada insecto que el jugador debe atrapar.
+
+      
+      </CardText>
+      <img alt={" "} src={"/mediaSales/ext3.png"}>
+    </CardBody>
+    <CardFooter style="background-color: #C7EFF3;">
+        
+      <a href="/#/sales/external3 "
+      ><Button style="background-color:  #22A3B0 ; ">Ir a la gráfica</Button></a
+    >
+      
+  </CardFooter
+    >
+  </Card>
+  
 </Col>
   
 
