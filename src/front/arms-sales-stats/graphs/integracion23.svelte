@@ -215,7 +215,7 @@ const togglealerta=()=>{
                         Gracias a la API proporcionada por mi compañero Eduardo perteneciente al grupo 23 puedo obtener unos datos muy utiles 
                         sobre el porcentaje personas en EEUU que tienen enfermedades mentales.
 
-                        Este estudio tratara de representar gráficamente que porcentage de personas (Dado un Estado y un Año) padecen alguna de estas tres
+                        Este estudio tratara de representar gráficamente que porcentaje de personas (Dado un Estado y un Año) padecen alguna de estas tres
                         enfermedades mentales respecto del numero de personas que han comprado un arma. Comencemos:
 
                         <h5>Datos iniciales</h5>
