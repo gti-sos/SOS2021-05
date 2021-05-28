@@ -104,6 +104,29 @@
     </Card>
     
 </Col>
+
+<Col xs="auto">
+        
+  <Card  class="mb-3">
+    <CardHeader style="background-color: #C7EFF3;">
+      <CardTitle><h5>Integracion 1: ...</h5></CardTitle>
+    </CardHeader>
+    <CardBody style="background-color: #F0FEFF;">
+      <CardSubtitle />
+      <CardText>Gráfico de ...</CardText>
+      
+    </CardBody>
+    <CardFooter style="background-color: #C7EFF3;">
+        
+      <a href="/#/attacks/integracion1"
+      ><Button style="background-color:  #22A3B0 ; ">Ir a la gráfica</Button></a
+    >
+      
+  </CardFooter
+    >
+  </Card>
+  
+</Col>
     
 
     </Container>
