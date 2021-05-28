@@ -2,8 +2,6 @@
   import {pop} from "svelte-spa-router";
   import ApexCharts from 'apexcharts';
   import { chart } from "svelte-apexcharts";
-   
-
   import Button from "sveltestrap/src/Button.svelte";
 import {
       onMount
@@ -157,7 +155,6 @@ const delay = ms => new Promise(res => setTimeout(res, ms));
 
 <svelte:head>
 
-  <script src="https://cdn.jsdelivr.net/npm/apexcharts" on:load="{loadGraph}"></script>
 
 
 </svelte:head>
@@ -165,7 +162,7 @@ const delay = ms => new Promise(res => setTimeout(res, ms));
 
 <main>
 
-  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/highcharts.js" on:load="{loadGraph}"></script>
   <script src="https://code.highcharts.com/modules/exporting.js"></script>
   <script src="https://code.highcharts.com/modules/export-data.js"></script>
   <script src="https://code.highcharts.com/modules/accessibility.js"></script>
