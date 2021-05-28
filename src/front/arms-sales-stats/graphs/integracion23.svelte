@@ -192,6 +192,7 @@ const lanzamensaje=(rc,rs,m,me,err)=>{
     mensajeespecifico=me;
     error=err;//booleano
 
+    
     alerta=true;
 }
 const togglealerta=()=>{
