@@ -63,18 +63,18 @@
             <Card  class="mb-3">
 
                 <CardHeader style="background-color: #C7EFF3;">
-                <CardTitle><h5>API Externa (Integración): Riesgos De Pobreza</h5></CardTitle>
+                <CardTitle><h5>API Externa (USO): Estadísticas COD</h5></CardTitle>
                 </CardHeader>
 
                 <CardBody style="background-color: #F0FEFF;">
                 <CardSubtitle />
-                <CardText>Gráfico para riesgos de pobrezas</CardText>
+                <CardText>Gráfico COD</CardText>
                 <img alt={" "} src={"/build/mediaSales/ext1.png"}>
                 </CardBody>
 
                 <CardFooter style="background-color: #C7EFF3;">
                     
-                    <a href="/#/homicides/riesgosPobreza"
+                    <a href="/#/homicides/usoCOD"
                     ><Button style="background-color:  #22A3B0 ; ">Ir a la gráfica</Button></a>
                 
                 

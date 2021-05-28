@@ -10,7 +10,8 @@
 	import GraphsIndex from "./homicides/indexGraficas.svelte";
 	import GraphHomicidesLine from "./homicides/lineHomicides.svelte";
 	import Pobreza from "./homicides/integrations/riesgosPobreza.svelte";
-	import imdb from "./homicides/integrations/usoIMDB.svelte"
+	import imdb from "./homicides/integrations/usoIMDB.svelte";
+	import cod from "./homicides/integrations/usoCOD.svelte";
 
 
 	//Aqui hago 2 imports uno para cada API externa
@@ -53,6 +54,7 @@
 		"/homicides/:state/:year": EditHomicides,//redirige a la página de edición de un recurso
 		"/homicides/riesgosPobreza": Pobreza,
 		"/homicides/usoIMDB": imdb,
+		"/homicides/usoCOD": cod,
 		//Arms Sales Stats
 		"/sales/analytics": GraphsArms,
 		"/sales/line": GraphLineArms,
