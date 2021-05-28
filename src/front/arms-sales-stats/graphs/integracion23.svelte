@@ -257,6 +257,7 @@ const togglealerta=()=>{
                             </Table >
                         </div>
 
+                        
 
                         <h5  style="text-align: left;"> Personas con Bipolaridad residentes en {state} que compraron un arma en {agno}</h5>
                         <div  style="width:50% " class="ct-chart1 ct-perfect-fourth" ></div>
