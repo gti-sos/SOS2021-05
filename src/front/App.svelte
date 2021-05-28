@@ -40,7 +40,6 @@
 	import NotFound from "./NotFound.svelte";
 	
 	import Info from "./Info.svelte";
-import TestingGraph from './homicides/integrations/testingGraph.svelte';
 	const routes = {
 		"/info": Info,
 		"/homicides": Homicides,
@@ -54,7 +53,6 @@ import TestingGraph from './homicides/integrations/testingGraph.svelte';
 		"/homicides/:state/:year": EditHomicides,//redirige a la página de edición de un recurso
 		"/homicides/riesgosPobreza": Pobreza,
 		"/homicides/usoIMDB": imdb,
-		"/homicides/testingGraph": test,
 		//Arms Sales Stats
 		"/sales/analytics": GraphsArms,
 		"/sales/line": GraphLineArms,
