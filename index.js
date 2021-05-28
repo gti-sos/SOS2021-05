@@ -105,10 +105,10 @@ app.get("/info/attacks-stats", (request,response) => {
 //será como si llamaramos a la variable apiServerHostPovertyRisks.
 //se define una var url que tendrá la ruta de la api + url original
 
-app.use("/poverty_risks", function(req, res) {
+app.use("/poverty-risks", function(req, res) {
     var apiServerHostPovertyRisks = ' https://endpoint-poverty-risks.herokuapp.com/api/v1';
     var url = apiServerHostPovertyRisks + req.url;
-    console.log('piped: /poverty_risks -> ' + url);
+    console.log('piped: /poverty-risks -> ' + url);
     // request solo hace get, investigar como hacer put, post, delete, etc.
     req.pipe(request(url)).pipe(res);
 });

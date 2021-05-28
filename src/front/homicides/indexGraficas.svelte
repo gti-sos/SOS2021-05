@@ -59,7 +59,26 @@
 
             <Col xs="auto">
                 
-                
+            <Card  class="mb-3">
+
+              <CardHeader style="background-color: #C7EFF3;">
+              <CardTitle><h5>API Externa (INTEGRACION): Riesgos De Pobreza</h5></CardTitle>
+              </CardHeader>
+
+              <CardBody style="background-color: #F0FEFF;">
+              <CardSubtitle />
+              <CardText></CardText>
+              <img alt={" "} src={""}>
+              </CardBody>
+
+              <CardFooter style="background-color: #C7EFF3;">
+                  
+                  <a href="/#/homicides/riesgosPobreza"
+                  ><Button style="background-color:  #22A3B0 ; ">Ir a la gráfica</Button></a>
+              
+              
+                </CardFooter>
+          </Card>  
             <Card  class="mb-3">
 
                 <CardHeader style="background-color: #C7EFF3;">

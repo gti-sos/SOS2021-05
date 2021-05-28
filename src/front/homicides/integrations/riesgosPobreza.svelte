@@ -1,175 +1,35 @@
 <script>
-    
-  import {
-      Nav,
-      Modal,
-      ModalBody,
-      ModalFooter,
-      ModalHeader,
-      NavItem,
-      NavLink,
-      Button,
-      Table,
-      UncontrolledAlert,
-      Card,
-      CardBody,
-      CardFooter,
-      CardHeader,
-      CardSubtitle,
-      CardText,
-      CardTitle,
-  } from "sveltestrap";
-   
-  import {
-     pop
-  } from "svelte-spa-router";
-  import {
+  import {pop} from "svelte-spa-router";
+  import Button from "sveltestrap/src/Button.svelte";
+import {
       onMount
   } from "svelte";
+
+  var myHeaders = new Headers();
+       
+
+
+  var requestOptions = {
+      method: 'GET',
+      headers: myHeaders,
+      redirect: 'follow'
+};
   
-  
-  let agno= 2019
-  let estados=["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Kansas","Kentucky","Louisiana","Lowa","Maine","Maryland","Massachusetts",
-"Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island",
-"South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"]	
+
+ let data = [];
+ let agnosPobreza = [];
+ let paisesPobreza = [];
+
+  onMount(inicio)
 
 
+
+
+async function inicio(){
  
-  let data = [];
-  let array = [];
-  onMount(buscar)
-
-  async function getData(){
-      console.log("Fetching data...");
-      const res = await fetch("/api/v2/homicides-by-firearms");
-      if(res.ok){
-          console.log("Ok.");
-          const json = await res.json();
-          data = json;
-          console.log(`We have received ${data.length} data points.`);
-          for(let i=0;i<data.length;i++){
-              let aux= data[i].homicide_by_firearm.replace(".","")
-              array[i]=parseInt(aux,10)
-          }
-          
-          console.log(array);
-      }else{
-          console.log("Error!");
-      }
-  }   
- 
-   function datos() {
-      
-      getData()
-      
-  }
-
-  function getVisibilidad(n) {
-      
-      return n.includes("Alab")||n.includes("Main")||n.includes("Idaho");
-  }
-
- function loadGraph(){  
-  
-  //SERIES PARA LOS ESTADOS
-  var seriesaux = [],
-  len = estados.length,
-  i = 0;
- 
-  for(i;i<len;i++){
-      let comienzo=i*10
-       let fin=comienzo +10
-      let arraytroceada=array.slice(comienzo,fin)
-      const arrayoredenada=[]
-      //ordenamos la array en funcion de como salen los datos del get
-      arrayoredenada[0]=arraytroceada[0]
-      arrayoredenada[1]=arraytroceada[1]
-      arrayoredenada[2]=arraytroceada[2]
-      arrayoredenada[3]=arraytroceada[3]
-      arrayoredenada[4]=arraytroceada[4]
-      arrayoredenada[5]=arraytroceada[5]
-      arrayoredenada[6]=arraytroceada[6]
-      arrayoredenada[7]=arraytroceada[7]
-      arrayoredenada[8]=arraytroceada[8]
-      arrayoredenada[9]=arraytroceada[9]
-      
-
-
-     seriesaux.push({
-      name: estados[i],
-      data: arrayoredenada,
-      visible: getVisibilidad(estados[i])
-  });
-
-  }
-
-  //SERIES PARA LOS ESTADOS
-  Highcharts.chart('container', {
-
-title: {
-
-  text: 'TESTING INTEGRACIÓN RIESGOS POBREZA'
-},
-
-yAxis: {
-  title: {
-      text: 'Homicidios'
-  }
-},
-
-xAxis: {
-  accessibility: {
-      rangeDescription: 'Range: 2010 to 2019'
-  }
-},
-
-legend: {
-  layout: 'vertical',
-  align: 'right',
-  verticalAlign: 'middle'
-},
-
-plotOptions: {
-  series: {
-      label: {
-          connectorAllowed: false
-      },
-      pointStart: 2010
-  }
-},
-
-series: seriesaux,
-
-responsive: {
-  rules: [{
-      condition: {
-          maxWidth: 500
-      },
-      chartOptions: {
-          legend: {
-              layout: 'horizontal',
-              align: 'center',
-              verticalAlign: 'bottom'
-          }
-      }
-  }]
-}
-
-});
-}
-
-let b=false;
-const busqueda=()=>{
-  b=!b;
-}
-async function buscar(){
-  b=!b;
- 
- getData(agno)
- await delay(200);
+await getData()
+  delay(29);
  recarga()
- 
-
  
 }
 const recarga=()=>{
@@ -177,44 +37,94 @@ const recarga=()=>{
   loadGraph()
  
 }
-
 const delay = ms => new Promise(res => setTimeout(res, ms));
+
+
+
+
+  async function getData(){
+      console.log("Fetching data...");
+      const res1 = await fetch("/poverty-risks");
+      if(res1.ok){
+        console.log(res1);
+        const json = await res1.json();
+        data = json;
+        console.log(data);
+        for(let i=0;i<data.length;i++){
+          //console.log(data[i].year);
+          paisesPobreza.push(data[i].country);
+        }
+      }
+      console.log(paisesPobreza);
+          
+  }
+
+
+
+
+  async function loadGraph() {
+    var options = {
+          series: [{
+          name: 'series1',
+          data: [31, 40, 28, 51, 42, 109, 100]
+        }, {
+          name: 'series2',
+          data: [11, 32, 45, 32, 34, 52, 41]
+        }],
+          chart: {
+          height: 350,
+          type: 'area'
+        },
+        dataLabels: {
+          enabled: false
+        },
+        stroke: {
+          curve: 'smooth'
+        },
+        xaxis: {
+          type: 'datetime',
+          categories: ["2018-09-19T00:00:00.000Z", "2018-09-19T01:30:00.000Z", "2018-09-19T02:30:00.000Z", "2018-09-19T03:30:00.000Z", "2018-09-19T04:30:00.000Z", "2018-09-19T05:30:00.000Z", "2018-09-19T06:30:00.000Z"]
+        },
+        tooltip: {
+          x: {
+            format: 'dd/MM/yy HH:mm'
+          },
+        },
+        };
+
+        var chart = new ApexCharts(document.querySelector("#chart"), options);
+        chart.render();
+      
+  }
+
 </script>
 
+
 <svelte:head>
-  
-  <script src="https://code.highcharts.com/highcharts.src.js" on:load="{loadGraph}"></script>
-  
-  
-     
+
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+
 </svelte:head>
 
+
 <main>
-  
-  <figure class="highcharts-figure">
-      <div id="container"></div>
-      
-  </figure>  
-  <div>
-      <Button color="secondary" on:click={pop}>Volver</Button>
-      
+  <div id="chart">
   </div>
 
-  <Modal isOpen={b} toggle={busqueda} transitionOptions>
-      <ModalHeader {busqueda}>¿Desea cambiar el año?</ModalHeader>
-      <ModalBody >
-          <p>Introduzaca el año del que quiera obtener los datos.</p>
-                  <div style="text-align: center;" >
-                      <input type="number" min="2010" max="2020" bind:value="{agno}">
-                  </div>
-         
-      </ModalBody>
-      <ModalFooter>
-          <Button color="primary" on:click={buscar}>Vamos allá!</Button>
-          <Button color="secondary" on:click={busqueda}>Cancelar</Button>
-      </ModalFooter>
-  </Modal>
+  <p></p>
+	<Button outline color="secondary" on:click="{pop}"> Volver</Button>
+	<p></p>
+
 </main>
+
 <style>
-  
+
+
+
+
+
+
+
+
 </style>
