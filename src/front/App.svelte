@@ -10,8 +10,12 @@
 	import GraphsIndex from "./homicides/indexGraficas.svelte";
 	import GraphHomicidesLine from "./homicides/lineHomicides.svelte";
 	import Pobreza from "./homicides/integrations/riesgosPobreza.svelte";
+<<<<<<< HEAD
 	import imdb from "./homicides/integrations/usoIMDB.svelte";
 	import test from "./homicides/integrations/testingGraph.svelte";
+=======
+	//import f1 from "./homicides/integrations/usoF1.svelte";
+>>>>>>> d8022b809b5c76c55ef389f7fd31906a5286dbad
 
 
 	//Aqui hago 2 imports uno para cada API externa
@@ -54,8 +58,12 @@ import TestingGraph from './homicides/integrations/testingGraph.svelte';
 		"/homicides/line": GraphHomicidesLine,//redirige al grafico de mi API
 		"/homicides/:state/:year": EditHomicides,//redirige a la página de edición de un recurso
 		"/homicides/riesgosPobreza": Pobreza,
+<<<<<<< HEAD
 		"/homicides/usoIMDB": imdb,
 		"/homicides/testingGraph": test,
+=======
+		//"/homicides/usoF1": f1,
+>>>>>>> d8022b809b5c76c55ef389f7fd31906a5286dbad
 		//Arms Sales Stats
 		"/sales/analytics": GraphsArms,
 		"/sales/line": GraphLineArms,
