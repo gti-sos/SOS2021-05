@@ -40,7 +40,7 @@
                 
                 <Card  class="mb-3">
                 <CardHeader style="background-color: #C7EFF3;">
-                    <CardTitle><h5>Venta de armas de 2010 a 2020</h5></CardTitle>
+                    <CardTitle><h5>Homicidios por armas de fuego entre 2010 y 2020</h5></CardTitle>
                 </CardHeader>
                 <CardBody style="background-color: #F0FEFF;">
                     <CardSubtitle />
@@ -84,18 +84,18 @@
             <Card  class="mb-3">
 
               <CardHeader style="background-color: #C7EFF3;">
-              <CardTitle><h5>API EXTERNA (USO): Estadísticas F1</h5></CardTitle>
+              <CardTitle><h5>API EXTERNA (USO): TOP 10 shows mejor puntuados IMDB</h5></CardTitle>
               </CardHeader>
 
               <CardBody style="background-color: #F0FEFF;">
               <CardSubtitle />
-              <CardText>Gráfico para estadísticas F1</CardText>
+              <CardText>Gráfico para estadísticas IMDB</CardText>
               <img alt={" "} src={"/build/mediaSales/ext1.png"}>
               </CardBody>
 
               <CardFooter style="background-color: #C7EFF3;">
                   
-                  <a href="/#/homicides/usoF1"
+                  <a href="/#/homicides/usoIMDB"
                   ><Button style="background-color:  #22A3B0 ; ">Ir a la gráfica</Button></a>
               
               
