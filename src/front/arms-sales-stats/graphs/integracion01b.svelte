@@ -69,7 +69,7 @@ async function  getData(){
 		if (res.ok) {
 			console.log("Ok");
             objeto= await res.json();
-            ql.push(objeto.quality_life_index)
+            ql.push(objeto.safety_index)
             
 		} else {
 			ql.push(null)
@@ -92,7 +92,6 @@ async function  getData(){
                     let numero = parseInt(megajson[i].arms_sold.replace(".",""),10) 
                        suma=suma+numero
                     //megajson[i]
-                    
                 }
                 armas.push(suma)
             } else {
@@ -110,7 +109,7 @@ async function loadGraph(){
         zoomType: 'xy'
     },
     title: {
-        text: 'Armas vendidas en: '+state+' junto al Índice de calidad de vida estimado en EEUU'
+        text: 'Armas vendidas en: '+state+' junto al Índice de Seguridad estimado en EEUU'
     },
     subtitle: {
         text: 'Integración con el grupo 1 utilizando Proxy'
@@ -128,7 +127,7 @@ async function loadGraph(){
             }
         },
         title: {
-            text: 'Indice Calidad de vida',
+            text: 'Indice de Seguridad',
             style: {
                 color: Highcharts.getOptions().colors[1]
             }
@@ -172,7 +171,7 @@ async function loadGraph(){
         }
 
     }, {
-        name: 'Indice Calidad de Vida general en EEUU',
+        name: 'Indice Seguridad general en EEUU',
         type: 'spline',
         data: ql,
         tooltip: {
