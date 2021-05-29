@@ -160,6 +160,17 @@ app.use("/ev", function(req, res) {
     req.pipe(request(url)).pipe(res);
 });
 
+//INTEGRACIÓN 4 API 
+
+app.use("/videogames", function(req, res) {
+    var apiServerHostvideogames = 'https://sos2021-28.herokuapp.com/api/v1/games';
+    var url = apiServerHostvideogames + req.url;
+    console.log('piped: /videogames -> ' + url);
+    // request solo hace get, investigar como hacer put, post, delete, etc.
+    req.pipe(request(url)).pipe(res);
+});
+
+
 
 //JOSÉ ANTONIO MEGIAS MACIAS
 

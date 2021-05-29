@@ -36,7 +36,7 @@ let yabasta=0;
 onMount(inicio)
         async function inicio(){
            yabasta++
-           if (yabasta==7){
+           if (yabasta>=7){
                espana=[]
                EEUU=[]
             palabras=[]
