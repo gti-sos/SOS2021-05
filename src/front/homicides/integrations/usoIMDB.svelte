@@ -30,9 +30,9 @@ import {
 
 async function inicio(){
  
-await getData()
-  delay(29);
- recarga()
+    await getData()
+    delay(25);
+    recarga()
  
 }
 const recarga=()=>{
@@ -46,11 +46,6 @@ const delay = ms => new Promise(res => setTimeout(res, ms));
 
 
   async function getData(){
-      console.log("Fetching data...");
-     /* const res = await fetch("https://imdb8.p.rapidapi.com/title/get-top-rated-tv-shows", requestOptions)
-          .then(response => response.text())
-          .then(result => console.log(result))
-          .catch(error => console.log('error', error));*/
       const res1 = await fetch("https://imdb8.p.rapidapi.com/title/get-top-rated-tv-shows", requestOptions);
       if(res1.ok){
           console.log("Ok.");

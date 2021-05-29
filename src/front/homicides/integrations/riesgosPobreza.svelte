@@ -133,10 +133,6 @@ const delay = ms => new Promise(res => setTimeout(res, ms));
                 x: 'Muertos por armas de fuego en 2015 en USA',
                 y: intAux
               },
-              {
-                x: "Personas en riesgo de pobreza en " + paisesPobreza[5],
-                y: peopleRisk[5]
-              },
             ]
           }
         ],
