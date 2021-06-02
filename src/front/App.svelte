@@ -3,6 +3,7 @@
 	import Router from 'svelte-spa-router'; //modulo svelte para SPA
 	import Home from "./Home.svelte";
 	import Graph from "./commongraph/statsGraph.svelte";
+	import Videos from "./Videos.svelte";
 
 	//IMPORTS HOMICIDES
 	import Homicides from "./homicides/homicides.svelte";
@@ -55,6 +56,7 @@
 		"/attacks": Attacks,
 		"/": Home,
 		"/analytics": Graph,
+		"/about": Videos,
 		//Homicides Stats
 		"/homicides/analytics": GraphsIndex, //redirige al "home" de mis graficos, tanto mio como de las API externa
 		"/homicides/line": GraphHomicidesLine,//redirige al grafico de mi API

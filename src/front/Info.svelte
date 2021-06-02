@@ -52,6 +52,11 @@
           ><b>Line Graph: </b> http://sos2021-05.herokuapp.com/#/analytics</a
         >
       </Col>
+      <Col>
+        <a href="./#/about"
+          ><b>Videos: </b> http://sos2021-05.herokuapp.com/#/about</a
+        >
+      </Col>
     </Container>
   
     <h2>APIs</h2>
