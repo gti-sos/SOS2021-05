@@ -99,6 +99,7 @@ app.get("/info/attacks-stats", (request,response) => {
 //IVÁN
 
 //INTEGRACIÓN 1 API POBREZA (GRUPO 04) (PROXY)
+
 //el servidor de datos se encontraría en apiServerHostPovertyRisks
 // "/poverty_risks" es la ruta dónde decido configurar el recurso
 //esto lo que va a hacer es que cada vez que llamemos a "/poverty_risks",
@@ -109,9 +110,19 @@ app.use("/poverty-risks", function(req, res) {
     var apiServerHostPovertyRisks = ' https://endpoint-poverty-risks.herokuapp.com/api/v1';
     var url = apiServerHostPovertyRisks + req.url;
     console.log('piped: /poverty-risks -> ' + url);
-    // request solo hace get, investigar como hacer put, post, delete, etc.
     req.pipe(request(url)).pipe(res);
 });
+
+//INTEGRACIÓN 2 API ABANDONO ESCOLAR (PROXY)
+
+
+app.use("/children-out", function(req, res) {
+    var apiServerHostPovertyChildren = ' http://sos2021-24.herokuapp.com/api/v2/children-out-school';
+    var url = apiServerHostPovertyChildren + req.url;
+    console.log('piped: /children-out -> ' + url);
+    req.pipe(request(url)).pipe(res);
+});
+
 
 //MANUEL
 //INTEGRACIÓN 1 API CALIDAD DE VIDA (GRUPO 01) (PROXY)
