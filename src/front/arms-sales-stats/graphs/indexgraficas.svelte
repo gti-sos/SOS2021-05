@@ -63,6 +63,28 @@
         
       <Card  class="mb-3">
         <CardHeader style="background-color: #C7EFF3;">
+          <CardTitle><h5>Venta de armas de 2010 a 2020</h5></CardTitle>
+        </CardHeader>
+        <CardBody style="background-color: #F0FEFF;">
+          <CardSubtitle />
+          <CardText>Gráfico de barras interactivo que muestra los datos sobre la venta de armas.</CardText>
+          <img alt={" "} src={"/mediaSales/general.png"}>
+        </CardBody>
+        <CardFooter style="background-color: #C7EFF3;">
+            
+          <a href="/#/sales/grafico "
+          ><Button style="background-color:  #22A3B0 ; ">Ir a la gráfica</Button></a
+        >
+          
+      </CardFooter
+        >
+      </Card>
+      
+  </Col>
+    <Col xs="auto">
+        
+      <Card  class="mb-3">
+        <CardHeader style="background-color: #C7EFF3;">
           <CardTitle><h5>Api Externa: Equipos de futbol.</h5></CardTitle>
         </CardHeader>
         <CardBody style="background-color: #F0FEFF;">
