@@ -32,14 +32,10 @@ async function inicio(){
  
     await getData()
     delay(25);
-    recarga()
+    loadGraph();
  
 }
-const recarga=()=>{
 
-  loadGraph()
- 
-}
 const delay = ms => new Promise(res => setTimeout(res, ms));
 
 
@@ -48,7 +44,6 @@ const delay = ms => new Promise(res => setTimeout(res, ms));
   async function getData(){
       const res1 = await fetch("https://imdb8.p.rapidapi.com/title/get-top-rated-tv-shows", requestOptions);
       if(res1.ok){
-          console.log("Ok.");
           const json = await res1.json();
           data = json;
           for(let i=0;i<10;i++){

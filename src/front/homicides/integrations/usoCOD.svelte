@@ -49,8 +49,8 @@
   async function inicio(){
         
         await getData(player)
-            delay(29);
-        recarga()
+        delay(29);
+        loadGraph();
         
   }
  
@@ -170,10 +170,7 @@ async function buscar(){
    
 }
 
-//todo tiene que esperar siempre
-const recarga=()=>{
-    loadGraph()
-}
+
  
 const delay = ms => new Promise(res => setTimeout(res, ms));
 

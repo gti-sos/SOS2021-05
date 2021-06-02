@@ -58,12 +58,7 @@
         }
     }   
    
-     function datos() {
-        
-        getData()
-        
-    }
-
+   
     function getVisibilidad(n) {
         
         return n.includes("Alab")||n.includes("Main")||n.includes("Idaho");

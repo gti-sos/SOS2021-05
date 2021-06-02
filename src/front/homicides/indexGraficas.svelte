@@ -56,19 +56,39 @@
                 </Card>
                 
             </Col>
+            <Col xs="auto">
+                
+              <Card  class="mb-3">
+              <CardHeader style="background-color: #C7EFF3;">
+                  <CardTitle><h5>Homicidios por armas de fuego xxxxxxxxxx</h5></CardTitle>
+              </CardHeader>
+              <CardBody style="background-color: #F0FEFF;">
+                  <CardSubtitle />
+                  <CardText>Gráfico para mostrar todos los recursos con highcharts</CardText>
+                  <img alt={" "} src={""}>
+              </CardBody>
+              <CardFooter style="background-color: #C7EFF3;">
+                  
+                  <a href="/#/homicides/homicidesAll">
+                  <Button style="background-color:  #22A3B0 ; ">Ir a la gráfica</Button></a>
+                  
+                  </CardFooter>
+              </Card>
+              
+          </Col>
 
             <Col xs="auto">
                 
             <Card  class="mb-3">
 
               <CardHeader style="background-color: #C7EFF3;">
-              <CardTitle><h5>API Externa (INTEGRACION): Riesgos De Pobreza</h5></CardTitle>
+              <CardTitle><h5>API Externa (INTEGRACION 1): Riesgos De Pobreza</h5></CardTitle>
               </CardHeader>
 
               <CardBody style="background-color: #F0FEFF;">
               <CardSubtitle />
               <CardText></CardText>
-              <img alt={" "} src={""}>
+              <img alt={" "} src={"/mediaHomicides/pobreza.jpg"}>
               </CardBody>
 
               <CardFooter style="background-color: #C7EFF3;">
@@ -79,16 +99,36 @@
               
                 </CardFooter>
           </Card>  
+          <Card  class="mb-3">
+
+            <CardHeader style="background-color: #C7EFF3;">
+            <CardTitle><h5>API Externa (INTEGRACION 2): Abandono Escolar</h5></CardTitle>
+            </CardHeader>
+
+            <CardBody style="background-color: #F0FEFF;">
+            <CardSubtitle />
+            <CardText></CardText>
+            <img alt={" "} src={"/mediaHomicides/abandono.jpg"}>
+            </CardBody>
+
+            <CardFooter style="background-color: #C7EFF3;">
+                
+                <a href="/#/homicides/abandonoEscolar"
+                ><Button style="background-color:  #22A3B0 ; ">Ir a la gráfica</Button></a>
+            
+            
+              </CardFooter>
+        </Card>  
             <Card  class="mb-3">
 
                 <CardHeader style="background-color: #C7EFF3;">
-                <CardTitle><h5>API Externa (USO): Estadísticas COD</h5></CardTitle>
+                <CardTitle><h5>API Externa (USO 1): Estadísticas COD</h5></CardTitle>
                 </CardHeader>
 
                 <CardBody style="background-color: #F0FEFF;">
                 <CardSubtitle />
                 <CardText>Gráfico COD</CardText>
-                <img alt={" "} src={""}>
+                <img alt={" "} src={"/mediaHomicides/cod.jpg"}>
                 </CardBody>
 
                 <CardFooter style="background-color: #C7EFF3;">
@@ -103,7 +143,7 @@
             <Card  class="mb-3">
 
               <CardHeader style="background-color: #C7EFF3;">
-              <CardTitle><h5>API EXTERNA (USO): TOP 10 shows mejor puntuados IMDB</h5></CardTitle>
+              <CardTitle><h5>API EXTERNA (USO 2): TOP 10 shows mejor puntuados IMDB</h5></CardTitle>
               </CardHeader>
 
               <CardBody style="background-color: #F0FEFF;">
