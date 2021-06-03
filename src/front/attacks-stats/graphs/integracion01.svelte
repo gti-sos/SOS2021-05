@@ -2,86 +2,82 @@
     import {pop} from "svelte-spa-router";
     import Button from "sveltestrap/src/Button.svelte";
 
-   
+    let data = [];
+    let data2 = [];
+    let datos = new Object();
+    let datapoints = [];
+    let ataquesTotales = 0;
+
+    
+    
 async function loadGraph(){
 
-    Highcharts.chart('container', {
-    series: [{
-        type: "treemap",
-        layoutAlgorithm: 'stripes',
-        alternateStartingDirection: true,
-        levels: [{
-            level: 1,
-            layoutAlgorithm: 'sliceAndDice',
-            dataLabels: {
-                enabled: true,
-                align: 'left',
-                verticalAlign: 'top',
-                style: {
-                    fontSize: '15px',
-                    fontWeight: 'bold'
+    window.onload = function() {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	theme: "light2", // "light1", "light2", "dark1", "dark2"
+	exportEnabled: true,
+	animationEnabled: true,
+	title: {
+		text: "Nacimientos en los países de Europa/Ataques en Estados Unidos"
+	},
+	data: [{
+		type: "pie",
+		startAngle: 15,
+		toolTipContent: "<b>{label}</b>: {y}",
+		showInLegend: "true",
+		legendText: "{label}",
+		indexLabelFontSize: 10,
+		indexLabel: "{label} - {y}",
+		dataPoints: datapoints
+	}]
+});
+chart.render();
+
+}
+
+console.log("Fetching data...");
+        const res = await fetch
+            ("http://sos2021-01.herokuapp.com/api/v2/natality-stats");
+
+        if(res.ok){
+          console.log("Ok.");
+          const json = await res.json();
+          data = json;
+          console.log(data);
+        }else{
+            console.log("Error!");
+        }
+
+        for(let i=0;i<data.length;i++){
+            if(data[i].date == "2019"){
+                datos.y = data[i].born;
+                datos.label = data[i].country;
+                datapoints.push(datos);
+                datos={};
+            }
+            
+        }
+        console.log(datapoints);
+        const res2 = await fetch("/api/v2/attacks-stats");
+        if(res2.ok){
+          console.log("Ok.");
+          const json = await res2.json();
+          data2 = json;
+          console.log(data2);
+          for(let i=0;i<data2.length;i++){
+                if(data2[i].year == "2019"){
+                    ataquesTotales += Number.parseInt(data2[i].sex_male);
                 }
             }
-        }],
-        data: [{
-            id: 'A',
-            name: 'Apples',
-            color: "#EC2500"
-        }, {
-            id: 'B',
-            name: 'Bananas',
-            color: "#ECE100"
-        }, {
-            id: 'O',
-            name: 'Oranges',
-            color: '#EC9800'
-        }, {
-            name: 'Anne',
-            parent: 'A',
-            value: 5
-        }, {
-            name: 'Rick',
-            parent: 'A',
-            value: 3
-        }, {
-            name: 'Peter',
-            parent: 'A',
-            value: 4
-        }, {
-            name: 'Anne',
-            parent: 'B',
-            value: 4
-        }, {
-            name: 'Rick',
-            parent: 'B',
-            value: 10
-        }, {
-            name: 'Peter',
-            parent: 'B',
-            value: 1
-        }, {
-            name: 'Anne',
-            parent: 'O',
-            value: 1
-        }, {
-            name: 'Rick',
-            parent: 'O',
-            value: 3
-        }, {
-            name: 'Peter',
-            parent: 'O',
-            value: 3
-        }, {
-            name: 'Susanne',
-            parent: 'Kiwi',
-            value: 2,
-            color: '#9EDE00'
-        }]
-    }],
-    title: {
-        text: 'Fruit consumption'
-    }
-});
+            datos.y = ataquesTotales;
+            datos.label = "states united";
+            datapoints.push(datos);
+        console.log(ataquesTotales);
+        console.log(datapoints);
+        }else{
+            console.log("Error!");
+        }
 
 }
 
@@ -92,20 +88,8 @@ async function loadGraph(){
 
 
 <main>
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="https://code.highcharts.com/modules/treemap.js"></script>
-<script src="https://code.highcharts.com/modules/exporting.js"></script>
-<script src="https://code.highcharts.com/modules/accessibility.js" on:load="{loadGraph}"></script>
-
-<figure class="highcharts-figure">
-    <div id="container"></div>
-    <p class="highcharts-description">
-        This chart shows a tree map with a hierarchy, where the
-        groups are labelled with a different text style from the
-        child nodes, and the nodes are grouped together by color.
-    </p>
-</figure>
-      
+    <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js" on:load="{loadGraph}"></script>
     <div>   <Button outline style=" background-color:#6C00AF; color:aliceblue" on:click="{pop}"> Volver</Button></div> 
 
 </main>
