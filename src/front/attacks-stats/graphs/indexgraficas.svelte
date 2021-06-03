@@ -70,7 +70,7 @@
         <CardBody style="background-color: #F0FEFF;">
           <CardSubtitle />
           <CardText>Gráfico de la capacidad de los circuitos de la Formula 1</CardText>
-          
+          <img alt={" "} src={"/mediaAttacks/USO1.png"}>
         </CardBody>
         <CardFooter style="background-color: #C7EFF3;">
             
@@ -93,7 +93,7 @@
       <CardBody style="background-color: #F0FEFF;">
         <CardSubtitle />
         <CardText>Gráfico del Ranking de los 10 mejores tenistas del mundo</CardText>
-        
+        <img alt={" "} src={"/mediaAttacks/USO2.png"}>
       </CardBody>
       <CardFooter style="background-color: #C7EFF3;">
           
@@ -111,12 +111,12 @@
         
   <Card  class="mb-3">
     <CardHeader style="background-color: #C7EFF3;">
-      <CardTitle><h5>Integracion 1: ...</h5></CardTitle>
+      <CardTitle><h5>Integracion 1: Infectados VIH</h5></CardTitle>
     </CardHeader>
     <CardBody style="background-color: #F0FEFF;">
       <CardSubtitle />
-      <CardText>Gráfico de ...</CardText>
-      
+      <CardText>Gráfico de los infectados de VIH en España frente a los ataques personales en Alabama</CardText>
+      <img alt={" "} src={"/mediaAttacks/INTEGRACION1.png"}>
     </CardBody>
     <CardFooter style="background-color: #C7EFF3;">
         
@@ -135,12 +135,13 @@
         
   <Card  class="mb-3">
     <CardHeader style="background-color: #C7EFF3;">
-      <CardTitle><h5>Integracion 2: ...</h5></CardTitle>
+      <CardTitle><h5>Integracion 2: Nacimientos en los países de Europa</h5></CardTitle>
     </CardHeader>
     <CardBody style="background-color: #F0FEFF;">
       <CardSubtitle />
-      <CardText>Gráfico de ...</CardText>
-      
+      <CardText>Gráfico de los nacimientos en los países de Europa del año 2019, y ataques totales en Estados Unidos a manos del sexo masculino.
+      </CardText>
+      <img alt={" "} src={"/mediaAttacks/INTEGRACION2.png"}>
     </CardBody>
     <CardFooter style="background-color: #C7EFF3;">
         
@@ -169,6 +170,12 @@
       text-transform: uppercase;
       font-size: 4em;
       font-weight: 100;
+    }
+
+    img{
+   
+   border: 3px solid rgb(27, 27, 27);
+   width: 100%; height: 100%;
     }
    
     @media (min-width: 640px) {
