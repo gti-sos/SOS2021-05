@@ -185,7 +185,7 @@ app.use("/videogames", function(req, res) {
 
 //JOSÉ ANTONIO MEGIAS MACIAS
 
-//INTEGRACIÓN 1 API CALIDAD DE VIDA (GRUPO 01) (PROXY)
+//INTEGRACIÓN 1 API VIH (GRUPO 24) (PROXY)
 //el servidor de datos se encontraría en apiServerHostVIH
 // "/vih" es la ruta dónde decido configurar el recurso
 //esto lo que va a hacer es que cada vez que llamemos a "/vih",
@@ -196,7 +196,20 @@ app.use("/vih", function(req, res) {
     var apiServerHostVIH = 'https://sos2021-24.herokuapp.com/api/v2/children-with-hiv';
     var url = apiServerHostVIH + req.url;
     console.log('piped: /vih -> ' + url);
-    // request solo hace get, investigar como hacer put, post, delete, etc.
+    req.pipe(request(url)).pipe(res);
+});
+
+//INTEGRACIÓN 2 COVID EN EEUU (GRUPO 08) (PROXY)
+//el servidor de datos se encontraría en apiServerHostCovid
+// "/covid" es la ruta dónde decido configurar el recurso
+//esto lo que va a hacer es que cada vez que llamemos a "/covid",
+//será como si llamaramos a la variable apiServerHostCovid.
+//se define una var url que tendrá la ruta de la api + url original
+
+app.use("/covid", function(req, res) {
+    var apiServerHostCovid = 'https://sos2021-08.herokuapp.com/api/v1/us_counties_covid19_daily';
+    var url = apiServerHostCovid + req.url;
+    console.log('piped: /covid -> ' + url);
     req.pipe(request(url)).pipe(res);
 });
 
