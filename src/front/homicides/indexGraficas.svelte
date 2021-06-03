@@ -60,11 +60,11 @@
                 
               <Card  class="mb-3">
               <CardHeader style="background-color: #C7EFF3;">
-                  <CardTitle><h5>Homicidios por armas de fuego xxxxxxxxxx</h5></CardTitle>
+                  <CardTitle><h5>Homicidios por armas de fuego en EE.UU</h5></CardTitle>
               </CardHeader>
               <CardBody style="background-color: #F0FEFF;">
                   <CardSubtitle />
-                  <CardText>Gráfico para mostrar todos los recursos con highcharts</CardText>
+                  <CardText>Gráfico para mostrar todos los recursos, por año seleccionado, junto a la estadística de Pareto.</CardText>
                   <img alt={" "} src={""}>
               </CardBody>
               <CardFooter style="background-color: #C7EFF3;">
@@ -76,6 +76,26 @@
               </Card>
               
           </Col>
+          <Col xs="auto">
+                
+            <Card  class="mb-3">
+            <CardHeader style="background-color: #C7EFF3;">
+                <CardTitle><h5>Homicidios por armas de fuego en EE.UU - ApexCharts</h5></CardTitle>
+            </CardHeader>
+            <CardBody style="background-color: #F0FEFF;">
+                <CardSubtitle />
+                <CardText>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</CardText>
+                <img alt={" "} src={""}>
+            </CardBody>
+            <CardFooter style="background-color: #C7EFF3;">
+                
+                <a href="/#/homicides/homicidesApex">
+                <Button style="background-color:  #22A3B0 ; ">Ir a la gráfica</Button></a>
+                
+                </CardFooter>
+            </Card>
+            
+        </Col>
 
             <Col xs="auto">
                 

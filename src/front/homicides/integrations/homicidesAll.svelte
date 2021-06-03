@@ -4,37 +4,26 @@
   import {
         onMount
     } from "svelte";
-  
-    var myHeaders = new Headers();
+
+    import {
+        Modal,
+        ModalBody,
+        ModalFooter,
+        ModalHeader,
+    } from "sveltestrap";
          
-  
-  
-    var requestOptions = {
-        method: 'GET',
-        headers: myHeaders,
-        redirect: 'follow'
-  };
-  
-  
-    onMount(inicio)
-  
- let estados=["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Kansas","Kentucky","Louisiana","Lowa","Maine","Maryland","Massachusetts",
-    "Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island",
-    "South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"];
 
+  
+  onMount(buscar);
 
-  let test = ["kkkk", 80000, "dddd", 200202];
-  test.push( 'Website visits', 15654,
-            'Downloads', 4064);
   let agno = 2019;
+  let estados2 = [];
   let data = [];
+  let array = [];//array donde se guardan los muertos de todos los estados en un año x
+  let auxHandgun = [];
   
-  async function inicio(){
-    await getData()
-    delay(29);
-    loadGraph();
-  }
 
+  
 
  
   const delay = ms => new Promise(res => setTimeout(res, ms));
@@ -44,17 +33,24 @@
   //necesito un array con las muertes de cada uno de los estados en estados
   
     async function getData(agno){
-
-        const res1 = await fetch("/api/v2/homicides-by-firearms?year=" + agno); 
-        if(res1.ok) {
-            const json = await res1.json();
+        estados2 = [];
+        console.log("/api/v2/homicides-by-firearms?year=" + agno);
+        const res = await fetch("/api/v2/homicides-by-firearms?year="+agno);
+        if(res.ok){
+            const json = await res.json();
             data = json;
             for(let i=0;i<data.length;i++){
-                
+                let aux= data[i].homicide_by_firearm.replace(".","")
+                array[i]=parseInt(aux,10)
+                estados2.push(data[i].state);
+                auxHandgun.push(data[i].auxHandgun);
             }
+            
+            console.log(array);
+            console.log(estados2);
+        }else{
+            console.log("Error!");
         }
-
-
         
     }
   
@@ -71,13 +67,13 @@
                 type: 'column'
             },
             title: {
-                text: 'Restaurants Complaints'
+                text: 'Homicidios en el año ' + agno,
             },
             tooltip: {
                 shared: true
             },
             xAxis: {
-                categories: estados,
+                categories: estados2,
                 crosshair: true
             },
             yAxis: [{
@@ -108,21 +104,43 @@
                 valueSuffix: '%'
                 }
             }, {
-                name: 'Complaints',
+                name: 'Homicidios',
                 type: 'column',
                 zIndex: 2,
-                data: [755, 222, 151, 86, 72, 51, 36, 10]
+                data: array,
             }]
             });
      }
   
     
+
+ 
+let b=false;
+const busqueda=()=>{
+    b=!b;
+}
+async function buscar(){
+    b=!b;
+   
+   getData(agno)
+   await delay(500);
+   loadGraph();
+   
+  
+   
+}
+const recarga=()=>{
+
+    loadGraph()
+   
+}
+
+
   </script>
   
   
   <svelte:head>
   
-    <script src="https://code.highcharts.com/highcharts.src.js" on:load="{loadGraph}"></script>
   </svelte:head>
   
   
@@ -137,15 +155,31 @@
     <figure class="highcharts-figure">
     <div id="container"></div>
     <p class="highcharts-description">
-        A Pareto Chart is a chart type based on the Pareto principle, commonly
-        used to maximize business efficiency. Highcharts can calculate the
-        Pareto line automatically based on a series, as shown in this chart.
+        Gráfica que nos muestra el número de homicidios en cada estado en el año seleccionado, comparando los datos con
+        un diagrama de Pareto que se genera en base a los datos arrojados por la API. Comúnmente, Pareto describe el fenómeno estadístico por el que en cualquier 
+        población que contribuye a un efecto común, es una proporción pequeña la que contribuye a la mayor parte del efecto.
     </p>
     </figure>
         
     <p></p>
       <Button outline color="secondary" on:click="{pop}"> Volver</Button>
+      <Button color="secondary" on:click={busqueda}>Cambiar año</Button>
       <p></p>
+
+      <Modal isOpen={b} toggle={busqueda} transitionOptions>
+        <ModalHeader {busqueda}>¿Desea cambiar el año?</ModalHeader>
+        <ModalBody >
+            <p>Introduzaca el año del que quiera obtener los datos.</p>
+                    <div style="text-align: center;" >
+                        <input type="number" min="2010" max="2020" bind:value="{agno}">
+                    </div>
+           
+        </ModalBody>
+        <ModalFooter>
+            <Button color="primary" on:click={buscar}>Vamos allá!</Button>
+            <Button color="secondary" on:click={busqueda}>Cancelar</Button>
+        </ModalFooter>
+    </Modal>
   
   </main>
   

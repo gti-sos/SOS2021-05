@@ -15,6 +15,8 @@
 	import imdb from "./homicides/integrations/usoIMDB.svelte";
 	import cod from "./homicides/integrations/usoCOD.svelte";
 	import all from "./homicides/integrations/homicidesAll.svelte";
+	import homicidesApex from "./homicides/integrations/homicidesApex.svelte";
+
 
 
 	//Aqui hago 2 imports uno para cada API externa
@@ -69,6 +71,8 @@
 		"/homicides/usoIMDB": imdb,
 		"/homicides/usoCOD": cod,
 		"/homicides/homicidesAll": all,
+		"/homicides/homicidesApex": homicidesApex,
+
 		//Arms Sales Stats
 		"/sales/analytics": GraphsArms,
 		"/sales/line": GraphLineArms,
