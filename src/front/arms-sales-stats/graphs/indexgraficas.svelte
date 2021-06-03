@@ -16,6 +16,9 @@
 
     let lineimage =  'tutorial/image.gif';
 
+
+  
+    
   </script>
   
   <main>
@@ -35,7 +38,7 @@
 
    
     <h2>Gráficas</h2>
-    <Container>
+    <Container class="import" id="import">
        
       <Col xs="auto">
         

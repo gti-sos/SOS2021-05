@@ -4,6 +4,7 @@
 	import Home from "./Home.svelte";
 	import Graph from "./commongraph/statsGraph.svelte";
 	import Videos from "./Videos.svelte";
+	import Integration from "./Integration.svelte";
 
 	//IMPORTS HOMICIDES
 	import Homicides from "./homicides/homicides.svelte";
@@ -62,6 +63,7 @@
 		"/": Home,
 		"/analytics": Graph,
 		"/about": Videos,
+		"/integration":Integration,
 		//Homicides Stats
 		"/homicides/analytics": GraphsIndex, //redirige al "home" de mis graficos, tanto mio como de las API externa
 		"/homicides/line": GraphHomicidesLine,//redirige al grafico de mi API
