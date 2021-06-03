@@ -294,7 +294,7 @@ const togglealerta=()=>{
                     </div>
                     <p> </p>
                     <div style="text-align: center;" >
-                        <input type="text"  bind:value="{agno}">   
+                        <input type="number" min="2017" max="2020"  bind:value="{agno}">   
                         
                     </div>
            

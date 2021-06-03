@@ -17,7 +17,7 @@ import { element } from "svelte/internal";
  async function inicio(){
    
 	await getData()
-    delay(2000);
+    await delay(2000);
     console.log("Datos Cargados")
     await recarga()
    
