@@ -60,8 +60,7 @@
         
     </Col>
 
-    // INTEGRACION A API EXTERNA
-    
+
     <Col xs="auto">
         
       <Card  class="mb-3">
@@ -85,8 +84,6 @@
       
   </Col>
 
-  // INTEGRACION A API EXTERNA
-
   <Col xs="auto">
         
     <Card  class="mb-3">
@@ -109,8 +106,6 @@
     </Card>
     
 </Col>
-
-// INTEGRACION A API DEL GRUPO 24
 
 <Col xs="auto">
         
@@ -136,8 +131,6 @@
 </Col>
 
 
-// INTEGRACION A API DEL GRUPO 08
-
 <Col xs="auto">
         
   <Card  class="mb-3">
@@ -151,7 +144,7 @@
     </CardBody>
     <CardFooter style="background-color: #C7EFF3;">
         
-      <a href="/#/attacks/integracion08"
+      <a href="/#/attacks/integracion01"
       ><Button style="background-color:  #22A3B0 ; ">Ir a la gráfica</Button></a
     >
       

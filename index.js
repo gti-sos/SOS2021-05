@@ -199,17 +199,17 @@ app.use("/vih", function(req, res) {
     req.pipe(request(url)).pipe(res);
 });
 
-//INTEGRACIÓN 2 COVID EN EEUU (GRUPO 08) (PROXY)
-//el servidor de datos se encontraría en apiServerHostCovid
-// "/covid" es la ruta dónde decido configurar el recurso
-//esto lo que va a hacer es que cada vez que llamemos a "/covid",
-//será como si llamaramos a la variable apiServerHostCovid.
+//INTEGRACIÓN 2 natalidad (GRUPO 01) (PROXY)
+//el servidor de datos se encontraría en apiServerHostNat
+// "/nat" es la ruta dónde decido configurar el recurso
+//esto lo que va a hacer es que cada vez que llamemos a "/nat",
+//será como si llamaramos a la variable apiServerHostNat.
 //se define una var url que tendrá la ruta de la api + url original
 
-app.use("/covid", function(req, res) {
-    var apiServerHostCovid = 'https://sos2021-08.herokuapp.com/api/v1/us_counties_covid19_daily';
-    var url = apiServerHostCovid + req.url;
-    console.log('piped: /covid -> ' + url);
+app.use("/nat", function(req, res) {
+    var apiServerHostNat = 'http://sos2021-01.herokuapp.com/api/v2/natality-stats';
+    var url = apiServerHostNat + req.url;
+    console.log('piped: /nat -> ' + url);
     req.pipe(request(url)).pipe(res);
 });
 
