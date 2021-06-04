@@ -86,6 +86,7 @@
 <main> 
     <div id="chartContainer" style="height: 370px; width: 100%;"></div>
     <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <div style="margin-top:16px;color:dimgrey;font-size:9px;font-family: Verdana, Arial, Helvetica, sans-serif;text-decoration:none;">Source: <a href="https://canvasjs.com/javascript-charts/bubble-chart-data-marker/" target="_blank" title="JavaScript Bubble Charts with Custom Markers ">https://canvasjs.com/javascript-charts/bubble-chart-data-marker/</a></div>
     <div>   <Button outline style=" background-color:#6C00AF; color:aliceblue" on:click="{pop}"> Volver</Button></div><Button color="secondary" on:click={recarga}>Recarga</Button> 
     
 </main>
