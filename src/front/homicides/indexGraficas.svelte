@@ -65,11 +65,11 @@
               <CardBody style="background-color: #F0FEFF;">
                   <CardSubtitle />
                   <CardText>Gráfico para mostrar todos los recursos, por año seleccionado, junto a la estadística de Pareto.</CardText>
-                  <img alt={" "} src={""}>
+                  <img alt={" "} src={"/mediaHomicides/homicidiosAll.jpg"}>
               </CardBody>
               <CardFooter style="background-color: #C7EFF3;">
                   
-                  <a href="/#/homicides/homicidiosAll.jpg">
+                  <a href="/#/homicides/homicidesAll">
                   <Button style="background-color:  #22A3B0 ; ">Ir a la gráfica</Button></a>
                   
                   </CardFooter>
@@ -85,11 +85,11 @@
             <CardBody style="background-color: #F0FEFF;">
                 <CardSubtitle />
                 <CardText>Gráfico para mostrar un desglose de los homicidios por armas de fuego en EE.UU por año y estado</CardText>
-                <img alt={" "} src={""}>
+                <img alt={" "} src={"/mediaHomicides/homicidiosApex.jpg"}>
             </CardBody>
             <CardFooter style="background-color: #C7EFF3;">
                 
-                <a href="/#/homicides/homicidiosApex.jpg">
+                <a href="/#/homicides/homicidesApex">
                 <Button style="background-color:  #22A3B0 ; ">Ir a la gráfica</Button></a>
                 
                 </CardFooter>
