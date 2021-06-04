@@ -180,8 +180,6 @@ const delay = ms => new Promise(res => setTimeout(res, ms));
   
   <svelte:head>
   
-    <script src="https://code.highcharts.com/highcharts.src.js" on:load="{loadGraph}"></script>
-
   
   </svelte:head>
   
