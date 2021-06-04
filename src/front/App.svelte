@@ -43,15 +43,15 @@
 	//IMPORTS ATTACKS
 	import Attacks from "./attacks-stats/attacks-stats.svelte";
 	import EditAttacks from "./attacks-stats/editAttacksData.svelte";
-	import GraphAttacks from "./attacks-stats/integrations/indexgraficas.svelte";
-	import GraphLineAttacks from "./attacks-stats/integrations/lineAttacks.svelte";
-	import GraphApiExterna1Attacks from "./attacks-stats/integrations/apiExterna1.svelte";
-	import GraphApiExterna2Attacks from "./attacks-stats/integrations/apiExterna2.svelte";
-	import GraphIntegracion24 from "./attacks-stats/integrations/integracion24.svelte";
-	import GraphIntegracion01 from "./attacks-stats/integrations/integracion01.svelte";
-	import GraphIntegracion27 from "./attacks-stats/integrations/integracion27.svelte";
-	import GraphAttacksHigh from "./attacks-stats/integrations/attacksHigh.svelte";
-	import GraphAttacksHighcharts from "./attacks-stats/integrations/attacksHighcharts.svelte";
+	import GraphAttacks from "./attacks-stats/graphs/indexgraficas.svelte";
+	import GraphLineAttacks from "./attacks-stats/graphs/lineAttacks.svelte";
+	import GraphApiExterna1Attacks from "./attacks-stats/graphs/apiExterna1.svelte";
+	import GraphApiExterna2Attacks from "./attacks-stats/graphs/apiExterna2.svelte";
+	import GraphIntegracion24 from "./attacks-stats/graphs/integracion24.svelte";
+	import GraphIntegracion01 from "./attacks-stats/graphs/integracion01.svelte";
+	import GraphIntegracion27 from "./attacks-stats/graphs/integracion27.svelte";
+	import GraphAttacksHigh from "./attacks-stats/graphs/attacksHigh.svelte";
+	import GraphAttacksHighcharts from "./attacks-stats/graphs/attacksHighcharts.svelte";
 
 	
 
