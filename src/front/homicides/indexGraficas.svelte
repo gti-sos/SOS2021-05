@@ -60,12 +60,12 @@
                 
               <Card  class="mb-3">
               <CardHeader style="background-color: #C7EFF3;">
-                  <CardTitle><h5>Homicidios por armas de fuego en EE.UU</h5></CardTitle>
+                  <CardTitle><h5>Homicidios por armas de fuego en EE.UU - HighCharts</h5></CardTitle>
               </CardHeader>
               <CardBody style="background-color: #F0FEFF;">
                   <CardSubtitle />
                   <CardText>Gráfico para mostrar todos los recursos, por año seleccionado, junto a la estadística de Pareto.</CardText>
-                  <img alt={" "} src={""}>
+                  <img alt={" "} src={"/mediaHomicides/homicidiosAll.jpg"}>
               </CardBody>
               <CardFooter style="background-color: #C7EFF3;">
                   
@@ -84,8 +84,8 @@
             </CardHeader>
             <CardBody style="background-color: #F0FEFF;">
                 <CardSubtitle />
-                <CardText>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</CardText>
-                <img alt={" "} src={""}>
+                <CardText>Gráfico para mostrar un desglose de los homicidios por armas de fuego en EE.UU por año y estado</CardText>
+                <img alt={" "} src={"/mediaHomicides/homicidiosApex.jpg"}>
             </CardBody>
             <CardFooter style="background-color: #C7EFF3;">
                 
@@ -107,7 +107,9 @@
 
               <CardBody style="background-color: #F0FEFF;">
               <CardSubtitle />
-              <CardText></CardText>
+              <CardText>Gráfico que compara el número de homicidios por armas de fuego en USA con el número
+                de personas en riesgo de pobreza.
+              </CardText>
               <img alt={" "} src={"/mediaHomicides/pobreza.jpg"}>
               </CardBody>
 
@@ -127,7 +129,9 @@
 
             <CardBody style="background-color: #F0FEFF;">
             <CardSubtitle />
-            <CardText></CardText>
+            <CardText>Gráfico de área que compara el numero de homicidios por armas de fuego con el número
+              de abandonos escolares por año.
+            </CardText>
             <img alt={" "} src={"/mediaHomicides/abandono.jpg"}>
             </CardBody>
 
@@ -147,7 +151,9 @@
 
                 <CardBody style="background-color: #F0FEFF;">
                 <CardSubtitle />
-                <CardText>Gráfico COD</CardText>
+                <CardText>Gráfico que, dado un perfil público de PSN, nos devuelve sus estadísticas en el videojuego
+                  "Call of Duty: Warzone".
+                </CardText>
                 <img alt={" "} src={"/mediaHomicides/cod.jpg"}>
                 </CardBody>
 
@@ -168,7 +174,9 @@
 
               <CardBody style="background-color: #F0FEFF;">
               <CardSubtitle />
-              <CardText>Gráfico para estadísticas IMDB</CardText>
+              <CardText>Gráfico para estadísticas IMDB, que nos representa un top con las películas y series mejor
+                puntuadas, así como el número de votaciones que ha recibido dicha obra en IMDB.
+              </CardText>
               <img alt={" "} src={"/mediaHomicides/imdb.png"}>
               </CardBody>
 

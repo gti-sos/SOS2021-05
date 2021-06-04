@@ -1,5 +1,6 @@
 <script>
     import {pop} from "svelte-spa-router";
+    import ApexCharts from 'apexcharts';
     import Button from "sveltestrap/src/Button.svelte";
   import {
         onMount
@@ -16,7 +17,7 @@
   
   onMount(buscar);
 
-  let stats = ['Handgun', 'Rifle', 'Shotgun', 'Type not stated'];
+  let stats = ['Armas de mano', 'Rifles', 'Escopetas', 'Tipo no indicado'];
   let agno = 2015;
   let state = "Alaska";
   let estados2 = [];
@@ -29,10 +30,7 @@
 
   
 
-  
 
- 
-  const delay = ms => new Promise(res => setTimeout(res, ms));
 
   
   
@@ -87,7 +85,11 @@
   
   
     async function loadGraph() {
+       
         var options = {
+          title: {
+            text: 'Homicidios en ' + state + ' en el año ' + agno,
+          },
           series: array,
           chart: {
           width: 380,
@@ -101,7 +103,7 @@
               width: 200
             },
             legend: {
-              position: 'bottom'
+              position: 'right'
             }
           }
         }]
@@ -122,19 +124,11 @@ const busqueda=()=>{
 }
 async function buscar(){
     b=!b;
-   
    getData(agno, state);
-   await delay(500);
+  // await delay(500);
    loadGraph();
-   
-  
-   
 }
-const recarga=()=>{
 
-    loadGraph()
-   
-}
 
 
   </script>
@@ -148,10 +142,12 @@ const recarga=()=>{
   
   <main>
 
-    <div id="chart">
+    <div id="chart" style = "margin:auto, margin-left: 20px;">
     </div>
 
-
+    <p>Gráfica de tipo "tarta" de ApexCharts, que nos muestra el porcentaje de homicidios llevados a cabo por armas de fuego personales,
+      por rifles de asalto, por escopetas, y por aquellos homicidios llevados a cabo por un tipo de arma de fuego no específicado.
+    </p>
       <Button outline color="secondary" on:click="{pop}"> Volver</Button>
       <Button color="secondary" on:click={busqueda}>Cambiar año y estado</Button>
       <p></p>
@@ -182,7 +178,12 @@ const recarga=()=>{
 
   <style>
   
- 
+  /*.chart {
+    margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;
+  }*/
   
   
   </style>

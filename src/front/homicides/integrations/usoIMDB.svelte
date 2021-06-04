@@ -80,7 +80,7 @@ const delay = ms => new Promise(res => setTimeout(res, ms));
 
 
   async function loadGraph() {
-      Highcharts.chart('container', {
+  Highcharts.chart('container', {
   chart: {
       type: 'bar'
   },
