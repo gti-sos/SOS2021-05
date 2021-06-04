@@ -44,7 +44,7 @@
     }
    
         async function loadGraph1(){
-
+            console.log("Grafico cargando");
             window.onload = function () {
 
             var chart = new CanvasJS.Chart("chartContainer", {
@@ -75,7 +75,7 @@
             chart.render();
 
             }
-
+            console.log("Grafico cargado con exito");
     }
 </script>
 
