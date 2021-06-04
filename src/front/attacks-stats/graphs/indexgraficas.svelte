@@ -46,6 +46,7 @@
           <CardBody style="background-color: #F0FEFF;">
             <CardSubtitle />
             <CardText>Gráfico lineal que muestra los datos sobre los ataques.</CardText>
+            <img alt={" "} src={"/mediaAttacks/attacksLine.PNG"}>
             
           </CardBody>
           <CardFooter style="background-color: #C7EFF3;">
@@ -65,11 +66,12 @@
         
       <Card  class="mb-3">
         <CardHeader style="background-color: #C7EFF3;">
-          <CardTitle><h5>Ataques en EEUU de 2010 a 2020 (CANVASJS)</h5></CardTitle>
+          <CardTitle><h5>Ataques en EEUU en 2019 (CANVASJS)</h5></CardTitle>
         </CardHeader>
         <CardBody style="background-color: #F0FEFF;">
           <CardSubtitle />
-          <CardText>Gráfico que muestra los datos sobre los ataques.</CardText>
+          <CardText>Gráfico que muestra los datos sobre los tipos de ataques (armas personales, pistola y navaja)
+            en los diferentes estados de EEUU en 2019.</CardText>
           <img alt={" "} src={"/mediaAttacks/attacks1.PNG"}>
           
         </CardBody>
@@ -89,11 +91,11 @@
         
     <Card  class="mb-3">
       <CardHeader style="background-color: #C7EFF3;">
-        <CardTitle><h5>Ataques en EEUU de 2010 a 2020 (HIGHCHARTS)</h5></CardTitle>
+        <CardTitle><h5>Ataques con armas personales entre 2017 y 2019 (HIGHCHARTS)</h5></CardTitle>
       </CardHeader>
       <CardBody style="background-color: #F0FEFF;">
         <CardSubtitle />
-        <CardText>Gráfico que muestra los datos sobre los ataques.</CardText>
+        <CardText>Gráfico que muestra los datos sobre los ataques por armas personales de todos los estados de EEUU entre los años 2017 y 2019.</CardText>
         <img alt={" "} src={"/mediaAttacks/attacks2.PNG"}>
         
       </CardBody>
