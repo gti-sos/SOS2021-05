@@ -70,7 +70,7 @@
         <CardBody style="background-color: #F0FEFF;">
           <CardSubtitle />
           <CardText>Gráfico de la capacidad de los circuitos de la Formula 1</CardText>
-          <img alt={" "} src={"/mediaAttacks/USO1.png"}>
+          <img alt={" "} src={"/mediaAttacks/PNG.png"}>
         </CardBody>
         <CardFooter style="background-color: #C7EFF3;">
             
@@ -93,7 +93,7 @@
       <CardBody style="background-color: #F0FEFF;">
         <CardSubtitle />
         <CardText>Gráfico del Ranking de los 10 mejores tenistas del mundo</CardText>
-        <img alt={" "} src={"/mediaAttacks/USO2.png"}>
+        <img alt={" "} src={"/mediaAttacks/USO2.PNG"}>
       </CardBody>
       <CardFooter style="background-color: #C7EFF3;">
           
@@ -116,7 +116,7 @@
     <CardBody style="background-color: #F0FEFF;">
       <CardSubtitle />
       <CardText>Gráfico de los infectados de VIH en España frente a los ataques personales en Alabama</CardText>
-      <img alt={" "} src={"/mediaAttacks/INTEGRACION1.png"}>
+      <img alt={" "} src={"/mediaAttacks/INTEGRACION1.PNG"}>
     </CardBody>
     <CardFooter style="background-color: #C7EFF3;">
         
@@ -141,7 +141,7 @@
       <CardSubtitle />
       <CardText>Gráfico de los nacimientos en los países de Europa del año 2019, y ataques totales en Estados Unidos a manos del sexo masculino.
       </CardText>
-      <img alt={" "} src={"/mediaAttacks/INTEGRACION2.png"}>
+      <img alt={" "} src={"/mediaAttacks/INTEGRACION2.PNG"}>
     </CardBody>
     <CardFooter style="background-color: #C7EFF3;">
         
@@ -159,12 +159,12 @@
         
   <Card  class="mb-3">
     <CardHeader style="background-color: #C7EFF3;">
-      <CardTitle><h5>Integracion 3: ...</h5></CardTitle>
+      <CardTitle><h5>Integracion 3: Suicidios en algunas ciudades de España</h5></CardTitle>
     </CardHeader>
     <CardBody style="background-color: #F0FEFF;">
       <CardSubtitle />
-      <CardText>Gráfico ... </CardText>
-      <img alt={" "} src={"/mediaAttacks/INTEGRACION2.png"}>
+      <CardText>Gráfico de los suicidios entre 2016 y 2019, y ataques por pistola en EEUU </CardText>
+      <img alt={" "} src={"/mediaAttacks/INTEGRACION3.PNG"}>
     </CardBody>
     <CardFooter style="background-color: #C7EFF3;">
         
