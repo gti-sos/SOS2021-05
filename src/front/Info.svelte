@@ -152,7 +152,7 @@
               ><Button color="info">Postman Documentation v2</Button></a
             >
 
-            <a href="http://sos2021-05.herokuapp.com/#/attacks/analytics"
+            <a href="http://sos2021-05.herokuapp.com/#/integrations"
             ><Button style="background-color: #D992FF">Gráficas</Button></a>
 
 
