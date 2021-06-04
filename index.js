@@ -213,6 +213,20 @@ app.use("/nat", function(req, res) {
     req.pipe(request(url)).pipe(res);
 });
 
+//INTEGRACIÓN 3 Suicidios (GRUPO 27) (PROXY)
+//el servidor de datos se encontraría en apiServerHostSui
+// "/sui" es la ruta dónde decido configurar el recurso
+//esto lo que va a hacer es que cada vez que llamemos a "/sui",
+//será como si llamaramos a la variable apiServerHostSui.
+//se define una var url que tendrá la ruta de la api + url original
+
+app.use("/sui", function(req, res) {
+    var apiServerHostSui = 'http://sos2021-27.herokuapp.com/api/v2/suicide-records';
+    var url = apiServerHostSui + req.url;
+    console.log('piped: /sui -> ' + url);
+    req.pipe(request(url)).pipe(res);
+});
+
 
 
 

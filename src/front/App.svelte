@@ -49,6 +49,7 @@
 	import GraphApiExterna2Attacks from "./attacks-stats/graphs/apiExterna2.svelte";
 	import GraphIntegracion24 from "./attacks-stats/graphs/integracion24.svelte";
 	import GraphIntegracion01 from "./attacks-stats/graphs/integracion01.svelte";
+	import GraphIntegracion27 from "./attacks-stats/graphs/integracion27.svelte";
 
 
 	
@@ -99,6 +100,7 @@
 		"/attacks/apiexterna2": GraphApiExterna2Attacks,
 		"/attacks/integracion24": GraphIntegracion24,
 		"/attacks/integracion01": GraphIntegracion01,
+		"/attacks/integracion27": GraphIntegracion27,
 		
 		
 		

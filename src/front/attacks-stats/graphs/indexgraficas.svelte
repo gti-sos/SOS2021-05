@@ -154,6 +154,29 @@
   </Card>
   
 </Col>
+
+<Col xs="auto">
+        
+  <Card  class="mb-3">
+    <CardHeader style="background-color: #C7EFF3;">
+      <CardTitle><h5>Integracion 3: ...</h5></CardTitle>
+    </CardHeader>
+    <CardBody style="background-color: #F0FEFF;">
+      <CardSubtitle />
+      <CardText>Gráfico ... </CardText>
+      <img alt={" "} src={"/mediaAttacks/INTEGRACION2.png"}>
+    </CardBody>
+    <CardFooter style="background-color: #C7EFF3;">
+        
+      <a href="/#/attacks/integracion27"
+      ><Button style="background-color:  #22A3B0 ; ">Ir a la gráfica</Button></a
+    >
+      
+  </CardFooter
+    >
+  </Card>
+  
+</Col>
     
 
     </Container>
