@@ -51,6 +51,7 @@
 	import GraphIntegracion01 from "./attacks-stats/graphs/integracion01.svelte";
 	import GraphIntegracion27 from "./attacks-stats/graphs/integracion27.svelte";
 	import GraphAttacksHigh from "./attacks-stats/graphs/attacksHigh.svelte";
+	import GraphAttacksHighcharts from "./attacks-stats/graphs/attacksHighcharts.svelte";
 
 
 	
@@ -103,6 +104,7 @@
 		"/attacks/integracion01": GraphIntegracion01,
 		"/attacks/integracion27": GraphIntegracion27,
 		"/attacks/attacks1": GraphAttacksHigh,
+		"/attacks/attacks2": GraphAttacksHighcharts,
 		
 		
 		

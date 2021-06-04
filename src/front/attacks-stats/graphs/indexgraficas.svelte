@@ -65,7 +65,7 @@
         
       <Card  class="mb-3">
         <CardHeader style="background-color: #C7EFF3;">
-          <CardTitle><h5>Ataques en EEUU de 2010 a 2020</h5></CardTitle>
+          <CardTitle><h5>Ataques en EEUU de 2010 a 2020 (CANVASJS)</h5></CardTitle>
         </CardHeader>
         <CardBody style="background-color: #F0FEFF;">
           <CardSubtitle />
@@ -84,6 +84,30 @@
       </Card>
       
   </Col>
+
+  <Col xs="auto">
+        
+    <Card  class="mb-3">
+      <CardHeader style="background-color: #C7EFF3;">
+        <CardTitle><h5>Ataques en EEUU de 2010 a 2020 (HIGHCHARTS)</h5></CardTitle>
+      </CardHeader>
+      <CardBody style="background-color: #F0FEFF;">
+        <CardSubtitle />
+        <CardText>Gráfico que muestra los datos sobre los ataques.</CardText>
+        <img alt={" "} src={"/mediaAttacks/attacks2.PNG"}>
+        
+      </CardBody>
+      <CardFooter style="background-color: #C7EFF3;">
+          
+        <a href="/#/attacks/attacks2"
+        ><Button style="background-color:  #22A3B0 ; ">Ir a la gráfica</Button></a
+      >
+        
+    </CardFooter
+      >
+    </Card>
+    
+</Col>
 
 
     <Col xs="auto">
