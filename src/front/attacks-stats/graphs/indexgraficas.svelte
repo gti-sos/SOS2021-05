@@ -70,6 +70,7 @@
         <CardBody style="background-color: #F0FEFF;">
           <CardSubtitle />
           <CardText>Gráfico que muestra los datos sobre los ataques.</CardText>
+          <img alt={" "} src={"/mediaAttacks/attacks1.PNG"}>
           
         </CardBody>
         <CardFooter style="background-color: #C7EFF3;">
@@ -94,7 +95,7 @@
         <CardBody style="background-color: #F0FEFF;">
           <CardSubtitle />
           <CardText>Gráfico de la capacidad de los circuitos de la Formula 1</CardText>
-          <img alt={" "} src={"/mediaAttacks/PNG.png"}>
+          <img alt={" "} src={"/mediaAttacks/USO1.PNG"}>
         </CardBody>
         <CardFooter style="background-color: #C7EFF3;">
             
