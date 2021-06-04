@@ -15,6 +15,9 @@
         await loadGraph1();
         
     }
+    async function recarga(){
+        await loadGraph1();
+    }
 
     async function cargarDatos1(){
         const res = await fetch("/api/v2/attacks-stats");
@@ -75,15 +78,18 @@
 
     }
 </script>
+
+<svelte:head>
+  
+</svelte:head>
+
 <main> 
     <div id="chartContainer" style="height: 370px; width: 100%;"></div>
-<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-    <div>   <Button outline style=" background-color:#6C00AF; color:aliceblue" on:click="{pop}"> Volver</Button></div><Button color="secondary" on:click={inicio}>Recarga</Button> 
+    <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <div>   <Button outline style=" background-color:#6C00AF; color:aliceblue" on:click="{pop}"> Volver</Button></div><Button color="secondary" on:click={recarga}>Recarga</Button> 
     
 </main>
-<svelte:head>
-    
-</svelte:head>
+
 <style>
 
 
