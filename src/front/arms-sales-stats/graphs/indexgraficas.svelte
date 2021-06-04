@@ -176,6 +176,7 @@
     </CardBody>
     <CardFooter style="background-color: #C7EFF3;">
         
+      
       <a href="/#/sales/external4 "
       ><Button style="background-color:  #22A3B0 ; ">Ir a la gráfica</Button></a
     >
