@@ -4,18 +4,11 @@
 	import {
         onMount
     } from "svelte";
-import { element } from "svelte/internal";
-    
-	
-        let Bug = [];
-        let data =[];
 
-        const url = "http://acnhapi.com/v1/bugs";
-      
         
 		onMount(inicio)
  async function inicio(){
-    horas=[]
+    eibar=[]
 	await getData()
     await delay(2000);
     console.log("Datos Cargados")
@@ -33,6 +26,11 @@ const delay = ms => new Promise(res => setTimeout(res, ms));
 
 let horas=[];
 
+let eibar=[]
+
+
+
+
 	async function  getData(){
 		
 
@@ -41,11 +39,22 @@ let horas=[];
             if (res2.ok) {
                 console.log("Ok");
                 megajson= await res2.json();
+                    let horas= megajson.forecast.forecastday[0].hour
                     let i
-                    for(i=1;i<megajson.forecast.forecastday[0].day.length;i++){
-                        megajson.forecast.forecastday[i]
+                    for(i=0;i<horas.length;i++){
+                        let aux= horas[i].time.split(" ")
+                       
+                       
+                        eibar.push({
+
+                            name: aux[1],
+                             low: horas[i].temp_c
+
+                        })
                     }
-                    console.log(megajson.forecast.forecastday)
+                    console.log(megajson.forecast.forecastday[0].hour)
+                    console.log(eibar)
+
             } else {
                 
             }
@@ -53,94 +62,75 @@ let horas=[];
 
 async function loadGraph(){
 
-	Highcharts.chart('container', {
-    chart: {
-        type: 'spline'
-    },
-    title: {
-        text: 'Monthly Average Temperature'
-    },
-    subtitle: {
-        text: 'Source: WorldClimate.com'
-    },
-    xAxis: {
-        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-            'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-    },
-    yAxis: {
-        title: {
-            text: 'Temperature'
-        },
-        labels: {
-            formatter: function () {
-                return this.value + '°';
-            }
-        }
-    },
-    tooltip: {
-        crosshairs: true,
-        shared: true
-    },
-    plotOptions: {
-        spline: {
-            marker: {
-                radius: 4,
-                lineColor: '#666666',
-                lineWidth: 1
-            }
-        }
-    },
-    series: [{
-        name: 'Tokyo',
-        marker: {
-            symbol: 'square'
-        },
-        data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, {
-            y: 26.5,
-            marker: {
-                symbol: 'url(https://www.highcharts.com/samples/graphics/sun.png)'
-            }
-        }, 23.3, 18.3, 13.9, 9.6]
+   
+    Highcharts.chart('container', {
 
-    }, {
-        name: 'London',
-        marker: {
-            symbol: 'diamond'
-        },
-        data: [{
-            y: 3.9,
-            marker: {
-                symbol: 'url(https://www.highcharts.com/samples/graphics/snow.png)'
-            }
-        }, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
-    }]
+chart: {
+    type: 'lollipop'
+},
+
+accessibility: {
+    point: {
+        valueDescriptionFormat: '{index}. {xDescription}, {point.y}.'
+    }
+},
+
+legend: {
+    enabled: false
+},
+
+subtitle: {
+    text: ' '
+},
+
+title: {
+    text: 'Previsión Temperaturas sevilla'
+},
+
+tooltip: {
+    shared: true
+},
+
+xAxis: {
+    type: 'category'
+},
+
+yAxis: {
+    title: {
+        text: 'Temperatura'
+    }
+},
+
+series: [{
+    name: 'Temperatura',
+    data: eibar
+}]
+
 });
 }
 </script>
 
 <svelte:head>
-   
+
+
     <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/modules/series-label.js"></script>
-    <script src="https://code.highcharts.com/modules/exporting.js"></script>
-    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/highcharts-more.js"></script>
+    <script src="https://code.highcharts.com/modules/dumbbell.js"></script>
+    <script src="https://code.highcharts.com/modules/lollipop.js"></script>
 
 
 
 </svelte:head>
-<main>
+<main style="text-align: center;">
+   
     <figure class="highcharts-figure">
         <div id="container"></div>
         <p class="highcharts-description">
-            This chart shows how symbols and shapes can be used in charts.
-            Highcharts includes several common symbol shapes, such as squares,
-            circles and triangles, but it is also possible to add your own
-            custom symbols. In this chart, custom weather symbols are used on
-            data points to highlight that certain temperatures are warm while
-            others are cold.
+            Previsión Temperatura Sevilla.
         </p>
     </figure>
-    
+    <Button color="secondary" on:click={pop}>Volver</Button>
+    <Button color="secondary" on:click={inicio}>Recarga</Button>
 </main>
 
 <style>
