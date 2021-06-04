@@ -94,7 +94,7 @@
 		"/sales/:state/:year/:month": EditSale,
 		
 		//Attacks stats
-		"/attacks/analytics": GraphAttacks,
+		"/integrations": GraphAttacks,
 		"/attacks/line": GraphLineAttacks,
 		"/attacks/:state/:year": EditAttacks,
 		"/attacks/apiexterna1": GraphApiExterna1Attacks,
