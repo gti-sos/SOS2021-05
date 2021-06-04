@@ -32,6 +32,7 @@
 	import GraphExternal1Arms from "./arms-sales-stats/graphs/external1.svelte";
 	import GraphExternal2Arms from "./arms-sales-stats/graphs/external2.svelte";
 	import GraphExternal3Arms from "./arms-sales-stats/graphs/external3.svelte";
+	import GraphExternal4Arms from "./arms-sales-stats/graphs/external4.svelte";
 	import  GraphIntegration01 from "./arms-sales-stats/graphs/integracion01.svelte";
 	import  GraphIntegration01b from "./arms-sales-stats/graphs/integracion01b.svelte";
 	import  GraphIntegration23 from "./arms-sales-stats/graphs/integracion23.svelte";
@@ -81,6 +82,7 @@
 		"/sales/external1": GraphExternal1Arms,
 		"/sales/external2": GraphExternal2Arms,
 		"/sales/external3": GraphExternal3Arms,
+		"/sales/external4": GraphExternal4Arms,
 		"/sales/integration01": GraphIntegration01,
 		"/sales/integration01b": GraphIntegration01b,
 		"/sales/integration23": GraphIntegration23,
