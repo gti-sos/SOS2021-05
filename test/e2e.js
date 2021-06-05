@@ -1,6 +1,6 @@
 const puppeteer = require('puppeteer');
 
-
+const delay = ms => new Promise(res => setTimeout(res, ms));
 
 (async () => {
   const browser = await puppeteer.launch();
@@ -20,6 +20,8 @@ const puppeteer = require('puppeteer');
 
   await page.goto('https://sos2021-05.herokuapp.com/');
   console.log("Vuelta a Home");
+
+ 
 
   await browser.close();
   console.log("Navegador Cerrado");
