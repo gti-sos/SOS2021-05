@@ -84,7 +84,7 @@
   
   
   
-  
+  //highcharts treemap
     async function loadGraph() {
        
         console.log(statsFromPlayer)

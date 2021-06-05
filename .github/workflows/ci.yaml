@@ -15,3 +15,4 @@ jobs:
       - run: npx newman run test/arms-sales-statsAPI-TEST.json
       - run: npx newman run test/attacks_statsAPI_TEST.json
       - run: npx newman run test/homicidesAPI-TEST.json
+      - run: node tests/e2e.js

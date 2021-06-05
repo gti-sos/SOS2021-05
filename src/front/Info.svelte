@@ -72,7 +72,7 @@
             <CardText
               >Homicides by firearms in the recent years in USA</CardText
             >
-            <a href="http://sos2021-05.herokuapp.com/api/v1/homicides-by-firearms">
+            <a href="http://sos2021-05.herokuapp.com/api/v2/homicides-by-firearms">
               <Button color="primary">Backend</Button></a
             >
             <a href="/#/homicides">
@@ -106,7 +106,7 @@
             <CardText
               >Arms sales stats in the recent years in USA</CardText
             >
-            <a href=" http://sos2021-05.herokuapp.com/api/v1/arms-sales-stats">
+            <a href=" http://sos2021-05.herokuapp.com/api/v2/arms-sales-stats">
               <Button color="primary">Backend</Button>
             </a>
             <a href="/#/sales">
@@ -139,7 +139,7 @@
             <CardText>
              Attacks stats in the recent years in USA
             </CardText>
-            <a href="http://sos2021-05.herokuapp.com/api/v1/attacks-stats"
+            <a href="http://sos2021-05.herokuapp.com/api/v2/attacks-stats"
               ><Button color="primary">Backend</Button></a
             >
             <a href="/#/attacks"

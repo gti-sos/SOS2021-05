@@ -61,55 +61,72 @@
   
   
     async function loadGraph() {
-             Highcharts.chart('container', {
-            chart: {
-                renderTo: 'container',
-                type: 'column'
-            },
-            title: {
-                text: 'Homicidios en el año ' + agno,
-            },
-            tooltip: {
-                shared: true
-            },
-            xAxis: {
-                categories: estados2,
-                crosshair: true
-            },
-            yAxis: [{
-                title: {
-                text: ''
-                }
-            }, {
-                title: {
-                text: ''
-                },
-                minPadding: 0,
-                maxPadding: 0,
-                max: 100,
-                min: 0,
-                opposite: true,
-                labels: {
-                format: "{value}%"
-                }
-            }],
-            series: [{
-                type: 'pareto',
-                name: 'Pareto',
-                yAxis: 1,
-                zIndex: 10,
-                baseSeries: 1,
-                tooltip: {
-                valueDecimals: 2,
-                valueSuffix: '%'
-                }
-            }, {
-                name: 'Homicidios',
-                type: 'column',
-                zIndex: 2,
-                data: array,
-            }]
-            });
+        var options = {
+          series: [{
+          name: 'Muertos',
+          data: array,
+        }],
+          chart: {
+          type: 'bar',
+          height: 410,
+          animations: {
+            enabled: false
+          }
+        },
+        plotOptions: {
+          bar: {
+            horizontal: true,
+            barHeight: '100%',
+        
+          },
+        },
+        dataLabels: {
+          enabled: true,
+        },
+        stroke: {
+          colors: ["#fff"],
+          width: 0.2
+        },
+        labels: Array.apply(null, {length: 39}).map(function(el, index){
+          return index + 1;
+        }),
+        yaxis: {
+          axisBorder: {
+            show: false
+          },
+          axisTicks: {
+            show: false
+          },
+          labels: {
+            show: false
+          },
+          title: {
+            text: 'Estados',
+          },
+        },
+        grid: {
+          position: 'back'
+        },
+        title: {
+          text: 'Muertos por armas de fuego por estados en el año ' + agno,
+          align: 'right',
+          offsetY: 30
+        },
+        fill: {
+          type: 'image',
+          opacity: 0.87,
+          image: {
+            src: ['/mediaHomicides/usa-flag.jpg'],
+            width: 466,
+            height: 406
+          }
+        },
+        };
+
+        var chart = new ApexCharts(document.querySelector("#chart"), options);
+        chart.render();
+      
+      
      }
   
     
@@ -146,21 +163,10 @@ const recarga=()=>{
   
   <main>
 
+    <div id = "chart"></div>
+
     
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/modules/pareto.js"></script>
-    <script src="https://code.highcharts.com/modules/exporting.js"></script>
-    <script src="https://code.highcharts.com/modules/export-data.js"></script>
-    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
-    
-    <figure class="highcharts-figure">
-    <div id="container"></div>
-    <p class="highcharts-description">
-        Gráfica que nos muestra el número de homicidios en cada estado en el año seleccionado, comparando los datos con
-        un diagrama de Pareto que se genera en base a los datos arrojados por la API. Comúnmente, Pareto describe el fenómeno estadístico por el que en cualquier 
-        población que contribuye a un efecto común, es una proporción pequeña la que contribuye a la mayor parte del efecto.
-    </p>
-    </figure>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
         
     <p></p>
       <Button outline color="secondary" on:click="{pop}"> Volver</Button>

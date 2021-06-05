@@ -308,7 +308,7 @@
 {"state":"Nebraska","year":"2013","homicide_by_firearm":"79","handgun":"61","rifle":"0","shotgun":"0","type_not_stated":"18","_id":"Wy9NyhBIp6HTu6gr"}
 {"state":"Louisiana","year":"2012","homicide_by_firearm":"56","handgun":"200","rifle":"24","shotgun":"4","type_not_stated":"205","_id":"X0DpFvIe3KvheeGh"}
 {"state":"Wisconsin","year":"2014","homicide_by_firearm":"0","handgun":"0","rifle":"0","shotgun":"0","type_not_stated":"0","_id":"X2gNo5gtzo5OoFdw"}
-{"state":"Alabama","year":"2019","homicide_by_firearm":"3","handgun":"90","rifle":"0","shotgun":"0","type_not_stated":"0","_id":"XCFFS42vF0qXZNaR"}
+{"state":"Alabama","year":"2019","homicide_by_firearm":"8999","handgun":"90","rifle":"0","shotgun":"0","type_not_stated":"0","_id":"XCFFS42vF0qXZNaR"}
 {"state":"Pennsylvania","year":"2010","homicide_by_firearm":"0","handgun":"0","rifle":"0","shotgun":"0","type_not_stated":"0","_id":"XSca1PIyDaLU0ON9"}
 {"state":"Colorado","year":"2016","homicide_by_firearm":"138","handgun":"84","rifle":"7","shotgun":"5","type_not_stated":"42","_id":"XxfrLRPGYcgE4cqS"}
 {"state":"New-York","year":"2010","homicide_by_firearm":"0","handgun":"0","rifle":"0","shotgun":"0","type_not_stated":"0","_id":"Y3oqLUHxLQeIaPi3"}
@@ -529,4 +529,4 @@
 {"state":"Rhode-Island","year":"2019","homicide_by_firearm":"0","handgun":"0","rifle":"0","shotgun":"0","type_not_stated":"0","_id":"zr3qdi65GYwgX0ye"}
 {"state":"Delaware","year":"2016","homicide_by_firearm":"41","handgun":"13","rifle":"0","shotgun":"1","type_not_stated":"27","_id":"zt8GA3pmZt8aa2Kn"}
 {"state":"Oregon","year":"2019","homicide_by_firearm":"0","handgun":"0","rifle":"0","shotgun":"0","type_not_stated":"0","_id":"zytSlXFWxzxAoKFI"}
-{"state":"Alabama","year":"2019","homicide_by_firearm":"8999","handgun":"90","rifle":"0","shotgun":"0","type_not_stated":"0","_id":"XCFFS42vF0qXZNaR"}
+{"state":"Kansas","year":"2014","homicide_by_firearm":"598","handgun":"37","rifle":"1","shotgun":"1","type_not_stated":"17","_id":"dLbfV7SclY3bNEJj"}

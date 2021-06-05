@@ -6,7 +6,7 @@ import {
   } from "svelte";
 
   var myHeaders = new Headers();
-        myHeaders.append("x-rapidapi-key", "a282db27a6mshcd8db7cc3c89e60p11aee7jsn6069240f3501");
+        myHeaders.append("x-rapidapi-key", "0433185753mshd6661ebf6e8f7f3p1f140ajsnb7b0ae10f983");
         myHeaders.append("x-rapidapi-host", "imdb8.p.rapidapi.com");
 
 
@@ -77,7 +77,7 @@ const delay = ms => new Promise(res => setTimeout(res, ms));
   }
 
 
-
+//highcharts bar
 
   async function loadGraph() {
   Highcharts.chart('container', {
@@ -144,18 +144,18 @@ const delay = ms => new Promise(res => setTimeout(res, ms));
 
 <svelte:head>
 
-
+   
 
 </svelte:head>
 
 
 <main>
 
-  <script src="https://code.highcharts.com/highcharts.js"></script>
-  <script src="https://code.highcharts.com/modules/exporting.js"></script>
-  <script src="https://code.highcharts.com/modules/export-data.js"></script>
-  <script src="https://code.highcharts.com/modules/accessibility.js"></script>
   
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
   <figure class="highcharts-figure">
       <div id="container"></div>
       <p class="highcharts-description">

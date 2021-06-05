@@ -102,7 +102,7 @@ const delay = ms => new Promise(res => setTimeout(res, ms));
 
  
 
-
+//apexcharts treemap
   async function loadGraph() {
    
     var options = {

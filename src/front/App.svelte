@@ -17,6 +17,8 @@
 	import cod from "./homicides/integrations/usoCOD.svelte";
 	import all from "./homicides/integrations/homicidesAll.svelte";
 	import homicidesApex from "./homicides/integrations/homicidesApex.svelte";
+	import homicidesAllApex from "./homicides/integrations/homicidesAllApex.svelte";
+
 
 
 
@@ -77,6 +79,7 @@
 		"/homicides/usoCOD": cod,
 		"/homicides/homicidesAll": all,
 		"/homicides/homicidesApex": homicidesApex,
+		"/homicides/homicidesAllApex": homicidesAllApex,
 
 		//Arms Sales Stats
 		"/sales/analytics": GraphsArms,
