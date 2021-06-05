@@ -158,6 +158,35 @@
   </Card>
   
 </Col>
+
+<Col xs="auto">
+        
+  <Card  class="mb-3">
+    <CardHeader style="background-color: #C7EFF3;">
+      <CardTitle><h5>Api Externa: Previsión Temperatura Sevilla</h5></CardTitle>
+    </CardHeader>
+    <CardBody style="background-color: #F0FEFF;">
+      <CardSubtitle />
+      <CardText>Previsión para las proximas 24h en Sevilla</CardText>
+      <CardText>Api externa utilizando API externa con Oauth.
+      
+      </CardText>
+     
+      <img alt={" "} src={"/mediaSales/ext4.png"}>
+    </CardBody>
+    <CardFooter style="background-color: #C7EFF3;">
+        
+      
+      <a href="/#/sales/external4 "
+      ><Button style="background-color:  #22A3B0 ; ">Ir a la gráfica</Button></a
+    >
+      
+  </CardFooter
+    >
+  </Card>
+  
+</Col>
+
 <Col xs="auto">
         
   <Card  class="mb-3">
