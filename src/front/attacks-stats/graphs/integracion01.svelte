@@ -37,6 +37,7 @@ chart.render();
 }
 
 console.log("Fetching data...");
+        await fetch("http://sos2021-01.herokuapp.com/api/v2/natality-stats/loadInitialData");
         const res = await fetch
             ("http://sos2021-01.herokuapp.com/api/v2/natality-stats");
 
