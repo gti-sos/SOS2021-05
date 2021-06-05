@@ -167,143 +167,49 @@ let state= "Alabama"
     
 
     //SERIES PARA LOS ESTADOS
-    
-    var colors = Highcharts.getOptions().colors;
-Highcharts.chart('container', {
-
-    chart: {
-        type: 'streamgraph',
-        marginBottom: 30,
-        zoomType: 'x'
-    },
-
-    // Make sure connected countries have similar colors
-    colors: [
-        colors[0],
-        colors[1],
-        colors[2],
-        colors[3],
-        colors[4],
-        // East Germany, West Germany and Germany
-        Highcharts.color(colors[5]).brighten(0.2).get(),
-        Highcharts.color(colors[5]).brighten(0.1).get(),
-
-        colors[5],
-        colors[6],
-        colors[7],
-        colors[8],
-        colors[9],
-        colors[0],
-        colors[1],
-        colors[3],
-        // Soviet Union, Russia
-        Highcharts.color(colors[2]).brighten(-0.1).get(),
-        Highcharts.color(colors[2]).brighten(-0.2).get(),
-        Highcharts.color(colors[2]).brighten(-0.3).get()
-    ],
-
-    title: {
-        floating: true,
-        align: 'center',
-        text: state
-    },
-    subtitle: {
-        floating: true,
-        align: 'left',
-        y: 30,
-        text: ' '
-    },
-
-    xAxis: {
-        maxPadding: 0,
-        type: 'category',
-        crosshair: true,
-        categories: [
-            '2010',
-            '2011',
-            '2012',
-            '2013',
-            '2014',
-            '2015',
-            '2016',
-            '2017',
-            '2018',
-            '2019',
-            '2020'
-            
-        ],
-        labels: {
-            align: 'left',
-            reserveSpace: false,
-            rotation: 270
+    Highcharts.chart('container', {
+        title: {
+            text: state
         },
-        lineWidth: 0,
-        margin: 20,
-        tickWidth: 0
-    },
-
-    yAxis: {
-        visible: false,
-        startOnTick: false,
-        endOnTick: false
-    },
-
-    legend: {
-        enabled: false
-    },
-
-    annotations: [{
-        labels: [{
-            point: {
-                x: 5.5,
-                xAxis: 0,
-                y: 30,
-                yAxis: 0
-            },
-            text: 'Cancelled<br>during<br>World War II'
-        }, {
-            point: {
-                x: 18,
-                xAxis: 0,
-                y: 90,
-                yAxis: 0
-            },
-            text: 'Soviet Union fell,<br>Germany united'
-        }],
-        labelOptions: {
-            backgroundColor: 'rgba(255,255,255,0.5)',
-            borderColor: 'silver'
-        }
-    }],
-
-    plotOptions: {
-        series: {
-            label: {
-                minFontSize: 5,
-                maxFontSize: 15,
-                style: {
-                    color: 'rgba(255,255,255,0.75)'
-                }
+        yAxis: {
+            title: {
+                text: state
             }
+        },
+        xAxis: {
+            accessibility: {
+                rangeDescription: 'Month'
+            }
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle'
+        },
+        plotOptions: {
+            series: {
+                label: {
+                    connectorAllowed: false
+                },
+                pointStart: 2010
+            }
+        },
+        series: seriesaux,
+        responsive: {
+            rules: [{
+                condition: {
+                    maxWidth: 500
+                },
+                chartOptions: {
+                    legend: {
+                        layout: 'horizontal',
+                        align: 'center',
+                        verticalAlign: 'bottom'
+                    }
+                }
+            }]
         }
-    },
-
-    // Data parsed with olympic-medals.node.js
-    series: [{
-        name: "Armas Vendidas/Ataques",
-        data: arrayporagno
-    }, {
-        name: "Armas Vendidas/Homicides",
-        data: arrayhomicidesarms
-    }
-],
-
-    exporting: {
-        sourceWidth: 800,
-        sourceHeight: 600
-    }
-
-});
+    });
     
   }
 
@@ -364,51 +270,26 @@ const delay = ms => new Promise(res => setTimeout(res, ms));
 
 <svelte:head>
     
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/modules/streamgraph.js"></script>
-    <script src="https://code.highcharts.com/modules/series-label.js"></script>
-
+    <script src="https://code.highcharts.com/highcharts.src.js" on:load="{loadGraph}"></script>
+    
+    
        
 </svelte:head>
 
-<main style="text-align: center;">
+<main>
     
-
-    <Card  class="mb-3">
-        <CardHeader style="background-color: #C7EFF3;">
-          <CardTitle><h5>Gráfica común</h5></CardTitle>
-        </CardHeader>
-        <CardBody style="background-color: #F0FEFF;">
-         
-            <figure class="highcharts-figure">
-                <div id="container"></div>
-                <p class="highcharts-description">
-                
-                </p>
-            </figure>
-
-        </CardBody>
-        <CardFooter style="background-color: #C7EFF3;">
-            
-            <div>
-                <Button color="secondary" on:click={pop}>Volver</Button>
-                <Button color="secondary" on:click={busqueda}>Cambiar Estado</Button>
-                <Button color="secondary" on:click={recarga}>Recarga</Button>
-            </div>
+    <figure class="highcharts-figure">
+        <div id="container"></div>
         
-          
-      </CardFooter
-        >
-      </Card>
-
-
-    
-
+    </figure> 
     <div>
         El objetivo de este gráfico se centra en interelacionar el % de ataques y de homicidios respecto a la venta de armas. 
         Como podemos comprobar, pese a que un gran número de personas compra armas en EEUU, no existe un gran numero de homicidios/ataques
     </div> 
-   
+    <div>
+        <Button color="secondary" on:click={pop}>Volver</Button>
+        <Button color="secondary" on:click={busqueda}>Cambiar Estado</Button>
+    </div>
 
     <Modal isOpen={b} toggle={busqueda} transitionOptions>
         <ModalHeader {busqueda}>¿Desea cambiar el Estado?</ModalHeader>
