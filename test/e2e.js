@@ -6,7 +6,7 @@ const delay = ms => new Promise(res => setTimeout(res, ms));
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
   await page.goto('https://sos2021-05.herokuapp.com/');
-  await page.screenshot({ path: 'init.png' });
+  await page.screenshot({ path: './test/capturas/init.png' });
   console.log("Página abierta");
 
 
@@ -14,17 +14,13 @@ const delay = ms => new Promise(res => setTimeout(res, ms));
     page.waitForNavigation(),
     page.click("body > main > main > body > section > div:nth-child(2) > div > a > button"),
   ]);
-  await page.screenshot({ path: 'clickOnAPiv1Button_us_counties.png' });
+  await page.screenshot({ path: './test/capturas/clickOnAPiv1Button_us_counties.png' });
 
 
 
   await page.goto('https://sos2021-05.herokuapp.com/');
   console.log("Vuelta a Home");
 
- 
-
   await browser.close();
   console.log("Navegador Cerrado");
 })();
-
-
