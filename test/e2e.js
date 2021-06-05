@@ -26,3 +26,5 @@ const delay = ms => new Promise(res => setTimeout(res, ms));
   await browser.close();
   console.log("Navegador Cerrado");
 })();
+
+
