@@ -49,7 +49,7 @@
       </Col>
       <Col>
         <a href="./#/analytics"
-          ><b>Line Graph: </b> http://sos2021-05.herokuapp.com/#/analytics</a
+          ><b>Gráfica común: </b> http://sos2021-05.herokuapp.com/#/analytics</a
         >
       </Col>
       <Col>
