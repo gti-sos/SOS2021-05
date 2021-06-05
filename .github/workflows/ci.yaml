@@ -16,4 +16,6 @@ jobs:
       - run: npx newman run test/attacks_statsAPI_TEST.json
       - run: npx newman run test/homicidesAPI-TEST.json
       - run: node test/e2e.js
+      - run: node test/e2eIvan.js
+
 
