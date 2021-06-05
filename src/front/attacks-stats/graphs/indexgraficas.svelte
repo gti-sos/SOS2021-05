@@ -166,7 +166,7 @@
     </CardHeader>
     <CardBody style="background-color: #F0FEFF;">
       <CardSubtitle />
-      <CardText>Gráfico de los infectados de VIH en España frente a los ataques personales en Alabama</CardText>
+      <CardText>Gráfico de los infectados de VIH y viviendo con VIH frente a los ataques personales en EEUU</CardText>
       <img alt={" "} src={"/mediaAttacks/INTEGRACION1.PNG"}>
     </CardBody>
     <CardFooter style="background-color: #C7EFF3;">
