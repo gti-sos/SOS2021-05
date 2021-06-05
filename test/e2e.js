@@ -3,40 +3,24 @@ const puppeteer = require('puppeteer');
 
 
 (async () => {
-
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
-  await page.goto('http://localhost:10000');
-  console.log("Page opened! Taking a screenshot...");
-  await page.screenshot({ path: '01.png' });
+  await page.goto('https://sos2021-05.herokuapp.com/');
+  await page.screenshot({ path: 'init.png' });
+  console.log("Página abierta");
+
 
   const [response] = await Promise.all([
-    page.waitForNavigation(), 
-    page.click('button.btn:nth-child(5)'), 
+    page.waitForNavigation(),
+    page.click("body > main > main > body > section > div:nth-child(2) > div > a > button"),
   ]);
-  
-  console.log("Clicked \"Integraciones\" link, waiting page load");
-  await page.waitForTimeout(1000);
-  console.log("Page opened! Taking a screenshot...");
-  await page.screenshot({ path: '02.png' });
+  await page.screenshot({ path: 'clickOnAPiv1Button_us_counties.png' });
 
-  await page.goto('http://localhost:10000/#/foundsresearchsources-stats');
-  await page.waitForTimeout(1000);
-  console.log("Page opened! Taking a screenshot...");
-  await page.screenshot({ path: '03.png' });
 
-  var rowCount = (await page.$$(".table > tbody > tr")).length;
-  var loaded = parseInt(rowCount) > 2;
-  console.log("Loaded elements correctly? " + loaded  );
+
+  await page.goto('https://sos2021-05.herokuapp.com/');
+  console.log("Vuelta a Home");
+
   await browser.close();
-  console.log("Browser closed");
-
-
-
-
-
-
-
-  process.exit(0);
-
+  console.log("Navegador Cerrado");
 })();

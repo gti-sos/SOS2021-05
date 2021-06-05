@@ -22,6 +22,7 @@
 
 
 
+
 	//Aqui hago 2 imports uno para cada API externa
 	
 
@@ -80,6 +81,7 @@
 		"/homicides/homicidesAll": all,
 		"/homicides/homicidesApex": homicidesApex,
 		"/homicides/homicidesAllApex": homicidesAllApex,
+
 
 		//Arms Sales Stats
 		"/sales/analytics": GraphsArms,
