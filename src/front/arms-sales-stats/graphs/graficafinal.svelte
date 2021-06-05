@@ -28,9 +28,9 @@
              
 		onMount(inicio)
 async function inicio(){
-   
+    array = [];
 	await getData()
-    await delay(1000);
+    await delay(1500);
    recarga()
    
 }
@@ -43,7 +43,7 @@ const delay = ms => new Promise(res => setTimeout(res, ms));
 
 let agno= 2019
 let month= 1
-  
+  let meses=["Enero", "Febrero", "Marzo","Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
    
     let data = [];
     let array = [];
@@ -99,11 +99,11 @@ async function loadGraph(){
     },
 
     title: {
-        text: 'U.S. states by population in 2016'
+        text: ' '
     },
 
     subtitle: {
-        text: 'Source:<a href="https://simple.wikipedia.org/wiki/List_of_U.S._states_by_population">Wikipedia</a>'
+        text: ' '
     },
 
     xAxis: {
@@ -119,21 +119,21 @@ async function loadGraph(){
             from: 0,
             to: 2500,
             color: '#F9EDB3',
-            name: '< 1M'
+            name: '< 2500'
         }, {
             from: 2500,
             to: 20000,
             color: '#FFC428',
-            name: '1M - 5M'
+            name: '2500 - 20000'
         }, {
             from: 20000,
             to: 50000,
             color: '#FF7987',
-            name: '5M - 20M'
+            name: '20000 - 50000'
         }, {
             from: 50000,
             color: '#FF2371',
-            name: '> 20M'
+            name: '> 50000'
         }]
     },
 
@@ -528,20 +528,7 @@ const busqueda=()=>{
 async function buscar(){
     b=!b;
    
-    if(estados.includes(state)){
-        state=state.replace(" ","_")
-        
-        if(agno<=2020 && agno>=2010){
-            await inicio()
-        }else{
-            lanzamensaje(0,"h","Se ha producido un error al cargar los datos","El año: "+agno+" debe estar entre 2010 y 2020"    ,null)
-        }
-        
-    }else{
-        
-            lanzamensaje(0,"h","Se ha producido un error al cargar los datos","El estado: "+state+" no corresponde con ningun estado de EEUU"    ,null)
-            
-    }
+   await inicio()
 
 }
 
@@ -580,7 +567,7 @@ const togglealerta=()=>{
         <Card  class="mb-3">
             <CardHeader style="background-color: #C7EFF3;">
                 <CardTitle><h5>
-                    Armas vendidas en en {agno}
+                    Armas vendidas en {meses[month-1]} en {agno}
                 </h5></CardTitle>
             </CardHeader>
             <CardBody style="background-color: #F0FEFF; 
@@ -590,17 +577,14 @@ const togglealerta=()=>{
             <figure class="highcharts-figure">
                 <div id="container"></div>
                 <p class="highcharts-description">
-                    Hexagonal tilemap, sometimes referred to as a honeycomb or hexbin chart,
-                    showing population data in the US. In this case the map is used to show
-                    each US state with the same size - which removes some of the bias
-                    associated with traditional maps.
+                   
                 </p>
             </figure>
             
     </CardBody>
          <CardFooter style="background-color: #C7EFF3;">
               <Button outline color="secondary" on:click="{pop}"> Volver</Button>
-              <Button color="secondary" on:click={busqueda}>Cambiar Estado y/o Año</Button>
+              <Button color="secondary" on:click={busqueda}>Cambiar Estado y/o Mes</Button>
                      
                         
          </CardFooter>
@@ -619,8 +603,8 @@ const togglealerta=()=>{
                     
                     <p> </p>
                     <div style="text-align: center;" >
-                        <input   type="number" min="2010" max="2020" bind:value="{agno}">   
-                        
+                        Año <input   type="number" min="2010" max="2020" bind:value="{agno}">   
+                        Mes <input   type="number" min="1" max="12" bind:value="{month}"> 
                     </div>
            
         </ModalBody>
