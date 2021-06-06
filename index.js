@@ -9,12 +9,15 @@ var app = express();
 var port = (process.env.PORT || 10000);
 //Para modificar y definiar las rutas, modulo 'path'
 var path = require("path");
+var cors = require("cors");
 
 var request = require("request");
 
 
 app.use("/", express.static( path.join(__dirname ,"./public")));
 
+
+app.use(cors())
 app.use(express.json());
 
 //Ruta base de acceso a los recursos, bajo la versión 'v1'
