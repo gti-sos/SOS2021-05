@@ -20,8 +20,8 @@
   let estados2 = [];
   let data = [];
   let array = [];//array donde se guardan los muertos de todos los estados en un año x
-  let auxHandgun = [];
-  
+  let array2 = [];
+  let arrayAux = []; //array que luego metemos en el array
 
   
 
@@ -42,12 +42,16 @@
             for(let i=0;i<data.length;i++){
                 let aux= data[i].homicide_by_firearm.replace(".","")
                 array[i]=parseInt(aux,10)
-                estados2.push(data[i].state);
-                auxHandgun.push(data[i].auxHandgun);
+                array2.push(data[i].state);
+                array2.push(array[i]);
+                arrayAux.push(array2); //el arrayAux se va cargando de arrays
+                array2 = [];
+
             }
             
-            console.log(array);
-            console.log(estados2);
+            //console.log(array);
+            //console.log(estados2);
+            //console.log(arrayAux);
         }else{
             console.log("Error!");
         }
@@ -61,55 +65,38 @@
   
   
     async function loadGraph() {
-             Highcharts.chart('container', {
-            chart: {
-                renderTo: 'container',
-                type: 'column'
-            },
-            title: {
-                text: 'Homicidios en el año ' + agno,
-            },
-            tooltip: {
-                shared: true
-            },
-            xAxis: {
-                categories: estados2,
-                crosshair: true
-            },
-            yAxis: [{
-                title: {
-                text: ''
-                }
-            }, {
-                title: {
-                text: ''
-                },
-                minPadding: 0,
-                maxPadding: 0,
-                max: 100,
-                min: 0,
-                opposite: true,
-                labels: {
-                format: "{value}%"
-                }
-            }],
-            series: [{
-                type: 'pareto',
-                name: 'Pareto',
-                yAxis: 1,
-                zIndex: 10,
-                baseSeries: 1,
-                tooltip: {
-                valueDecimals: 2,
-                valueSuffix: '%'
-                }
-            }, {
-                name: 'Homicidios',
-                type: 'column',
-                zIndex: 2,
-                data: array,
-            }]
-            });
+        Highcharts.chart('container', {
+  chart: {
+    type: 'columnpyramid'
+  },
+  title: {
+    text: 'Muertos por armas de fuego en el año ' + agno,
+  },
+  colors: ['#C79D6D', '#B5927B', '#CE9B84', '#B7A58C', '#C7A58C'],
+  xAxis: {
+    crosshair: true,
+    labels: {
+      style: {
+        fontSize: '14px'
+      }
+    },
+    type: 'category'
+  },
+  yAxis: {
+    min: 0,
+    title: {
+      text: 'Muertos'
+    }
+  },
+  tooltip: {
+  },
+  series: [{
+    name: 'Nº Muertos',
+    colorByPoint: true,
+    data: arrayAux,
+    showInLegend: false
+  }]
+});
      }
   
     
@@ -148,20 +135,18 @@ const recarga=()=>{
 
     
     <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/modules/pareto.js"></script>
+    <script src="https://code.highcharts.com/highcharts-more.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="https://code.highcharts.com/modules/export-data.js"></script>
     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
     
     <figure class="highcharts-figure">
-    <div id="container"></div>
-    <p class="highcharts-description">
-        Gráfica que nos muestra el número de homicidios en cada estado en el año seleccionado, comparando los datos con
-        un diagrama de Pareto que se genera en base a los datos arrojados por la API. Comúnmente, Pareto describe el fenómeno estadístico por el que en cualquier 
-        población que contribuye a un efecto común, es una proporción pequeña la que contribuye a la mayor parte del efecto.
-    </p>
+      <div id="container"></div>
+      <p class="highcharts-description">
+        Gráfica de tipo columna-piramidal que nos muestra el número de fallecidos por armas de fuego en los distintos estados de EE.UU por
+        año seleccionado.
+      </p>
     </figure>
-        
     <p></p>
       <Button outline color="secondary" on:click="{pop}"> Volver</Button>
       <Button color="secondary" on:click={busqueda}>Cambiar año</Button>
@@ -190,7 +175,6 @@ const recarga=()=>{
 
 
   <style>
-  
  
   
   

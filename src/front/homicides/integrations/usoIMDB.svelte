@@ -130,10 +130,10 @@ const delay = ms => new Promise(res => setTimeout(res, ms));
       enabled: false
   },
   series: [{
-      name: 'Rating',
+      name: 'Puntuación',
       data: ratings,
   }, {
-      name: 'Rating Count',
+      name: 'Veces puntuado',
       data: totalRates,
   }]
   });

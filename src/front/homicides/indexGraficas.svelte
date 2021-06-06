@@ -65,7 +65,7 @@
               <CardBody style="background-color: #F0FEFF;">
                   <CardSubtitle />
                   <CardText>Gráfico para mostrar todos los recursos, por año seleccionado, junto a la estadística de Pareto.</CardText>
-                  <img alt={" "} src={"/mediaHomicides/homicidiosAll.jpg"}>
+                  <img alt={" "} src={"/mediaHomicides/homicidesAll2.jpg"}>
               </CardBody>
               <CardFooter style="background-color: #C7EFF3;">
                   
