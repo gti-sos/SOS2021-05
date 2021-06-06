@@ -83,8 +83,7 @@
 		"/homicides/homicidesApex": homicidesApex,
 		"/homicides/homicidesAllApex": homicidesAllApex,
 
-
-
+		
 		//Arms Sales Stats
 		"/sales/analytics": GraphsArms,
 		"/sales/line": GraphLineArms,
