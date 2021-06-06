@@ -20,7 +20,7 @@
         CardTitle,
     } from "sveltestrap";
      
-	import {pop} from "svelte-spa-router";
+	import {pop, push} from "svelte-spa-router";
 
 	import {
         onMount
@@ -29,6 +29,7 @@ import { element } from "svelte/internal";
     
 let armas =[]
 let ql =[]
+let general=[]
 let estados=["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts",
 "Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island",
 "South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"]	
@@ -42,6 +43,7 @@ let urlql = "/ql/united%20states/"
         async function inicio(){
            armas =[]
              ql =[]
+             general=[]
             await getData()
             delay(2000);
             console.log("Datos Cargados")
@@ -99,87 +101,65 @@ async function  getData(){
                 
             }
     }
-        console.log(armas)  
+let j
+    for(j=0; j<armas.length;j++){
+
+            //Valor por defecto 100
+            if(ql[j]==null){
+                general.push([2012+j,armas[j],100])
+            }else{
+                general.push([2012+j,armas[j],ql[j]])
+            }
+                
+
+    }
+        console.log(general)  
     console.log(ql)
 }
 
 async function loadGraph(){
  
     Highcharts.chart('container', {
-    chart: {
-        zoomType: 'xy'
-    },
-    title: {
-        text: 'Armas vendidas en: '+state+' junto al Índice de calidad de vida estimado en EEUU'
-    },
-    subtitle: {
-        text: 'Integración con el grupo 1 utilizando Proxy'
-    },
-    xAxis: [{
-        categories: ['2012', '2013', '2014', '2015', '2016', '2017',
-            '2018', '2019', '2020'],
-        crosshair: true
-    }],
-    yAxis: [{ // Primary yAxis
-        labels: {
-            format: '{value}',
-            style: {
-                color: Highcharts.getOptions().colors[1]
-            }
-        },
-        title: {
-            text: 'Indice Calidad de vida',
-            style: {
-                color: Highcharts.getOptions().colors[1]
-            }
-        }
-    }, { // Secondary yAxis
-        title: {
-            text: 'Armas vendidas en '+state,
-            style: {
-                color: Highcharts.getOptions().colors[0]
-            }
-        },
-        labels: {
-            format: '{value} Armas',
-            style: {
-                color: Highcharts.getOptions().colors[0]
-            }
-        },
-        opposite: true
-    }],
-    tooltip: {
-        shared: true
-    },
-    legend: {
-        layout: 'vertical',
-        align: 'left',
-        x: 120,
-        verticalAlign: 'top',
-        y: 100,
-        floating: true,
-        backgroundColor:
-            Highcharts.defaultOptions.legend.backgroundColor || // theme
-            'rgba(255,255,255,0.25)'
-    },
-    series: [{
-        name: 'Armas vendidas en '+ state,
-        type: 'column',
-        yAxis: 1,
-        data: armas,
-        tooltip: {
-            valueSuffix: ' armas'
-        }
 
-    }, {
-        name: 'Indice Calidad de Vida general en EEUU',
-        type: 'spline',
-        data: ql,
-        tooltip: {
-            valueSuffix: ' puntos'
-        }
-    }]
+chart: {
+    type: 'variwide'
+},
+
+title: {
+    text: 'Comparación Indice Calidad de Vida general en EEUU y las Armas vendidad en '+state
+},
+
+
+
+xAxis: {
+    type: 'category'
+},
+
+caption: {
+    text: ' '
+},
+
+legend: {
+    enabled: false
+},
+
+series: [{
+    name: 'Labor Costs',
+    data: general
+    ,
+    dataLabels: {
+        enabled: true,
+        format: 'Año {point.x:.0f}'
+    },
+    tooltip: {
+        pointFormat: 'Indice Calidad de Vida general en EEUU: <b> {point.z} puntos</b><br>' +
+            'Armas Vendidas: <b>€ {point.y} Armas</b><br>'
+    },
+    colorByPoint: true
+}]
+
 });
+
 }
 
 
@@ -195,6 +175,7 @@ async function buscar(){
         state=state.replace(" ","_")
         urlarmas = "/api/v2/arms-sales-stats?state="+state+"&year="
         console.log(state)
+        general=[]
         inicio()
     }else{
         
@@ -232,10 +213,11 @@ const togglealerta=()=>{
 <svelte:head>
    
     <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/variwide.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="https://code.highcharts.com/modules/export-data.js"></script>
     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
-
+    
 
 
 </svelte:head>
@@ -243,7 +225,7 @@ const togglealerta=()=>{
     <figure class="highcharts-figure">
         <div id="container"></div>
         <p class="highcharts-description">
-            
+           Por si te lo preguntas, no. No es tipo bar ni column, es tipo variwide
         </p>
     </figure>
     
