@@ -17,5 +17,6 @@ jobs:
       - run: npx newman run test/homicidesAPI-TEST.json
       - run: node test/e2e.js
       - run: node test/e2eIvan.js
+      - run: node test/e2eManuel.js
 
 
