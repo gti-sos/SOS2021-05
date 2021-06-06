@@ -18,5 +18,6 @@ jobs:
       - run: node test/e2e.js
       - run: node test/e2eIvan.js
       - run: node test/e2eManuel.js
+      - run: node test/e2eJosan.js
 
 
