@@ -27,6 +27,7 @@
     
   
     let miseries=[]
+    let general=[]
     let urlarmas = "/api/v2/arms-sales-stats?state="
         let agno =2020
         let estados=["California", "Texas","Florida","New_York", "Illinois"]
@@ -99,60 +100,69 @@
 
        }
        
-       miseries.push({
-                name: 'Armas vendidas en los 5 estados mas habitados en '+agno,
-                data: armas
-            })
 
+       function getZ(x){
+            if (x>5 && x<=10) {
+               return 75
+            }else if(x>10){
+                
+                return 100
+                
+            }else{
+                return 50
+            }
+       }
+
+    let i
+    for(i=0;i<armas.length;i++){
+
+        general.push(
+
+            {
+             name: "Armas vendidas en: "+armas[i].name,
+              y: armas[i].value,
+             z: getZ(armas[i].value)
+            }
+
+        )
+    }
+    for(i=0;i<data.length;i++){
+
+        general.push(
+
+    {
+     name: data[i].name,
+      y: data[i].value,
+     z: getZ(data[i].value)
+    }
+
+)
+}
+    console.log(general)
        
 
         
     }
     
-    async function loadGraph(){
-    
-        Highcharts.chart('container', {
+    async function loadGraph(){Highcharts.chart('container', {
     chart: {
-        type: 'packedbubble',
-        height: '100%'
+        type: 'variablepie'
     },
     title: {
-        text: 'Videojuegos vendidos en EEUU y armas vendidas en sus 5 Estados mas poblados en 2020'
+        text: 'Comparación de ventas de Videojuegos en EEUU y Armas vendidas en sus 5 estados más habitados'
     },
     tooltip: {
-        useHTML: true,
-        pointFormat: '<b>{point.name}:</b> {point.value} Millones de Unidades vendidas'
+        headerFormat: '',
+        pointFormat: '<span style="color:{point.color}">\u25CF</span> <b> {point.name}</b><br/>' +
+            'Unidades vendidas : <b>{point.y}</b> millones <br/>' 
     },
-    plotOptions: {
-        packedbubble: {
-            minSize: '20%',
-            maxSize: '100%',
-            zMin: 0,
-            zMax: 1000,
-            layoutAlgorithm: {
-                gravitationalConstant: 0.05,
-                splitSeries: true,
-                seriesInteraction: false,
-                dragBetweenSeries: true,
-                parentNodeLimit: true
-            },
-            dataLabels: {
-                enabled: true,
-                format: '{point.name}',
-                filter: {
-                    property: 'y',
-                    operator: '>',
-                    value: 250
-                },
-                style: {
-                    color: 'black',
-                    textOutline: 'none',
-                    fontWeight: 'normal'
-                }
-            }
-        }
-    },
-    series: miseries
+    series: [{
+        minPointSize: 10,
+        innerSize: '20%',
+        zMin: 0,
+        name: 'countries',
+        data: general
+    }]
 });
 
       
@@ -165,9 +175,10 @@
         <figure class="highcharts-figure">
             <div id="container"></div>
             <p class="highcharts-description">
-                
+              
             </p>
         </figure>
+      
         
         <Button color="secondary" on:click={pop}>Volver</Button>
         <Button color="secondary" on:click={inicio}>Recarga</Button>
@@ -175,8 +186,9 @@
     <svelte:head>
        
         <script src="https://code.highcharts.com/highcharts.js"></script>
-        <script src="https://code.highcharts.com/highcharts-more.js"></script>
+        <script src="https://code.highcharts.com/modules/variable-pie.js"></script>
         <script src="https://code.highcharts.com/modules/exporting.js"></script>
+        <script src="https://code.highcharts.com/modules/export-data.js"></script>
         <script src="https://code.highcharts.com/modules/accessibility.js"></script>
     
     </svelte:head>
