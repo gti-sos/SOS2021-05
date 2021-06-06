@@ -138,7 +138,7 @@
 {"state":"New-Mexico","year":"2013","homicide_by_firearm":"0","handgun":"0","rifle":"0","shotgun":"0","type_not_stated":"0","_id":"G7nQPc9i9Ekpyefx"}
 {"state":"Iowa","year":"2019","homicide_by_firearm":"36","handgun":"21","rifle":"0","shotgun":"0","type_not_stated":"15","_id":"GBChGdAGW9LVuRFQ"}
 {"state":"Ohio","year":"2018","homicide_by_firearm":"0","handgun":"0","rifle":"0","shotgun":"0","type_not_stated":"0","_id":"GCHMUPrKgxjFdKly"}
-{"state":"Maine","year":"2019","homicide_by_firearm":"13","handgun":"6","rifle":"0","shotgun":"3","type_not_stated":"4","_id":"GFgvjCsVcoD9tgAt"}
+{"state":"Maine","year":"2019","homicide_by_firearm":"322","handgun":"6","rifle":"0","shotgun":"3","type_not_stated":"4","_id":"GFgvjCsVcoD9tgAt"}
 {"state":"Mississippi","year":"2017","homicide_by_firearm":"79","handgun":"61","rifle":"0","shotgun":"0","type_not_stated":"18","_id":"GGGYpwwPqqHzfgOR"}
 {"state":"Utah","year":"2019","homicide_by_firearm":"0","handgun":"0","rifle":"0","shotgun":"0","type_not_stated":"0","_id":"GSyA1fe6ZtbMGaY2"}
 {"state":"Iowa","year":"2011","homicide_by_firearm":"36","handgun":"21","rifle":"0","shotgun":"0","type_not_stated":"15","_id":"Gh1Uy3gxD1CeWKPZ"}
@@ -157,7 +157,7 @@
 {"state":"Alabama","year":"2018","homicide_by_firearm":"3","handgun":"3","rifle":"0","shotgun":"0","type_not_stated":"0","_id":"I7V9Oc99ITkZvbS6"}
 {"state":"Missouri","year":"2011","homicide_by_firearm":"79","handgun":"61","rifle":"0","shotgun":"0","type_not_stated":"18","_id":"INl7gz1N28tizjZn"}
 {"state":"Pennsylvania","year":"2019","homicide_by_firearm":"0","handgun":"0","rifle":"0","shotgun":"0","type_not_stated":"0","_id":"IUgbRYSAkGR6nRee"}
-{"state":"Indiana","year":"2019","homicide_by_firearm":"10437","handgun":"6385","rifle":"398","shotgun":"364","type_not_stated":"3290","_id":"IstnXGKJHpx4VtY1"}
+{"state":"Indiana","year":"2019","homicide_by_firearm":"2567","handgun":"6385","rifle":"398","shotgun":"364","type_not_stated":"3290","_id":"IstnXGKJHpx4VtY1"}
 {"state":"New-York","year":"2014","homicide_by_firearm":"0","handgun":"0","rifle":"0","shotgun":"0","type_not_stated":"0","_id":"IyWaflF8xa7Z01ye"}
 {"state":"Mississippi","year":"2016","homicide_by_firearm":"79","handgun":"61","rifle":"0","shotgun":"0","type_not_stated":"18","_id":"J3nIwmseEQ4Rp6LG"}
 {"state":"Colorado","year":"2014","homicide_by_firearm":"138","handgun":"84","rifle":"7","shotgun":"5","type_not_stated":"42","_id":"J7G7WXfFptLlwFsg"}
@@ -385,7 +385,7 @@
 {"state":"Montana","year":"2010","homicide_by_firearm":"20","handgun":"13","rifle":"1","shotgun":"1","type_not_stated":"2","_id":"jxde5ug9oRFBmd2e"}
 {"state":"Hawaii","year":"2015","homicide_by_firearm":"9","handgun":"5","rifle":"0","shotgun":"0","type_not_stated":"4","_id":"jzt1Y3nMoXbZU5zZ"}
 {"state":"New-Jersey","year":"2019","homicide_by_firearm":"0","handgun":"0","rifle":"0","shotgun":"0","type_not_stated":"0","_id":"k1vEIPEl7sElIGBH"}
-{"state":"New-Hampshire","year":"2019","homicide_by_firearm":"79","handgun":"61","rifle":"0","shotgun":"0","type_not_stated":"18","_id":"kDgVnc7XNRtKSkRs"}
+{"state":"New-Hampshire","year":"2019","homicide_by_firearm":"790","handgun":"61","rifle":"0","shotgun":"0","type_not_stated":"18","_id":"kDgVnc7XNRtKSkRs"}
 {"state":"North-Dakota","year":"2012","homicide_by_firearm":"79","handgun":"61","rifle":"0","shotgun":"0","type_not_stated":"18","_id":"kIpaEgIDvek9u3vv"}
 {"state":"Wyoming","year":"2017","homicide_by_firearm":"0","handgun":"0","rifle":"0","shotgun":"0","type_not_stated":"0","_id":"kV6eetj3ZQdIxvJ6"}
 {"state":"South-Carolina","year":"2011","homicide_by_firearm":"0","handgun":"0","rifle":"0","shotgun":"0","type_not_stated":"0","_id":"kb4eVHPA9AgMQAXX"}
@@ -529,7 +529,3 @@
 {"state":"West-Virginia","year":"2012","homicide_by_firearm":"0","handgun":"0","rifle":"0","shotgun":"0","type_not_stated":"0","_id":"zmPXvUsxoxx8wYol"}
 {"state":"New-Hampshire","year":"2017","homicide_by_firearm":"79","handgun":"61","rifle":"0","shotgun":"0","type_not_stated":"18","_id":"zvIrhNENhyTnfxon"}
 {"state":"Minnesota","year":"2011","homicide_by_firearm":"79","handgun":"61","rifle":"0","shotgun":"0","type_not_stated":"18","_id":"zvcSYh6coli4Ts9G"}
-{"state":"Maine","year":"2019","homicide_by_firearm":"322","handgun":"6","rifle":"0","shotgun":"3","type_not_stated":"4","_id":"GFgvjCsVcoD9tgAt"}
-{"state":"New-Hampshire","year":"2019","homicide_by_firearm":"790","handgun":"61","rifle":"0","shotgun":"0","type_not_stated":"18","_id":"kDgVnc7XNRtKSkRs"}
-{"state":"Indiana","year":"2019","homicide_by_firearm":"2899","handgun":"6385","rifle":"398","shotgun":"364","type_not_stated":"3290","_id":"IstnXGKJHpx4VtY1"}
-{"state":"Indiana","year":"2019","homicide_by_firearm":"2567","handgun":"6385","rifle":"398","shotgun":"364","type_not_stated":"3290","_id":"IstnXGKJHpx4VtY1"}
