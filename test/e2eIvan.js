@@ -44,7 +44,47 @@ await delay(2000);
 await page.screenshot({ path: './test/capturas/Ivan/frontHomicidesInsert.png' });
 console.log("Insert");
 
-await page.screenshot({ path: 'clickOnInsertarDato.png' });
+
+
+//Volvemos a la tabla
+
+await page.goto('https://sos2021-05.herokuapp.com/#/homicides');
+await delay(2000)
+console.log("Volviendo a la tabla");
+
+//CAPTURA ACTUALIZAR
+const [response3] = await Promise.all([
+  page.click("body > main > main > table > tbody > tr:nth-child(1) > td:nth-child(8) > button:nth-child(2)"),
+]);
+
+await delay(500);
+await page.screenshot({ path: './test/capturas/Ivan/frontHomicidesUpdate.png' })
+console.log("Captura Update");
+
+const [response4] = await Promise.all([
+  page.click("body > main > main >  div >  div >  div >  div > div:nth-child(1)>  button"),
+]);
+  console.log("Click en volver");
+  await delay(2000)
+
+ const [response5] = await Promise.all([
+  page.click("body > main > main> button:nth-child(2)"),
+]);
+console.log("Click en actualizar");
+
+await delay(2000)
+await page.screenshot({ path: './test/capturas/Ivan/frontHomicideUpdatePop.png' })
+
+
+const [response6] = await Promise.all([
+  page.click("body > main > main >  div >  div >  div >  div > div:nth-child(3)>  button:nth-child(1)"),
+]);
+await delay(2000)
+
+await page.screenshot({ path: './test/capturas/Ivan/frontHomicidesUpdateOK.png' })
+
+
+
 
 //Para hacer captura de mi index de gráficas
 await page.goto("http://sos2021-05.herokuapp.com/#/homicides/analytics");
