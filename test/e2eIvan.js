@@ -51,7 +51,11 @@ await page.goto("http://sos2021-05.herokuapp.com/#/homicides/analytics");
 await delay(2000);
 await page.screenshot({ path: './test/capturas/Ivan/indexGraficasHomicides.png' });
 
-
+//vamos a una de mis gráficas y captura
+await page.goto('http://sos2021-05.herokuapp.com/#/homicides/abandonoEscolar');
+await delay(5000)
+await page.screenshot({ path: './test/capturas/Ivan/frontGrafica.png' })
+console.log("Captura de un gráfico");
 
 await browser.close();
 console.log("Navegador Cerrado");
