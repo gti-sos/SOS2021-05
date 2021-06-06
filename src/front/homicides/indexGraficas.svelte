@@ -64,7 +64,7 @@
               </CardHeader>
               <CardBody style="background-color: #F0FEFF;">
                   <CardSubtitle />
-                  <CardText>Gráfico para mostrar todos los recursos, por año seleccionado, junto a la estadística de Pareto.</CardText>
+                  <CardText>Gráfico de tipo piramidal que muestra los homicidios en un año determinado en cada estado de EE.UU.</CardText>
                   <img alt={" "} src={"/mediaHomicides/homicidesAll2.jpg"}>
               </CardBody>
               <CardFooter style="background-color: #C7EFF3;">
@@ -102,7 +102,7 @@
             <Card  class="mb-3">
 
               <CardHeader style="background-color: #C7EFF3;">
-              <CardTitle><h5>API Externa (INTEGRACION 1): Riesgos De Pobreza</h5></CardTitle>
+              <CardTitle><h5>API Externa (INTEGRACION 1): Riesgos De Pobreza - ApexCharts</h5></CardTitle>
               </CardHeader>
 
               <CardBody style="background-color: #F0FEFF;">
@@ -124,7 +124,7 @@
           <Card  class="mb-3">
 
             <CardHeader style="background-color: #C7EFF3;">
-            <CardTitle><h5>API Externa (INTEGRACION 2): Abandono Escolar</h5></CardTitle>
+            <CardTitle><h5>API Externa (INTEGRACION 2): Abandono Escolar -  ApexCharts</h5></CardTitle>
             </CardHeader>
 
             <CardBody style="background-color: #F0FEFF;">
@@ -146,7 +146,7 @@
             <Card  class="mb-3">
 
                 <CardHeader style="background-color: #C7EFF3;">
-                <CardTitle><h5>API Externa (USO 1): Estadísticas COD</h5></CardTitle>
+                <CardTitle><h5>API Externa (USO 1): Estadísticas COD - HighCharts</h5></CardTitle>
                 </CardHeader>
 
                 <CardBody style="background-color: #F0FEFF;">
@@ -169,7 +169,7 @@
             <Card  class="mb-3">
 
               <CardHeader style="background-color: #C7EFF3;">
-              <CardTitle><h5>API EXTERNA (USO 2): TOP 10 shows mejor puntuados IMDB</h5></CardTitle>
+              <CardTitle><h5>API EXTERNA (USO 2): TOP 10 shows mejor puntuados IMDB - HighCharts</h5></CardTitle>
               </CardHeader>
 
               <CardBody style="background-color: #F0FEFF;">
