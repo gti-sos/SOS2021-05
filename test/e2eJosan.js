@@ -108,7 +108,7 @@ await page.screenshot({ path: './test/capturas/JoseAntonio/indexGraficasAttacks.
 
 //vamos a una de mis gráficas y captura
 await page.goto('http://sos2021-05.herokuapp.com/#/attacks/apiexterna2');
-await delay(5000)
+await delay(7000)
 await page.screenshot({ path: './test/capturas/JoseAntonio/frontGrafica.png' })
 console.log("Captura del grafico del ranking de tenis del mundo");
 
