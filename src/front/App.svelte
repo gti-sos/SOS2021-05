@@ -70,7 +70,7 @@
 		"/": Home,
 		"/analytics": Graph,
 		"/about": Videos,
-		"/integration":Integration,
+		"/integrations":Integration,
 		//Homicides Stats
 		"/homicides/analytics": GraphsIndex, //redirige al "home" de mis graficos, tanto mio como de las API externa
 		"/homicides/line": GraphHomicidesLine,//redirige al grafico de mi API
@@ -101,7 +101,7 @@
 		"/sales/:state/:year/:month": EditSale,
 		
 		//Attacks stats
-		"/integrations": GraphAttacks,
+		"/attacks/integrations": GraphAttacks,
 		"/attacks/line": GraphLineAttacks,
 		"/attacks/:state/:year": EditAttacks,
 		"/attacks/apiexterna1": GraphApiExterna1Attacks,

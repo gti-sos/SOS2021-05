@@ -379,12 +379,397 @@ document.getElementById("ataques").style.visibility = "visible"
     </div>
 
 <div class="homicidios" id="homicidios">
-  <h1>Homicidios </h1>
+  <h1>Homicidios por armas de fuego en EE.UU </h1>
+  
+  <Container>
+  
+    <Col>
+      Desarrollado por:
+      <a href = " https://github.com/ivanmartinsk " > Iván Martín Jiménez </a>
+    </Col>
+    
+  </Container>
+
+      <p></p>
+      <p></p>
+
+      
+          <h2>Gráficas</h2>
+          <Container>
+          
+          <Col xs="auto">
+              
+              <Card  class="mb-3">
+              <CardHeader style="background-color: #C7EFF3;">
+                  <CardTitle><h5>Homicidios por armas de fuego entre 2010 y 2020</h5></CardTitle>
+              </CardHeader>
+              <CardBody style="background-color: #F0FEFF;">
+                  <CardSubtitle />
+                  <CardText>Gráfico lineal que representa los datos de homicidios por armas de fuego en la última década.</CardText>
+                  <img alt={" "} src={"/mediaHomicides/homicidesGraph.jpg"}>
+              </CardBody>
+              <CardFooter style="background-color: #C7EFF3;">
+                  
+                  <a href="/#/homicides/line">
+                  <Button style="background-color:  #22A3B0 ; ">Ir a la gráfica</Button></a>
+                  
+                  </CardFooter>
+              </Card>
+              
+          </Col>
+          <Col xs="auto">
+              
+            <Card  class="mb-3">
+            <CardHeader style="background-color: #C7EFF3;">
+                <CardTitle><h5>Homicidios por armas de fuego en EE.UU - HighCharts</h5></CardTitle>
+            </CardHeader>
+            <CardBody style="background-color: #F0FEFF;">
+                <CardSubtitle />
+                <CardText>Gráfico para mostrar todos los recursos, por año seleccionado, junto a la estadística de Pareto.</CardText>
+                <img alt={" "} src={"/mediaHomicides/homicidesAll2.jpg"}>
+            </CardBody>
+            <CardFooter style="background-color: #C7EFF3;">
+                
+                <a href="/#/homicides/homicidesAll">
+                <Button style="background-color:  #22A3B0 ; ">Ir a la gráfica</Button></a>
+                
+                </CardFooter>
+            </Card>
+            
+        </Col>
+        <Col xs="auto">
+              
+          <Card  class="mb-3">
+          <CardHeader style="background-color: #C7EFF3;">
+              <CardTitle><h5>Homicidios por armas de fuego en EE.UU - ApexCharts</h5></CardTitle>
+          </CardHeader>
+          <CardBody style="background-color: #F0FEFF;">
+              <CardSubtitle />
+              <CardText>Gráfico para mostrar un desglose de los homicidios por armas de fuego en EE.UU por año y estado</CardText>
+              <img alt={" "} src={"/mediaHomicides/homicidiosApex.jpg"}>
+          </CardBody>
+          <CardFooter style="background-color: #C7EFF3;">
+              
+              <a href="/#/homicides/homicidesApex">
+              <Button style="background-color:  #22A3B0 ; ">Ir a la gráfica</Button></a>
+              
+              </CardFooter>
+          </Card>
+          
+      </Col>
+
+          <Col xs="auto">
+              
+          <Card  class="mb-3">
+
+            <CardHeader style="background-color: #C7EFF3;">
+            <CardTitle><h5>API Externa (INTEGRACION 1): Riesgos De Pobreza</h5></CardTitle>
+            </CardHeader>
+
+            <CardBody style="background-color: #F0FEFF;">
+            <CardSubtitle />
+            <CardText>Gráfico que compara el número de homicidios por armas de fuego en USA con el número
+              de personas en riesgo de pobreza.
+            </CardText>
+            <img alt={" "} src={"/mediaHomicides/pobreza.jpg"}>
+            </CardBody>
+
+            <CardFooter style="background-color: #C7EFF3;">
+                
+                <a href="/#/homicides/riesgosPobreza"
+                ><Button style="background-color:  #22A3B0 ; ">Ir a la gráfica</Button></a>
+            
+            
+              </CardFooter>
+        </Card>  
+        <Card  class="mb-3">
+
+          <CardHeader style="background-color: #C7EFF3;">
+          <CardTitle><h5>API Externa (INTEGRACION 2): Abandono Escolar</h5></CardTitle>
+          </CardHeader>
+
+          <CardBody style="background-color: #F0FEFF;">
+          <CardSubtitle />
+          <CardText>Gráfico de área que compara el numero de homicidios por armas de fuego con el número
+            de abandonos escolares por año.
+          </CardText>
+          <img alt={" "} src={"/mediaHomicides/abandono.jpg"}>
+          </CardBody>
+
+          <CardFooter style="background-color: #C7EFF3;">
+              
+              <a href="/#/homicides/abandonoEscolar"
+              ><Button style="background-color:  #22A3B0 ; ">Ir a la gráfica</Button></a>
+          
+          
+            </CardFooter>
+      </Card>  
+          <Card  class="mb-3">
+
+              <CardHeader style="background-color: #C7EFF3;">
+              <CardTitle><h5>API Externa (USO 1): Estadísticas COD</h5></CardTitle>
+              </CardHeader>
+
+              <CardBody style="background-color: #F0FEFF;">
+              <CardSubtitle />
+              <CardText>Gráfico que, dado un perfil público de PSN, nos devuelve sus estadísticas en el videojuego
+                "Call of Duty: Warzone".
+              </CardText>
+              <img alt={" "} src={"/mediaHomicides/cod.jpg"}>
+              </CardBody>
+
+              <CardFooter style="background-color: #C7EFF3;">
+                  
+                  <a href="/#/homicides/usoCOD"
+                  ><Button style="background-color:  #22A3B0 ; ">Ir a la gráfica</Button></a>
+              
+              
+               </CardFooter>
+          </Card>
+
+          <Card  class="mb-3">
+
+            <CardHeader style="background-color: #C7EFF3;">
+            <CardTitle><h5>API EXTERNA (USO 2): TOP 10 shows mejor puntuados IMDB</h5></CardTitle>
+            </CardHeader>
+
+            <CardBody style="background-color: #F0FEFF;">
+            <CardSubtitle />
+            <CardText>Gráfico para estadísticas IMDB, que nos representa un top con las películas y series mejor
+              puntuadas, así como el número de votaciones que ha recibido dicha obra en IMDB.
+            </CardText>
+            <img alt={" "} src={"/mediaHomicides/imdb.png"}>
+            </CardBody>
+
+            <CardFooter style="background-color: #C7EFF3;">
+                
+                <a href="/#/homicides/usoIMDB"
+                ><Button style="background-color:  #22A3B0 ; ">Ir a la gráfica</Button></a>
+            
+            
+             </CardFooter>
+        </Card>
+          
+      </Col>
+  
+
+  </Container>
   
 </div>
 
 <div class="ataques" id="ataques">
-   ataques
+  <h1>Ataques en EEUU </h1>
+  
+  <Container>
+  
+    <Col>
+      Desarrollado por:
+      <a href = " http://github.com/josanmegias " > José Antonio Megías Macías </a>
+    </Col>
+    
+  </Container>
+
+ <p></p>
+ <p></p>
+
+ 
+  <h2>Gráficas</h2>
+  <Container>
+     
+    <Col xs="auto">
+      
+      <Card  class="mb-3">
+        <CardHeader style="background-color: #C7EFF3;">
+          <CardTitle><h5>Ataques en EEUU de 2010 a 2020</h5></CardTitle>
+        </CardHeader>
+        <CardBody style="background-color: #F0FEFF;">
+          <CardSubtitle />
+          <CardText>Gráfico lineal que muestra los datos sobre los ataques.</CardText>
+          <img alt={" "} src={"/mediaAttacks/attacksLine.PNG"}>
+          
+        </CardBody>
+        <CardFooter style="background-color: #C7EFF3;">
+            
+          <a href="/#/attacks/line"
+          ><Button style="background-color:  #22A3B0 ; ">Ir a la gráfica</Button></a
+        >
+          
+      </CardFooter
+        >
+      </Card>
+      
+  </Col>
+
+
+  <Col xs="auto">
+      
+    <Card  class="mb-3">
+      <CardHeader style="background-color: #C7EFF3;">
+        <CardTitle><h5>Ataques en EEUU en 2019 (CANVASJS)</h5></CardTitle>
+      </CardHeader>
+      <CardBody style="background-color: #F0FEFF;">
+        <CardSubtitle />
+        <CardText>Gráfico que muestra los datos sobre los tipos de ataques (armas personales, pistola y navaja)
+          en los diferentes estados de EEUU en 2019.</CardText>
+        <img alt={" "} src={"/mediaAttacks/attacks1.PNG"}>
+        
+      </CardBody>
+      <CardFooter style="background-color: #C7EFF3;">
+          
+        <a href="/#/attacks/attacks1"
+        ><Button style="background-color:  #22A3B0 ; ">Ir a la gráfica</Button></a
+      >
+        
+    </CardFooter
+      >
+    </Card>
+    
+</Col>
+
+<Col xs="auto">
+      
+  <Card  class="mb-3">
+    <CardHeader style="background-color: #C7EFF3;">
+      <CardTitle><h5>Ataques con armas personales entre 2017 y 2019 (HIGHCHARTS)</h5></CardTitle>
+    </CardHeader>
+    <CardBody style="background-color: #F0FEFF;">
+      <CardSubtitle />
+      <CardText>Gráfico que muestra los datos sobre los ataques por armas personales de todos los estados de EEUU entre los años 2017 y 2019.</CardText>
+      <img alt={" "} src={"/mediaAttacks/attacks2.PNG"}>
+      
+    </CardBody>
+    <CardFooter style="background-color: #C7EFF3;">
+        
+      <a href="/#/attacks/attacks2"
+      ><Button style="background-color:  #22A3B0 ; ">Ir a la gráfica</Button></a
+    >
+      
+  </CardFooter
+    >
+  </Card>
+  
+</Col>
+
+
+  <Col xs="auto">
+      
+    <Card  class="mb-3">
+      <CardHeader style="background-color: #C7EFF3;">
+        <CardTitle><h5>Api Externa 1: Formula 1.</h5></CardTitle>
+      </CardHeader>
+      <CardBody style="background-color: #F0FEFF;">
+        <CardSubtitle />
+        <CardText>Gráfico de la capacidad de los circuitos de la Formula 1</CardText>
+        <img alt={" "} src={"/mediaAttacks/USO1.PNG"}>
+      </CardBody>
+      <CardFooter style="background-color: #C7EFF3;">
+          
+        <a href="/#/attacks/apiexterna1"
+        ><Button style="background-color:  #22A3B0 ; ">Ir a la gráfica</Button></a
+      >
+        
+    </CardFooter
+      >
+    </Card>
+    
+</Col>
+
+<Col xs="auto">
+      
+  <Card  class="mb-3">
+    <CardHeader style="background-color: #C7EFF3;">
+      <CardTitle><h5>Api Externa 2: Tenis.</h5></CardTitle>
+    </CardHeader>
+    <CardBody style="background-color: #F0FEFF;">
+      <CardSubtitle />
+      <CardText>Gráfico del Ranking de los 10 mejores tenistas del mundo</CardText>
+      <img alt={" "} src={"/mediaAttacks/USO2.PNG"}>
+    </CardBody>
+    <CardFooter style="background-color: #C7EFF3;">
+        
+      <a href="/#/attacks/apiexterna2"
+      ><Button style="background-color:  #22A3B0 ; ">Ir a la gráfica</Button></a
+    >
+      
+  </CardFooter
+    >
+  </Card>
+  
+</Col>
+
+<Col xs="auto">
+      
+<Card  class="mb-3">
+  <CardHeader style="background-color: #C7EFF3;">
+    <CardTitle><h5>Integracion 1: Infectados VIH</h5></CardTitle>
+  </CardHeader>
+  <CardBody style="background-color: #F0FEFF;">
+    <CardSubtitle />
+    <CardText>Gráfico de los infectados de VIH y viviendo con VIH frente a los ataques personales en EEUU</CardText>
+    <img alt={" "} src={"/mediaAttacks/INTEGRACION1.PNG"}>
+  </CardBody>
+  <CardFooter style="background-color: #C7EFF3;">
+      
+    <a href="/#/attacks/integracion24"
+    ><Button style="background-color:  #22A3B0 ; ">Ir a la gráfica</Button></a
+  >
+    
+</CardFooter
+  >
+</Card>
+
+</Col>
+
+
+<Col xs="auto">
+      
+<Card  class="mb-3">
+  <CardHeader style="background-color: #C7EFF3;">
+    <CardTitle><h5>Integracion 2: Nacimientos en los países de Europa</h5></CardTitle>
+  </CardHeader>
+  <CardBody style="background-color: #F0FEFF;">
+    <CardSubtitle />
+    <CardText>Gráfico de los nacimientos en los países de Europa del año 2019, y ataques totales en Estados Unidos a manos del sexo masculino.
+    </CardText>
+    <img alt={" "} src={"/mediaAttacks/INTEGRACION2.PNG"}>
+  </CardBody>
+  <CardFooter style="background-color: #C7EFF3;">
+      
+    <a href="/#/attacks/integracion01"
+    ><Button style="background-color:  #22A3B0 ; ">Ir a la gráfica</Button></a
+  >
+    
+</CardFooter
+  >
+</Card>
+
+</Col>
+
+<Col xs="auto">
+      
+<Card  class="mb-3">
+  <CardHeader style="background-color: #C7EFF3;">
+    <CardTitle><h5>Integracion 3: Suicidios en algunas ciudades de España</h5></CardTitle>
+  </CardHeader>
+  <CardBody style="background-color: #F0FEFF;">
+    <CardSubtitle />
+    <CardText>Gráfico de los suicidios entre 2016 y 2019, y ataques por pistola en EEUU </CardText>
+    <img alt={" "} src={"/mediaAttacks/INTEGRACION3.PNG"}>
+  </CardBody>
+  <CardFooter style="background-color: #C7EFF3;">
+      
+    <a href="/#/attacks/integracion27"
+    ><Button style="background-color:  #22A3B0 ; ">Ir a la gráfica</Button></a
+  >
+    
+</CardFooter
+  >
+</Card>
+
+</Col>
+  
+
+  </Container>
 </div>
 
   </main>
