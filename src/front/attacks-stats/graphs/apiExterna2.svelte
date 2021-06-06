@@ -88,7 +88,7 @@
             }
         },
         series: [{
-            name: 'Unique users',
+            name: 'Puntos',
             data: puntosPorJugador
 
         }]
@@ -99,17 +99,23 @@
 </script>
 
 <svelte:head>
-    
-</svelte:head>
-
-<main>
-
-    <script src="https://code.highcharts.com/highcharts.js" on:load={loadGraph}></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/highcharts-3d.js"></script>
     <script src="https://code.highcharts.com/modules/cylinder.js"></script>
     <script src="https://code.highcharts.com/modules/funnel3d.js"></script>
     <script src="https://code.highcharts.com/modules/pyramid3d.js"></script>
+</svelte:head>
+
+<main>
+
     
+    
+    <figure class="highcharts-figure">
+        <div id="container" on:load="{loadGraph}"></div>
+        <p class="highcharts-description">
+            
+        </p>
+    </figure>   
 
     <div>   <Button outline style=" background-color:#6C00AF; color:aliceblue" on:click="{pop}"> Volver</Button></div> 
 
@@ -117,6 +123,13 @@
 
 
 <style>
+
+#container {
+    min-width: 410px;
+    max-width: 800px; 
+    height: 400px; 
+    margin: 0 auto 
+}
 
 
 
