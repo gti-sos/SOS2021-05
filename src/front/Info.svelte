@@ -53,6 +53,11 @@
         >
       </Col>
       <Col>
+        <a href="./#/integrations"
+          ><b>Integraciones: </b> http://sos2021-05.herokuapp.com/#/integrations</a
+        >
+      </Col>
+      <Col>
         <a href="./#/about"
           ><b>Videos: </b> http://sos2021-05.herokuapp.com/#/about</a
         >
@@ -152,7 +157,7 @@
               ><Button color="info">Postman Documentation v2</Button></a
             >
 
-            <a href="http://sos2021-05.herokuapp.com/#/integrations"
+            <a href="http://sos2021-05.herokuapp.com/#/attacks/integrations"
             ><Button style="background-color: #D992FF">Gráficas</Button></a>
 
 
