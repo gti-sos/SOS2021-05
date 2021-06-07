@@ -71,6 +71,9 @@
         <CardBody style="background-color: #F0FEFF;">
           <CardSubtitle />
           <CardText>Gráfico de barras interactivo que muestra los datos sobre la venta de armas.</CardText>
+          <CardText>Api externa utilizando protocolo Oauth.
+      
+          </CardText>
           <img alt={" "} src={"/mediaSales/general.png"}>
         </CardBody>
         <CardFooter style="background-color: #C7EFF3;">
@@ -88,11 +91,12 @@
         
       <Card  class="mb-3">
         <CardHeader style="background-color: #C7EFF3;">
-          <CardTitle><h5>Api Externa: Equipos de futbol.</h5></CardTitle>
+          <CardTitle><h5>Api Externa: Equipos de futbol.(Oauth)</h5></CardTitle>
         </CardHeader>
         <CardBody style="background-color: #F0FEFF;">
           <CardSubtitle />
           <CardText>Gráfico de Burbujas que muestra los equipos de Inglaterra, Estados Unidos, España e Italia</CardText>
+
           <img alt={" "} src={"/mediaSales/ext1.png"}>
         </CardBody>
         <CardFooter style="background-color: #C7EFF3;">
@@ -163,12 +167,12 @@
         
   <Card  class="mb-3">
     <CardHeader style="background-color: #C7EFF3;">
-      <CardTitle><h5>Api Externa: Previsión Temperatura Sevilla</h5></CardTitle>
+      <CardTitle><h5>Api Externa: Previsión Temperatura Sevilla (Oauth)</h5></CardTitle>
     </CardHeader>
     <CardBody style="background-color: #F0FEFF;">
       <CardSubtitle />
       <CardText>Previsión para las proximas 24h en Sevilla</CardText>
-      <CardText>Api externa utilizando API externa con Oauth.
+      <CardText>Api externa utilizando protocolo Oauth.
       
       </CardText>
      
