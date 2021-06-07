@@ -101,6 +101,7 @@ app.get("/info/attacks-stats", (request,response) => {
 
 //IVÁN
 
+
 //INTEGRACIÓN 1 API POBREZA (GRUPO 04) (PROXY)
 
 //el servidor de datos se encontraría en apiServerHostPovertyRisks
