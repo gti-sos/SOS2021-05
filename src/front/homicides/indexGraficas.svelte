@@ -188,6 +188,28 @@
               
                </CardFooter>
           </Card>
+          <Card  class="mb-3">
+
+            <CardHeader style="background-color: #C7EFF3;">
+            <CardTitle><h5>API EXTERNA (USO 3): Volumen de mercado 10 principales criptomonedas - ApexCharts</h5></CardTitle>
+            </CardHeader>
+
+            <CardBody style="background-color: #F0FEFF;">
+            <CardSubtitle />
+            <CardText>Gráfica que muestra el volumen (medida de la cantidad de criptomoneda que se negoció en las últimas 24 horas) de las 10 
+              principales criptomonedas.
+            </CardText>
+            <img alt={" "} src={"/mediaHomicides/coin.jpg"}>
+            </CardBody>
+
+            <CardFooter style="background-color: #C7EFF3;">
+                
+                <a href="/#/homicides/usoCoin"
+                ><Button style="background-color:  #22A3B0 ; ">Ir a la gráfica</Button></a>
+            
+            
+             </CardFooter>
+        </Card>
             
         </Col>
     

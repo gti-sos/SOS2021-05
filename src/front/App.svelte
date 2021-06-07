@@ -18,6 +18,8 @@
 	import all from "./homicides/integrations/homicidesAll.svelte";
 	import homicidesApex from "./homicides/integrations/homicidesApex.svelte";
 	import homicidesAllApex from "./homicides/integrations/homicidesAllApex.svelte";
+	import coin from "./homicides/integrations/usoCoin.svelte";
+
 
 
 
@@ -82,6 +84,8 @@
 		"/homicides/homicidesAll": all,
 		"/homicides/homicidesApex": homicidesApex,
 		"/homicides/homicidesAllApex": homicidesAllApex,
+		"/homicides/usoCoin": coin,
+
 
 		
 		//Arms Sales Stats

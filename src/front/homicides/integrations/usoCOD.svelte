@@ -68,17 +68,25 @@
             console.log("Ok.");
             const json = await res.json();
             dataFromPlayer = json;
-            statsFromPlayer.push(dataFromPlayer.summary.all.kills);
-            statsFromPlayer.push(dataFromPlayer.summary.all.headshots);
-            statsFromPlayer.push(dataFromPlayer.summary.all.assists);
-            statsFromPlayer.push(dataFromPlayer.summary.all.killsPerGame);
-            statsFromPlayer.push(dataFromPlayer.summary.all.scorePerMinute);
-            statsFromPlayer.push(dataFromPlayer.summary.all.scorePerMinute);
-            //console.log(statsFromPlayer)
+            try {
+                statsFromPlayer.push(dataFromPlayer.summary.all.kills);
+                statsFromPlayer.push(dataFromPlayer.summary.all.headshots);
+                statsFromPlayer.push(dataFromPlayer.summary.all.assists);
+                statsFromPlayer.push(dataFromPlayer.summary.all.killsPerGame);
+                statsFromPlayer.push(dataFromPlayer.summary.all.scorePerMinute);
+                statsFromPlayer.push(dataFromPlayer.summary.all.scorePerMinute);
+                //console.log(statsFromPlayer)
+            }catch {
+                console.log("¡ERROR! El perfil especificado no es válido (es privado, o la API Fuente ha fallado)");
+            }
+           
+        
+           
 
         }else{
             console.log("ERROR!");
         }
+       
             
     }
   
@@ -87,7 +95,6 @@
   //highcharts treemap
     async function loadGraph() {
        
-        console.log(statsFromPlayer)
         Highcharts.chart('container', {
         series: [{
             type: "treemap",
@@ -204,7 +211,7 @@ const delay = ms => new Promise(res => setTimeout(res, ms));
             
             </ModalBody>
             <ModalFooter>
-                <Button color="primary" on:click={buscar}>Vamos allá!</Button>
+                <Button color="primary" on:click={buscar}>¡Vamos allá!</Button>
             </ModalFooter>
         </Modal>
 
@@ -218,7 +225,8 @@ const delay = ms => new Promise(res => setTimeout(res, ms));
             <div id="container"></div>
             <p class="highcharts-description">
                Esta gráfica nos muestra las principales estadísticas de jugadores de COD Warzone en PlayStation.
-               (Avertencia: La herramienta sólo funcionará con perfiles públicos de PSN)
+               (Avertencia: La herramienta sólo funcionará con perfiles públicos de PSN, y actualmente, la API origen
+               no es estable y algunas búsquedas pueden resultar en error por causas ajenas).
             </p>
         </figure>
 
