@@ -379,6 +379,7 @@ document.getElementById("ataques").style.visibility = "visible"
     </div>
 
 <div class="homicidios" id="homicidios">
+ 
   <h1>Homicidios por armas de fuego en EE.UU </h1>
   
   <Container>
@@ -425,7 +426,7 @@ document.getElementById("ataques").style.visibility = "visible"
             </CardHeader>
             <CardBody style="background-color: #F0FEFF;">
                 <CardSubtitle />
-                <CardText>Gráfico para mostrar todos los recursos, por año seleccionado, junto a la estadística de Pareto.</CardText>
+                <CardText>Gráfico de tipo piramidal que muestra los homicidios en un año determinado en cada estado de EE.UU.</CardText>
                 <img alt={" "} src={"/mediaHomicides/homicidesAll2.jpg"}>
             </CardBody>
             <CardFooter style="background-color: #C7EFF3;">
@@ -435,6 +436,7 @@ document.getElementById("ataques").style.visibility = "visible"
                 
                 </CardFooter>
             </Card>
+            
             
         </Col>
         <Col xs="auto">
@@ -463,7 +465,7 @@ document.getElementById("ataques").style.visibility = "visible"
           <Card  class="mb-3">
 
             <CardHeader style="background-color: #C7EFF3;">
-            <CardTitle><h5>API Externa (INTEGRACION 1): Riesgos De Pobreza</h5></CardTitle>
+            <CardTitle><h5>API Externa (INTEGRACION 1): Riesgos De Pobreza - ApexCharts</h5></CardTitle>
             </CardHeader>
 
             <CardBody style="background-color: #F0FEFF;">
@@ -485,7 +487,7 @@ document.getElementById("ataques").style.visibility = "visible"
         <Card  class="mb-3">
 
           <CardHeader style="background-color: #C7EFF3;">
-          <CardTitle><h5>API Externa (INTEGRACION 2): Abandono Escolar</h5></CardTitle>
+          <CardTitle><h5>API Externa (INTEGRACION 2): Abandono Escolar -  ApexCharts</h5></CardTitle>
           </CardHeader>
 
           <CardBody style="background-color: #F0FEFF;">
@@ -507,7 +509,7 @@ document.getElementById("ataques").style.visibility = "visible"
           <Card  class="mb-3">
 
               <CardHeader style="background-color: #C7EFF3;">
-              <CardTitle><h5>API Externa (USO 1): Estadísticas COD</h5></CardTitle>
+              <CardTitle><h5>API Externa (USO 1): Estadísticas COD - HighCharts</h5></CardTitle>
               </CardHeader>
 
               <CardBody style="background-color: #F0FEFF;">
@@ -530,7 +532,7 @@ document.getElementById("ataques").style.visibility = "visible"
           <Card  class="mb-3">
 
             <CardHeader style="background-color: #C7EFF3;">
-            <CardTitle><h5>API EXTERNA (USO 2): TOP 10 shows mejor puntuados IMDB</h5></CardTitle>
+            <CardTitle><h5>API EXTERNA (USO 2): TOP 10 shows mejor puntuados IMDB - HighCharts</h5></CardTitle>
             </CardHeader>
 
             <CardBody style="background-color: #F0FEFF;">
@@ -549,12 +551,33 @@ document.getElementById("ataques").style.visibility = "visible"
             
              </CardFooter>
         </Card>
+        <Card  class="mb-3">
+
+          <CardHeader style="background-color: #C7EFF3;">
+          <CardTitle><h5>API EXTERNA (USO 3): Volumen de mercado 10 principales criptomonedas - ApexCharts</h5></CardTitle>
+          </CardHeader>
+
+          <CardBody style="background-color: #F0FEFF;">
+          <CardSubtitle />
+          <CardText>Gráfica que muestra el volumen (medida de la cantidad de criptomoneda que se negoció en las últimas 24 horas) de las 10 
+            principales criptomonedas.
+          </CardText>
+          <img alt={" "} src={"/mediaHomicides/coin.jpg"}>
+          </CardBody>
+
+          <CardFooter style="background-color: #C7EFF3;">
+              
+              <a href="/#/homicides/usoCoin"
+              ><Button style="background-color:  #22A3B0 ; ">Ir a la gráfica</Button></a>
+          
+          
+           </CardFooter>
+      </Card>
           
       </Col>
   
 
   </Container>
-  
 </div>
 
 <div class="ataques" id="ataques">
